@@ -16,6 +16,7 @@ class QAOASolver:
                  problem_hamiltonian_gen: Callable=None,
                  mixer_hamiltonian_gen: Callable=None,
                  cost_hamiltonian_gen: Callable=None,
+                 cost_postop: str=None,
                  optimizer_method: str='Nelder-Mead',
                  optimizer_opts: dict={},
                  device: str='default.qubit'):
@@ -43,21 +44,24 @@ class QAOASolver:
         self.Hp = problem_hamiltonian_gen(self.N, self.nx, self.ny)
         self.Hm = mixer_hamiltonian_gen(self.num_qubits)
         self.Hc = cost_hamiltonian_gen(self.N, self.nx, self.ny)
+        self.cost_postop = cost_postop
 
         self.optimizer_method = optimizer_method
         self.optimizer_opts = optimizer_opts
         self.param_bounds = [(0,2*np.pi)]*self.p*2
         
         self.dev = qml.device(device, wires=self.num_qubits)
-        self.cost_fn = qml.QNode(self._cost_fn, self.dev)
+        self.circuit = qml.QNode(self._cost_expval, self.dev)
         self.circuit_state = qml.QNode(self._circuit_state, self.dev)
 
-    def _get_solution(self):
+    def _get_solution(self) -> str:
         fac1, fac2 = get_factors(self.N)
         fac1 = simplified_factor(fac1)
         fac2 = simplified_factor(fac2)
-        res = int_to_binary_str(fac1, self.nx) + int_to_binary_str(fac2, self.ny)
-        return res
+        sol1 = int_to_binary_str(fac1, self.nx)
+        sol2 = int_to_binary_str(fac2, self.ny)
+        
+        return sol2+sol1
     
     def _qaoa_layer(self, gamma, beta):
         qaoa.cost_layer(gamma, self.Hp)
@@ -73,9 +77,18 @@ class QAOASolver:
         self._circuit(params[:self.p], params[self.p:])
         return qml.state()
     
-    def _cost_fn(self, params):
+    def _cost_expval(self, params):
         self._circuit(params[:self.p], params[self.p:])
         return qml.expval(self.Hc)
+
+    def cost_fn(self, params):
+        expval = self.circuit(params)
+        if self.cost_postop == 'abs':
+            return abs(expval)
+        elif self.cost_postop == 'pow2':
+            return expval**2
+        else:
+            return expval
     
     def run(self, initial_gammas: List[float]=None, initial_betas: List[float]=None,
             iters: int=10, save_results: bool=False,
