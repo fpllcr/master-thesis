@@ -1,9 +1,8 @@
 {
     "number": 15,
-    "layers": 1,
+    "layers": 2,
     "problem_hamiltonian": "simplified_problem_H",
-    "cost_hamiltonian": "simplified_cost_H",
-    "cost_postop": "abs",
+    "cost_hamiltonian": "default_cost_H",
     "mixer_hamiltonian": "default_mixer_H",
     "iterations": 100,
     "optimizer_opts": {
