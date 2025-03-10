@@ -50,7 +50,7 @@ def sympy_to_pennylane(expr):
         return qml.Hamiltonian(coeffs, ops).simplify()
 
 
-def plot_quantum_state_probabilities(psi, ax, top_n=None):
+def plot_quantum_state_probabilities(psi, ax, title='State probabilities', top_n=None):
     # Convert SymPy matrix to a NumPy array
     psi_np = np.array(psi).astype(np.complex128).flatten()
 
@@ -76,7 +76,7 @@ def plot_quantum_state_probabilities(psi, ax, top_n=None):
 
     # Plot the probabilities
     ax.bar(basis_states, probabilities, color='royalblue', alpha=0.7)
-    ax.title.set_text("Best Result - State Probabilities")
+    ax.title.set_text(title)
     ax.set_xticks(basis_states)
     ax.set_xticklabels(labels=basis_states, rotation=90, fontsize=8)  # Rotate x labels & set font size
     ax.set_ylim(0, 1)

@@ -1,0 +1,12 @@
+{
+    "number": 35,
+    "layers": 3,
+    "problem_hamiltonian": "simplified_problem_H",
+    "cost_hamiltonian": "simplified_problem_H",
+    "cost_postop": "abs",
+    "mixer_hamiltonian": "default_mixer_H",
+    "iterations": 10,
+    "optimizer_opts": {
+        "adaptive": true
+    }
+}
