@@ -101,7 +101,11 @@ def int_to_binary_str(n: int, bits: int) -> str:
     filled_binary = binary.zfill(bits)
     return filled_binary
 
-def get_population(state: sp.Matrix, solution: str) -> float:
-    comp = int(solution, 2)
-    pop = float(abs(state[comp]))**2
+def get_population(state: sp.Matrix, solution: set[str]) -> float:
+    pop = 0
+    
+    for sol in solution:
+        comp = int(sol, 2)
+        pop += float(abs(state[comp]))**2
+    
     return pop
