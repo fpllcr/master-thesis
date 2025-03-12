@@ -51,6 +51,8 @@ class QAOASolver:
         self.dev = qml.device(device, wires=self.num_qubits)
         self.circuit = qml.QNode(self._circuit, self.dev)
         self.circuit_state = qml.QNode(self._circuit_state, self.dev)
+        
+        self.num_gates = qml.specs(self.circuit, level=None)([0]*self.p*2)['resources'].num_gates
 
     def _get_solution(self) -> set[str]:
         fac1, fac2 = get_factors(self.N)
@@ -110,8 +112,9 @@ class QAOASolver:
                 'N': self.N,
                 'nx': self.nx,
                 'ny': self.ny,
-                'iter': i,
                 'layers': self.p,
+                'circuit_gates': self.num_gates,
+                'iter': i,
                 'gammas_init': gammas_i,
                 'betas_init': betas_i
             }
@@ -167,3 +170,6 @@ class QAOASolver:
             print(f'Results saved in {results_path}')
             
         return best_result, results, monitoring
+    
+    def draw_circuit(self):
+        qml.draw_mpl(self.circuit, level=None)([0]*self.p*2)
