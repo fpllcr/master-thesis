@@ -66,7 +66,8 @@ if __name__ == "__main__":
 
         optimizer_opts = conf.get('optimizer_opts', {})
 
-        print(f'[{i+1}/{len(experiments)}] Started experiment {exp_name} with {conf["iterations"]} repetitions')
+        time = datetime.now().time().strftime('%H:%M:%S')
+        print(f'{time} [{i+1}/{len(experiments)}] Started experiment {exp_name} with {conf["iterations"]} repetitions')
         
         main(
             number=conf['number'],

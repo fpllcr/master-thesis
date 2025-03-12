@@ -54,6 +54,7 @@ class QAOASolver:
         self.circuit_state = qml.QNode(self._circuit_state, self.dev)
         
         self.num_gates = qml.specs(self.circuit, level=None)([0]*self.p*2)['resources'].num_gates
+        self.gate_sizes = dict(qml.specs(self.circuit, level=None)([0]*self.p*2)['resources'].gate_sizes)
 
     def _get_solution(self) -> set[str]:
         fac1, fac2 = get_factors(self.N)
@@ -104,9 +105,9 @@ class QAOASolver:
         
         for i in range(iters):
             if not initial_gammas:
-                gammas_i = (np.random.rand(self.p) * np.pi).round(1).tolist()
+                gammas_i = (np.random.rand(self.p) * (2*np.pi - 1e-6)).round(2).tolist()
             if not initial_betas:
-                betas_i = (np.random.rand(self.p) * np.pi).round(1).tolist()
+                betas_i = (np.random.rand(self.p) * (2*np.pi - 1e-6)).round(2).tolist()
 
             monitoring_i = []
             result_i = {
@@ -114,7 +115,8 @@ class QAOASolver:
                 'nx': self.nx,
                 'ny': self.ny,
                 'layers': self.p,
-                'circuit_gates': self.num_gates,
+                'num_gates': self.num_gates,
+                'gate_sizes': self.gate_sizes,
                 'device': self.device,
                 'iter': i,
                 'gammas_0': gammas_i,
@@ -161,7 +163,7 @@ class QAOASolver:
 
         if save_results:
             strftime = datetime.now().strftime('%Y%m%d%H%M%S')
-            results_path = f'experiments/results/{experiment}_results_{strftime}.jsonl'
+            results_path = f'experiments/results/{experiment}/{experiment}_results_{strftime}.jsonl'
             with open(results_path, 'w') as fout:
                 for r in results:
                     fout.write(json.dumps(r) + '\n')
