@@ -16,7 +16,6 @@ class QAOASolver:
                  problem_hamiltonian_gen: Callable=None,
                  mixer_hamiltonian_gen: Callable=None,
                  cost_hamiltonian_gen: Callable=None,
-                 cost_postop: str=None,
                  optimizer_method: str='Nelder-Mead',
                  optimizer_opts: dict={},
                  device: str='default.qubit'):
@@ -44,51 +43,49 @@ class QAOASolver:
         self.Hp = problem_hamiltonian_gen(self.N, self.nx, self.ny)
         self.Hm = mixer_hamiltonian_gen(self.num_qubits)
         self.Hc = cost_hamiltonian_gen(self.N, self.nx, self.ny)
-        self.cost_postop = cost_postop
 
         self.optimizer_method = optimizer_method
         self.optimizer_opts = optimizer_opts
         self.param_bounds = [(0,2*np.pi)]*self.p*2
         
         self.dev = qml.device(device, wires=self.num_qubits)
-        self.circuit = qml.QNode(self._cost_expval, self.dev)
+        self.circuit = qml.QNode(self._circuit, self.dev)
         self.circuit_state = qml.QNode(self._circuit_state, self.dev)
 
-    def _get_solution(self) -> str:
+    def _get_solution(self) -> set[str]:
         fac1, fac2 = get_factors(self.N)
-        fac1 = simplified_factor(fac1)
-        fac2 = simplified_factor(fac2)
-        sol1 = int_to_binary_str(fac1, self.nx)
-        sol2 = int_to_binary_str(fac2, self.ny)
         
-        return sol2+sol1
+        solx_1 = int_to_binary_str(simplified_factor(fac1), self.nx)[::-1]
+        soly_1 = int_to_binary_str(simplified_factor(fac2), self.ny)[::-1]
+        sol1 = solx_1 + soly_1
+
+        sols = {sol1}
+
+        solx_2 = int_to_binary_str(simplified_factor(fac2), self.nx)[::-1]
+        soly_2 = int_to_binary_str(simplified_factor(fac1), self.ny)[::-1]
+        sol2 = solx_2 + soly_2
+        if len(sol2) == self.num_qubits:
+            sols.add(sol2)
+        
+        return sols
     
     def _qaoa_layer(self, gamma, beta):
         qaoa.cost_layer(gamma, self.Hp)
         qaoa.mixer_layer(beta, self.Hm)
     
-    def _circuit(self, gammas, betas):
+    def _circuit_gates(self, gammas, betas):
         for w in range(self.num_qubits):
             qml.Hadamard(w)
 
         qml.layer(self._qaoa_layer, self.p, gammas, betas)
 
     def _circuit_state(self, params):
-        self._circuit(params[:self.p], params[self.p:])
+        self._circuit_gates(params[:self.p], params[self.p:])
         return qml.state()
     
-    def _cost_expval(self, params):
-        self._circuit(params[:self.p], params[self.p:])
+    def _circuit(self, params):
+        self._circuit_gates(params[:self.p], params[self.p:])
         return qml.expval(self.Hc)
-
-    def cost_fn(self, params):
-        expval = self.circuit(params)
-        if self.cost_postop == 'abs':
-            return abs(expval)
-        elif self.cost_postop == 'pow2':
-            return expval**2
-        else:
-            return expval
     
     def run(self, initial_gammas: List[float]=None, initial_betas: List[float]=None,
             iters: int=10, save_results: bool=False,
@@ -120,7 +117,7 @@ class QAOASolver:
             }
 
             res = minimize(
-                fun=self.cost_fn,
+                fun=self.circuit,
                 x0=gammas_i + betas_i,
                 method=self.optimizer_method,
                 bounds=self.param_bounds,
