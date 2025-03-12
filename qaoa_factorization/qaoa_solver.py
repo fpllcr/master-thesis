@@ -1,3 +1,4 @@
+from datetime import datetime
 import json
 from math import ceil, floor, log2, sqrt
 from typing import Callable, List
@@ -30,13 +31,13 @@ class QAOASolver:
         :param optimizer_method: Optimization method of scipy.optimize.minimize for parameter tuning
         :param optimizer_opts: Options for the optimization function
         :param device: Pennylane device to run the quantum circuit
-        :param save_results: Save a JSON file with the algorithm run results
         """
         self.N = N
         self.nx = ceil(log2(floor(sqrt(N)))) - 1
         self.ny = ceil(log2(floor(N/3))) - 1
         self.num_qubits = self.nx + self.ny
         self.p = p
+        self.device = device
         self.solution = self._get_solution()
 
 
@@ -48,7 +49,7 @@ class QAOASolver:
         self.optimizer_opts = optimizer_opts
         self.param_bounds = [(0,2*np.pi)]*self.p*2
         
-        self.dev = qml.device(device, wires=self.num_qubits)
+        self.dev = qml.device(self.device, wires=self.num_qubits)
         self.circuit = qml.QNode(self._circuit, self.dev)
         self.circuit_state = qml.QNode(self._circuit_state, self.dev)
         
@@ -91,7 +92,7 @@ class QAOASolver:
     
     def run(self, initial_gammas: List[float]=None, initial_betas: List[float]=None,
             iters: int=10, save_results: bool=False,
-            results_path: str=None, verbose: bool=False):
+            experiment: str=None, verbose: bool=False):
 
         best_result = {}
 
@@ -99,7 +100,7 @@ class QAOASolver:
         monitoring = []
 
         if save_results:
-            assert results_path is not None
+            assert experiment is not None
         
         for i in range(iters):
             if not initial_gammas:
@@ -114,9 +115,10 @@ class QAOASolver:
                 'ny': self.ny,
                 'layers': self.p,
                 'circuit_gates': self.num_gates,
+                'device': self.device,
                 'iter': i,
-                'gammas_init': gammas_i,
-                'betas_init': betas_i
+                'gammas_0': gammas_i,
+                'betas_0': betas_i
             }
 
             res = minimize(
@@ -158,13 +160,10 @@ class QAOASolver:
                 print(f'Iteration {i}: cost={round(res.fun, 2)}, fidelity={round(fidelity, 2)}')
 
         if save_results:
-            exp_name = results_path.split('/')[-1]
-            with open(f'{results_path}/{exp_name}_results.jsonl', 'w') as fout:
+            strftime = datetime.now().strftime('%Y%m%d%H%M%S')
+            results_path = f'experiments/results/{experiment}_results_{strftime}.jsonl'
+            with open(results_path, 'w') as fout:
                 for r in results:
-                    fout.write(json.dumps(r) + '\n')
-            
-            with open(f'{results_path}/{exp_name}_cost_monitoring.jsonl', 'w') as fout:
-                for r in monitoring:
                     fout.write(json.dumps(r) + '\n')
 
             print(f'Results saved in {results_path}')
