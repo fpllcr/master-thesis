@@ -1,5 +1,6 @@
 from datetime import datetime
 import json
+import os
 from math import ceil, floor, log2, sqrt
 from typing import Callable, List
 
@@ -162,8 +163,13 @@ class QAOASolver:
                 print(f'Iteration {i+1}: cost={round(res.fun, 2)}, fidelity={round(fidelity, 2)}')
 
         if save_results:
+            dirpath = f'experiments/results/{experiment}'
+            if not os.path.exists(dirpath):
+                os.makedirs(dirpath)
+                if verbose:
+                    print(f'Created directory {dirpath}')
             strftime = datetime.now().strftime('%Y%m%d%H%M%S')
-            results_path = f'experiments/results/{experiment}/{experiment}_results_{strftime}.jsonl'
+            results_path = f'{dirpath}/{experiment}_results_{strftime}.jsonl'
             with open(results_path, 'w') as fout:
                 for r in results:
                     fout.write(json.dumps(r) + '\n')

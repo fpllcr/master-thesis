@@ -35,12 +35,14 @@ if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument('-e', '--experiment')
     parser.add_argument('-b', '--batch', help='Batch processing for the experiments of the provided N')
+    parser.add_argument('-a', '--all', action='store_true', help='In batch mode, if false, it only process new configs. If true, reprocess all.')
     parser.add_argument('-d', '--device', default='default.qubit', help='Pennylane device to use')
     parser.add_argument('-v', '--verbose', action='store_true')
 
     args = parser.parse_args()    
     experiment = args.experiment
     batch = args.batch
+    all = args.all
     device = args.device
     verbose = args.verbose
 
@@ -51,6 +53,12 @@ if __name__ == "__main__":
     elif batch:
         batch_experiments = [e.split('_conf.json')[0] for e in
                              filter(lambda e: e.startswith(f'N{batch}'), os.listdir('experiments'))]
+        
+        if not all:
+            existing_results = os.listdir('experiments/results')
+            batch_experiments = list(filter(lambda e: e not in existing_results, batch_experiments))
+
+        
         experiments.extend(batch_experiments) 
         experiments.sort()
     else:
@@ -58,10 +66,6 @@ if __name__ == "__main__":
         exit(1)
 
     for i, exp_name in enumerate(experiments):
-        results_path = f'experiments/results/{exp_name}'
-        if not os.path.exists(results_path):
-            os.makedirs(results_path)
-
         with open(f'experiments/{exp_name}_conf.json', 'r') as f:
             conf = json.load(f)
 
