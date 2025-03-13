@@ -159,7 +159,7 @@ class QAOASolver:
                 }
 
             if verbose:
-                print(f'Iteration {i}: cost={round(res.fun, 2)}, fidelity={round(fidelity, 2)}')
+                print(f'Iteration {i+1}: cost={round(res.fun, 2)}, fidelity={round(fidelity, 2)}')
 
         if save_results:
             strftime = datetime.now().strftime('%Y%m%d%H%M%S')
@@ -168,7 +168,8 @@ class QAOASolver:
                 for r in results:
                     fout.write(json.dumps(r) + '\n')
 
-            print(f'Results saved in {results_path}')
+            if(verbose):
+                print(f'Results saved in {results_path}')
             
         return best_result, results, monitoring
     

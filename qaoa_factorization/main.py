@@ -27,7 +27,8 @@ def main(number, layers, reps, problem_hamiltonian, cost_hamiltonian,
         verbose=verbose
     )
 
-    print('Completed successfully')
+    if(verbose):
+        print('Completed successfully')
 
 
 if __name__ == "__main__":
