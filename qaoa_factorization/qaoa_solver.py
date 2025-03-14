@@ -52,10 +52,34 @@ class QAOASolver:
         
         self.dev = qml.device(self.device, wires=self.num_qubits)
         self.circuit = qml.QNode(self._circuit, self.dev)
+        self.circuit_sample = qml.QNode(self._circuit_sample, self.dev)
         self.circuit_state = qml.QNode(self._circuit_state, self.dev)
         
-        self.num_gates = qml.specs(self.circuit, level=None)([0]*self.p*2)['resources'].num_gates
-        self.gate_sizes = dict(qml.specs(self.circuit, level=None)([0]*self.p*2)['resources'].gate_sizes)
+        specs = qml.specs(self.circuit, level=None)([0]*self.p*2)
+        if isinstance(specs, list):
+            specs = specs[0]
+        self.num_gates = specs['resources'].num_gates
+        self.gate_sizes = dict(specs['resources'].gate_sizes)
+
+    def __str__(self):
+        res = (
+            'QAOA Solver for factorization, with properties:'
+            f'\n   - N (number to factorize): {self.N}'
+            f'\n   - p (# layers): {self.p}'
+            f'\n   - num_qubits: {self.num_qubits}'
+            f'\n   - nx: {self.nx}, ny: {self.ny}'
+            f'\n   - device: {self.device}'
+            f'\n   - solution (encoded): {self.solution}'
+            f'\n   - Hp (Problem Hamiltonian): {self.Hp}'
+            f'\n   - Hc (Cost Hamiltonian): {self.Hc}'
+            f'\n   - Hm (Mixer Hamiltonian): {self.Hm}'
+            f'\n   - Optimizer: {self.optimizer_method}'
+            f'\n   - num_gates: {self.num_gates}'
+            f'\n   - gate_sizes: {self.gate_sizes}'
+        )
+
+        return res
+
 
     def _get_solution(self) -> set[str]:
         fac1, fac2 = get_factors(self.N)
@@ -84,13 +108,17 @@ class QAOASolver:
 
         qml.layer(self._qaoa_layer, self.p, gammas, betas)
 
-    def _circuit_state(self, params):
-        self._circuit_gates(params[:self.p], params[self.p:])
-        return qml.state()
-    
     def _circuit(self, params):
         self._circuit_gates(params[:self.p], params[self.p:])
         return qml.expval(self.Hc)
+    
+    def _circuit_sample(self, params):
+        self._circuit_gates(params[:self.p], params[self.p:])
+        return qml.sample()
+
+    def _circuit_state(self, params):
+        self._circuit_gates(params[:self.p], params[self.p:])
+        return qml.state()
     
     def run(self, initial_gammas: List[float]=None, initial_betas: List[float]=None,
             iters: int=10, save_results: bool=False,
@@ -133,16 +161,25 @@ class QAOASolver:
                 options=self.optimizer_opts
             )
 
-            state = sp.Matrix(self.circuit_state(res.x.tolist()))
-            state_str = [str(comp).replace(' ', '').replace('*I', 'j') for comp in state]
-            fidelity = get_population(state, self.solution)
+            if self.device.startswith('default.'):
+                state = sp.Matrix(self.circuit_state(res.x.tolist()))
+                state_str = [str(comp).replace(' ', '').replace('*I', 'j') for comp in state]
+                fidelity = get_population_from_state(state, self.solution)
+                result_i['state'] = state_str
+            
+            else:
+                samples = self.circuit_sample(res.x)
+                populations = compute_probabilities(samples)
+                fidelity = 0
+                for sol in self.solution:
+                    fidelity += populations[sol]
 
             result_i['gammas'] = res.x[:self.p].tolist()
             result_i['betas'] = res.x[self.p:].tolist()
             result_i['cost'] = float(res.fun)
             result_i['steps'] = len(monitoring_i)
             result_i['fidelity'] = fidelity
-            result_i['state'] = state_str
+            
             
             monitoring.append({'iter': i, 'cost_evol': monitoring_i})
 

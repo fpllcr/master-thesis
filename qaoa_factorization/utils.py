@@ -1,3 +1,4 @@
+from collections import Counter
 from itertools import product
 
 import pennylane as qml
@@ -101,7 +102,7 @@ def int_to_binary_str(n: int, bits: int) -> str:
     filled_binary = binary.zfill(bits)
     return filled_binary
 
-def get_population(state: sp.Matrix, solution: set[str]) -> float:
+def get_population_from_state(state: sp.Matrix, solution: set[str]) -> float:
     pop = 0
     
     for sol in solution:
@@ -109,3 +110,22 @@ def get_population(state: sp.Matrix, solution: set[str]) -> float:
         pop += float(abs(state[comp]))**2
     
     return pop
+
+def compute_probabilities(samples):
+    """
+    Converts an array of sampled bitstrings into a probability dictionary.
+    
+    Parameters:
+        samples (array-like): A list of sampled bitstrings, e.g., [[1,0,1], [0,1,1], ...]
+    
+    Returns:
+        dict: A dictionary where keys are bitstrings ('101', '011', etc.) and values are probabilities.
+    """
+
+    bitstrings = ["".join(map(str, sample)) for sample in samples]
+    counts = Counter(bitstrings)
+
+    total_samples = len(samples)
+    probabilities = {bitstring: count / total_samples for bitstring, count in counts.items()}
+    
+    return probabilities
