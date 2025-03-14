@@ -161,7 +161,7 @@ class QAOASolver:
                 options=self.optimizer_opts
             )
 
-            if self.device.startswith('default.'):
+            if self.device.startswith('default.qubit'):
                 state = sp.Matrix(self.circuit_state(res.x.tolist()))
                 state_str = [str(comp).replace(' ', '').replace('*I', 'j') for comp in state]
                 fidelity = get_population_from_state(state, self.solution)
