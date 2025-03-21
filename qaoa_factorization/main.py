@@ -1,6 +1,7 @@
 from argparse import ArgumentParser
 from datetime import datetime
 import json
+import multiprocessing as mp
 import os
 
 import hamiltonians
@@ -31,12 +32,23 @@ def main(number, layers, reps, problem_hamiltonian, cost_hamiltonian,
         print('Completed successfully')
 
 
+def run_experiment(exp_num: int, params: dict):
+    time = datetime.now().time().strftime('%H:%M:%S')
+    print(
+        f'{time} [{exp_num+1}/{len(experiments)}]',
+        f'Started experiment {params["experiment_name"]} with {params["reps"]} repetitions'
+    )
+
+    main(**params)
+
+
 if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument('-e', '--experiment')
     parser.add_argument('-b', '--batch', help='Batch processing for the experiments of the provided N')
     parser.add_argument('-a', '--all', action='store_true', help='In batch mode, if false, it only process new configs. If true, reprocess all.')
     parser.add_argument('-d', '--device', default='default.qubit', help='Pennylane device to use')
+    parser.add_argument('-c', '--cpus', default=1, type=int, choices=range(1, mp.cpu_count()), help='Number of CPUs to use')
     parser.add_argument('-v', '--verbose', action='store_true')
 
     args = parser.parse_args()    
@@ -44,7 +56,8 @@ if __name__ == "__main__":
     batch = args.batch
     all = args.all
     device = args.device
-    verbose = args.verbose
+    cpus = args.cpus
+    verbose = args.verbose if cpus == 1 else False
 
     experiments = []
 
@@ -65,24 +78,28 @@ if __name__ == "__main__":
         print('Either --experiment [-e] or --batch [-b] must be provided')
         exit(1)
 
+    params_list = []
+
     for i, exp_name in enumerate(experiments):
         with open(f'experiments/{exp_name}_conf.json', 'r') as f:
             conf = json.load(f)
 
         optimizer_opts = conf.get('optimizer_opts', {})
 
-        time = datetime.now().time().strftime('%H:%M:%S')
-        print(f'{time} [{i+1}/{len(experiments)}] Started experiment {exp_name} with {conf["iterations"]} repetitions')
+        params = {
+            'number': conf['number'],
+            'layers': conf['layers'],
+            'reps': conf['iterations'],
+            'problem_hamiltonian': getattr(hamiltonians, conf['problem_hamiltonian']),
+            'cost_hamiltonian': getattr(hamiltonians, conf['cost_hamiltonian']),
+            'mixer_hamiltonian': getattr(hamiltonians, conf['mixer_hamiltonian']),
+            'optimizer_opts': optimizer_opts,
+            'device': device,
+            'experiment_name': exp_name,
+            'verbose': verbose
+        }
         
-        main(
-            number=conf['number'],
-            layers=conf['layers'],
-            reps=conf['iterations'],
-            problem_hamiltonian=getattr(hamiltonians, conf['problem_hamiltonian']),
-            cost_hamiltonian=getattr(hamiltonians, conf['cost_hamiltonian']),
-            mixer_hamiltonian=getattr(hamiltonians, conf['mixer_hamiltonian']),
-            optimizer_opts=optimizer_opts,
-            device=device,
-            experiment_name=exp_name,
-            verbose=verbose
-        )
+        params_list.append((i, params))
+
+    with mp.Pool(processes=cpus) as pool:
+        pool.starmap(run_experiment, params_list)
