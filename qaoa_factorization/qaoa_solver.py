@@ -99,15 +99,15 @@ class QAOASolver:
     
     def _single_run(self, i, initial_gammas=None, initial_betas=None, verbose=False):
 
-        np.random.seed(os.getpid())
+        rng = np.random.default_rng()
 
         if not initial_gammas:
-            gammas_i = (np.random.rand(self.p) * (2*np.pi - 1e-6)).round(2).tolist()
+            gammas_i = (rng.random(self.p) * 2*np.pi).tolist()
         else:
             gammas_i = initial_gammas
 
         if not initial_betas:
-            betas_i = (np.random.rand(self.p) * (2*np.pi - 1e-6)).round(2).tolist()
+            betas_i = (rng.random(self.p) * 2*np.pi).tolist()
         else:
             betas_i = initial_betas
 
