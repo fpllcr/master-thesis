@@ -120,7 +120,6 @@ class QAOASolver:
             'num_gates': self.num_gates,
             'gate_sizes': self.gate_sizes,
             'device': self.device,
-            'rep': params['i'],
             'gammas_0': gammas_i,
             'betas_0': betas_i
         }
@@ -158,25 +157,31 @@ class QAOASolver:
         if save_results:
             assert experiment is not None
 
+        rep = 1
+
         with mp.Pool(processes=cpus) as pool:
-            pbar = tqdm(total=reps, unit='rep')
-            params = [
-                {
-                    'i': i,
-                    'initial_gammas': initial_gammas,
-                    'initial_betas': initial_betas,
-                    'verbose': verbose
-                } for i in range(reps)
-            ]
+            pbar = tqdm(total=reps, unit='rep', disable=verbose)
+            params = [{
+                'initial_gammas': initial_gammas,
+                'initial_betas': initial_betas,
+                'verbose': verbose
+            }] * reps
+            
             results = []
             for res in pool.imap_unordered(self._single_run, params):
                 pbar.update()
                 pbar.refresh()
+
+                res['rep'] = rep
                 results.append(res)
-                if verbose:
-                    if not res['success']:
+
+                if not res['success']:
                         pbar.write(f"[Warning] {res['message']}")
-                    pbar.write(f"Rep {pbar.n}: cost={round(res['cost'], 2)}, fidelity={round(res['fidelity'], 2)}")
+                
+                if verbose:
+                    pbar.write(f"Rep {rep}: cost={round(res['cost'], 2)}, fidelity={round(res['fidelity'], 2)}")
+
+                rep += 1
 
         best_result = min(results, key=lambda x: x['fidelity'])
 
