@@ -109,3 +109,9 @@ def get_population(state: sp.Matrix, solution: set[str]) -> float:
         pop += float(abs(state[comp]))**2
     
     return pop
+
+class DummyTqdm:
+    def update(self, n=1):
+        pass
+    def refresh(self):
+        pass
