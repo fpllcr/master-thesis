@@ -10,6 +10,7 @@ from pennylane import qaoa
 from pennylane import numpy as np
 from scipy.optimize import minimize
 import sympy as sp
+from tqdm import tqdm
 
 from utils import *
 
@@ -97,19 +98,19 @@ class QAOASolver:
         self._circuit_gates(params[:self.p], params[self.p:])
         return qml.expval(self.Hc)
     
-    def _single_run(self, i, initial_gammas=None, initial_betas=None, verbose=False):
+    def _single_run(self, params):
 
         rng = np.random.default_rng()
 
-        if not initial_gammas:
+        if not params['initial_gammas']:
             gammas_i = (rng.random(self.p) * 2*np.pi).tolist()
         else:
-            gammas_i = initial_gammas
+            gammas_i = params['initial_gammas']
 
-        if not initial_betas:
+        if not params['initial_betas']:
             betas_i = (rng.random(self.p) * 2*np.pi).tolist()
         else:
-            betas_i = initial_betas
+            betas_i = params['initial_betas']
 
         result_i = {
             'N': self.N,
@@ -119,7 +120,6 @@ class QAOASolver:
             'num_gates': self.num_gates,
             'gate_sizes': self.gate_sizes,
             'device': self.device,
-            'rep': i,
             'gammas_0': gammas_i,
             'betas_0': betas_i
         }
@@ -132,9 +132,6 @@ class QAOASolver:
             options=self.optimizer_opts
         )
 
-        if not res.success:
-            print(f'[Warning] {res.message}')
-
         state = sp.Matrix(self.circuit_state(res.x.tolist()))
         state_str = [str(comp).replace(' ', '').replace('*I', 'j') for comp in state]
         fidelity = get_population(state, self.solution)
@@ -146,11 +143,9 @@ class QAOASolver:
             'steps': res.nit,
             'fidelity': fidelity,
             'state': state_str,
-            'success': res.success
+            'success': res.success,
+            'message': res.message
         })
-
-        if verbose:
-            print(f'Repetition {i+1}: cost={round(res.fun, 2)}, fidelity={round(fidelity, 2)}')
 
         return result_i
         
@@ -162,9 +157,31 @@ class QAOASolver:
         if save_results:
             assert experiment is not None
 
+        rep = 1
+
         with mp.Pool(processes=cpus) as pool:
-            params = [(i, initial_gammas, initial_betas, verbose) for i in range(reps)]
-            results = pool.starmap(self._single_run, params)
+            pbar = tqdm(total=reps, unit='rep', disable=verbose)
+            params = [{
+                'initial_gammas': initial_gammas,
+                'initial_betas': initial_betas,
+                'verbose': verbose
+            }] * reps
+            
+            results = []
+            for res in pool.imap_unordered(self._single_run, params):
+                pbar.update()
+                pbar.refresh()
+
+                res['rep'] = rep
+                results.append(res)
+
+                if not res['success']:
+                        pbar.write(f"[Warning] {res['message']}")
+                
+                if verbose:
+                    pbar.write(f"Rep {rep}: cost={round(res['cost'], 2)}, fidelity={round(res['fidelity'], 2)}")
+
+                rep += 1
 
         best_result = min(results, key=lambda x: x['fidelity'])
 
