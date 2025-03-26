@@ -1,5 +1,5 @@
 {
-    "number": 35,
+    "number": 33,
     "layers": 6,
     "problem_hamiltonian": "default_problem_H",
     "cost_hamiltonian": "default_cost_H",
