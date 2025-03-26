@@ -1,7 +1,8 @@
 from datetime import datetime
 import json
-import os
 from math import ceil, floor, log2, sqrt
+import multiprocessing as mp
+import os
 from typing import Callable, List
 
 import pennylane as qml
@@ -9,6 +10,7 @@ from pennylane import qaoa
 from pennylane import numpy as np
 from scipy.optimize import minimize
 import sympy as sp
+from tqdm import tqdm
 
 from utils import *
 
@@ -47,8 +49,12 @@ class QAOASolver:
         self.Hc = cost_hamiltonian_gen(self.N, self.nx, self.ny)
 
         self.optimizer_method = optimizer_method
-        self.optimizer_opts = optimizer_opts
         self.param_bounds = [(0,2*np.pi)]*self.p*2
+        self.optimizer_opts = optimizer_opts
+        
+        if not 'maxiter' in self.optimizer_opts:
+            optimizer_opts['maxiter'] = 2 * self.p * 1000
+
         
         self.dev = qml.device(self.device, wires=self.num_qubits)
         self.circuit = qml.QNode(self._circuit, self.dev)
@@ -92,75 +98,92 @@ class QAOASolver:
         self._circuit_gates(params[:self.p], params[self.p:])
         return qml.expval(self.Hc)
     
+    def _single_run(self, params):
+
+        rng = np.random.default_rng()
+
+        if not params['initial_gammas']:
+            gammas_i = (rng.random(self.p) * 2*np.pi).tolist()
+        else:
+            gammas_i = params['initial_gammas']
+
+        if not params['initial_betas']:
+            betas_i = (rng.random(self.p) * 2*np.pi).tolist()
+        else:
+            betas_i = params['initial_betas']
+
+        result_i = {
+            'N': self.N,
+            'nx': self.nx,
+            'ny': self.ny,
+            'layers': self.p,
+            'num_gates': self.num_gates,
+            'gate_sizes': self.gate_sizes,
+            'device': self.device,
+            'gammas_0': gammas_i,
+            'betas_0': betas_i
+        }
+
+        res = minimize(
+            fun=self.circuit,
+            x0=gammas_i + betas_i,
+            method=self.optimizer_method,
+            bounds=self.param_bounds,
+            options=self.optimizer_opts
+        )
+
+        state = sp.Matrix(self.circuit_state(res.x.tolist()))
+        state_str = [str(comp).replace(' ', '').replace('*I', 'j') for comp in state]
+        fidelity = get_population(state, self.solution)
+
+        result_i.update({
+            'gammas': res.x[:self.p].tolist(),
+            'betas': res.x[self.p:].tolist(),
+            'cost': float(res.fun),
+            'steps': res.nit,
+            'fidelity': fidelity,
+            'state': state_str,
+            'success': res.success,
+            'message': res.message
+        })
+
+        return result_i
+        
+    
     def run(self, initial_gammas: List[float]=None, initial_betas: List[float]=None,
-            iters: int=10, save_results: bool=False,
-            experiment: str=None, verbose: bool=False):
-
-        best_result = {}
-
-        results = []
-        monitoring = []
-
+            reps: int=10, save_results: bool=False,
+            experiment: str=None, cpus: int=1, verbose: bool=False):
+        
         if save_results:
             assert experiment is not None
-        
-        for i in range(iters):
-            if not initial_gammas:
-                gammas_i = (np.random.rand(self.p) * (2*np.pi - 1e-6)).round(2).tolist()
-            if not initial_betas:
-                betas_i = (np.random.rand(self.p) * (2*np.pi - 1e-6)).round(2).tolist()
 
-            monitoring_i = []
-            result_i = {
-                'N': self.N,
-                'nx': self.nx,
-                'ny': self.ny,
-                'layers': self.p,
-                'num_gates': self.num_gates,
-                'gate_sizes': self.gate_sizes,
-                'device': self.device,
-                'iter': i,
-                'gammas_0': gammas_i,
-                'betas_0': betas_i
-            }
+        rep = 1
 
-            res = minimize(
-                fun=self.circuit,
-                x0=gammas_i + betas_i,
-                method=self.optimizer_method,
-                bounds=self.param_bounds,
-                callback=lambda intermediate_result: monitoring_i.append(float(intermediate_result.fun)),
-                options=self.optimizer_opts
-            )
-
-            state = sp.Matrix(self.circuit_state(res.x.tolist()))
-            state_str = [str(comp).replace(' ', '').replace('*I', 'j') for comp in state]
-            fidelity = get_population(state, self.solution)
-
-            result_i['gammas'] = res.x[:self.p].tolist()
-            result_i['betas'] = res.x[self.p:].tolist()
-            result_i['cost'] = float(res.fun)
-            result_i['steps'] = len(monitoring_i)
-            result_i['fidelity'] = fidelity
-            result_i['state'] = state_str
+        with mp.Pool(processes=cpus) as pool:
+            pbar = tqdm(total=reps, unit='rep', disable=verbose)
+            params = [{
+                'initial_gammas': initial_gammas,
+                'initial_betas': initial_betas,
+                'verbose': verbose
+            }] * reps
             
-            monitoring.append({'iter': i, 'cost_evol': monitoring_i})
+            results = []
+            for res in pool.imap_unordered(self._single_run, params):
+                pbar.update()
+                pbar.refresh()
 
-            results.append(result_i)
+                res['rep'] = rep
+                results.append(res)
 
-            if not 'fun' in best_result or res.fun < best_result['fun']:
-                best_result = {
-                    'iter': i,
-                    'cost': result_i['cost'],
-                    'gammas': result_i['gammas'],
-                    'betas': result_i['betas'],
-                    'steps': result_i['steps'],
-                    'fidelity': fidelity,
-                    'state': state_str
-                }
+                if not res['success']:
+                        pbar.write(f"[Warning] {res['message']}")
+                
+                if verbose:
+                    pbar.write(f"Rep {rep}: cost={round(res['cost'], 2)}, fidelity={round(res['fidelity'], 2)}")
 
-            if verbose:
-                print(f'Iteration {i+1}: cost={round(res.fun, 2)}, fidelity={round(fidelity, 2)}')
+                rep += 1
+
+        best_result = min(results, key=lambda x: x['fidelity'])
 
         if save_results:
             dirpath = f'experiments/results/{experiment}'
@@ -174,10 +197,10 @@ class QAOASolver:
                 for r in results:
                     fout.write(json.dumps(r) + '\n')
 
-            if(verbose):
+            if verbose:
                 print(f'Results saved in {results_path}')
             
-        return best_result, results, monitoring
+        return best_result, results
     
     def draw_circuit(self):
         qml.draw_mpl(self.circuit, level=None)([0]*self.p*2)
