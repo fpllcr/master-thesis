@@ -1,0 +1,10 @@
+{
+    "number": 33,
+    "layers": 1,
+    "problem_hamiltonian": "default_problem_H",
+    "cost_hamiltonian": "default_cost_H",
+    "mixer_hamiltonian": "default_mixer_H",
+    "optimizer_opts": {
+        "adaptive": true
+    }
+}
