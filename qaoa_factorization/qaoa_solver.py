@@ -121,7 +121,8 @@ class QAOASolver:
             'gate_sizes': self.gate_sizes,
             'device': self.device,
             'gammas_0': gammas_i,
-            'betas_0': betas_i
+            'betas_0': betas_i,
+            'solution': self.solution
         }
 
         res = minimize(
