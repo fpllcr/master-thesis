@@ -78,7 +78,7 @@ class QAOASolver:
         if len(sol2) == self.num_qubits:
             sols.add(sol2)
         
-        return sols
+        return list(sols)
     
     def _qaoa_layer(self, gamma, beta):
         qaoa.cost_layer(gamma, self.Hp)
@@ -121,7 +121,8 @@ class QAOASolver:
             'gate_sizes': self.gate_sizes,
             'device': self.device,
             'gammas_0': gammas_i,
-            'betas_0': betas_i
+            'betas_0': betas_i,
+            'solution': self.solution
         }
 
         res = minimize(

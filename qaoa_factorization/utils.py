@@ -110,6 +110,23 @@ def get_population(state: sp.Matrix, solution: set[str]) -> float:
     
     return pop
 
+def compute_solution(n, nx, ny) -> list[str]:
+    fac1, fac2 = get_factors(n)
+    
+    solx_1 = int_to_binary_str(simplified_factor(fac1), nx)[::-1]
+    soly_1 = int_to_binary_str(simplified_factor(fac2), ny)[::-1]
+    sol1 = solx_1 + soly_1
+
+    sols = {sol1}
+
+    solx_2 = int_to_binary_str(simplified_factor(fac2), nx)[::-1]
+    soly_2 = int_to_binary_str(simplified_factor(fac1), ny)[::-1]
+    sol2 = solx_2 + soly_2
+    if len(sol2) == nx + ny:
+        sols.add(sol2)
+    
+    return list(sols)
+
 class DummyTqdm:
     def update(self, n=1):
         pass
