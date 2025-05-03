@@ -103,8 +103,7 @@ class QAOASolver:
             'gate_sizes': self.gate_sizes,
             'device': self.device,
             'gammas_0': gammas_i,
-            'betas_0': betas_i,
-            'solution': self.solution
+            'betas_0': betas_i
         }
 
         res = minimize(
@@ -122,10 +121,10 @@ class QAOASolver:
             'gammas': res.x[:self.p].tolist(),
             'betas': res.x[self.p:].tolist(),
             'cost': float(res.fun),
-            'steps': res.nit,
             'state': state_str,
-            'success': res.success,
-            'message': res.message
+            'optimizer_steps': res.nit,
+            'optimizer_success': res.success,
+            'optimizer_message': res.message
         })
 
         return result_i
@@ -156,7 +155,7 @@ class QAOASolver:
                 res['rep'] = rep
                 results.append(res)
 
-                if not res['success']:
+                if not res['optimizer_success']:
                         pbar.write(f"[Warning] {res['message']}")
                 
                 if verbose:

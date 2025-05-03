@@ -127,6 +127,20 @@ def compute_solution(n, nx, ny) -> list[str]:
     
     return list(sols)
 
+def basis_bitstrings(n):
+    return list(product([0, 1], repeat=n))
+
+def compute_diagonal_elements(N, nx, ny):
+    n_qubits = nx + ny
+    diag = []
+    for bits in basis_bitstrings(n_qubits):
+        # Compute x and y encoded from bits
+        x = sum((1 - bits[l - 1]) * 2 ** l for l in range(1, nx + 1))
+        y = sum((1 - bits[m + nx - 1]) * 2 ** m for m in range(1, ny + 1))
+        val = N - x * y
+        diag.append(abs(val))
+    return diag
+
 class DummyTqdm:
     def update(self, n=1):
         pass
