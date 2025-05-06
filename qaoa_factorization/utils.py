@@ -141,6 +141,10 @@ def compute_diagonal_elements(N, nx, ny):
         diag.append(abs(val))
     return diag
 
+def compute_fidelity(state_populations, solutions):
+    indices = [int(b, 2) for b in solutions]
+    return sum(state_populations[i] for i in indices)
+
 class DummyTqdm:
     def update(self, n=1):
         pass

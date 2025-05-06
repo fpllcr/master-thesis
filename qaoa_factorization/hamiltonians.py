@@ -35,7 +35,7 @@ def abs_H(N: int, nx: int, ny: int) -> qml.Hamiltonian:
     )
 
     H_matrix = sympy_to_pennylane(H).matrix()
-    H_abs_dense = np.abs(H_matrix)  # No need to call .toarray()
+    H_abs_dense = np.abs(H_matrix)
     return qml.pauli_decompose(H_abs_dense)
 
 #================================================================================================================#
