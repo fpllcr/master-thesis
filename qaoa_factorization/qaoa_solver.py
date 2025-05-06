@@ -156,7 +156,7 @@ class QAOASolver:
                 results.append(res)
 
                 if not res['optimizer_success']:
-                        pbar.write(f"[Warning] {res['message']}")
+                        pbar.write(f"[Warning] {res['optimizer_message']}")
                 
                 if verbose:
                     pbar.write(f"Rep {rep}: cost={round(res['cost'], 2)}")
