@@ -141,7 +141,7 @@ class QAOASolver:
 
         with mp.Pool(processes=cpus) as pool:
             pbar = tqdm(total=reps, unit='rep', disable=verbose,
-                        bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_inv_fmt}]"))
+                        bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_inv_fmt}]")
             params = [{
                 'initial_gammas': initial_gammas,
                 'initial_betas': initial_betas,
