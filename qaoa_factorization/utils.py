@@ -1,4 +1,5 @@
 from itertools import product
+from math import ceil, floor, log2, sqrt
 
 import pennylane as qml
 from pennylane import numpy as np
@@ -110,8 +111,11 @@ def get_population(state: sp.Matrix, solution: set[str]) -> float:
     
     return pop
 
-def compute_solution(n, nx, ny) -> list[str]:
-    fac1, fac2 = get_factors(n)
+def compute_solution(N) -> list[str]:
+    fac1, fac2 = get_factors(N)
+
+    nx = ceil(log2(floor(sqrt(N)))) - 1
+    ny = ceil(log2(floor(N/3))) - 1
     
     solx_1 = int_to_binary_str(simplified_factor(fac1), nx)[::-1]
     soly_1 = int_to_binary_str(simplified_factor(fac2), ny)[::-1]
