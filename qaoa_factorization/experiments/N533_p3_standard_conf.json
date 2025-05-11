@@ -1,0 +1,10 @@
+{
+    "number": 533,
+    "layers": 3,
+    "problem_hamiltonian": "quadratic_H",
+    "cost_hamiltonian": "quadratic_H",
+    "mixer_hamiltonian": "standard_mixer_H",
+    "optimizer_opts": {
+        "adaptive": true
+    }
+}

@@ -2,7 +2,7 @@
 
 # Parameters (edit these values as needed)
 ORIGINAL_NUM=35
-COPY_NUM=39
+COPY_NUM=533
 
 # Directory containing the JSON files (use "." for current directory)
 DIR="."
