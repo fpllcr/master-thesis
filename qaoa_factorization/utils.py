@@ -1,4 +1,5 @@
 from itertools import product
+from math import ceil, floor, log2, sqrt
 
 import pennylane as qml
 from pennylane import numpy as np
@@ -110,8 +111,11 @@ def get_population(state: sp.Matrix, solution: set[str]) -> float:
     
     return pop
 
-def compute_solution(n, nx, ny) -> list[str]:
-    fac1, fac2 = get_factors(n)
+def compute_solution(N) -> list[str]:
+    fac1, fac2 = get_factors(N)
+
+    nx = ceil(log2(floor(sqrt(N)))) - 1
+    ny = ceil(log2(floor(N/3))) - 1
     
     solx_1 = int_to_binary_str(simplified_factor(fac1), nx)[::-1]
     soly_1 = int_to_binary_str(simplified_factor(fac2), ny)[::-1]
@@ -126,6 +130,24 @@ def compute_solution(n, nx, ny) -> list[str]:
         sols.add(sol2)
     
     return list(sols)
+
+def basis_bitstrings(n):
+    return list(product([0, 1], repeat=n))
+
+def compute_diagonal_elements(N, nx, ny):
+    n_qubits = nx + ny
+    diag = []
+    for bits in basis_bitstrings(n_qubits):
+        # Compute x and y encoded from bits
+        x = sum((1 - bits[l - 1]) * 2 ** l for l in range(1, nx + 1))
+        y = sum((1 - bits[m + nx - 1]) * 2 ** m for m in range(1, ny + 1))
+        val = N - x * y
+        diag.append(abs(val))
+    return diag
+
+def compute_fidelity(state_populations, solutions):
+    indices = [int(b, 2) for b in solutions]
+    return sum(state_populations[i] for i in indices)
 
 class DummyTqdm:
     def update(self, n=1):

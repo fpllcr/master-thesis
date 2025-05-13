@@ -41,7 +41,6 @@ class QAOASolver:
         self.num_qubits = self.nx + self.ny
         self.p = p
         self.device = device
-        self.solution = self._get_solution()
 
 
         self.Hp = problem_hamiltonian_gen(self.N, self.nx, self.ny)
@@ -62,23 +61,6 @@ class QAOASolver:
         
         self.num_gates = qml.specs(self.circuit, level=None)([0]*self.p*2)['resources'].num_gates
         self.gate_sizes = dict(qml.specs(self.circuit, level=None)([0]*self.p*2)['resources'].gate_sizes)
-
-    def _get_solution(self) -> set[str]:
-        fac1, fac2 = get_factors(self.N)
-        
-        solx_1 = int_to_binary_str(simplified_factor(fac1), self.nx)[::-1]
-        soly_1 = int_to_binary_str(simplified_factor(fac2), self.ny)[::-1]
-        sol1 = solx_1 + soly_1
-
-        sols = {sol1}
-
-        solx_2 = int_to_binary_str(simplified_factor(fac2), self.nx)[::-1]
-        soly_2 = int_to_binary_str(simplified_factor(fac1), self.ny)[::-1]
-        sol2 = solx_2 + soly_2
-        if len(sol2) == self.num_qubits:
-            sols.add(sol2)
-        
-        return list(sols)
     
     def _qaoa_layer(self, gamma, beta):
         qaoa.cost_layer(gamma, self.Hp)
@@ -121,8 +103,7 @@ class QAOASolver:
             'gate_sizes': self.gate_sizes,
             'device': self.device,
             'gammas_0': gammas_i,
-            'betas_0': betas_i,
-            'solution': self.solution
+            'betas_0': betas_i
         }
 
         res = minimize(
@@ -135,17 +116,15 @@ class QAOASolver:
 
         state = sp.Matrix(self.circuit_state(res.x.tolist()))
         state_str = [str(comp).replace(' ', '').replace('*I', 'j') for comp in state]
-        fidelity = get_population(state, self.solution)
 
         result_i.update({
             'gammas': res.x[:self.p].tolist(),
             'betas': res.x[self.p:].tolist(),
             'cost': float(res.fun),
-            'steps': res.nit,
-            'fidelity': fidelity,
             'state': state_str,
-            'success': res.success,
-            'message': res.message
+            'optimizer_steps': res.nit,
+            'optimizer_success': res.success,
+            'optimizer_message': res.message
         })
 
         return result_i
@@ -161,7 +140,8 @@ class QAOASolver:
         rep = 1
 
         with mp.Pool(processes=cpus) as pool:
-            pbar = tqdm(total=reps, unit='rep', disable=verbose)
+            pbar = tqdm(total=reps, unit='rep', disable=verbose,
+                        bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_inv_fmt}]")
             params = [{
                 'initial_gammas': initial_gammas,
                 'initial_betas': initial_betas,
@@ -176,15 +156,15 @@ class QAOASolver:
                 res['rep'] = rep
                 results.append(res)
 
-                if not res['success']:
-                        pbar.write(f"[Warning] {res['message']}")
+                if not res['optimizer_success']:
+                        pbar.write(f"[Warning] {res['optimizer_message']}")
                 
                 if verbose:
-                    pbar.write(f"Rep {rep}: cost={round(res['cost'], 2)}, fidelity={round(res['fidelity'], 2)}")
+                    pbar.write(f"Rep {rep}: cost={round(res['cost'], 2)}")
 
                 rep += 1
 
-        best_result = min(results, key=lambda x: x['fidelity'])
+        best_result = min(results, key=lambda x: x['cost'])
 
         if save_results:
             dirpath = f'experiments/results/{experiment}'
