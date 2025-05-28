@@ -1,0 +1,9 @@
+{
+    "number": 35,
+    "layers": 2,
+    "problem_hamiltonian": "linear_H",
+    "cost_hamiltonian": "abs_H",
+    "optimizer_opts": {
+        "adaptive": true
+    }
+}

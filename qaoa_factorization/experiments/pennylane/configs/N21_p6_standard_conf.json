@@ -1,0 +1,9 @@
+{
+    "number": 21,
+    "layers": 6,
+    "problem_hamiltonian": "quadratic_H",
+    "cost_hamiltonian": "quadratic_H",
+    "optimizer_opts": {
+        "adaptive": true
+    }
+}
