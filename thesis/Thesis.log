@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  6 JUN 2025 09:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  6 JUN 2025 10:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1233,7 +1233,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 Package glossaries Info: Writing glossary file Thesis.acn on input line 24.
  (./glossary.tex) (./abbreviations.tex (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
-)) (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+) (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
@@ -1244,7 +1246,7 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 43.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-GateModelComputation.aux) (./01-introduction/02-AdiabaticComputation.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-results/01-IntroducingProblem.aux) (./04-conclusion/conclusion.aux) (./publications/publications.aux))
+) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-results/01-IntroducingProblem.aux) (./04-conclusion/conclusion.aux) (./publications/publications.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
@@ -1465,26 +1467,32 @@ Package lettrine.sty Info: Targeted height = 17.3449pt
 (lettrine.sty)             Lettrine height = 17.70815pt (\color {drocap-color}Q);
 (lettrine.sty)             reported on input line 4.
 )
-\openout2 = `01-introduction/01-GateModelComputation.aux'.
+\openout2 = `01-introduction/01-CircuitModel.aux'.
 
- (./01-introduction/01-GateModelComputation.tex
+ (./01-introduction/01-CircuitModel.tex)
+\openout2 = `01-introduction/02-AdiabaticModel.aux'.
+
+ (./01-introduction/02-AdiabaticModel.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
+
+
+
+
+
+]
 
 Package lipsum Warning: Unknown language 'latin'. Hyphenation patterns for
 (lipsum)                'english' will be used instead.
 
-)
-\openout2 = `01-introduction/02-AdiabaticComputation.aux'.
 
- (./01-introduction/02-AdiabaticComputation.tex [1
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-
-
-])
+ [2])
 \openout2 = `01-introduction/03-QAOABasicConcepts.aux'.
 
- (./01-introduction/03-QAOABasicConcepts.tex [2])
+ (./01-introduction/03-QAOABasicConcepts.tex)
 \openout2 = `02-factorization/01-ShorsAlgo.aux'.
 
  (./02-factorization/01-ShorsAlgo.tex [3]
@@ -1496,10 +1504,13 @@ Package lettrine.sty Info: Targeted height = 17.3449pt
 )
 \openout2 = `02-factorization/02-AdiabaticFactorization.aux'.
 
- (./02-factorization/02-AdiabaticFactorization.tex [4
+ (./02-factorization/02-AdiabaticFactorization.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4
 
 ]
-<figs/drawing.pdf, id=136, 563.03961pt x 91.38394pt>
+<figs/drawing.pdf, id=137, 563.03961pt x 91.38394pt>
 File: figs/drawing.pdf Graphic file (type pdf)
 <use figs/drawing.pdf>
 Package pdftex.def Info: figs/drawing.pdf  used on input line 16.
@@ -1512,7 +1523,7 @@ LaTeX Font Info:    Trying to load font information for U+bbm on input line 37.
 (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
-<figs/grafico_3d.pdf, id=157, 574.29025pt x 231.62152pt>
+<figs/grafico_3d.pdf, id=156, 574.29025pt x 231.62152pt>
 File: figs/grafico_3d.pdf Graphic file (type pdf)
 <use figs/grafico_3d.pdf>
 Package pdftex.def Info: figs/grafico_3d.pdf  used on input line 47.
@@ -1571,17 +1582,17 @@ File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
 
 Package natbib Warning: There were undefined citations.
 
-(./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-GateModelComputation.aux) (./01-introduction/02-AdiabaticComputation.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-results/01-IntroducingProblem.aux) (./04-conclusion/conclusion.aux) (./publications/publications.aux)) ) 
+(./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-results/01-IntroducingProblem.aux) (./04-conclusion/conclusion.aux) (./publications/publications.aux)) ) 
 Here is how much of TeX's memory you used:
- 44635 strings out of 480129
- 830403 string characters out of 5893410
- 1261158 words of memory out of 5000000
- 61268 multiletter control sequences out of 15000+600000
- 543401 words of font info for 307 fonts, out of 8000000 for 9000
+ 44669 strings out of 480129
+ 830969 string characters out of 5893410
+ 1264383 words of memory out of 5000000
+ 61302 multiletter control sequences out of 15000+600000
+ 543282 words of font info for 305 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 106i,18n,105p,1963b,869s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 106i,18n,105p,1982b,869s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Thesis.pdf (20 pages, 538240 bytes).
+Output written on Thesis.pdf (20 pages, 538222 bytes).
 PDF statistics:
  276 PDF objects out of 1000 (max. 8388607)
  202 compressed objects within 3 object streams

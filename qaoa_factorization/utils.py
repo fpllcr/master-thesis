@@ -204,3 +204,13 @@ def kron_all(ops):
     for op in ops[1:]:
         result = np.kron(result, op)
     return result
+
+def get_setup(problem_H, cost_H):
+    if problem_H == 'quadratic_H' and cost_H == 'quadratic_H':
+        return 'standard'
+    elif problem_H == 'linear_H' and cost_H == 'quadratic_H':
+        return 'linear_quadratic'
+    elif problem_H == 'linear_H' and cost_H == 'abs_H':
+        return 'linear_abs'
+    else:
+        return 'unknown'
