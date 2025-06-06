@@ -4,15 +4,15 @@ The top-level auxiliary file: Thesis.aux
 A level-1 auxiliary file: 00-frontmatter/title.aux
 A level-1 auxiliary file: 00-frontmatter/committee.aux
 A level-1 auxiliary file: 00-frontmatter/acks.aux
-A level-1 auxiliary file: 01-Introduction/00-Abstract.aux
-A level-1 auxiliary file: 01-Introduction/00-Introduction.aux
-A level-1 auxiliary file: 01-Introduction/01-GateModelComputation.aux
-A level-1 auxiliary file: 01-Introduction/02-AdiabaticComputation.aux
-A level-1 auxiliary file: 01-Introduction/03-QAOABasicConcepts.aux
-A level-1 auxiliary file: 02-Factorization/01-ShorsAlgo.aux
-A level-1 auxiliary file: 02-Factorization/02-AdiabaticFactorization.aux
-A level-1 auxiliary file: 03-Results/01-IntroducingProblem.aux
-A level-1 auxiliary file: 00-conclusion/conclusion.aux
+A level-1 auxiliary file: 01-introduction/00-Abstract.aux
+A level-1 auxiliary file: 01-introduction/00-Introduction.aux
+A level-1 auxiliary file: 01-introduction/01-GateModelComputation.aux
+A level-1 auxiliary file: 01-introduction/02-AdiabaticComputation.aux
+A level-1 auxiliary file: 01-introduction/03-QAOABasicConcepts.aux
+A level-1 auxiliary file: 02-factorization/01-ShorsAlgo.aux
+A level-1 auxiliary file: 02-factorization/02-AdiabaticFactorization.aux
+A level-1 auxiliary file: 03-results/01-IntroducingProblem.aux
+A level-1 auxiliary file: 04-conclusion/conclusion.aux
 The style file: unsrt.bst
 A level-1 auxiliary file: publications/publications.aux
 Database file #1: dissertation.bib

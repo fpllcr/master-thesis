@@ -1,187 +1,249 @@
 from datetime import datetime
 import json
-from math import ceil, floor, log2, sqrt
-import multiprocessing as mp
+import math
 import os
-from typing import Callable, List
+from time import time
 
-import pennylane as qml
-from pennylane import qaoa
-from pennylane import numpy as np
+import numpy as np
 from scipy.optimize import minimize
-import sympy as sp
-from tqdm import tqdm
 
+import hamiltonians as hamiltonians
 from utils import *
 
 
+UNBOUNDED_OPTS = ['BFGS']
+GRADIENT_FREE_OPTIMIZERS = ['Nelder-Mead', 'COBYLA']
+DEFAULT_LAMBDA = math.pi/3
+
+OPTIMIZER_MULTIPLIER = {
+    'Nelder-Mead': 2000,
+    'L-BFGS-B': 500,
+    'BFGS': 500,
+    'COBYLA': 4000
+}
+
 class QAOASolver:
-    def __init__(self, N: int, p: int=1,
-                 problem_hamiltonian_gen: Callable=None,
-                 mixer_hamiltonian_gen: Callable=None,
-                 cost_hamiltonian_gen: Callable=None,
+    def __init__(self, N: int, layers: int=1,
+                 problem_hamiltonian: str='quadratic_H',
+                 cost_hamiltonian: str='quadratic_H',
                  optimizer_method: str='Nelder-Mead',
-                 optimizer_opts: dict={},
-                 device: str='default.qubit'):
+                 optimizer_opts: dict=None,
+                 extended_qaoa: bool=False,
+                 bounded: bool=False):
         """
         Initialize QAOA solver for integer factorization.
 
         :param N: Number to factorize
         :param p: Number of QAOA layers
         :param problem_hamiltonian_gen: Function to generate the problem Hamiltonian
-        :param mixer_hamiltonian_gen: Function to generate the mixer Hamiltonian
         :param cost_hamiltonian_gen: Cost function to evaluate solutions
         :param optimizer_method: Optimization method of scipy.optimize.minimize for parameter tuning
         :param optimizer_opts: Options for the optimization function
-        :param device: Pennylane device to run the quantum circuit
         """
         self.N = N
         self.nx = ceil(log2(floor(sqrt(N)))) - 1
         self.ny = ceil(log2(floor(N/3))) - 1
         self.num_qubits = self.nx + self.ny
-        self.p = p
-        self.device = device
+        self.dim = 2 ** self.num_qubits
+        self.layers = layers
 
+        problem_hamiltonian_gen = getattr(hamiltonians, problem_hamiltonian)
+        cost_hamiltonian_gen = getattr(hamiltonians, cost_hamiltonian)
 
         self.Hp = problem_hamiltonian_gen(self.N, self.nx, self.ny)
-        self.Hm = mixer_hamiltonian_gen(self.num_qubits)
+        self.Ep = np.diag(self.Hp)
         self.Hc = cost_hamiltonian_gen(self.N, self.nx, self.ny)
+        self.Ec = np.diag(self.Hc)
 
         self.optimizer_method = optimizer_method
-        self.param_bounds = [(0,2*np.pi)]*self.p*2
+        if optimizer_opts is None:
+            optimizer_opts = {}
+            if optimizer_method == 'Nelder-Mead':
+                optimizer_opts['adaptive'] = True
         self.optimizer_opts = optimizer_opts
+        self.extended_qaoa = extended_qaoa
+        self.bounded = bounded
+
+        self.lbda = DEFAULT_LAMBDA
         
-        if not 'maxiter' in self.optimizer_opts:
-            optimizer_opts['maxiter'] = 2 * self.p * 1000
-
         
-        self.dev = qml.device(self.device, wires=self.num_qubits)
-        self.circuit = qml.QNode(self._circuit, self.dev)
-        self.circuit_state = qml.QNode(self._circuit_state, self.dev)
-        
-        self.num_gates = qml.specs(self.circuit, level=None)([0]*self.p*2)['resources'].num_gates
-        self.gate_sizes = dict(qml.specs(self.circuit, level=None)([0]*self.p*2)['resources'].gate_sizes)
     
-    def _qaoa_layer(self, gamma, beta):
-        qaoa.cost_layer(gamma, self.Hp)
-        qaoa.mixer_layer(beta, self.Hm)
+    def _qaoa_layer(self, psi, gamma, beta):
+        return apply_op(Rx(beta), apply_expiH(gamma, self.Ep, psi))
     
-    def _circuit_gates(self, gammas, betas):
-        for w in range(self.num_qubits):
-            qml.Hadamard(w)
+    def _qaoa_layer_and_derivatives(self, psi, gamma, beta):
+        psi = apply_expiH(gamma, self.Ep, psi)
+        dpsi_dgamma = 1j * (self.Ep * psi)
+        R = Rx(beta)
+        dpsi_dgamma = apply_op(R, dpsi_dgamma)
+        psi = apply_op(R, psi)
+        dpsi_dbeta = apply_sum_op(-0.5j * sigma_x, psi)
+        return psi, dpsi_dgamma, dpsi_dbeta
 
-        qml.layer(self._qaoa_layer, self.p, gammas, betas)
-
-    def _circuit_state(self, params):
-        self._circuit_gates(params[:self.p], params[self.p:])
-        return qml.state()
+    def _qaoa_state(self, gammas, betas):
+        psi = np.full(self.dim, 1 / np.sqrt(self.dim), dtype=np.complex128)
+        for gamma, beta in zip(gammas, betas):
+            psi = self._qaoa_layer(psi, gamma, beta)
+        return psi
     
-    def _circuit(self, params):
-        self._circuit_gates(params[:self.p], params[self.p:])
-        return qml.expval(self.Hc)
+    def _qaoa_state_and_derivatives(self, gammas, betas):
+        psi = np.full(self.dim, 1 / np.sqrt(self.dim), dtype=np.complex128)
+        dgammas = []
+        dbetas = []
+        for gamma, beta in zip(gammas, betas):
+            psi, dgamma, dbeta = self._qaoa_layer_and_derivatives(psi, gamma, beta)
+            dgammas = [self._qaoa_layer(v, gamma, beta) for v in dgammas] + [dgamma]
+            dbetas = [self._qaoa_layer(v, gamma, beta) for v in dbetas] + [dbeta]
+        return psi, dgammas, dbetas
     
-    def _single_run(self, params):
+    def _compute_cost(self, params):
+        p = int(len(params)/2)
+        psi = self._qaoa_state(params[:p], params[p:])
+        cost = np.vdot(psi, self.Ec * psi).real
+        return cost
+    
+    def _compute_cost_and_gradient(self, params):
+        p = int(len(params)/2)
+        psi, dgammas, dbetas = self._qaoa_state_and_derivatives(params[:p], params[p:])
+        cost = np.vdot(psi, self.Ec * psi).real
 
-        rng = np.random.default_rng()
+        gradient = []
+        for dpsi in dgammas + dbetas:
+            grad_i = 2 * np.real(np.vdot(dpsi, self.Ec * psi))
+            gradient.append(grad_i)
+        gradient = np.array(gradient)
 
-        if not params['initial_gammas']:
-            gammas_i = (rng.random(self.p) * 2*np.pi).tolist()
-        else:
-            gammas_i = params['initial_gammas']
+        return cost, gradient
+    
+    def _qaoa_layer_extended(self, psi, gamma, beta, lbda=DEFAULT_LAMBDA):
+        return apply_op(Rx(beta) @ U1(lbda), apply_expiH(gamma, self.Ep, psi))
+    
+    def _qaoa_layer_and_derivatives_extended(self, psi, gamma, beta, lbda=DEFAULT_LAMBDA):
+        psi = apply_expiH(gamma, self.Ep, psi)
+        dpsi_dgamma = 1j * (self.Ep * psi)
+        R = Rx(beta) @ U1(lbda)
+        dpsi_dgamma = apply_op(R, dpsi_dgamma)
+        psi = apply_op(R, psi)
+        dpsi_dbeta = apply_sum_op(-0.5j * sigma_x, psi)
+        return psi, dpsi_dgamma, dpsi_dbeta
+    
+    def _make_lambdas(self, gammas, lbda):
+        return [0.0] * (len(gammas) - 1) + [lbda]
 
-        if not params['initial_betas']:
-            betas_i = (rng.random(self.p) * 2*np.pi).tolist()
-        else:
-            betas_i = params['initial_betas']
+    def _qaoa_state_extended(self, gammas, betas, lbda=DEFAULT_LAMBDA):
+        psi = np.full(self.dim, 1 / np.sqrt(self.dim), dtype=np.complex128)
+        lambdas = self._make_lambdas(gammas, lbda)
+        for gamma, beta, lbda in zip(gammas, betas, lambdas):
+            psi = self._qaoa_layer_extended(psi, gamma, beta, lbda)
+        return psi
+    
+    def _qaoa_state_and_derivatives_extended(self, gammas, betas, lbda=DEFAULT_LAMBDA):
+        psi = np.full(self.dim, 1 / np.sqrt(self.dim), dtype=np.complex128)
+        dgammas = []
+        dbetas = []
+        lambdas = self._make_lambdas(gammas, lbda)
+        for gamma, beta, lbda in zip(gammas, betas, lambdas):
+            psi, dgamma, dbeta = self._qaoa_layer_and_derivatives_extended(psi, gamma, beta, lbda)
+            dgammas = [self._qaoa_layer_extended(v, gamma, beta, lbda) for v in dgammas] + [dgamma]
+            dbetas = [self._qaoa_layer_extended(v, gamma, beta, lbda) for v in dbetas] + [dbeta]
+        return psi, dgammas, dbetas
+    
+    def _compute_cost_extended(self, params):
+        p = int(len(params)/2)
+        psi = self._qaoa_state_extended(params[:p], params[p:], self.lbda)
+        cost = np.vdot(psi, self.Ec * psi).real
+        return cost
+    
+    def _compute_cost_and_gradient_extended(self, params):
+        p = int(len(params)/2)
+        psi, dgammas, dbetas = self._qaoa_state_and_derivatives_extended(params[:p], params[p:], self.lbda)
+        cost = np.vdot(psi, self.Ec * psi).real
+
+        gradient = []
+        for dpsi in dgammas + dbetas:
+            grad_i = 2 * np.real(np.vdot(dpsi, self.Ec * psi))
+            gradient.append(grad_i)
+        gradient = np.array(gradient)
+
+        return cost, gradient
+    
+    def _single_run(self, p, initial_gammas, initial_betas):
 
         result_i = {
             'N': self.N,
             'nx': self.nx,
             'ny': self.ny,
-            'layers': self.p,
-            'num_gates': self.num_gates,
-            'gate_sizes': self.gate_sizes,
-            'device': self.device,
-            'gammas_0': gammas_i,
-            'betas_0': betas_i
+            'layers': p,
+            'initial_gammas': initial_gammas,
+            'initial_betas': initial_betas
         }
 
-        res = minimize(
-            fun=self.circuit,
-            x0=gammas_i + betas_i,
-            method=self.optimizer_method,
-            bounds=self.param_bounds,
-            options=self.optimizer_opts
-        )
+        self.optimizer_opts['maxiter'] = 2 * p * OPTIMIZER_MULTIPLIER[self.optimizer_method]
 
-        state = sp.Matrix(self.circuit_state(res.x.tolist()))
-        state_str = [str(comp).replace(' ', '').replace('*I', 'j') for comp in state]
+        bounds = [(0,2*np.pi)]*p*2
+
+        if self.optimizer_method in GRADIENT_FREE_OPTIMIZERS and not self.extended_qaoa:
+            cost_fn = self._compute_cost
+        elif self.optimizer_method in GRADIENT_FREE_OPTIMIZERS and self.extended_qaoa:
+            cost_fn = self._compute_cost_extended
+        elif self.optimizer_method not in GRADIENT_FREE_OPTIMIZERS and not self.extended_qaoa:
+            cost_fn = self._compute_cost_and_gradient
+        elif self.optimizer_method not in GRADIENT_FREE_OPTIMIZERS and self.extended_qaoa:
+            cost_fn = self._compute_cost_and_gradient_extended
+
+        start_time = time()
+        res = minimize(
+            fun=cost_fn,
+            x0=initial_gammas + initial_betas,
+            method=self.optimizer_method,
+            options=self.optimizer_opts,
+            bounds=bounds if self.bounded and self.optimizer_method not in UNBOUNDED_OPTS else None,
+            jac=self.optimizer_method not in GRADIENT_FREE_OPTIMIZERS
+        )
+        end_time = time()
+        elapsed_time = end_time - start_time
+
+        gammas = res.x[:p].tolist()
+        betas = res.x[p:].tolist()
+        state = self._qaoa_state(gammas, betas)
+        state_str = [str(comp).removeprefix('(').removesuffix(')') for comp in state]
 
         result_i.update({
-            'gammas': res.x[:self.p].tolist(),
-            'betas': res.x[self.p:].tolist(),
+            'gammas': gammas,
+            'betas': betas,
             'cost': float(res.fun),
             'state': state_str,
-            'optimizer_steps': res.nit,
+            'optimizer_time': elapsed_time,
             'optimizer_success': res.success,
             'optimizer_message': res.message
         })
 
+        if self.optimizer_method in ['COBYLA']:
+            result_i['optimizer_success'] = bool(result_i['optimizer_success'])
+        else:
+            result_i.update({'optimizer_steps': res.nit})
+
+
         return result_i
         
     
-    def run(self, initial_gammas: List[float]=None, initial_betas: List[float]=None,
-            reps: int=10, save_results: bool=False,
-            experiment: str=None, cpus: int=1, verbose: bool=False):
+    def run(self, conf):
+        dirpath = f"experiments/results/{conf['experiment']}"
+        if not os.path.exists(dirpath):
+            os.makedirs(dirpath)
+
+        strftime = datetime.now().strftime('%Y%m%d%H%M%S%f')
+        results_path = f"{dirpath}/{conf['experiment']}_{strftime}.jsonl"
         
-        if save_results:
-            assert experiment is not None
+        gammas = [conf['initial_gamma']]
+        betas = [conf['initial_beta']]
 
-        rep = 1
+        for p in range(1, self.layers+1):
+            res = self._single_run(p, gammas, betas)
 
-        with mp.Pool(processes=cpus) as pool:
-            pbar = tqdm(total=reps, unit='rep', disable=verbose,
-                        bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_inv_fmt}]")
-            params = [{
-                'initial_gammas': initial_gammas,
-                'initial_betas': initial_betas,
-                'verbose': verbose
-            }] * reps
-            
-            results = []
-            for res in pool.imap_unordered(self._single_run, params):
-                pbar.update()
-                pbar.refresh()
+            gammas = res['gammas'] + [math.pi / 3]
+            betas = res['betas'] + [math.pi / 3]
 
-                res['rep'] = rep
-                results.append(res)
-
-                if not res['optimizer_success']:
-                        pbar.write(f"[Warning] {res['optimizer_message']}")
-                
-                if verbose:
-                    pbar.write(f"Rep {rep}: cost={round(res['cost'], 2)}")
-
-                rep += 1
-
-        best_result = min(results, key=lambda x: x['cost'])
-
-        if save_results:
-            dirpath = f'experiments/results/{experiment}'
-            if not os.path.exists(dirpath):
-                os.makedirs(dirpath)
-                if verbose:
-                    print(f'Created directory {dirpath}')
-            strftime = datetime.now().strftime('%Y%m%d%H%M%S')
-            results_path = f'{dirpath}/{experiment}_results_{strftime}.jsonl'
-            with open(results_path, 'w') as fout:
-                for r in results:
-                    fout.write(json.dumps(r) + '\n')
-
-            if verbose:
-                print(f'Results saved in {results_path}')
-            
-        return best_result, results
-    
-    def draw_circuit(self):
-        qml.draw_mpl(self.circuit, level=None)([0]*self.p*2)
+            with open(results_path, 'a') as fout:
+                res['config'] = conf
+                fout.write(json.dumps(res) + '\n')

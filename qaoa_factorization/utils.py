@@ -1,10 +1,53 @@
 from itertools import product
 from math import ceil, floor, log2, sqrt
 
+import numpy as np
 import pennylane as qml
-from pennylane import numpy as np
 import sympy as sp
 
+
+
+sigma_z = np.array([[1, 0], [0, -1]])
+sigma_x = np.array([[0, 1], [1, 0]])
+sigma_y = -1j * sigma_z @ sigma_x
+i2 = np.eye(2)
+
+def product(operators):
+    output = 1
+    for op in operators:
+        output = np.kron(op, output)
+    return output
+
+
+def apply_op(O, psi):
+    N = round(log2(psi.size))
+    for _ in range(N):
+        psi = (psi.reshape(-1, 2) @ O.T).transpose()
+    return psi.flatten()
+
+
+def apply_sum_op(O, psi):
+    N = round(np.log2(psi.size))
+    Opsi = 0
+    for i in range(N):
+        Opsi += np.einsum("ij,kjl->kil", O, psi.reshape(2**i, 2, -1)).flatten()
+    return Opsi
+
+
+def Ry(beta):
+    return np.cos(beta / 2) * i2 - 1j * np.sin(beta / 2) * sigma_y
+
+
+def Rx(beta):
+    return np.cos(beta / 2) * i2 - 1j * np.sin(beta / 2) * sigma_x
+
+
+def apply_expiH(gamma, E, psi):
+    return np.exp((1j * gamma) * E) * psi
+
+
+def U1(lambda_):
+    return np.cos(lambda_ / 2) * i2 - 1j * np.sin(lambda_ / 2) * sigma_z
 
 def to_polar(M: sp.Matrix):
     return M.applyfunc(lambda z: sp.Abs(z) * sp.exp(sp.I * sp.arg(z).evalf()))
@@ -154,3 +197,10 @@ class DummyTqdm:
         pass
     def refresh(self):
         pass
+
+def kron_all(ops):
+    """Tensor product of all operators in the list"""
+    result = ops[0]
+    for op in ops[1:]:
+        result = np.kron(result, op)
+    return result

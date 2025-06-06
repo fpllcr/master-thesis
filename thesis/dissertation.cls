@@ -586,8 +586,8 @@
 %% Define a drop command which can be used to generate drop caps at the
 %% beginning of a section.
 \renewcommand*\LettrineTextFont{\titleshape}
-\newcommand*\dropcap[2]{
-    \lettrine[lines=2,findent=0.2em,nindent=0pt]{\color{drocap-color} #1}{#2}%
+\newcommand*\dropcap[1]{%
+    \lettrine[lines=2,findent=0.2em,nindent=0pt]{\color{drocap-color}#1}{}%
 }
 
 %% Create an unnumbered reference section.

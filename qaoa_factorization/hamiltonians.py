@@ -1,48 +1,37 @@
 import numpy as np
-import pennylane as qml
-import sympy as sp
 
-from utils import sympy_to_pennylane
+from utils import sigma_z, i2
 
+def _kron_all(ops):
+    """Tensor product of all operators in the list"""
+    result = ops[0]
+    for op in ops[1:]:
+        result = np.kron(result, op)
+    return result
 
-#============================================= Problem Hamiltonians =============================================#
-def quadratic_H(N: int, nx: int, ny: int) -> qml.Hamiltonian:
-    H = sp.expand(
-        (
-            N*sp.Symbol('I')
-            - (sum(2**l * (sp.Symbol('I') - sp.Symbol(f'Z_{l}')) / 2 for l in range(1, nx+1)) + sp.Symbol('I'))
-            * (sum(2**m * (sp.Symbol('I') - sp.Symbol(f'Z_{m+nx}')) / 2 for m in range(1, ny+1)) + sp.Symbol('I'))
-        )**2
-    )
-
-    return sympy_to_pennylane(H)
+def _hat_z(l, num_qubits):
+    """Return the operator (I - Z_l)/2"""
+    ops = [i2] * num_qubits
+    ops[l] = (i2 - sigma_z) / 2
+    return _kron_all(ops)
 
 
-def linear_H(N: int, nx: int, ny: int) -> qml.Hamiltonian:
-    H = sp.expand(
-        N*sp.Symbol('I')
-        - (sum(2**l * (sp.Symbol('I') - sp.Symbol(f'Z_{l}')) / 2 for l in range(1, nx+1)) + sp.Symbol('I'))
-        * (sum(2**m * (sp.Symbol('I') - sp.Symbol(f'Z_{m+nx}')) / 2 for m in range(1, ny+1)) + sp.Symbol('I'))
-    )
+def linear_H(N: int, nx: int, ny: int) -> np.array:
+    num_qubits = nx + ny
+    I = np.eye(2**num_qubits, dtype=np.complex128)
 
-    return sympy_to_pennylane(H)
+    Sx = sum(2**(l+1) * _hat_z(l, num_qubits) for l in range(nx)) + I
+    Sy = sum(2**(m+1) * _hat_z(nx + m, num_qubits) for m in range(ny)) + I
 
-def abs_H(N: int, nx: int, ny: int) -> qml.Hamiltonian:
-    H = sp.expand(
-        N * sp.Symbol('I')
-        - (sum(2**l * (sp.Symbol('I') - sp.Symbol(f'Z_{l}')) / 2 for l in range(1, nx + 1)) + sp.Symbol('I'))
-        * (sum(2**m * (sp.Symbol('I') - sp.Symbol(f'Z_{m + nx}')) / 2 for m in range(1, ny + 1)) + sp.Symbol('I'))
-    )
+    H = N * I - Sx @ Sy
+    return H
 
-    H_matrix = sympy_to_pennylane(H).matrix()
-    H_abs_dense = np.abs(H_matrix)
-    return qml.pauli_decompose(H_abs_dense)
+def quadratic_H(N: int, nx: int, ny: int) -> np.array:
+    H_lin = linear_H(N, nx, ny)
+    H = H_lin @ H_lin
+    return H
 
-#================================================================================================================#
-
-
-#============================================== Mixer Hamiltonians ==============================================#
-def standard_mixer_H(num_qubits: int) -> qml.Hamiltonian:
-    mixer_H = sum(qml.PauliX(i) for i in range(num_qubits))
-    return mixer_H
-#================================================================================================================#
+def abs_H(N: int, nx: int, ny: int) -> np.array:
+    H_lin = linear_H(N, nx, ny)
+    H = np.abs(H_lin)
+    return H
