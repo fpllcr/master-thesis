@@ -241,9 +241,17 @@ class QAOASolver:
         for p in range(1, self.layers+1):
             res = self._single_run(p, gammas, betas)
 
-            gammas = res['gammas'] + [math.pi / 3]
-            betas = res['betas'] + [math.pi / 3]
-
             with open(results_path, 'a') as fout:
                 res['config'] = conf
                 fout.write(json.dumps(res) + '\n')
+
+
+            # Extrapolate parameters for the new layer
+            poly_order = 0 if p==1 else 1
+            x = np.linspace(1, p, p)
+            
+            gamma_fit = np.poly1d(np.polyfit(x, res['gammas'], poly_order))
+            beta_fit = np.poly1d(np.polyfit(x, res['betas'], poly_order))
+
+            gammas = res['gammas'] + [float(gamma_fit(p+1))]
+            betas = res['betas'] + [float(beta_fit(p+1))]
