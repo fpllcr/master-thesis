@@ -246,12 +246,9 @@ class QAOASolver:
                 fout.write(json.dumps(res) + '\n')
 
 
-            # Extrapolate parameters for the new layer
-            poly_order = 0 if p==1 else 1
-            x = np.linspace(1, p, p)
-            
-            gamma_fit = np.poly1d(np.polyfit(x, res['gammas'], poly_order))
-            beta_fit = np.poly1d(np.polyfit(x, res['betas'], poly_order))
+            # Interpolate initial parameters for next execution
+            x = np.linspace(0, 1, p+1)
+            x0 = np.linspace(0, 1, p)
 
-            gammas = res['gammas'] + [float(gamma_fit(p+1))]
-            betas = res['betas'] + [float(beta_fit(p+1))]
+            gammas = np.interp(x, x0, res['gammas']).tolist()
+            betas = np.interp(x, x0, res['betas']).tolist()
