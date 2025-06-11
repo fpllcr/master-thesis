@@ -1,3 +1,13 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{sarandy_consistency_2004}
+M.~S. Sarandy, L.-A. Wu, and D.~A. Lidar.
+\newblock Consistency of the {Adiabatic} {Theorem}.
+\newblock {\em Quantum Information Processing}, 3(6):331--349, December 2004.
+
+\bibitem{albash_adiabatic_2018}
+Tameem Albash and Daniel~A. Lidar.
+\newblock Adiabatic quantum computation.
+\newblock {\em Reviews of Modern Physics}, 90(1):015002, January 2018.
 
 \end{thebibliography}

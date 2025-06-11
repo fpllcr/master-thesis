@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  6 JUN 2025 10:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  11 JUN 2025 13:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1486,10 +1486,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Package lipsum Warning: Unknown language 'latin'. Hyphenation patterns for
 (lipsum)                'english' will be used instead.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2])
+[2])
 \openout2 = `01-introduction/03-QAOABasicConcepts.aux'.
 
  (./01-introduction/03-QAOABasicConcepts.tex)
@@ -1510,7 +1507,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [4
 
 ]
-<figs/drawing.pdf, id=137, 563.03961pt x 91.38394pt>
+<figs/drawing.pdf, id=144, 563.03961pt x 91.38394pt>
 File: figs/drawing.pdf Graphic file (type pdf)
 <use figs/drawing.pdf>
 Package pdftex.def Info: figs/drawing.pdf  used on input line 16.
@@ -1523,7 +1520,7 @@ LaTeX Font Info:    Trying to load font information for U+bbm on input line 37.
 (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
-<figs/grafico_3d.pdf, id=156, 574.29025pt x 231.62152pt>
+<figs/grafico_3d.pdf, id=162, 574.29025pt x 231.62152pt>
 File: figs/grafico_3d.pdf Graphic file (type pdf)
 <use figs/grafico_3d.pdf>
 Package pdftex.def Info: figs/grafico_3d.pdf  used on input line 47.
@@ -1558,11 +1555,7 @@ Chapter 4.
 ] [10
 \@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces A nice table.\relax }}{10}{table.caption.6}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces A nice table.\relax }}{10}{table.caption.7}\protected@file@percent }
-] (./Thesis.bbl
-
-Package natbib Warning: Empty `thebibliography' environment on input line 3.
-
-) (./Thesis.acr [11
+] (./Thesis.bbl) (./Thesis.acr [11
 
 ])
 \openout2 = `publications/publications.aux'.
@@ -1584,18 +1577,18 @@ Package natbib Warning: There were undefined citations.
 
 (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-results/01-IntroducingProblem.aux) (./04-conclusion/conclusion.aux) (./publications/publications.aux)) ) 
 Here is how much of TeX's memory you used:
- 44669 strings out of 480129
- 830969 string characters out of 5893410
- 1264383 words of memory out of 5000000
- 61302 multiletter control sequences out of 15000+600000
- 543282 words of font info for 305 fonts, out of 8000000 for 9000
+ 44686 strings out of 480129
+ 831285 string characters out of 5893410
+ 1264413 words of memory out of 5000000
+ 61308 multiletter control sequences out of 15000+600000
+ 543639 words of font info for 311 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 106i,18n,105p,1982b,869s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 106i,18n,105p,1963b,877s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Thesis.pdf (20 pages, 538222 bytes).
+Output written on Thesis.pdf (20 pages, 543878 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
+ 281 PDF objects out of 1000 (max. 8388607)
+ 207 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
  110118 words of extra memory for PDF output out of 128383 (max. 10000000)
 
