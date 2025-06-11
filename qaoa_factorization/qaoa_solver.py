@@ -60,6 +60,10 @@ class QAOASolver:
             optimizer_opts = {}
             if optimizer_method == 'Nelder-Mead':
                 optimizer_opts['adaptive'] = True
+            elif self.optimizer_method == 'BFGS':
+                optimizer_opts.update({
+                    'gtol': 1e-3
+                })
         self.optimizer_opts = optimizer_opts
         self.extended_qaoa = extended_qaoa
         self.bounded = bounded
