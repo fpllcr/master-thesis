@@ -92,7 +92,8 @@ if __name__ == "__main__":
     configs = []
 
     if random_params:
-        gamma_0, beta_0 = np.random.uniform(np.pi / 2, 3 * np.pi / 2, size=2)
+        gamma_0 = np.random.uniform(np.pi / 2, 3 * np.pi / 2)
+        beta_0 = np.random.uniform(np.pi / 4, 3 * np.pi / 4)
     else:
         gamma_0, beta_0 = math.pi/3, math.pi/3
 

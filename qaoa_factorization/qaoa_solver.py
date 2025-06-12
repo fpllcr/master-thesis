@@ -62,7 +62,7 @@ class QAOASolver:
                 optimizer_opts['adaptive'] = True
             elif self.optimizer_method == 'BFGS':
                 optimizer_opts.update({
-                    'gtol': 1e-3
+                    'gtol': 1e-2
                 })
         self.optimizer_opts = optimizer_opts
         self.extended_qaoa = extended_qaoa
@@ -184,7 +184,8 @@ class QAOASolver:
 
         self.optimizer_opts['maxiter'] = 2 * p * OPTIMIZER_MULTIPLIER[self.optimizer_method]
 
-        bounds = [(0,2*np.pi)]*p*2
+        #bounds = [(0,2*np.pi)]*p*2
+        bounds = [(0, 2*np.pi)]*p + [(0, np.pi)]*p
 
         if self.optimizer_method in GRADIENT_FREE_OPTIMIZERS and not self.extended_qaoa:
             cost_fn = self._compute_cost
@@ -226,7 +227,6 @@ class QAOASolver:
             result_i['optimizer_success'] = bool(result_i['optimizer_success'])
         else:
             result_i.update({'optimizer_steps': res.nit})
-
 
         return result_i
         
