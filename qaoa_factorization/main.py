@@ -5,6 +5,7 @@ import os
 import math
 import multiprocessing as mp
 
+from git import Repo
 import numpy as np
 from tqdm import tqdm
 
@@ -12,6 +13,8 @@ from qaoa_solver import QAOASolver
 
 
 OPTIMIZERS = ['Nelder-Mead', 'L-BFGS-B', 'BFGS', 'COBYLA']
+
+repo = Repo('..')
 
 
 def main(config):
@@ -87,25 +90,26 @@ if __name__ == "__main__":
         exit(1)
 
     configs = []
+
+    if random_params:
+        gamma_0 = np.random.uniform(np.pi / 2, 3 * np.pi / 2)
+        beta_0 = np.random.uniform(np.pi / 4, 3 * np.pi / 4)
+    else:
+        gamma_0, beta_0 = math.pi/3, math.pi/3
+
     for experiment in experiments:
         for optimizer in optimizers:
             with open(f'experiments/configs/{experiment}.json', 'r') as f:
                 conf = json.load(f)
-    
-                if not random_params:
-                    conf['initial_gamma'] = math.pi / 3
-                    conf['initial_beta'] = math.pi / 3
-                else:
-                    gamma_0, beta_0 = np.random.uniform(np.pi / 2, 3 * np.pi / 2, size=2)
-                    conf['initial_gamma'] = gamma_0
-                    conf['initial_beta'] = beta_0
 
-
+                conf['initial_gamma'] = gamma_0
+                conf['initial_beta'] = beta_0
                 conf['verbose'] = verbose
                 conf['experiment'] = experiment
                 conf['optimizer'] = optimizer
                 conf['extended_qaoa'] = extended
                 conf['bounded'] = bounded
+                conf['commit_date'] = repo.head.commit.committed_datetime.date().strftime('%Y-%m-%d')
 
                 configs.append(conf)
 

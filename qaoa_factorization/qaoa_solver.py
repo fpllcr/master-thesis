@@ -60,6 +60,10 @@ class QAOASolver:
             optimizer_opts = {}
             if optimizer_method == 'Nelder-Mead':
                 optimizer_opts['adaptive'] = True
+            elif self.optimizer_method == 'BFGS':
+                optimizer_opts.update({
+                    'gtol': 1e-2
+                })
         self.optimizer_opts = optimizer_opts
         self.extended_qaoa = extended_qaoa
         self.bounded = bounded
@@ -180,7 +184,8 @@ class QAOASolver:
 
         self.optimizer_opts['maxiter'] = 2 * p * OPTIMIZER_MULTIPLIER[self.optimizer_method]
 
-        bounds = [(0,2*np.pi)]*p*2
+        #bounds = [(0,2*np.pi)]*p*2
+        bounds = [(0, 2*np.pi)]*p + [(0, np.pi)]*p
 
         if self.optimizer_method in GRADIENT_FREE_OPTIMIZERS and not self.extended_qaoa:
             cost_fn = self._compute_cost
@@ -223,7 +228,6 @@ class QAOASolver:
         else:
             result_i.update({'optimizer_steps': res.nit})
 
-
         return result_i
         
     
@@ -241,9 +245,14 @@ class QAOASolver:
         for p in range(1, self.layers+1):
             res = self._single_run(p, gammas, betas)
 
-            gammas = res['gammas'] + [math.pi / 3]
-            betas = res['betas'] + [math.pi / 3]
-
             with open(results_path, 'a') as fout:
                 res['config'] = conf
                 fout.write(json.dumps(res) + '\n')
+
+
+            # Interpolate initial parameters for next execution
+            x = np.linspace(0, 1, p+1)
+            x0 = np.linspace(0, 1, p)
+
+            gammas = np.interp(x, x0, res['gammas']).tolist()
+            betas = np.interp(x, x0, res['betas']).tolist()
