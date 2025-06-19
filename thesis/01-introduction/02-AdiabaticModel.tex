@@ -54,11 +54,14 @@ of the computational task.
 is the Ising Hamiltonian (which is the focus of our applications). To this end, maybe we can use the
 review paper to get some key discussions [Rev. Mod. Phys. 90, 015002 (2018)].}
 
-An important and widely studied application of adiabatic adiabatic evolution in quantum
+An important and widely studied application of adiabatic evolution in quantum
 devices is adiabatic quantum annealing (AQA), where the goal is to find low-energy configurations of
 a classical cost function mapped onto a quantum Ising Hamiltonian. In this setting, the problem
 Hamiltonian $H_\mathrm{P}$ takes the form:
-$$H_\mathrm{P} = \sum_i h_i \sigma_i^z + \sum_{i<j} J_{ij} \sigma_i^z \sigma_j^z$$
+\begin{equation}
+    H_\mathrm{P} = \sum_i h_i \sigma_i^z + \sum_{i<j} J_{ij} \sigma_i^z \sigma_j^z
+    \label{eq:ising_hamiltonian}
+\end{equation}
 where $h_i$ are local fields, $J_{ij}$ represent coupling strengths between qubits, and
 $\sigma_i^z$ are Pauli-Z operators acting on the $i$-th qubit. The task is to drive the system
 from an initial, easily preparable ground state towards the ground state of $H_\mathrm{P}$,
@@ -66,7 +69,13 @@ which encodes the optimal solution to the problem at hand.
 
 In adiabatic quantum annealers, the evolution typically starts from an initial transverse
 field Hamiltonian 
-$$H_0 = -\sum_i \sigma_i^x,$$
-whose ground state is a uniform superposition of all computational basis states. Then,
-the system is then evolved adiabatically as of equation~(\ref{eq:adiabatic_passage}).
+\begin{equation}
+    H_0 = \sum_i \sigma_i^x
+    \label{eq:transverse_field_hamiltonian}
+\end{equation}
+The system is then evolved adiabatically as of equation~(\ref{eq:adiabatic_passage}). The aim
+is to adiabatically steer the system from the easily preparable ground state $H_0$ to the
+ground state of $H_\mathrm{P}$, which encodes the solution to the problem of interest.
+
+
 

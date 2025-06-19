@@ -1,9 +1,44 @@
 \section{QAOA}
 \label{Section:QAOA}
 
-aaaaaaaaaaaaaaaaaaa
+The Quantum Approximate Optimization Algorithm (QAOA) is a variational quantum algorithm
+designed to solve discrete optimization problems by approximating the ground state of a cost Hamiltonian.
+Originally proposed by Farhi et al. in 2014~\cite{farhi_quantum_2014}, QAOA is well-suited to the capabilities
+and limitations of near-term quantum devices, as it operates with relatively shallow circuits
+and allows for classical optimization of quantum parameters.
 
+The main idea of QAOA is to construct a quantum ansatz state by alternating the application of
+two types of operators derived from two Hamiltonians:
+\begin{itemize}
+    \item A cost Hamiltonian $H_C$, which encodes the optimization problem (often
+    in the form of an Ising model).
+    \item A mixing Hamiltonian $H_M$, which typically promotes exploration of the solution
+    space and is often chosen as:
+    \begin{equation}
+        H_M = \sum_i \sigma_i^x
+        \label{eq:mixing_hamiltonian}
+    \end{equation}
+\end{itemize}
 
-%To avoid creating new page
+{\color{red} FELIP: Add some picture of the QAOA structure}
 
+Given an initial state $\ket{\psi_0} = \ket{+}^{\otimes n}$, which is the ground state of
+$H_M$, the QAOA ansatz after $p$ layers is defined as:
+\begin{equation}
+    \ket{\psi(\bm{\gamma, \beta})} = e^{-i \beta_p H_M} e^{- i \gamma_p H_C} \cdots
+    e^{-i \beta_1 H_M} e^{- i \gamma_1 H_C} \ket{+}^{\otimes n}
+\end{equation}
+where $\bm{\gamma} = (\gamma_1, \dots, \gamma_p)$ and $\bm{\beta} = (\beta_1, \dots, \beta_p)$
+are real variational parameters. We then determine the expectation value of $H_C$ as:
+\begin{equation}
+    F_p (\bm{\gamma}, \bm{\beta}) = \bra{\psi_p (\bm{\gamma}, \bm{\beta})} H_C \ket{\psi_p (\bm{\gamma}, \bm{\beta})},
+    \label{eq:cost_function}
+\end{equation}
+which is precisely the cost function to be minimized by varying the QAOA parameters.
 
+{\color{red} FELIP: Talk here about why QAOA is believed to be a promising algorithm. Also,
+Juanjo's work (Universal Resouces for QAOA and Quantum Annealing) contains interesting
+statements like "... universal properties common to QAOA and QA... there is evidence
+of smooth annealing paths constructed from QAOA optimal parameters..."}
+
+\cite{zhou_quantum_2020}

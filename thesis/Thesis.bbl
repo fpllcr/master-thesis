@@ -10,4 +10,15 @@ Tameem Albash and Daniel~A. Lidar.
 \newblock Adiabatic quantum computation.
 \newblock {\em Reviews of Modern Physics}, 90(1):015002, January 2018.
 
+\bibitem{farhi_quantum_2014}
+Edward Farhi, Jeffrey Goldstone, and Sam Gutmann.
+\newblock A {Quantum} {Approximate} {Optimization} {Algorithm}, November 2014.
+\newblock arXiv:1411.4028 [quant-ph].
+
+\bibitem{zhou_quantum_2020}
+Leo Zhou, Sheng-Tao Wang, Soonwon Choi, Hannes Pichler, and Mikhail~D. Lukin.
+\newblock Quantum {Approximate} {Optimization} {Algorithm}: {Performance},
+  {Mechanism}, and {Implementation} on {Near}-{Term} {Devices}.
+\newblock {\em Physical Review X}, 10(2):021067, June 2020.
+
 \end{thebibliography}
