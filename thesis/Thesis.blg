@@ -9,6 +9,7 @@ A level-1 auxiliary file: 01-introduction/00-Introduction.aux
 A level-1 auxiliary file: 01-introduction/01-CircuitModel.aux
 A level-1 auxiliary file: 01-introduction/02-AdiabaticModel.aux
 A level-1 auxiliary file: 01-introduction/03-QAOABasicConcepts.aux
+A level-1 auxiliary file: 02-factorization/00-Introduction.aux
 A level-1 auxiliary file: 02-factorization/01-ShorsAlgo.aux
 A level-1 auxiliary file: 02-factorization/02-AdiabaticFactorization.aux
 A level-1 auxiliary file: 03-results/01-IntroducingProblem.aux
@@ -17,45 +18,45 @@ The style file: unsrt.bst
 A level-1 auxiliary file: publications/publications.aux
 Database file #1: bibliography.bib
 Warning--I didn't find a database entry for "PhysRevA.104.L050403"
-You've used 4 entries,
+You've used 5 entries,
             1791 wiz_defined-function locations,
-            487 strings with 4679 characters,
-and the built_in function-call counts, 914 in all, are:
-= -- 73
-> -- 47
+            496 strings with 4829 characters,
+and the built_in function-call counts, 1143 in all, are:
+= -- 97
+> -- 51
 < -- 0
-+ -- 17
-- -- 13
-* -- 79
-:= -- 153
-add.period$ -- 12
-call.type$ -- 4
-change.case$ -- 4
++ -- 19
+- -- 14
+* -- 99
+:= -- 188
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 32
-empty$ -- 89
-format.name$ -- 13
-if$ -- 193
+cite$ -- 5
+duplicate$ -- 41
+empty$ -- 113
+format.name$ -- 14
+if$ -- 241
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 3
-newline$ -- 23
-num.names$ -- 4
-pop$ -- 10
+int.to.str$ -- 5
+missing$ -- 4
+newline$ -- 28
+num.names$ -- 5
+pop$ -- 11
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 13
+skip$ -- 16
 stack$ -- 0
-substring$ -- 61
-swap$ -- 4
+substring$ -- 88
+swap$ -- 5
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 8
-width$ -- 5
-write$ -- 45
+while$ -- 11
+width$ -- 6
+write$ -- 56
 (There was 1 warning)

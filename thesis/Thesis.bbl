@@ -21,4 +21,9 @@ Leo Zhou, Sheng-Tao Wang, Soonwon Choi, Hannes Pichler, and Mikhail~D. Lukin.
   {Mechanism}, and {Implementation} on {Near}-{Term} {Devices}.
 \newblock {\em Physical Review X}, 10(2):021067, June 2020.
 
+\bibitem{montgomery_cwi_1994}
+P.L. Montgomery.
+\newblock A survey of modern integer factorization algorithms.
+\newblock {\em CWI Quarterly}, 7(4):337---366, December 1994.
+
 \end{thebibliography}

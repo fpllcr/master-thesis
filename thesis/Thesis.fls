@@ -2076,6 +2076,9 @@ INPUT 01-introduction/02-AdiabaticModel.aux
 INPUT ./01-introduction/03-QAOABasicConcepts.aux
 INPUT 01-introduction/03-QAOABasicConcepts.aux
 INPUT 01-introduction/03-QAOABasicConcepts.aux
+INPUT ./02-factorization/00-Introduction.aux
+INPUT 02-factorization/00-Introduction.aux
+INPUT 02-factorization/00-Introduction.aux
 INPUT ./02-factorization/01-ShorsAlgo.aux
 INPUT 02-factorization/01-ShorsAlgo.aux
 INPUT 02-factorization/01-ShorsAlgo.aux
@@ -2397,6 +2400,16 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntx-Regular-tlf-ot1.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txmiaX.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1r.tfm
+INPUT ./02-factorization/00-Introduction.tex
+INPUT ./02-factorization/00-Introduction.tex
+INPUT ./02-factorization/00-Introduction.tex
+OUTPUT 02-factorization/00-Introduction.aux
+INPUT ./02-factorization/00-Introduction.tex
+INPUT ./02-factorization/00-Introduction.tex
+INPUT ./02-factorization/00-Introduction.tex
+INPUT 02-factorization/00-Introduction.tex
+INPUT ./02-factorization/00-Introduction.tex
+INPUT 02-factorization/00-Introduction.tex
 INPUT ./02-factorization/01-ShorsAlgo.tex
 INPUT ./02-factorization/01-ShorsAlgo.tex
 INPUT ./02-factorization/01-ShorsAlgo.tex
@@ -2425,8 +2438,6 @@ INPUT ./figs/drawing.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
@@ -2439,6 +2450,8 @@ INPUT ./figs/grafico_3d.pdf
 INPUT figs/grafico_3d.pdf
 INPUT ./figs/grafico_3d.pdf
 INPUT ./figs/grafico_3d.pdf
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
@@ -2524,6 +2537,9 @@ INPUT 01-introduction/02-AdiabaticModel.aux
 INPUT ./01-introduction/03-QAOABasicConcepts.aux
 INPUT 01-introduction/03-QAOABasicConcepts.aux
 INPUT 01-introduction/03-QAOABasicConcepts.aux
+INPUT ./02-factorization/00-Introduction.aux
+INPUT 02-factorization/00-Introduction.aux
+INPUT 02-factorization/00-Introduction.aux
 INPUT ./02-factorization/01-ShorsAlgo.aux
 INPUT 02-factorization/01-ShorsAlgo.aux
 INPUT 02-factorization/01-ShorsAlgo.aux
