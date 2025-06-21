@@ -1,5 +1,26 @@
 \section{Shor's Factorization Algorithm}
 
-First we have to briefly introduce the Shor's algorithm. We do not need a very detailed explanation, but it would be nice to provide a didactic discussion about the algorithm and its relevance. To this end, we can use the book by Nielsen and Chuang. In this section, we make clear that it is a gate-based way to do factorization.
+{\color{blue} ALAN: First we have to briefly introduce the Shor's algorithm. We do not need a
+very detailed explanation, but it would be nice to provide a didactic discussion about the algorithm
+and its relevance. To this end, we can use the book by Nielsen and Chuang. In this section,
+we make clear that it is a gate-based way to do factorization.}
 
-\lipsum[1]
+In computer science, an algorithm is considered to be efficient when the number of steps
+of the algorithm grows as a polynomial in the input size. For the problem of integer factorization,
+the input is a semiprime number $N$, and the input size is measured as the number of bits
+required to represent it, i.e., $\log N$. The best known classical algorithm for factoring
+scales superpolynomially with input size, making the problem computationally hard for large $N$.
+\begin{equation}
+    \exp \bigg[ \bigg( (64/9)^{1/3} + o(1) \bigg) (\log N)^{1/3} (\log \log N)^{2/3} \bigg].
+    \label{field_sieve_scaling}
+\end{equation}
+
+In 1994, Peter Shor introduced a quantum algorithm that factors integers in polynomial time,
+marking a landmark result in quantum computing. Shor's algorithm runs in time
+\begin{equation}
+    \mathcal{O} \big( (\log N)^3 \big),
+    \label{shor_scaling}
+\end{equation}
+dramatically outperforming the best classical method. The algorithm relies on the quantum
+circuit model, making it a gate-based approach to factorization and one of the strongest motivations
+for the development of quantum computers.
