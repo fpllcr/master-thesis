@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{sarandy_consistency_2004}
 M.~S. Sarandy, L.-A. Wu, and D.~A. Lidar.
@@ -14,6 +14,23 @@ Tameem Albash and Daniel~A. Lidar.
 Edward Farhi, Jeffrey Goldstone, and Sam Gutmann.
 \newblock A {Quantum} {Approximate} {Optimization} {Algorithm}, November 2014.
 \newblock arXiv:1411.4028 [quant-ph].
+
+\bibitem{farhi_quantum_2019}
+Edward Farhi and Aram~W. Harrow.
+\newblock Quantum {Supremacy} through the {Quantum} {Approximate}
+  {Optimization} {Algorithm}, October 2019.
+\newblock arXiv:1602.07674 [quant-ph].
+
+\bibitem{ho_efficient_2019}
+Wen~Wei Ho and Timothy~H. Hsieh.
+\newblock Efficient variational simulation of non-trivial quantum states.
+\newblock {\em SciPost Physics}, 6(3):029, March 2019.
+\newblock arXiv:1803.00026 [cond-mat].
+
+\bibitem{anschuetz_variational_2018}
+Eric~R. Anschuetz, Jonathan~P. Olson, Alán Aspuru-Guzik, and Yudong Cao.
+\newblock Variational {Quantum} {Factoring}, August 2018.
+\newblock arXiv:1808.08927 [quant-ph].
 
 \bibitem{montgomery_cwi_1994}
 P.L. Montgomery.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  22 JUN 2025 12:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  22 JUN 2025 19:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1504,13 +1504,36 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \openout2 = `01-introduction/03-QAOABasicConcepts.aux'.
 
  (./01-introduction/03-QAOABasicConcepts.tex
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 13.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+Overfull \hbox (5.99283pt too wide) in paragraph at lines 1--1
+|[][]\OT1/ptm/b/sc/14.4 (-20) Quantum Ap-prox-i-mate Op-ti-miza-tion Al-go-rithm| 
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 14.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [3])
+) [3]
+<01-introduction/figs/qaoa.png, id=158, 1002.74625pt x 499.8675pt>
+File: 01-introduction/figs/qaoa.png Graphic file (type png)
+<use 01-introduction/figs/qaoa.png>
+Package pdftex.def Info: 01-introduction/figs/qaoa.png  used on input line 45.
+(pdftex.def)             Requested size: 217.6347pt x 108.49147pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 49.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 49.
+
+)
 \openout2 = `02-factorization/00-Introduction.aux'.
 
- (./02-factorization/00-Introduction.tex [4]
+ (./02-factorization/00-Introduction.tex [4 <./01-introduction/figs/qaoa.png>] [5]
 Chapter 2.
 Package lettrine.sty Info: Targeted height = 17.3449pt
 (lettrine.sty)             (for loversize=0, accent excluded),
@@ -1519,19 +1542,19 @@ Package lettrine.sty Info: Targeted height = 17.3449pt
 )
 \openout2 = `02-factorization/01-ShorsAlgo.aux'.
 
- (./02-factorization/01-ShorsAlgo.tex [5
+ (./02-factorization/01-ShorsAlgo.tex [6
 
 ])
 \openout2 = `02-factorization/02-AdiabaticFactorization.aux'.
 
- (./02-factorization/02-AdiabaticFactorization.tex [6]
+ (./02-factorization/02-AdiabaticFactorization.tex [7]
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 58.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [7])
+) [8])
 \openout2 = `03-results/01-IntroducingProblem.aux'.
 
- (./03-results/01-IntroducingProblem.tex [8]
+ (./03-results/01-IntroducingProblem.tex [9]
 Chapter 3.
 Package lettrine.sty Info: Targeted height = 17.3449pt
 (lettrine.sty)             (for loversize=0, accent excluded),
@@ -1544,30 +1567,30 @@ Package lipsum Warning: Unknown language 'latin'. Hyphenation patterns for
 )
 \openout2 = `04-conclusion/conclusion.aux'.
 
- (./04-conclusion/conclusion.tex [9
+ (./04-conclusion/conclusion.tex [10
 
 ]
 Chapter 4.
-) [10
+) [11
 
 
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion}{10}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion}{11}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{conclusion}{{4}{10}{Conclusion}{chapter.4}{}}
-\newlabel{conclusion@cref}{{[chapter][4][]4}{[1][10][]10}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}This is a section title}{10}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}This is a subsection}{10}{subsection.4.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{This is a subsubsection header}{10}{subsection.4.1.1}\protected@file@percent }
-] [11
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces A nice table.\relax }}{11}{table.caption.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces A nice table.\relax }}{11}{table.caption.5}\protected@file@percent }
-] (./Thesis.bbl) (./Thesis.acr [12
+\newlabel{conclusion}{{4}{11}{Conclusion}{chapter.4}{}}
+\newlabel{conclusion@cref}{{[chapter][4][]4}{[1][11][]11}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}This is a section title}{11}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}This is a subsection}{11}{subsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{This is a subsubsection header}{11}{subsection.4.1.1}\protected@file@percent }
+] [12
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces A nice table.\relax }}{12}{table.caption.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces A nice table.\relax }}{12}{table.caption.6}\protected@file@percent }
+] (./Thesis.bbl) (./Thesis.acr [13
 
 ])
 \openout2 = `publications/publications.aux'.
 
- (./publications/publications.tex [13
+ (./publications/publications.tex [14
 
 
 ]
@@ -1580,18 +1603,18 @@ LaTeX Font Info:    Trying to load font information for U+fontawesomethree on in
 File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
 )) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-results/01-IntroducingProblem.aux) (./04-conclusion/conclusion.aux) (./publications/publications.aux)) ) 
 Here is how much of TeX's memory you used:
- 44904 strings out of 480129
- 835822 string characters out of 5893410
- 1268294 words of memory out of 5000000
- 61479 multiletter control sequences out of 15000+600000
- 544681 words of font info for 321 fonts, out of 8000000 for 9000
+ 45013 strings out of 480129
+ 837584 string characters out of 5893410
+ 1268923 words of memory out of 5000000
+ 61542 multiletter control sequences out of 15000+600000
+ 559450 words of font info for 365 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  106i,18n,105p,1280b,869s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Thesis.pdf (21 pages, 286739 bytes).
+Output written on Thesis.pdf (22 pages, 335520 bytes).
 PDF statistics:
- 313 PDF objects out of 1000 (max. 8388607)
- 240 compressed objects within 3 object streams
- 75 named destinations out of 1000 (max. 500000)
- 114204 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 328 PDF objects out of 1000 (max. 8388607)
+ 252 compressed objects within 3 object streams
+ 80 named destinations out of 1000 (max. 500000)
+ 125473 words of extra memory for PDF output out of 128383 (max. 10000000)
 
