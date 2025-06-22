@@ -17,46 +17,44 @@ A level-1 auxiliary file: 04-conclusion/conclusion.aux
 The style file: unsrt.bst
 A level-1 auxiliary file: publications/publications.aux
 Database file #1: bibliography.bib
-Warning--I didn't find a database entry for "PhysRevA.104.L050403"
-You've used 5 entries,
+You've used 8 entries,
             1791 wiz_defined-function locations,
-            496 strings with 4829 characters,
-and the built_in function-call counts, 1143 in all, are:
-= -- 97
-> -- 51
+            515 strings with 5382 characters,
+and the built_in function-call counts, 1792 in all, are:
+= -- 145
+> -- 96
 < -- 0
-+ -- 19
-- -- 14
-* -- 99
-:= -- 188
-add.period$ -- 15
-call.type$ -- 5
-change.case$ -- 5
++ -- 35
+- -- 27
+* -- 145
+:= -- 297
+add.period$ -- 26
+call.type$ -- 8
+change.case$ -- 7
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 41
-empty$ -- 113
-format.name$ -- 14
-if$ -- 241
+cite$ -- 8
+duplicate$ -- 65
+empty$ -- 174
+format.name$ -- 27
+if$ -- 382
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 4
-newline$ -- 28
-num.names$ -- 5
-pop$ -- 11
+int.to.str$ -- 8
+missing$ -- 7
+newline$ -- 45
+num.names$ -- 8
+pop$ -- 24
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 16
+skip$ -- 25
 stack$ -- 0
-substring$ -- 88
-swap$ -- 5
+substring$ -- 109
+swap$ -- 8
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 11
-width$ -- 6
-write$ -- 56
-(There was 1 warning)
+while$ -- 15
+width$ -- 9
+write$ -- 91

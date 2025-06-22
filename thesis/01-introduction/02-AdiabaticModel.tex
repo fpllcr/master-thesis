@@ -15,7 +15,7 @@ eigenstates and eigenenergies by
 \end{equation}
 
 \noindent The adiabatic theorem states that a quantum system initially prepared in an eigenstate
-$\ket{n(0)}$ of  $H(t)$, will remain in its instantaneous eigenstate $\ket{n(t)}$ throughout
+$\ket{n(0)}$ of  $H(0)$, will remain in its instantaneous eigenstate $\ket{n(t)}$ throughout
 the evolution, provided that the spectrum remains gapped and the change is sufficiently
 slow~\cite{sarandy_consistency_2004,albash_adiabatic_2018}. This last condition is generally formulated as follows:
 \begin{equation}
@@ -28,7 +28,7 @@ where $T$ is the total evolution time and $g_{nk}$ represents the energy gap bet
     \label{eq:energy_gap}
 \end{equation}
 
-Despite the adiabatic theorem works for any eigenstate, it is customary in quantum computation to focus on
+Despite the adiabatic theorem works for any eigenstate, in practice it is customary to focus on
 ground state adiabatic passages. This is because ground states are typically more robust against
 decoherence and thermal excitations, as they are energetically isolated from higher-energy levels.
 Moreover, for many computational problems, particularly those related to optimization problems,
@@ -47,6 +47,8 @@ Hamiltonian $H_\mathrm{P}$ is designed so that its ground state corresponds to t
 of the computational task.
 
 (Maybe talk about AQC can be efficiently simulated in the circuit model).
+
+{\color{red} FELIP: Add some figure related to AQC}
 
 \subsection{Adiabatic Quantum Annealers}
 
@@ -77,5 +79,4 @@ The system is then evolved adiabatically as of equation~(\ref{eq:adiabatic_passa
 is to adiabatically steer the system from the easily preparable ground state $H_0$ to the
 ground state of $H_\mathrm{P}$, which encodes the solution to the problem of interest.
 
-
-
+{\color{red} FELIP: Add some figure related to Quantum Annealing}
