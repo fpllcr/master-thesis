@@ -35,6 +35,15 @@ def main(config):
         extended_qaoa=config['extended_qaoa']
     )
 
+    if 'initial_gamma' not in config.keys():
+        max_E = np.max(np.abs(solver.Ep))
+        max_gamma = 2*np.pi/max_E
+        gamma_0 = np.random.uniform(0, max_gamma)
+        beta_0 = np.random.uniform(0, 2 * np.pi)
+
+        config['initial_gamma'] = gamma_0
+        config['initial_beta'] = beta_0
+
     solver.run(config)
 
 
@@ -95,13 +104,13 @@ if __name__ == "__main__":
 
     configs = []
 
-    if not initial_params:
-        gamma_0 = np.random.uniform(np.pi / 2, 3 * np.pi / 2)
-        beta_0 = np.random.uniform(np.pi / 4, 3 * np.pi / 4)
-    elif ',' in initial_params:
+    gamma_0 = None
+    beta_0 = None
+
+    if initial_params is not None and ',' in initial_params:
         initial_params = [float(p) for p in initial_params.split(',')]
         gamma_0, beta_0 = initial_params
-    else:
+    elif initial_params is not None:
         assert initial_params in INIT_PARAMS.keys()
         gamma_0, beta_0 = INIT_PARAMS[initial_params]
 
@@ -110,8 +119,9 @@ if __name__ == "__main__":
             with open(f'experiments/configs/{experiment}.json', 'r') as f:
                 conf = json.load(f)
 
-                conf['initial_gamma'] = gamma_0
-                conf['initial_beta'] = beta_0
+                if gamma_0:
+                    conf['initial_gamma'] = gamma_0
+                    conf['initial_beta'] = beta_0
                 conf['verbose'] = verbose
                 conf['experiment'] = experiment
                 conf['optimizer'] = optimizer

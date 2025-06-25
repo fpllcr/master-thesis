@@ -57,21 +57,13 @@ class QAOASolver:
         self.optimizer_method = optimizer_method
         if optimizer_opts is None:
             optimizer_opts = {}
-            if optimizer_method == 'Nelder-Mead':
-                optimizer_opts['adaptive'] = True
-            elif self.optimizer_method == 'BFGS':
-                optimizer_opts.update({
-                    'gtol': 1e-2
-                })
-            elif self.optimizer_method == 'L-BFGS-B':
-                optimizer_opts.update({
-                    'workers': 6
-
-                })
         self.optimizer_opts = optimizer_opts
         self.extended_qaoa = extended_qaoa
 
         self.lbda = DEFAULT_LAMBDA
+
+        max_E = np.max(np.abs(self.Ep))
+        self.max_gamma = 2*np.pi/max_E
         
         
     
@@ -187,7 +179,7 @@ class QAOASolver:
 
         self.optimizer_opts['maxiter'] = 2 * p * OPTIMIZER_MULTIPLIER[self.optimizer_method]
 
-        bounds = [(0, 2*np.pi)]*p + [(0, np.pi)]*p
+        bounds = [(0, self.max_gamma)]*p + [(0, 2*np.pi)]*p
 
         if self.optimizer_method in GRADIENT_FREE_OPTIMIZERS and not self.extended_qaoa:
             cost_fn = self._compute_cost
@@ -206,6 +198,7 @@ class QAOASolver:
             options=self.optimizer_opts,
             bounds=bounds if self.optimizer_method not in UNBOUNDED_OPTS else None,
             jac=self.optimizer_method not in GRADIENT_FREE_OPTIMIZERS,
+            tol=1e-7
         )
         
         end_time = time()
