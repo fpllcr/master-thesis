@@ -14,6 +14,12 @@ from qaoa_solver import QAOASolver
 
 OPTIMIZERS = ['Nelder-Mead', 'L-BFGS-B', 'BFGS', 'COBYLA']
 
+INIT_PARAMS = {
+    'a': [2.278194341790279,1.8878746546919813],
+    'b': [3.4748376816697872, 2.118867272280805],
+    'c': [4.022993274680973, 0.8503996595801566]
+}
+
 repo = Repo('..')
 
 
@@ -40,8 +46,7 @@ if __name__ == "__main__":
     parser.add_argument('-c', '--cpus', default=1, type=int, choices=range(1, mp.cpu_count()), help='Number of CPUs to use')
     parser.add_argument('-o', '--optimizers', default='all')
     parser.add_argument('-E', '--extended', action='store_true', help='Whether to use extended QAOA or traditional QAOA')
-    parser.add_argument('-B', '--bounded', action='store_true')
-    parser.add_argument('-r', '--random', action='store_true', help='Whether gamma_0 and beta_0 are set to random float or not')
+    parser.add_argument('-i', '--init', help='Initial params gamma_0 and beta_0 separated by a comma or alphabetic for predefined sets')
     parser.add_argument('-v', '--verbose', action='store_true')
 
     args = parser.parse_args()    
@@ -51,8 +56,7 @@ if __name__ == "__main__":
     cpus = args.cpus
     optimizers = args.optimizers
     extended = args.extended
-    bounded = args.bounded
-    random_params = args.random
+    initial_params = args.init
     verbose = args.verbose
 
     if optimizers == 'all':
@@ -91,11 +95,15 @@ if __name__ == "__main__":
 
     configs = []
 
-    if random_params:
+    if not initial_params:
         gamma_0 = np.random.uniform(np.pi / 2, 3 * np.pi / 2)
         beta_0 = np.random.uniform(np.pi / 4, 3 * np.pi / 4)
+    elif ',' in initial_params:
+        initial_params = [float(p) for p in initial_params.split(',')]
+        gamma_0, beta_0 = initial_params
     else:
-        gamma_0, beta_0 = math.pi/3, math.pi/3
+        assert initial_params in INIT_PARAMS.keys()
+        gamma_0, beta_0 = INIT_PARAMS[initial_params]
 
     for experiment in experiments:
         for optimizer in optimizers:
@@ -108,7 +116,6 @@ if __name__ == "__main__":
                 conf['experiment'] = experiment
                 conf['optimizer'] = optimizer
                 conf['extended_qaoa'] = extended
-                conf['bounded'] = bounded
                 conf['commit_date'] = repo.head.commit.committed_datetime.date().strftime('%Y-%m-%d')
 
                 configs.append(conf)

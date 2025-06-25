@@ -13,7 +13,7 @@ from utils import *
 
 UNBOUNDED_OPTS = ['BFGS']
 GRADIENT_FREE_OPTIMIZERS = ['Nelder-Mead', 'COBYLA']
-DEFAULT_LAMBDA = math.pi/3
+DEFAULT_LAMBDA = 0
 
 OPTIMIZER_MULTIPLIER = {
     'Nelder-Mead': 2000,
@@ -28,8 +28,7 @@ class QAOASolver:
                  cost_hamiltonian: str='quadratic_H',
                  optimizer_method: str='Nelder-Mead',
                  optimizer_opts: dict=None,
-                 extended_qaoa: bool=False,
-                 bounded: bool=False):
+                 extended_qaoa: bool=False):
         """
         Initialize QAOA solver for integer factorization.
 
@@ -64,9 +63,13 @@ class QAOASolver:
                 optimizer_opts.update({
                     'gtol': 1e-2
                 })
+            elif self.optimizer_method == 'L-BFGS-B':
+                optimizer_opts.update({
+                    'workers': 6
+
+                })
         self.optimizer_opts = optimizer_opts
         self.extended_qaoa = extended_qaoa
-        self.bounded = bounded
 
         self.lbda = DEFAULT_LAMBDA
         
@@ -184,7 +187,6 @@ class QAOASolver:
 
         self.optimizer_opts['maxiter'] = 2 * p * OPTIMIZER_MULTIPLIER[self.optimizer_method]
 
-        #bounds = [(0,2*np.pi)]*p*2
         bounds = [(0, 2*np.pi)]*p + [(0, np.pi)]*p
 
         if self.optimizer_method in GRADIENT_FREE_OPTIMIZERS and not self.extended_qaoa:
@@ -202,9 +204,10 @@ class QAOASolver:
             x0=initial_gammas + initial_betas,
             method=self.optimizer_method,
             options=self.optimizer_opts,
-            bounds=bounds if self.bounded and self.optimizer_method not in UNBOUNDED_OPTS else None,
-            jac=self.optimizer_method not in GRADIENT_FREE_OPTIMIZERS
+            bounds=bounds if self.optimizer_method not in UNBOUNDED_OPTS else None,
+            jac=self.optimizer_method not in GRADIENT_FREE_OPTIMIZERS,
         )
+        
         end_time = time()
         elapsed_time = end_time - start_time
 
