@@ -6,6 +6,7 @@ from time import time
 
 import numpy as np
 from scipy.optimize import minimize
+from tqdm import tqdm
 
 import hamiltonians as hamiltonians
 from utils import *
@@ -19,7 +20,7 @@ OPTIMIZER_MULTIPLIER = {
     'Nelder-Mead': 2000,
     'L-BFGS-B': 500,
     'BFGS': 500,
-    'COBYLA': 4000
+    'COBYLA': 15000
 }
 
 class QAOASolver:
@@ -27,7 +28,6 @@ class QAOASolver:
                  problem_hamiltonian: str='quadratic_H',
                  cost_hamiltonian: str='quadratic_H',
                  optimizer_method: str='Nelder-Mead',
-                 optimizer_opts: dict=None,
                  extended_qaoa: bool=False):
         """
         Initialize QAOA solver for integer factorization.
@@ -37,7 +37,6 @@ class QAOASolver:
         :param problem_hamiltonian_gen: Function to generate the problem Hamiltonian
         :param cost_hamiltonian_gen: Cost function to evaluate solutions
         :param optimizer_method: Optimization method of scipy.optimize.minimize for parameter tuning
-        :param optimizer_opts: Options for the optimization function
         """
         self.N = N
         self.nx = ceil(log2(floor(sqrt(N)))) - 1
@@ -55,9 +54,6 @@ class QAOASolver:
         self.Ec = np.diag(self.Hc)
 
         self.optimizer_method = optimizer_method
-        if optimizer_opts is None:
-            optimizer_opts = {}
-        self.optimizer_opts = optimizer_opts
         self.extended_qaoa = extended_qaoa
 
         self.lbda = DEFAULT_LAMBDA
@@ -166,7 +162,7 @@ class QAOASolver:
 
         return cost, gradient
     
-    def _single_run(self, p, initial_gammas, initial_betas):
+    def _single_run(self, p, initial_gammas, initial_betas, optimizer_opts):
 
         result_i = {
             'N': self.N,
@@ -177,9 +173,7 @@ class QAOASolver:
             'initial_betas': initial_betas
         }
 
-        self.optimizer_opts['maxiter'] = 2 * p * OPTIMIZER_MULTIPLIER[self.optimizer_method]
-
-        bounds = [(0, self.max_gamma)]*p + [(0, 2*np.pi)]*p
+        bounds = [(self.max_gamma/1000, self.max_gamma)]*p + [(0, 2*np.pi)]*p
 
         if self.optimizer_method in GRADIENT_FREE_OPTIMIZERS and not self.extended_qaoa:
             cost_fn = self._compute_cost
@@ -195,7 +189,7 @@ class QAOASolver:
             fun=cost_fn,
             x0=initial_gammas + initial_betas,
             method=self.optimizer_method,
-            options=self.optimizer_opts,
+            options=optimizer_opts,
             bounds=bounds if self.optimizer_method not in UNBOUNDED_OPTS else None,
             jac=self.optimizer_method not in GRADIENT_FREE_OPTIMIZERS,
             tol=1e-7
@@ -238,17 +232,53 @@ class QAOASolver:
         gammas = [conf['initial_gamma']]
         betas = [conf['initial_beta']]
 
-        for p in range(1, self.layers+1):
-            res = self._single_run(p, gammas, betas)
+        for p in tqdm(range(1, self.layers+1), unit='exp', disable=conf['verbose'],
+                        bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_inv_fmt}]"):
+            
+            optimizer_opts = {}
+            optimizer_opts['maxiter'] = 2 * p * OPTIMIZER_MULTIPLIER[self.optimizer_method]
+            if self.optimizer_method == 'COBYLA':
+                optimizer_opts['tol'] = 1e-6
+
+            conf['optimizer_opts'] = optimizer_opts
+            
+            res = self._single_run(p, gammas, betas, optimizer_opts)
 
             with open(results_path, 'a') as fout:
                 res['config'] = conf
                 fout.write(json.dumps(res) + '\n')
 
 
-            # Interpolate initial parameters for next execution
             x = np.linspace(0, 1, p+1)
             x0 = np.linspace(0, 1, p)
+            gammas = np.interp(x, x0, res['gammas']).tolist()
+            betas = np.interp(x, x0, res['betas']).tolist()
 
+    def run_continuation(self, conf, state):
+        filepath = f"experiments/results/{conf['experiment']}/{state['filename']}"
+        
+        x = np.linspace(0, 1, state['layers']+1)
+        x0 = np.linspace(0, 1, state['layers'])
+        gammas = np.interp(x, x0, state['gammas']).tolist()
+        betas = np.interp(x, x0, state['betas']).tolist()
+
+        for p in tqdm(range(state['layers']+1, self.layers+1), unit='exp', disable=conf['verbose'],
+                        bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_inv_fmt}]"):
+            
+            optimizer_opts = {}
+            optimizer_opts['maxiter'] = 2 * p * OPTIMIZER_MULTIPLIER[self.optimizer_method]
+            if self.optimizer_method == 'COBYLA':
+                optimizer_opts['tol'] = 1e-6
+
+            conf['optimizer_opts'] = optimizer_opts
+            
+            res = self._single_run(p, gammas, betas, optimizer_opts)
+
+            with open(filepath, 'a') as fout:
+                res['config'] = conf
+                fout.write(json.dumps(res) + '\n')
+
+            x = np.linspace(0, 1, p+1)
+            x0 = np.linspace(0, 1, p)
             gammas = np.interp(x, x0, res['gammas']).tolist()
             betas = np.interp(x, x0, res['betas']).tolist()
