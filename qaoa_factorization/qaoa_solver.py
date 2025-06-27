@@ -53,13 +53,16 @@ class QAOASolver:
         self.Hc = cost_hamiltonian_gen(self.N, self.nx, self.ny)
         self.Ec = np.diag(self.Hc)
 
+        # Rescale energies
+        self.Hp = self.Hp / np.max(self.Ep)
+        self.Ep = self.Ep / np.max(self.Ep)
+        self.Hc = self.Hc / np.max(self.Ec)
+        self.Ec = self.Ec / np.max(self.Ec)
+
         self.optimizer_method = optimizer_method
         self.extended_qaoa = extended_qaoa
 
         self.lbda = DEFAULT_LAMBDA
-
-        norm_E = np.linalg.norm((self.Ep))
-        self.max_gamma = 2*np.pi/norm_E
         
         
     
@@ -173,7 +176,7 @@ class QAOASolver:
             'initial_betas': initial_betas
         }
 
-        bounds = [(self.max_gamma/1e6, self.max_gamma)]*p + [(0, np.pi)]*p
+        bounds = [(0, np.pi)]*p + [(0, np.pi)]*p
 
         if self.optimizer_method in GRADIENT_FREE_OPTIMIZERS and not self.extended_qaoa:
             cost_fn = self._compute_cost

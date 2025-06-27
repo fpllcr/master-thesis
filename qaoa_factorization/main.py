@@ -124,10 +124,8 @@ if __name__ == "__main__":
                         conf['initial_gamma'] = gamma_0
                         conf['initial_beta'] = beta_0
                     else:
-                        norm_E = np.linalg.norm((solver.Ep))
-                        max_gamma = 2*np.pi/norm_E
-                        gamma_0 = np.random.uniform(0, max_gamma/10)
-                        beta_0 = np.random.uniform(np.pi/4, 3*np.pi/4)
+                        gamma_0 = np.random.uniform(0, np.pi/16)
+                        beta_0 = np.pi/4# np.random.uniform(np.pi/4, 3*np.pi/4)
 
                         conf['initial_gamma'] = gamma_0
                         conf['initial_beta'] = beta_0
