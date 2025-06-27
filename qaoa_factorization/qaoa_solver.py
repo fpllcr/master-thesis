@@ -173,7 +173,7 @@ class QAOASolver:
             'initial_betas': initial_betas
         }
 
-        bounds = [(self.max_gamma/1000, self.max_gamma)]*p + [(0, 2*np.pi)]*p
+        bounds = [(self.max_gamma/1e3, self.max_gamma)]*p + [(0, np.pi)]*p
 
         if self.optimizer_method in GRADIENT_FREE_OPTIMIZERS and not self.extended_qaoa:
             cost_fn = self._compute_cost
@@ -239,6 +239,8 @@ class QAOASolver:
             optimizer_opts['maxiter'] = 2 * p * OPTIMIZER_MULTIPLIER[self.optimizer_method]
             if self.optimizer_method == 'COBYLA':
                 optimizer_opts['tol'] = 1e-6
+            elif self.optimizer_method == 'BFGS':
+                optimizer_opts['gtol'] = 1e-7
 
             conf['optimizer_opts'] = optimizer_opts
             
@@ -269,6 +271,8 @@ class QAOASolver:
             optimizer_opts['maxiter'] = 2 * p * OPTIMIZER_MULTIPLIER[self.optimizer_method]
             if self.optimizer_method == 'COBYLA':
                 optimizer_opts['tol'] = 1e-6
+            elif self.optimizer_method == 'BFGS':
+                optimizer_opts['gtol'] = 1e-7
 
             conf['optimizer_opts'] = optimizer_opts
             

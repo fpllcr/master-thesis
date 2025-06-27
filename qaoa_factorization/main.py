@@ -127,7 +127,7 @@ if __name__ == "__main__":
                         max_E = np.max(np.abs(solver.Ep))
                         max_gamma = 2*np.pi/max_E
                         gamma_0 = np.random.uniform(0, max_gamma/10)
-                        beta_0 = np.random.uniform(0, 2 * np.pi)
+                        beta_0 = np.random.uniform(np.pi/4, 3*np.pi/4)
 
                         conf['initial_gamma'] = gamma_0
                         conf['initial_beta'] = beta_0
