@@ -173,7 +173,7 @@ class QAOASolver:
             'initial_betas': initial_betas
         }
 
-        bounds = [(self.max_gamma/1e3, self.max_gamma)]*p + [(0, np.pi)]*p
+        bounds = [(self.max_gamma/1e6, self.max_gamma)]*p + [(0, np.pi)]*p
 
         if self.optimizer_method in GRADIENT_FREE_OPTIMIZERS and not self.extended_qaoa:
             cost_fn = self._compute_cost
