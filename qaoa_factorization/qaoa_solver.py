@@ -49,9 +49,9 @@ class QAOASolver:
         cost_hamiltonian_gen = getattr(hamiltonians, cost_hamiltonian)
 
         self.Hp = problem_hamiltonian_gen(self.N, self.nx, self.ny)
-        self.Ep = np.diag(self.Hp)
+        self.Ep = np.real(np.diag(self.Hp))
         self.Hc = cost_hamiltonian_gen(self.N, self.nx, self.ny)
-        self.Ec = np.diag(self.Hc)
+        self.Ec = np.real(np.diag(self.Hc))
 
         self.optimizer_method = optimizer_method
         self.extended_qaoa = extended_qaoa
