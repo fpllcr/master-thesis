@@ -58,8 +58,8 @@ class QAOASolver:
 
         self.lbda = DEFAULT_LAMBDA
 
-        norm_E = np.linalg.norm((self.Ep))
-        self.max_gamma = 2*np.pi/norm_E
+        max_E = np.max(self.Ep)
+        self.max_gamma = 2*np.pi/max_E
         
         
     
