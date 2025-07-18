@@ -14,7 +14,7 @@ from utils import *
 
 UNBOUNDED_OPTS = ['BFGS']
 GRADIENT_FREE_OPTIMIZERS = ['Nelder-Mead', 'COBYLA']
-DEFAULT_LAMBDA = 0
+DEFAULT_LAMBDA = np.pi/2
 
 OPTIMIZER_MULTIPLIER = {
     'Nelder-Mead': 2000,
@@ -190,7 +190,7 @@ class QAOASolver:
             x0=initial_gammas + initial_betas,
             method=self.optimizer_method,
             options=optimizer_opts,
-            bounds=bounds if self.optimizer_method not in UNBOUNDED_OPTS else None,
+            bounds=None, #bounds if self.optimizer_method not in UNBOUNDED_OPTS else None,
             jac=self.optimizer_method not in GRADIENT_FREE_OPTIMIZERS,
             tol=1e-7
         )
@@ -241,6 +241,11 @@ class QAOASolver:
                 optimizer_opts['tol'] = 1e-6
             elif self.optimizer_method == 'BFGS':
                 optimizer_opts['gtol'] = 1e-7
+            elif self.optimizer_method == 'L-BFGS-B':
+                optimizer_opts['gtol'] = 1e-8
+                optimizer_opts['ftol'] = 1e-11
+                optimizer_opts['maxls'] = 100
+
 
             conf['optimizer_opts'] = optimizer_opts
             
