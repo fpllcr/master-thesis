@@ -190,7 +190,7 @@ class QAOASolver:
             x0=initial_gammas + initial_betas,
             method=self.optimizer_method,
             options=optimizer_opts,
-            bounds=None, #bounds if self.optimizer_method not in UNBOUNDED_OPTS else None,
+            bounds=bounds if self.optimizer_method not in UNBOUNDED_OPTS else None,
             jac=self.optimizer_method not in GRADIENT_FREE_OPTIMIZERS,
             tol=1e-7
         )
