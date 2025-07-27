@@ -27,7 +27,6 @@ if __name__ == "__main__":
     parser.add_argument('-b', '--batch', help='Batch processing for the experiments of the provided N')
     parser.add_argument('-a', '--all', action='store_true', help='In batch mode, if false, it only process new configs. If true, reprocess all.')
     parser.add_argument('-o', '--optimizers', default='all')
-    parser.add_argument('-E', '--extended', action='store_true', help='Whether to use extended QAOA or traditional QAOA')
     parser.add_argument('-i', '--init', help='Initial params gamma_0 and beta_0 separated by a comma or alphabetic for predefined sets')
     parser.add_argument('-c', '--cont', help='Continue the experiment until the specified number of layers')
     parser.add_argument('-v', '--verbose', action='store_true')
@@ -37,7 +36,6 @@ if __name__ == "__main__":
     batch = args.batch
     all = args.all
     optimizers = args.optimizers
-    extended = args.extended
     initial_params = args.init
     cont = args.cont
     verbose = args.verbose
@@ -95,8 +93,7 @@ if __name__ == "__main__":
             layers=cont,
             problem_hamiltonian=data['config']['problem_hamiltonian'],
             cost_hamiltonian=data['config']['cost_hamiltonian'],
-            optimizer_method=data['config']['optimizer'],
-            extended_qaoa=data['config']['extended_qaoa']
+            optimizer_method=data['config']['optimizer']
         )
 
         conf = data['config']
@@ -116,8 +113,7 @@ if __name__ == "__main__":
                         layers=conf['layers'],
                         problem_hamiltonian=conf['problem_hamiltonian'],
                         cost_hamiltonian=conf['cost_hamiltonian'],
-                        optimizer_method=optimizer,
-                        extended_qaoa=extended
+                        optimizer_method=optimizer
                     )
 
                     if initial_params:
@@ -135,7 +131,6 @@ if __name__ == "__main__":
                     conf['verbose'] = verbose
                     conf['experiment'] = experiment
                     conf['optimizer'] = optimizer
-                    conf['extended_qaoa'] = extended
                     conf['commit_date'] = repo.head.commit.committed_datetime.date().strftime('%Y-%m-%d')
 
                     print(f'Running experiment {experiment} with {optimizer}')

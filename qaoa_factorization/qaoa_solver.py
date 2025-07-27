@@ -14,7 +14,6 @@ from utils import *
 
 UNBOUNDED_OPTS = ['BFGS']
 GRADIENT_FREE_OPTIMIZERS = ['Nelder-Mead', 'COBYLA']
-DEFAULT_LAMBDA = np.pi/2
 
 OPTIMIZER_MULTIPLIER = {
     'Nelder-Mead': 2000,
@@ -27,8 +26,7 @@ class QAOASolver:
     def __init__(self, N: int, layers: int=1,
                  problem_hamiltonian: str='quadratic_H',
                  cost_hamiltonian: str='quadratic_H',
-                 optimizer_method: str='Nelder-Mead',
-                 extended_qaoa: bool=False):
+                 optimizer_method: str='Nelder-Mead'):
         """
         Initialize QAOA solver for integer factorization.
 
@@ -54,9 +52,6 @@ class QAOASolver:
         self.Ec = np.real(np.diag(self.Hc))
 
         self.optimizer_method = optimizer_method
-        self.extended_qaoa = extended_qaoa
-
-        self.lbda = DEFAULT_LAMBDA
 
         max_E = np.max(self.Ep)
         self.max_gamma = 2*np.pi/max_E
@@ -74,15 +69,34 @@ class QAOASolver:
         psi = apply_op(R, psi)
         dpsi_dbeta = apply_sum_op(-0.5j * sigma_x, psi)
         return psi, dpsi_dgamma, dpsi_dbeta
+    
+    def _init_state(self):
+        if self.problem_hamiltonian == 'linear_H':
+            # |+-+-+-...>
+            ket_0 = np.array([1, 0], dtype=np.complex128)
+            ket_1 = np.array([0, 1], dtype=np.complex128)
+            ket_plus = (ket_0 + ket_1) / np.sqrt(2)
+            ket_minus = (ket_0 - ket_1) / np.sqrt(2)
+
+            psi = ket_plus
+            for i in range(1, self.num_qubits):
+                next_ket = ket_plus if i%2==0 else ket_minus
+                psi = np.kron(psi, next_ket)
+            
+        else:
+            # |++++++...>
+            psi = np.full(self.dim, 1 / np.sqrt(self.dim), dtype=np.complex128)
+        
+        return psi
 
     def _qaoa_state(self, gammas, betas):
-        psi = np.full(self.dim, 1 / np.sqrt(self.dim), dtype=np.complex128)
+        psi = self._init_state()
         for gamma, beta in zip(gammas, betas):
             psi = self._qaoa_layer(psi, gamma, beta)
         return psi
     
     def _qaoa_state_and_derivatives(self, gammas, betas):
-        psi = np.full(self.dim, 1 / np.sqrt(self.dim), dtype=np.complex128)
+        psi = self._init_state()
         dgammas = []
         dbetas = []
         for gamma, beta in zip(gammas, betas):
@@ -110,57 +124,6 @@ class QAOASolver:
 
         return cost, gradient
     
-    def _qaoa_layer_extended(self, psi, gamma, beta, lbda=DEFAULT_LAMBDA):
-        return apply_op(Rx(beta) @ U1(lbda), apply_expiH(gamma, self.Ep, psi))
-    
-    def _qaoa_layer_and_derivatives_extended(self, psi, gamma, beta, lbda=DEFAULT_LAMBDA):
-        psi = apply_expiH(gamma, self.Ep, psi)
-        dpsi_dgamma = 1j * (self.Ep * psi)
-        R = Rx(beta) @ U1(lbda)
-        dpsi_dgamma = apply_op(R, dpsi_dgamma)
-        psi = apply_op(R, psi)
-        dpsi_dbeta = apply_sum_op(-0.5j * sigma_x, psi)
-        return psi, dpsi_dgamma, dpsi_dbeta
-    
-    def _make_lambdas(self, gammas, lbda):
-        return [0.0] * (len(gammas) - 1) + [lbda]
-
-    def _qaoa_state_extended(self, gammas, betas, lbda=DEFAULT_LAMBDA):
-        psi = np.full(self.dim, 1 / np.sqrt(self.dim), dtype=np.complex128)
-        lambdas = self._make_lambdas(gammas, lbda)
-        for gamma, beta, lbda in zip(gammas, betas, lambdas):
-            psi = self._qaoa_layer_extended(psi, gamma, beta, lbda)
-        return psi
-    
-    def _qaoa_state_and_derivatives_extended(self, gammas, betas, lbda=DEFAULT_LAMBDA):
-        psi = np.full(self.dim, 1 / np.sqrt(self.dim), dtype=np.complex128)
-        dgammas = []
-        dbetas = []
-        lambdas = self._make_lambdas(gammas, lbda)
-        for gamma, beta, lbda in zip(gammas, betas, lambdas):
-            psi, dgamma, dbeta = self._qaoa_layer_and_derivatives_extended(psi, gamma, beta, lbda)
-            dgammas = [self._qaoa_layer_extended(v, gamma, beta, lbda) for v in dgammas] + [dgamma]
-            dbetas = [self._qaoa_layer_extended(v, gamma, beta, lbda) for v in dbetas] + [dbeta]
-        return psi, dgammas, dbetas
-    
-    def _compute_cost_extended(self, params):
-        p = int(len(params)/2)
-        psi = self._qaoa_state_extended(params[:p], params[p:], self.lbda)
-        cost = np.vdot(psi, self.Ec * psi).real
-        return cost
-    
-    def _compute_cost_and_gradient_extended(self, params):
-        p = int(len(params)/2)
-        psi, dgammas, dbetas = self._qaoa_state_and_derivatives_extended(params[:p], params[p:], self.lbda)
-        cost = np.vdot(psi, self.Ec * psi).real
-
-        gradient = []
-        for dpsi in dgammas + dbetas:
-            grad_i = 2 * np.real(np.vdot(dpsi, self.Ec * psi))
-            gradient.append(grad_i)
-        gradient = np.array(gradient)
-
-        return cost, gradient
     
     def _single_run(self, p, initial_gammas, initial_betas, optimizer_opts):
 
@@ -175,14 +138,10 @@ class QAOASolver:
 
         bounds = [(0, self.max_gamma)]*p + [(0, np.pi)]*p
 
-        if self.optimizer_method in GRADIENT_FREE_OPTIMIZERS and not self.extended_qaoa:
+        if self.optimizer_method in GRADIENT_FREE_OPTIMIZERS:
             cost_fn = self._compute_cost
-        elif self.optimizer_method in GRADIENT_FREE_OPTIMIZERS and self.extended_qaoa:
-            cost_fn = self._compute_cost_extended
-        elif self.optimizer_method not in GRADIENT_FREE_OPTIMIZERS and not self.extended_qaoa:
+        else:
             cost_fn = self._compute_cost_and_gradient
-        elif self.optimizer_method not in GRADIENT_FREE_OPTIMIZERS and self.extended_qaoa:
-            cost_fn = self._compute_cost_and_gradient_extended
 
         start_time = time()
         res = minimize(
