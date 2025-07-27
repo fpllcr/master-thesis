@@ -1,6 +1,6 @@
 {
     "number": 39,
-    "layers": 50,
+    "layers": 30,
     "problem_hamiltonian": "linear_H",
     "cost_hamiltonian": "abs_H"
 }

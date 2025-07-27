@@ -43,6 +43,9 @@ class QAOASolver:
         self.dim = 2 ** self.num_qubits
         self.layers = layers
 
+        self.problem_hamiltonian=problem_hamiltonian
+        self.cost_hamiltonian=cost_hamiltonian
+
         problem_hamiltonian_gen = getattr(hamiltonians, problem_hamiltonian)
         cost_hamiltonian_gen = getattr(hamiltonians, cost_hamiltonian)
 
@@ -136,7 +139,7 @@ class QAOASolver:
             'initial_betas': initial_betas
         }
 
-        bounds = [(0, self.max_gamma)]*p + [(0, np.pi)]*p
+        bounds = [(0, self.max_gamma)]*p + [(0, 2*np.pi)]*p
 
         if self.optimizer_method in GRADIENT_FREE_OPTIMIZERS:
             cost_fn = self._compute_cost
