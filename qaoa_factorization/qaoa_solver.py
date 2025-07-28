@@ -240,6 +240,10 @@ class QAOASolver:
                 optimizer_opts['tol'] = 1e-6
             elif self.optimizer_method == 'BFGS':
                 optimizer_opts['gtol'] = 1e-7
+            elif self.optimizer_method == 'L-BFGS-B':
+                optimizer_opts['gtol'] = 1e-8
+                optimizer_opts['ftol'] = 1e-11
+                optimizer_opts['maxls'] = 100
 
             conf['optimizer_opts'] = optimizer_opts
             
