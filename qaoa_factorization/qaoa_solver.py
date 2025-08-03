@@ -217,11 +217,18 @@ class QAOASolver:
                 res['config'] = conf
                 fout.write(json.dumps(res) + '\n')
 
+            if self.optimizer_method not in UNBOUNDED_OPTS:
+                x = np.linspace(0, 1, p+1)
+                x0 = np.linspace(0, 1, p)
+                gammas = np.interp(x, x0, res['gammas']).tolist()
+                betas = np.interp(x, x0, res['betas']).tolist()
+            else:
+                gammas = res['gammas']
+                gammas.append(gammas[-1])
 
-            x = np.linspace(0, 1, p+1)
-            x0 = np.linspace(0, 1, p)
-            gammas = np.interp(x, x0, res['gammas']).tolist()
-            betas = np.interp(x, x0, res['betas']).tolist()
+                betas = res['betas']
+                betas.append(betas[-1])
+            
 
     def run_continuation(self, conf, state):
         filepath = f"experiments/results/{conf['experiment']}/{state['filename']}"
