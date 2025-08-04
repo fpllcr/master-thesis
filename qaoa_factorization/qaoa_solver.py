@@ -222,12 +222,17 @@ class QAOASolver:
                 x0 = np.linspace(0, 1, p)
                 gammas = np.interp(x, x0, res['gammas']).tolist()
                 betas = np.interp(x, x0, res['betas']).tolist()
+            elif self.problem_hamiltonian == 'quadratic_H':
+                gammas = res['gammas']
+                gammas.append(gammas[-1])
+                betas = res['betas']
+                betas.append(betas[-1])
             else:
                 gammas = res['gammas']
                 gammas.append(gammas[-1])
-
                 betas = res['betas']
-                betas.append(betas[-1])
+                betas.append(0)
+
             
 
     def run_continuation(self, conf, state):
