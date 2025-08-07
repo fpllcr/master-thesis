@@ -217,12 +217,12 @@ class QAOASolver:
                 res['config'] = conf
                 fout.write(json.dumps(res) + '\n')
 
-            if self.optimizer_method not in UNBOUNDED_OPTS: # bounded optimizers
+            if self.optimizer_method not in UNBOUNDED_OPTS: # bounded optimizer
                 x = np.linspace(0, 1, p+1)
                 x0 = np.linspace(0, 1, p)
                 gammas = np.interp(x, x0, res['gammas']).tolist()
                 betas = np.interp(x, x0, res['betas']).tolist()
-            else: # optimizer = BFGS
+            else: # unbounded optimizer
                 gammas = res['gammas']
                 gammas.append(gammas[-1])
                 betas = res['betas']
