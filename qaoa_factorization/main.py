@@ -36,7 +36,7 @@ if __name__ == "__main__":
     parser.add_argument('-b', '--batch', help='Batch processing for the experiments of the provided N')
     parser.add_argument('-a', '--all', action='store_true', help='In batch mode, if false, it only process new configs. If true, reprocess all.')
     parser.add_argument('-o', '--optimizers', default='all')
-    parser.add_argument('-i', '--init', help='Initial params gamma_0 and beta_0 separated by a comma or alphabetic for predefined sets')
+    parser.add_argument('-i', '--init', help='Initial params gamma_0 and beta_0 separated by a comma')
     parser.add_argument('-c', '--cont', help='Continue the experiment until the specified number of layers in its conf file.')
     parser.add_argument('-v', '--verbose', action='store_true')
 
@@ -111,9 +111,6 @@ if __name__ == "__main__":
     if initial_params is not None and ',' in initial_params:
         initial_params = [float(p) for p in initial_params.split(',')]
         gamma_0, beta_0 = initial_params
-    elif initial_params is not None:
-        assert initial_params in INIT_PARAMS.keys()
-        gamma_0, beta_0 = INIT_PARAMS[initial_params]
 
     for experiment in experiments:
         for optimizer in optimizers:

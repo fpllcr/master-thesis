@@ -1,4 +1,5 @@
 \section{Adiabatic Factorization Algorithm}
+\label{Section:AFA}
 
 The problem of integer factorization can be formulated as a
 constrained search over pairs of natural numbers $p$ and $q$
@@ -28,7 +29,7 @@ $p$ and $q$ of an odd composite number can be rewritten as:
 	\label{eq:factors_simplification}
 \end{equation}
 It can be proved that the $n_p$ and $n_q$ are an upper bound on the number of qubits
-required to represent $p'$ and $q'$, respectively:
+required to represent $p'$ and $q'$, respectively {\color{red}(FELIP: confirm that this bounds are really for $p'$ and $q'$ and not for $p$ and $q$)}:
 \begin{equation}
 	\begin{cases}
 		n_p = m\,\big(\lfloor \sqrt{N} \rfloor_o\big) - 1 \\[2ex]
@@ -95,6 +96,8 @@ but an eigenstate with eigenvalue zero. Since the adiabatic theorem applies to a
 eigenstate, not necessarily the ground state, we hypothesize that this eigenstate can still be
 targeted by an appropriate adiabatic or variational algorithm.
 
+{\color{red} (FELIP: maybe put the results that these research groups obtained when applying AQC for factorization)}
+
 \subsection{Digitized Adiabatic Quantum Factorization}
 Although the adiabatic model is often formulated in terms of continuous time evolution, it
 can be simulated efficiently using gate-based quantum computation {\color{red} (ADD REFERENCES)}
@@ -120,10 +123,11 @@ approximates the solution.
 As shown in Ref.~\cite{diez-valle_universal_2025}, QAOA and quantum annealing share universal
 structural properties, and there is compelling evidence that smooth annealing paths can be constructed
 from QAOA optimal parameters. This supports the interpretation of QAOA as a digitized
-and variationally optimized version of an adiabatic process.
+and variationally optimized version of an adiabatic process. ({\color{red} FELIP: comment that this has been observed
+in MaxCut and QUBO problems, and provide references})
 
-In this approach, our proposal is to use the linearized Hamiltonian from equation
-Eq.~\ref{eq:linear_problem_hamiltonian} in the layers of the QAOA algorithm, and a cost
-function that encodes the factorization solution in its minimum, such as
-$\langle \hat{H}_\mathrm{QP} \rangle$ or any other Hamiltonian that accomplish this.
+As mentioned at the beginning in the introduction of Section~\ref{Section:AFA}, the adiabatic factorization algorithm needs to deal with the difficulty of implementing three- and four-body interaction terms. In the digitized version of this problem, like QAOA, this difficulty is transformed into the necessity to implement three- and four-qubit gates. ({\color{red} FELIP: add figure showing one-layer QAOA circuit and the presence of 3- and 4-qubit gates}).
 
+Then, our proposal is to replace the original Hamiltonian in the QAOA layers with the linearized problem Hamiltonian defined in Eq.~\ref{eq:linear_problem_hamiltonian}, while using a separate cost Hamiltonian—such as $\langle \hat{H}_\mathrm{QP} \rangle$—to guide the classical optimization. This approach is motivated by a key observation: the adiabatic theorem does not constrain us to evolve within the ground state of a system, but rather within any eigenstate, provided the evolution is slow enough. We hypothesize that initializing the system in an eigenstate near the center of the spectrum of the initial Hamiltonian and evolving adiabatically under the linearized Hamiltonian may preserve this eigenstate structure, ultimately leading to the correct factorization solution, which is also located near the center of the spectrum.
+
+In standard QAOA, the same Hamiltonian is typically used for both quantum evolution and classical cost evaluation. In contrast, our proposal explicitly decouples these two roles: we use the linearized Hamiltonian to drive the quantum dynamics (problem Hamiltonian), and a separate cost Hamiltonian—whose ground state encodes the correct factors—to steer the classical optimizer.

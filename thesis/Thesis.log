@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  22 JUN 2025 19:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  7 AUG 2025 13:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1548,13 +1548,16 @@ Package lettrine.sty Info: Targeted height = 17.3449pt
 \openout2 = `02-factorization/02-AdiabaticFactorization.aux'.
 
  (./02-factorization/02-AdiabaticFactorization.tex [7]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 58.
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 59.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [8])
+) [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9])
 \openout2 = `03-results/01-IntroducingProblem.aux'.
 
- (./03-results/01-IntroducingProblem.tex [9]
+ (./03-results/01-IntroducingProblem.tex [10]
 Chapter 3.
 Package lettrine.sty Info: Targeted height = 17.3449pt
 (lettrine.sty)             (for loversize=0, accent excluded),
@@ -1567,30 +1570,30 @@ Package lipsum Warning: Unknown language 'latin'. Hyphenation patterns for
 )
 \openout2 = `04-conclusion/conclusion.aux'.
 
- (./04-conclusion/conclusion.tex [10
+ (./04-conclusion/conclusion.tex [11
 
 ]
 Chapter 4.
-) [11
+) [12
 
 
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion}{11}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion}{12}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{conclusion}{{4}{11}{Conclusion}{chapter.4}{}}
-\newlabel{conclusion@cref}{{[chapter][4][]4}{[1][11][]11}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}This is a section title}{11}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}This is a subsection}{11}{subsection.4.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{This is a subsubsection header}{11}{subsection.4.1.1}\protected@file@percent }
-] [12
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces A nice table.\relax }}{12}{table.caption.5}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces A nice table.\relax }}{12}{table.caption.6}\protected@file@percent }
-] (./Thesis.bbl) (./Thesis.acr [13
+\newlabel{conclusion}{{4}{12}{Conclusion}{chapter.4}{}}
+\newlabel{conclusion@cref}{{[chapter][4][]4}{[1][12][]12}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}This is a section title}{12}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}This is a subsection}{12}{subsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{This is a subsubsection header}{12}{subsection.4.1.1}\protected@file@percent }
+] [13
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces A nice table.\relax }}{13}{table.caption.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces A nice table.\relax }}{13}{table.caption.6}\protected@file@percent }
+] (./Thesis.bbl) (./Thesis.acr [14
 
 ])
 \openout2 = `publications/publications.aux'.
 
- (./publications/publications.tex [14
+ (./publications/publications.tex [15
 
 
 ]
@@ -1603,18 +1606,18 @@ LaTeX Font Info:    Trying to load font information for U+fontawesomethree on in
 File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
 )) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-results/01-IntroducingProblem.aux) (./04-conclusion/conclusion.aux) (./publications/publications.aux)) ) 
 Here is how much of TeX's memory you used:
- 45013 strings out of 480129
- 837584 string characters out of 5893410
- 1268923 words of memory out of 5000000
- 61542 multiletter control sequences out of 15000+600000
- 559450 words of font info for 365 fonts, out of 8000000 for 9000
+ 45021 strings out of 480129
+ 837692 string characters out of 5893410
+ 1269066 words of memory out of 5000000
+ 61546 multiletter control sequences out of 15000+600000
+ 559569 words of font info for 367 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  106i,18n,105p,1280b,869s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Thesis.pdf (22 pages, 335520 bytes).
+Output written on Thesis.pdf (23 pages, 337785 bytes).
 PDF statistics:
- 328 PDF objects out of 1000 (max. 8388607)
- 252 compressed objects within 3 object streams
- 80 named destinations out of 1000 (max. 500000)
+ 333 PDF objects out of 1000 (max. 8388607)
+ 256 compressed objects within 3 object streams
+ 81 named destinations out of 1000 (max. 500000)
  125473 words of extra memory for PDF output out of 128383 (max. 10000000)
 
