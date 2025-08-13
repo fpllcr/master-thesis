@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Parameters (edit these values as needed)
-ORIGINAL_NUM=15
-COPY_NUM=187
+ORIGINAL_NUM=95
+COPY_NUM=143
 
 # Directory containing the JSON files (use "." for current directory)
 DIR="."
