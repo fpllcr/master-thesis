@@ -3,8 +3,8 @@ from math import ceil, floor, log2, sqrt
 
 import numpy as np
 import pennylane as qml
+from pennylane import qaoa
 import sympy as sp
-
 
 
 sigma_z = np.array([[1, 0], [0, -1]])
@@ -214,3 +214,29 @@ def get_setup(problem_H, cost_H):
         return 'linear_abs'
     else:
         return 'unknown'
+    
+def get_pennylane_layer(N, nx, ny, problem_hamiltonian):
+
+    from hamiltonians import quadratic_H, linear_H
+
+    dev = qml.device('default.qubit', wires=nx+ny)
+    quad_H = qml.pauli_decompose(quadratic_H(N, nx, ny))
+    lin_H = qml.pauli_decompose(linear_H(N, nx, ny))
+    
+    def mixer_H() -> qml.Hamiltonian:
+        mixer_H = sum(qml.PauliX(i) for i in range(nx+ny))
+        return mixer_H
+
+    def qaoa_layer(gamma, beta):
+        if problem_hamiltonian == 'linear_H':
+            qaoa.cost_layer(gamma, lin_H)
+        else:
+            qaoa.cost_layer(gamma, quad_H)
+        qaoa.mixer_layer(beta, mixer_H())
+
+    @qml.qnode(dev)
+    def circuit():
+        qml.layer(qaoa_layer, 1, [1], [1])
+        return qml.expval(quad_H)
+
+    return circuit

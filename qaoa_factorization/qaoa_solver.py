@@ -232,11 +232,17 @@ class QAOASolver:
 
     def run_continuation(self, conf, state):
         filepath = f"experiments/results/{conf['experiment']}/{state['filename']}"
-        
-        x = np.linspace(0, 1, state['layers']+1)
-        x0 = np.linspace(0, 1, state['layers'])
-        gammas = np.interp(x, x0, state['gammas']).tolist()
-        betas = np.interp(x, x0, state['betas']).tolist()
+
+        if self.optimizer_method not in UNBOUNDED_OPTS: # bounded optimizer
+            x = np.linspace(0, 1, state['layers']+1)
+            x0 = np.linspace(0, 1, state['layers'])
+            gammas = np.interp(x, x0, state['gammas']).tolist()
+            betas = np.interp(x, x0, state['betas']).tolist()
+        else: # unbounded optimizer
+            gammas = state['gammas']
+            gammas.append(gammas[-1])
+            betas = state['betas']
+            betas.append(0)
 
         for p in tqdm(range(state['layers']+1, self.layers+1), unit='exp', disable=conf['verbose'],
                         bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_inv_fmt}]"):
@@ -260,7 +266,13 @@ class QAOASolver:
                 res['config'] = conf
                 fout.write(json.dumps(res) + '\n')
 
-            x = np.linspace(0, 1, p+1)
-            x0 = np.linspace(0, 1, p)
-            gammas = np.interp(x, x0, res['gammas']).tolist()
-            betas = np.interp(x, x0, res['betas']).tolist()
+            if self.optimizer_method not in UNBOUNDED_OPTS: # bounded optimizer
+                x = np.linspace(0, 1, p+1)
+                x0 = np.linspace(0, 1, p)
+                gammas = np.interp(x, x0, res['gammas']).tolist()
+                betas = np.interp(x, x0, res['betas']).tolist()
+            else: # unbounded optimizer
+                gammas = res['gammas']
+                gammas.append(gammas[-1])
+                betas = res['betas']
+                betas.append(0)
