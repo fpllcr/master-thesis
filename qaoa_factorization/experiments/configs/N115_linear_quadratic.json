@@ -1,6 +1,6 @@
 {
     "number": 115,
-    "layers": 160,
+    "layers": 200,
     "problem_hamiltonian": "linear_H",
     "cost_hamiltonian": "quadratic_H"
 }
