@@ -35,6 +35,14 @@ Moreover, for many computational problems, particularly those related to optimiz
 it is possible to construct a problem Hamiltonian $H_\mathrm{P}$ whose ground state encodes
 the solution to the instance under consideration.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{01-introduction/figs/adiabatic_theorem.pdf}
+    \caption{Schematic of an adiabatic passage. The orange line represents the Hamiltonian's ground state, while
+    the green a Hamiltonian's eigenstate different from the ground state.}
+    \label{fig:adiabatic_passage}
+\end{figure}
+
 In the adiabatic quantum computation model, the Hamiltonian is interpolated between an
 initial Hamiltonian $H_0$, with a known and easily preparable ground state, and the problem
 Hamiltonian $H_\mathrm{P}$, according to a schedule~\cite{albash_adiabatic_2018}:
@@ -46,22 +54,21 @@ where $s(t)$ is a smooth, monotonic function such that $s(0)=0$ and $s(T)=1$. Th
 Hamiltonian $H_\mathrm{P}$ is designed so that its ground state corresponds to the solution
 of the computational task.
 
-(Maybe talk about AQC can be efficiently simulated in the circuit model).
-
-{\color{red} FELIP: Add some figure related to AQC}
+{\color{red}(Maybe talk about AQC can be efficiently simulated in the circuit model).}
 
 \subsection{Adiabatic Quantum Annealers}
 
-{\color{blue}ALAN: Here we discuss about the adiabatic quantum aneealers, where the problem Hamiltonian
+{\color{blue}ALAN: Here we discuss about the adiabatic quantum annealers, where the problem Hamiltonian
 is the Ising Hamiltonian (which is the focus of our applications). To this end, maybe we can use the
 review paper to get some key discussions [Rev. Mod. Phys. 90, 015002 (2018)].}
 
 An important and widely studied application of adiabatic evolution in quantum
-devices is adiabatic quantum annealing (AQA), where the goal is to find low-energy configurations of
-a classical cost function mapped onto a quantum Ising Hamiltonian. In this setting, the problem
-Hamiltonian $H_\mathrm{P}$ takes the form:
+devices is Adiabatic Quantum Annealing (AQA), where the goal is to find low-energy configurations of
+a classical cost function mapped onto a quantum Hamiltonian. AQA is most often applied to Quadratic Unconstrained
+Binary Optimization (QUBO) problems, which can be exactly reformulated as a 2-body interaction Ising
+Hamiltonian of the form
 \begin{equation}
-    H_\mathrm{P} = \sum_i h_i \sigma_i^z + \sum_{i<j} J_{ij} \sigma_i^z \sigma_j^z
+    H_\mathrm{P} = \sum_i h_i \sigma_i^z + \sum_{i<j} J_{ij} \sigma_i^z \sigma_j^z\,,
     \label{eq:ising_hamiltonian}
 \end{equation}
 where $h_i$ are local fields, $J_{ij}$ represent coupling strengths between qubits, and
@@ -69,14 +76,18 @@ $\sigma_i^z$ are Pauli-Z operators acting on the $i$-th qubit. The task is to dr
 from an initial, easily preparable ground state towards the ground state of $H_\mathrm{P}$,
 which encodes the optimal solution to the problem at hand.
 
-In adiabatic quantum annealers, the evolution typically starts from an initial transverse
-field Hamiltonian 
+In a typical AQA protocol, the evolution begins with an initial transverse-field Hamiltonian
 \begin{equation}
-    H_0 = \sum_i \sigma_i^x
+    H_0 = \sum_i \sigma_i^x\,.
     \label{eq:transverse_field_hamiltonian}
 \end{equation}
-The system is then evolved adiabatically as of equation~(\ref{eq:adiabatic_passage}). The aim
-is to adiabatically steer the system from the easily preparable ground state $H_0$ to the
-ground state of $H_\mathrm{P}$, which encodes the solution to the problem of interest.
+whose ground state is straightforward to prepare. The system is then evolved according to the interpolation
+scheme in equation (\ref{eq:adiabatic_passage}). The aim is to adiabatically steer the system from the easily
+preparable ground state $H_0$ to the ground state of $H_\mathrm{P}$, which encodes the solution to the
+problem of interest.
 
-{\color{red} FELIP: Add some figure related to Quantum Annealing}
+This procedure is straightforward for problems that can be expressed in the QUBO form, as they can be mapped to
+an Ising Hamiltonian with only two-body interactions. However, the factorization problem presented in
+chapter~\ref{Chapter:Factorization} does not directly fall into the QUBO class, as its Hamiltonian contains
+three- and four-body interaction terms. As will be discussed later, this limitation can be addressed by adopting
+an alternative formulation of the problem Hamiltonian that avoids these high-order terms while preserving the encoded solution.

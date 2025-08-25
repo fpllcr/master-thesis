@@ -1,0 +1,17 @@
+\section{Benchmarking process}
+To ensure a fair comparison between our proposed protocol and the standard QAOA approach, it is necessary to establish
+consistent guidelines for the classical optimization process. For benchmarking, we adopt the configuration that yields
+the best performance for the standard protocol. Specifically,
+\begin{itemize}
+    \item We employ the BFGS algorithm as the classical optimizer, which resulted in better performance
+    than other optimizers such as L-BFGS-B (Fig.~\ref{fig:optimizer_comparison}) or Cobyla. Nelder-Mead has been discarded
+    due to its poor scalability with the number of parametes.
+    \item The QAOA parameters are trained using an incremental (layer-by-layer) approach: optimization begins with
+    a single QAOA layer, and the optimal parameters obtained at each step are used to initialize the training of
+    the next layer. {\color{red} (ADD REFERENCES)}
+    \item In this initialization strategy, the parameters from the previous iteration are reused for the corresponding
+    layers of the deeper circuit, while the new layer is initialized with its $\gamma$ parameter set equal to the last
+    optimized $\gamma$ value and its $\beta$ parameter set to zero. This procedure improves convergence and reduces the
+    likelihood of the optimizer becoming trapped in poor local minima, thereby providing a consistent reference
+    for evaluating the performance of our protocol. {\color{red} (ADD REFERENCES)}
+\end{itemize}

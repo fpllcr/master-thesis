@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  7 AUG 2025 13:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  25 AUG 2025 11:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -10,8 +10,8 @@ L3 programming layer <2022-01-21> (./dissertation.cls
 Document Class: dissertation 2020/08/25 v1.0 Atlarge dissertation class by LV
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo
-File: bk10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk11.clo
+File: bk11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@chapter=\count186
@@ -1218,7 +1218,7 @@ Package: glossary-tree 2021/11/01 v4.49 (NLCT)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 603.
+Package hyperref Info: Option `colorlinks' set `false' on input line 595.
 ) (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/bbm.sty
 Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
 LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
@@ -1236,12 +1236,14 @@ Package bm Info: No bold for \U/msb/m/n, using \pmb.
 Package bm Info: No bold for \OT1/ptm/bx/n, using \pmb.
 Package bm Info: No bold for \OT1/ptm/m/it, using \pmb.
 \symboldwasy=\mathgroup9
+) (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
 )
 \glswrite=\write4
 \glo@acronym@file=\write5
 \openout5 = `Thesis.acn'.
 
-Package glossaries Info: Writing glossary file Thesis.acn on input line 25.
+Package glossaries Info: Writing glossary file Thesis.acn on input line 27.
  (./glossary.tex) (./abbreviations.tex (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )) (/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
@@ -1254,30 +1256,30 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \l__lipsum_a_int=\count406
 \l__lipsum_b_int=\count407
  (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 42.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 44.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-results/01-IntroducingProblem.aux) (./04-conclusion/conclusion.aux) (./publications/publications.aux))
+) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-results/01-IntroducingProblem.aux) (./03-results/02-Benchmarking.aux) (./03-results/03-OptimizerSelection.aux) (./03-results/04-Results.aux) (./04-conclusion/conclusion.aux) (./publications/publications.aux))
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1294,27 +1296,27 @@ Package caption Info: End \AtBeginDocument code.
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: custom
+* paper: a4paper
 * layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,19.91692pt)
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(48.39038pt, 362.72084pt, 72.58562pt)
-* v-part:(T,H,B)=(54.62845pt, 546.29498pt, 81.9427pt)
-* \paperwidth=483.69684pt
-* \paperheight=682.86613pt
-* \textwidth=362.72084pt
-* \textheight=546.29498pt
-* \oddsidemargin=-23.87961pt
-* \evensidemargin=0.31563pt
-* \topmargin=-27.79211pt
+* h-part:(L,W,R)=(85.35826pt, 441.01773pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=441.01773pt
+* \textheight=702.78308pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-33.0119pt
 * \headheight=12.0pt
-* \headsep=18.06749pt
-* \topskip=10.0pt
-* \footskip=25.29494pt
-* \marginparwidth=125.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=116.0pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1338,7 +1340,7 @@ Package caption Info: End \AtBeginDocument code.
 \makeMPintoPDFobject=\count413
 \everyMPtoPDFconversion=\toks71
 )
-Package hyperref Info: Link coloring OFF on input line 42.
+Package hyperref Info: Link coloring OFF on input line 44.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1348,38 +1350,49 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count414
 )
-LaTeX Info: Redefining \ref on input line 42.
-LaTeX Info: Redefining \pageref on input line 42.
-LaTeX Info: Redefining \nameref on input line 42.
-LaTeX Info: Redefining \microtypecontext on input line 42.
-Package microtype Info: Applying patch `item' on input line 42.
-Package microtype Info: Applying patch `toc' on input line 42.
-Package microtype Info: Applying patch `eqnum' on input line 42.
-Package microtype Info: Applying patch `footnote' on input line 42.
+LaTeX Info: Redefining \ref on input line 44.
+LaTeX Info: Redefining \pageref on input line 44.
+LaTeX Info: Redefining \nameref on input line 44.
+LaTeX Info: Redefining \microtypecontext on input line 44.
+Package microtype Info: Applying patch `item' on input line 44.
+Package microtype Info: Applying patch `toc' on input line 44.
+Package microtype Info: Applying patch `eqnum' on input line 44.
+
+
+Package microtype Warning: Unable to apply patch `footnote' on input line 44.
+
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 42.
+LaTeX Info: Redefining \showhyphens on input line 44.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
- (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 \c@lstlisting=\count415
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 42.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 44.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/ztmcm/m/n --> OT1/ntxtlf/m/n on input line 42.
+(Font)                  OT1/ztmcm/m/n --> OT1/ntxtlf/m/n on input line 44.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/ztmcm/m/n --> OT1/ntxtlf/m/n on input line 42.
+(Font)                  OT1/ztmcm/m/n --> OT1/ntxtlf/m/n on input line 44.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/ntxtlf/m/n --> OT1/ntxtlf/b/n on input line 42.
+(Font)                  OT1/ntxtlf/m/n --> OT1/ntxtlf/b/n on input line 44.
 \openout2 = `00-frontmatter/title.aux'.
 
- (./00-frontmatter/title.tex [1
+ (./00-frontmatter/title.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[1
 
 \openout4 = `Thesis.ist'.
 
@@ -1387,11 +1400,16 @@ LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-] [3])
+[2
+
+])
 \openout2 = `00-frontmatter/committee.aux'.
 
  (./00-frontmatter/committee.tex
@@ -1415,9 +1433,9 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
@@ -1426,54 +1444,94 @@ LaTeX Font Info:    Trying to load font information for U+wasy on input line 7.
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7.4> not available
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 7.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 7.
 
-<00-frontmatter/logos/VU-logo.pdf, id=22, 210.90294pt x 62.7667pt>
+<00-frontmatter/logos/VU-logo.pdf, id=18, 210.90294pt x 62.7667pt>
 File: 00-frontmatter/logos/VU-logo.pdf Graphic file (type pdf)
 <use 00-frontmatter/logos/VU-logo.pdf>
 Package pdftex.def Info: 00-frontmatter/logos/VU-logo.pdf  used on input line 61.
 (pdftex.def)             Requested size: 121.41626pt x 36.135pt.
-<example-image.pdf, id=23, 321.2pt x 240.9pt>
+<example-image.pdf, id=19, 321.2pt x 240.9pt>
 File: example-image.pdf Graphic file (type pdf)
 <use example-image.pdf>
 Package pdftex.def Info: example-image.pdf  used on input line 64.
 (pdftex.def)             Requested size: 67.44908pt x 50.58878pt.
-<00-frontmatter/logos/NWO-logo.pdf, id=24, 142.26149pt x 230.47104pt>
+<00-frontmatter/logos/NWO-logo.pdf, id=20, 142.26149pt x 230.47104pt>
 File: 00-frontmatter/logos/NWO-logo.pdf Graphic file (type pdf)
 <use 00-frontmatter/logos/NWO-logo.pdf>
 Package pdftex.def Info: 00-frontmatter/logos/NWO-logo.pdf  used on input line 68.
 (pdftex.def)             Requested size: 26.344pt x 42.67912pt.
-) [4
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[3
 
 
 
  <./00-frontmatter/logos/VU-logo.pdf> </usr/share/texlive/texmf-dist/tex/latex/mwe/example-image.pdf> <./00-frontmatter/logos/NWO-logo.pdf>]
 \openout2 = `00-frontmatter/acks.aux'.
 
- (./00-frontmatter/acks.tex) [5
+ (./00-frontmatter/acks.tex)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[4
 
 
 
 
-] [6
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[5
 
 
 ] (./Thesis.toc)
 \tf@toc=\write6
 \openout6 = `Thesis.toc'.
 
- [7
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[6
 
 
 ]
 \openout2 = `01-introduction/00-Abstract.aux'.
 
- (./01-introduction/00-Abstract.tex) [8
+ (./01-introduction/00-Abstract.tex)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[7
 
 
 ]
@@ -1481,119 +1539,250 @@ Package pdftex.def Info: 00-frontmatter/logos/NWO-logo.pdf  used on input line 6
 
  (./01-introduction/00-Introduction.tex
 Chapter 1.
-Package lettrine.sty Info: Targeted height = 17.3449pt
+Package lettrine.sty Info: Targeted height = 22.34943pt
 (lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 17.70815pt (\color {drocap-color}Q);
+(lettrine.sty)             Lettrine height = 22.81749pt (\color {drocap-color}Q);
 (lettrine.sty)             reported on input line 4.
 )
 \openout2 = `01-introduction/01-CircuitModel.aux'.
 
- (./01-introduction/01-CircuitModel.tex)
+ (./01-introduction/01-CircuitModel.tex
+<01-introduction/figs/example_circuit.pdf, id=129, 1013.7875pt x 201.75375pt>
+File: 01-introduction/figs/example_circuit.pdf Graphic file (type pdf)
+<use 01-introduction/figs/example_circuit.pdf>
+Package pdftex.def Info: 01-introduction/figs/example_circuit.pdf  used on input line 27.
+(pdftex.def)             Requested size: 396.91325pt x 78.9884pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
 \openout2 = `01-introduction/02-AdiabaticModel.aux'.
 
  (./01-introduction/02-AdiabaticModel.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[1
+
+
+
+
+
+]
+<01-introduction/figs/adiabatic_theorem.pdf, id=138, 487.8225pt x 167.62625pt>
+File: 01-introduction/figs/adiabatic_theorem.pdf Graphic file (type pdf)
+<use 01-introduction/figs/adiabatic_theorem.pdf>
+Package pdftex.def Info: 01-introduction/figs/adiabatic_theorem.pdf  used on input line 40.
+(pdftex.def)             Requested size: 330.76329pt x 113.65694pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [1
-
-
-
-
-
-] [2])
+ [2 <./01-introduction/figs/example_circuit.pdf>])
 \openout2 = `01-introduction/03-QAOABasicConcepts.aux'.
 
  (./01-introduction/03-QAOABasicConcepts.tex
-Overfull \hbox (5.99283pt too wide) in paragraph at lines 1--1
-|[][]\OT1/ptm/b/sc/14.4 (-20) Quantum Ap-prox-i-mate Op-ti-miza-tion Al-go-rithm| 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [3 <./01-introduction/figs/adiabatic_theorem.pdf>]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 14.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [3]
-<01-introduction/figs/qaoa.png, id=158, 1002.74625pt x 499.8675pt>
+)
+<01-introduction/figs/qaoa.png, id=169, 1002.74625pt x 499.8675pt>
 File: 01-introduction/figs/qaoa.png Graphic file (type png)
 <use 01-introduction/figs/qaoa.png>
-Package pdftex.def Info: 01-introduction/figs/qaoa.png  used on input line 45.
-(pdftex.def)             Requested size: 217.6347pt x 108.49147pt.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+Package pdftex.def Info: 01-introduction/figs/qaoa.png  used on input line 46.
+(pdftex.def)             Requested size: 264.61333pt x 131.90746pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
 
 
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 49.
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <9> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 50.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 50.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 49.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 50.
 
-)
+[4 <./01-introduction/figs/qaoa.png>])
 \openout2 = `02-factorization/00-Introduction.aux'.
 
- (./02-factorization/00-Introduction.tex [4 <./01-introduction/figs/qaoa.png>] [5]
+ (./02-factorization/00-Introduction.tex [5]
 Chapter 2.
-Package lettrine.sty Info: Targeted height = 17.3449pt
+Package lettrine.sty Info: Targeted height = 22.34943pt
 (lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 17.3449pt (\color {drocap-color}I);
+(lettrine.sty)             Lettrine height = 22.34944pt (\color {drocap-color}I);
 (lettrine.sty)             reported on input line 4.
 )
 \openout2 = `02-factorization/01-ShorsAlgo.aux'.
 
- (./02-factorization/01-ShorsAlgo.tex [6
+ (./02-factorization/01-ShorsAlgo.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[6
 
 ])
 \openout2 = `02-factorization/02-AdiabaticFactorization.aux'.
 
- (./02-factorization/02-AdiabaticFactorization.tex [7]
+ (./02-factorization/02-AdiabaticFactorization.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 59.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [8]
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9])
+ [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+<02-factorization/figs/standard_circuit_35.pdf, id=244, 1816.7875pt x 347.2975pt>
+File: 02-factorization/figs/standard_circuit_35.pdf Graphic file (type pdf)
+<use 02-factorization/figs/standard_circuit_35.pdf>
+Package pdftex.def Info: 02-factorization/figs/standard_circuit_35.pdf  used on input line 156.
+(pdftex.def)             Requested size: 441.01773pt x 84.30168pt.
+<02-factorization/figs/gate_decomposition.pdf, id=248, 1619.04875pt x 185.69376pt>
+File: 02-factorization/figs/gate_decomposition.pdf Graphic file (type pdf)
+<use 02-factorization/figs/gate_decomposition.pdf>
+Package pdftex.def Info: 02-factorization/figs/gate_decomposition.pdf  used on input line 182.
+(pdftex.def)             Requested size: 441.01773pt x 50.58pt.
+ [10 <./02-factorization/figs/standard_circuit_35.pdf> <./02-factorization/figs/gate_decomposition.pdf
+
+pdfTeX warning: pdflatex (file ./02-factorization/figs/gate_decomposition.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<02-factorization/figs/linear_circuit_35.pdf, id=260, 729.72626pt x 347.2975pt>
+File: 02-factorization/figs/linear_circuit_35.pdf Graphic file (type pdf)
+<use 02-factorization/figs/linear_circuit_35.pdf>
+Package pdftex.def Info: 02-factorization/figs/linear_circuit_35.pdf  used on input line 198.
+(pdftex.def)             Requested size: 242.5611pt x 115.44052pt.
+)
 \openout2 = `03-results/01-IntroducingProblem.aux'.
 
- (./03-results/01-IntroducingProblem.tex [10]
+ (./03-results/01-IntroducingProblem.tex [11 <./02-factorization/figs/linear_circuit_35.pdf>]
 Chapter 3.
-Package lettrine.sty Info: Targeted height = 17.3449pt
+Package lettrine.sty Info: Targeted height = 22.34943pt
 (lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 17.3449pt (\color {drocap-color}T);
-(lettrine.sty)             reported on input line 5.
+(lettrine.sty)             Lettrine height = 22.34944pt (\color {drocap-color}T);
+(lettrine.sty)             reported on input line 4.
+)
+\openout2 = `03-results/02-Benchmarking.aux'.
+
+ (./03-results/02-Benchmarking.tex)
+\openout2 = `03-results/03-OptimizerSelection.aux'.
+
+ (./03-results/03-OptimizerSelection.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[12
+
+]
+<03-results/figs/optimizer_comparison.pdf, id=278, 728.4402pt x 261.13435pt>
+File: 03-results/figs/optimizer_comparison.pdf Graphic file (type pdf)
+<use 03-results/figs/optimizer_comparison.pdf>
+Package pdftex.def Info: 03-results/figs/optimizer_comparison.pdf  used on input line 18.
+(pdftex.def)             Requested size: 441.01773pt x 158.09634pt.
+<03-results/figs/optimizer_parameters_comparison.pdf, id=282, 762.33244pt x 455.90201pt>
+File: 03-results/figs/optimizer_parameters_comparison.pdf Graphic file (type pdf)
+<use 03-results/figs/optimizer_parameters_comparison.pdf>
+Package pdftex.def Info: 03-results/figs/optimizer_parameters_comparison.pdf  used on input line 33.
+(pdftex.def)             Requested size: 441.01773pt x 263.74857pt.
+)
+\openout2 = `03-results/04-Results.aux'.
+
+ (./03-results/04-Results.tex)
 
 Package lipsum Warning: Unknown language 'latin'. Hyphenation patterns for
 (lipsum)                'english' will be used instead.
 
-)
+[13 <./03-results/figs/optimizer_comparison.pdf> <./03-results/figs/optimizer_parameters_comparison.pdf>]
 \openout2 = `04-conclusion/conclusion.aux'.
 
- (./04-conclusion/conclusion.tex [11
-
-]
+ (./04-conclusion/conclusion.tex [14]
 Chapter 4.
-) [12
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[15
 
 
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion}{12}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion}{15}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{conclusion}{{4}{12}{Conclusion}{chapter.4}{}}
-\newlabel{conclusion@cref}{{[chapter][4][]4}{[1][12][]12}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}This is a section title}{12}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}This is a subsection}{12}{subsection.4.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{This is a subsubsection header}{12}{subsection.4.1.1}\protected@file@percent }
-] [13
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces A nice table.\relax }}{13}{table.caption.5}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces A nice table.\relax }}{13}{table.caption.6}\protected@file@percent }
-] (./Thesis.bbl) (./Thesis.acr [14
+\newlabel{conclusion}{{4}{15}{Conclusion}{chapter.4}{}}
+\newlabel{conclusion@cref}{{[chapter][4][]4}{[1][15][]15}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}This is a section title}{15}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}This is a subsection}{15}{subsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{This is a subsubsection header}{15}{subsection.4.1.1}\protected@file@percent }
+] [16
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces A nice table.\relax }}{16}{table.caption.12}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces A nice table.\relax }}{16}{table.caption.13}\protected@file@percent }
+] (./Thesis.bbl
+Overfull \hbox (1.54424pt too wide) in paragraph at lines 36--39
+[]\OT1/ptm/m/n/10.95 (-20) P.L. Montgomery.  A survey of modern integer factorization algorithms.  \OT1/ptm/m/it/10.95 (-20) CWI Quarterly\OT1/ptm/m/n/10.95 (-20) , 7(4):337---
+ []
+
+) (./Thesis.acr
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[17
 
 ])
 \openout2 = `publications/publications.aux'.
 
- (./publications/publications.tex [15
+ (./publications/publications.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[18
 
 
 ]
@@ -1604,20 +1793,20 @@ File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 LaTeX Font Info:    Trying to load font information for U+fontawesomethree on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
 File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
-)) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-results/01-IntroducingProblem.aux) (./04-conclusion/conclusion.aux) (./publications/publications.aux)) ) 
+)) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-results/01-IntroducingProblem.aux) (./03-results/02-Benchmarking.aux) (./03-results/03-OptimizerSelection.aux) (./03-results/04-Results.aux) (./04-conclusion/conclusion.aux) (./publications/publications.aux)) ) 
 Here is how much of TeX's memory you used:
- 45021 strings out of 480129
- 837692 string characters out of 5893410
- 1269066 words of memory out of 5000000
- 61546 multiletter control sequences out of 15000+600000
- 559569 words of font info for 367 fonts, out of 8000000 for 9000
+ 45302 strings out of 480129
+ 846581 string characters out of 5893410
+ 1273402 words of memory out of 5000000
+ 61743 multiletter control sequences out of 15000+600000
+ 570115 words of font info for 402 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 106i,18n,105p,1280b,869s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Thesis.pdf (23 pages, 337785 bytes).
+ 106i,18n,105p,1280b,914s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+Output written on Thesis.pdf (25 pages, 519874 bytes).
 PDF statistics:
- 333 PDF objects out of 1000 (max. 8388607)
- 256 compressed objects within 3 object streams
- 81 named destinations out of 1000 (max. 500000)
- 125473 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 490 PDF objects out of 1000 (max. 8388607)
+ 332 compressed objects within 4 object streams
+ 98 named destinations out of 1000 (max. 500000)
+ 130116 words of extra memory for PDF output out of 154059 (max. 10000000)
 

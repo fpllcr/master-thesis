@@ -29,7 +29,7 @@ $p$ and $q$ of an odd composite number can be rewritten as:
 	\label{eq:factors_simplification}
 \end{equation}
 It can be proved that the $n_p$ and $n_q$ are an upper bound on the number of qubits
-required to represent $p'$ and $q'$, respectively {\color{red}(FELIP: confirm that this bounds are really for $p'$ and $q'$ and not for $p$ and $q$)}:
+required to represent $p'$ and $q'$, respectively:
 \begin{equation}
 	\begin{cases}
 		n_p = m\,\big(\lfloor \sqrt{N} \rfloor_o\big) - 1 \\[2ex]
@@ -76,25 +76,14 @@ is slow enough, the system will remain in the instantaneous ground state, reachi
 $\hat{H}_\mathrm{QP}$ at the end of the protocol. This final state encodes the solution to the factorization
 problem.
 
-Despite its coneptual clarity, the Hamiltonian $\hat{H}_\mathrm{QP}$ includes high-order
-multi-qubit interactions, such as three- and four-body terms of the form
-$\hat{\sigma}_\ell^z \hat{\sigma}_m^z \hat{\sigma}_k^z$ and $\hat{\sigma}_\ell^z \hat{\sigma}_m^z \hat{\sigma}_k^z \hat{\sigma}_n^z$.
-These many-body interactions are difficult to implement, since they require to bring
-all involved qubits together and make them interact in a controled way, resulting in
-prone-to-error processes.
-
-To mitigate this issue, we propose a linearized problem Hamiltonian
-inspired by the same factorization condition, defined as:
-\begin{equation}
-	\hat{H}_\mathrm{LP} = N \1 - \bigg( \sum_{\ell=1}^{n_p} 2^\ell \hat{x}_\ell + \1 \bigg)
-	\bigg( \sum_{m=1}^{n_q} 2^m \hat{y}_m + \1 \bigg)\,.
-	\label{eq:linear_problem_hamiltonian}
-\end{equation}
-$\hat{H}_\mathrm{LP}$ contains only two-body interaction terms, which can be efficiently
-simulated. However, unlike $\hat{H}_\mathrm{QP}$, the desired solution is not the ground state of $\hat{H}_\mathrm{LP}$,
-but an eigenstate with eigenvalue zero. Since the adiabatic theorem applies to any non-degenerate
-eigenstate, not necessarily the ground state, we hypothesize that this eigenstate can still be
-targeted by an appropriate adiabatic or variational algorithm.
+Despite its conceptual clarity, the Hamiltonian $\hat{H}_\mathrm{QP}$ includes high-order
+multiqubit interactions, such as three- and four-body terms of the form
+$\hat{\sigma}_\ell^z \hat{\sigma}_m^z \hat{\sigma}_k^z$ and $\hat{\sigma}_\ell^z \hat{\sigma}_m^z
+\hat{\sigma}_k^z \hat{\sigma}_n^z$.
+These many-body interactions are difficult to implement, since they require one to bring
+all involved qubits together and make them interact in a controlled way, resulting in
+prone-to-error processes. The need to avoid those terms is of pivotal interest to provide
+efficient quantum algorithms.
 
 {\color{red} (FELIP: maybe put the results that these research groups obtained when applying AQC for factorization)}
 
@@ -113,7 +102,7 @@ This method was successfully demonstrated in Ref.~\cite{hegade_digitized_2021}, 
 the authors implemented a digitized adiabatic factorization algorithm on superconducting
 hardware.
 
-\subsection{QAOA Applied to Factorization}
+\subsection{QAOA Applied to Factorization (Standard Protocol)}
 The Quantum Approximate Optimization Algorithm can be viewed as a shortcut to adiabaticity.
 Rather than performing a slow, continuous evolution, QAOA uses a fixed-depth quantum
 circuit composed of alternating unitaries derived from the mixing and problem Hamiltonians.
@@ -123,11 +112,99 @@ approximates the solution.
 As shown in Ref.~\cite{diez-valle_universal_2025}, QAOA and quantum annealing share universal
 structural properties, and there is compelling evidence that smooth annealing paths can be constructed
 from QAOA optimal parameters. This supports the interpretation of QAOA as a digitized
-and variationally optimized version of an adiabatic process. ({\color{red} FELIP: comment that this has been observed
-in MaxCut and QUBO problems, and provide references})
+and variationally optimized version of an adiabatic process.
 
-As mentioned at the beginning in the introduction of Section~\ref{Section:AFA}, the adiabatic factorization algorithm needs to deal with the difficulty of implementing three- and four-body interaction terms. In the digitized version of this problem, like QAOA, this difficulty is transformed into the necessity to implement three- and four-qubit gates. ({\color{red} FELIP: add figure showing one-layer QAOA circuit and the presence of 3- and 4-qubit gates}).
+In summary, the ingredients to build and execute the QAOA algorithm applied to integer factorization --or what we
+will call the ``standard protocol''-- are:
+\begin{itemize}
+    \item A Hamiltonian $\hat{H}_\mathrm{QP}$ (Eq.~\ref{eq:quadratic_problem_hamiltonian}) that encodes the solution to the factorization problem in its ground state.
+    \item A mixing Hamiltonian $\hat{H}_\mathrm{M}$ that does not commute with $\hat{H}_\mathrm{QP}$, e.g., Eq.~\ref{eq:mixing_hamiltonian}.
+    \item A quantum circuit that implements the state evolution given by Eq.~\ref{eq:qaoa_state_evolution}.
+    \item A classical optimizer to find the circuit's optimal parameters.
+    \item A cost function given by $F_p (\bm{\gamma}, \bm{\beta}) = \bra{\psi_p (\bm{\gamma}, \bm{\beta})} \hat{H}_\mathrm{QP} \ket{\psi_p (\bm{\gamma}, \bm{\beta})}$.
+\end{itemize}
 
-Then, our proposal is to replace the original Hamiltonian in the QAOA layers with the linearized problem Hamiltonian defined in Eq.~\ref{eq:linear_problem_hamiltonian}, while using a separate cost Hamiltonian—such as $\langle \hat{H}_\mathrm{QP} \rangle$—to guide the classical optimization. This approach is motivated by a key observation: the adiabatic theorem does not constrain us to evolve within the ground state of a system, but rather within any eigenstate, provided the evolution is slow enough. We hypothesize that initializing the system in an eigenstate near the center of the spectrum of the initial Hamiltonian and evolving adiabatically under the linearized Hamiltonian may preserve this eigenstate structure, ultimately leading to the correct factorization solution, which is also located near the center of the spectrum.
+Due to the form of Eq.~\ref{eq:quadratic_problem_hamiltonian}, the problem Hamiltonian can be expressed as:
+\begin{equation}
+    \hat{H}_\mathrm{QP} = n \1 + \sum_i a_i \hat{\sigma}^z_i
+    + \sum_{ij} b_{ij} \hat{\sigma}^z_i \hat{\sigma}^z_j
+    + \sum_{ijk} c_{ijk} \hat{\sigma}^z_i \hat{\sigma}^z_j \hat{\sigma}^z_k
+    + \sum_{ijk\ell} d_{ijk\ell} \hat{\sigma}^z_i \hat{\sigma}^z_j \hat{\sigma}^z_k \hat{\sigma}^z_\ell
+    \label{eq:expanded_problem_quadratic_hamiltonian}
+\end{equation}
+Then, the part of $e^{-i \gamma \hat{H}_\mathrm{QP}}$ corresponding to the term $a_i \hat{\sigma}^z_i$ is
+\begin{equation}
+    e^{-i \gamma a_i \hat{\sigma}^z_i} = e^{-i \gamma a_i} \ket{0}\bra{0}
+    + e^{i \gamma a_i} \ket{1}\bra{1}
+    = R_Z(2 \gamma a_i)\,,
+\end{equation}
+the part corresponding to $b_{ij} \hat{\sigma}^z_i \hat{\sigma}^z_j$ is
+\begin{equation}
+    \begin{split}
+        e^{-i \gamma b_{ij} \hat{\sigma}^z_i \hat{\sigma}^z_j} \\
+         &=e^{-i\gamma b_{ij}} \ket{00}\bra{00} + e^{i\gamma b_{ij}} \ket{10}\bra{10}
+        +  e^{i\gamma b_{ij}} \ket{01}\bra{01} + e^{-i\gamma b_{ij}} \ket{11}\bra{11} \\
+        &= R_{ZZ} (2 \gamma b_{ij})\,,
+    \end{split}
+\end{equation}
+and so on for the higher-order terms. Similarly, the mixing Hamiltonian $\hat{H}_\mathrm{M}$ gives rise to
+individual X-rotations at the end of each QAOA layer. With all this, one constructs the QAOA circuit, as shown
+in Fig.~\ref{fig:standard_circuit}.
 
-In standard QAOA, the same Hamiltonian is typically used for both quantum evolution and classical cost evaluation. In contrast, our proposal explicitly decouples these two roles: we use the linearized Hamiltonian to drive the quantum dynamics (problem Hamiltonian), and a separate cost Hamiltonian—whose ground state encodes the correct factors—to steer the classical optimizer.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{02-factorization/figs/standard_circuit_35.pdf}
+    \caption{One-layer circuit for factorizing the number $N=35$ using the standard QAOA protocol. Notice the presence
+    of three- and four-qubit gates, highlighted in yellow and red, respectively. Rotation angles are omitted for simplicity.}
+    \label{fig:standard_circuit}
+\end{figure}
+
+{\color{red} (FELIP: I found these few articles on QAOA factorization. The problem is that
+they use simplification techniques and ad-hoc analysis to run factorization using much less qubits. I 
+was not able to find articles that use the standard basic approach.)}
+
+In a study that makes use of a similar approach, plus further pre-processing and simplifications, Anschuetz et al.
+factorize numbers up to $291311$. Using additional classical pre-processing heuristics, Karamlou et al. were able to factorize
+$1099551473989$, $3127$, and $6557$ using only $3$, $4$, and $5$ qubits, respectively. However, our aim is not to
+compete with those approaches, since we focus on the general standard approach for factorization, without making use
+of ad-hoc analysis.
+
+\subsection{Our proposal (Linearized Protocol)}
+As mentioned in the introduction to Section~\ref{Section:AFA}, the adiabatic factorization algorithm
+needs to deal with the difficulty of implementing three- and four-body interaction terms. In the 
+digitized version of this problem, like QAOA, this difficulty is transformed into three- and
+four-qubit gates (Fig.~\ref{fig:standard_circuit}),
+which need to be decomposed into multiple two-qubit gates (Fig.~\ref{fig:gate_decomposition}),
+leading to lower fidelities at the end of the quantum circuit.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{02-factorization/figs/gate_decomposition.pdf}
+    \caption{Decomposition of (a) two-, (b) three-, and (c) four-qubit Z-rotation gates in CNOTs and
+    single-qubit Z-rotations.}
+    \label{fig:gate_decomposition}
+\end{figure}
+
+To mitigate this issue, we propose a linearized problem Hamiltonian inspired by the same factorization condition, defined as:
+\begin{equation}
+	\hat{H}_\mathrm{LP} = N \1 - \bigg( \sum_{\ell=1}^{n_p} 2^\ell \hat{x}_\ell + \1 \bigg)
+	\bigg( \sum_{m=1}^{n_q} 2^m \hat{y}_m + \1 \bigg)\,.
+	\label{eq:linear_problem_hamiltonian}
+\end{equation}
+Unlike the original Hamiltonian $\hat{H}_\mathrm{QP}$, whose ground state encodes the solution, $\hat{H}_\mathrm{LP}$ contains only two-body terms and is therefore easier to implement, but the factorization solution corresponds to an eigenstate with eigenvalue zero rather than the ground state. Since the adiabatic theorem is not restricted to ground states but applies to any non-degenerate eigenstate, we hypothesize that it is possible to target this eigenstate through a suitable adiabatic or variational process. Based on this idea, our proposal is to replace the original Hamiltonian in the QAOA layers with $\hat{H}_\mathrm{LP}$, leveraging the possibility of starting from an eigenstate near the middle of the initial Hamiltonian’s spectrum and evolving under $\hat{H}_\mathrm{LP}$ to preserve this eigenstate structure, ultimately reaching the correct factorization solution, which also lies near the center of the spectrum.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.55\textwidth]{02-factorization/figs/linear_circuit_35.pdf}
+    \caption{One-layer circuit for factorizing the number $N=35$ using our protocol, evolving the state with the linear Hamiltonian $H_{\mathrm{LP}}$. Notice the simplification with respect to Fig.~\ref{fig:standard_circuit}
+    due to the absence of three- and four-qubit gates.}
+    \label{fig:linear_circuit_35.pdf}
+\end{figure}
+
+{\color{blue} (I am not sure if adding this paragraph or not, since at the end the cost function is just
+a classical computation and maybe this explanation adds confusion.)}
+There is another difference with respect to the standard QAOA protocol. In the latter, the same Hamiltonian
+is typically used for both quantum state evolution and classical cost evaluation. In contrast,
+our proposal explicitly decouples these two roles: we use the linearized Hamiltonian to drive the quantum
+dynamics (problem Hamiltonian), and a separate cost Hamiltonian, whose ground state encodes the correct factors
+to steer the classical optimizer.
