@@ -12,9 +12,13 @@
 \contentsline {subsection}{\numberline {2.2.1}Digitized Adiabatic Quantum Factorization}{9}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}QAOA Applied to Factorization (Standard Protocol)}{9}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Our proposal (Linearized Protocol)}{10}{subsection.2.2.3}%
-\contentsline {chapter}{\numberline {3}Results (work in progress)}{12}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Benchmarking process}{12}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Choosing a classical optimizer}{12}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Results}{14}{section.3.3}%
-\contentsline {chapter}{Bibliography}{17}{chapter*.14}%
-\contentsline {chapter}{Glossary}{18}{chapter*.16}%
+\contentsline {chapter}{\numberline {3}Methodology}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Incremental Approach}{12}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Parameter initialization}{13}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Classical optimizer}{14}{section.3.3}%
+\contentsline {section}{\numberline {3.4}QAOA Setup Summary}{15}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Results (work in progress)}{16}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Benchmarking process}{16}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Results}{16}{section.4.2}%
+\contentsline {chapter}{Bibliography}{19}{chapter*.15}%
+\contentsline {chapter}{Glossary}{19}{chapter*.15}%

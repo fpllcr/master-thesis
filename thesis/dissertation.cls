@@ -447,6 +447,8 @@
 %% in the page header.
 \newcommand*\setheader[1]{\markboth{\color{chapter-blue}#1}{\color{chapter-blue}#1}}
 
+\setlength{\headheight}{14pt}
+\addtolength{\topmargin}{-2pt}
 %% Change the headrule command (from fancyhdr.sty) to draw the line below the
 %% header in the title color.
 \renewcommand*\headrule{%

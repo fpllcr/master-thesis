@@ -64,6 +64,12 @@ Pablo Díez-Valle, Fernando~J. Gómez-Ruiz, Diego Porras, and Juan~José
   2025.
 \newblock arXiv:2506.03241 [quant-ph].
 
+\bibitem{zhou_quantum_2020}
+Leo Zhou, Sheng-Tao Wang, Soonwon Choi, Hannes Pichler, and Mikhail~D. Lukin.
+\newblock Quantum {Approximate} {Optimization} {Algorithm}: {Performance},
+  {Mechanism}, and {Implementation} on {Near}-{Term} {Devices}.
+\newblock {\em Physical Review X}, 10(2):021067, June 2020.
+
 \bibitem{blekos_review_2024}
 Kostas Blekos, Dean Brand, Andrea Ceschini, Chiao-Hui Chou, Rui-Hao Li, Komal
   Pandya, and Alessandro Summer.
@@ -71,11 +77,5 @@ Kostas Blekos, Dean Brand, Andrea Ceschini, Chiao-Hui Chou, Rui-Hao Li, Komal
   its {Variants}.
 \newblock {\em Physics Reports}, 1068:1--66, June 2024.
 \newblock arXiv:2306.09198 [quant-ph].
-
-\bibitem{zhou_quantum_2020}
-Leo Zhou, Sheng-Tao Wang, Soonwon Choi, Hannes Pichler, and Mikhail~D. Lukin.
-\newblock Quantum {Approximate} {Optimization} {Algorithm}: {Performance},
-  {Mechanism}, and {Implementation} on {Near}-{Term} {Devices}.
-\newblock {\em Physical Review X}, 10(2):021067, June 2020.
 
 \end{thebibliography}
