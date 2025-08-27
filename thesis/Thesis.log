@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  26 AUG 2025 17:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  27 AUG 2025 17:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1259,7 +1259,7 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 44.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-IncrementalApproach.aux) (./03-methodology/02-ParameterInitialization.aux) (./03-methodology/03-ClassicalOptimizer.aux) (./03-methodology/04-SetupSummary.aux) (./04-results/01-IntroducingProblem.aux) (./04-results/02-Benchmarking.aux) (./04-results/04-Results.aux) (./05-discussion/conclusion.aux) (./publications/publications.aux))
+) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-IncrementalApproach.aux) (./03-methodology/02-ParameterInitialization.aux) (./03-methodology/03-ClassicalOptimizer.aux) (./03-methodology/04-SetupSummary.aux) (./04-results/01-Introduction.aux) (./04-results/02-Benchmarking.aux) (./04-results/04-Results.aux) (./05-discussion/conclusion.aux) (./publications/publications.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
@@ -1665,18 +1665,23 @@ File: 03-methodology/figs/optimizer_parameters_comparison.pdf Graphic file (type
 Package pdftex.def Info: 03-methodology/figs/optimizer_parameters_comparison.pdf  used on input line 15.
 (pdftex.def)             Requested size: 441.01773pt x 263.74857pt.
 )
-\openout2 = `04-results/01-IntroducingProblem.aux'.
+\openout2 = `04-results/01-Introduction.aux'.
 
- (./04-results/01-IntroducingProblem.tex [15 <./03-methodology/figs/optimizer_parameters_comparison.pdf>]
+ (./04-results/01-Introduction.tex [15 <./03-methodology/figs/optimizer_parameters_comparison.pdf>]
 Chapter 4.
 Package lettrine.sty Info: Targeted height = 22.34943pt
 (lettrine.sty)             (for loversize=0, accent excluded),
 (lettrine.sty)             Lettrine height = 22.34944pt (\color {drocap-color}T);
 (lettrine.sty)             reported on input line 4.
+
+LaTeX Warning: Reference `todo' on page 16 undefined on input line 37.
+
 )
 \openout2 = `04-results/02-Benchmarking.aux'.
 
- (./04-results/02-Benchmarking.tex)
+ (./04-results/02-Benchmarking.tex [16
+
+])
 \openout2 = `04-results/04-Results.aux'.
 
  (./04-results/04-Results.tex)
@@ -1686,24 +1691,22 @@ Package lipsum Warning: Unknown language 'latin'. Hyphenation patterns for
 
 \openout2 = `05-discussion/conclusion.aux'.
 
-(./05-discussion/conclusion.tex [16
-
-]
+(./05-discussion/conclusion.tex [17]
 Chapter 5.
-) [17
+) [18
 
 
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{17}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{18}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{conclusion}{{5}{17}{Conclusion}{chapter.5}{}}
-\newlabel{conclusion@cref}{{[chapter][5][]5}{[1][17][]17}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}This is a section title}{17}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}This is a subsection}{17}{subsection.5.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{This is a subsubsection header}{17}{subsection.5.1.1}\protected@file@percent }
-] [18
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces A nice table.\relax }}{18}{table.caption.13}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces A nice table.\relax }}{18}{table.caption.14}\protected@file@percent }
+\newlabel{conclusion}{{5}{18}{Conclusion}{chapter.5}{}}
+\newlabel{conclusion@cref}{{[chapter][5][]5}{[1][18][]18}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}This is a section title}{18}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}This is a subsection}{18}{subsection.5.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{This is a subsubsection header}{18}{subsection.5.1.1}\protected@file@percent }
+] [19
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces A nice table.\relax }}{19}{table.caption.15}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces A nice table.\relax }}{19}{table.caption.16}\protected@file@percent }
 ] (./Thesis.bbl
 Overfull \hbox (1.54424pt too wide) in paragraph at lines 36--39
 []\OT1/ptm/m/n/10.95 (-20) P.L. Montgomery.  A survey of modern integer factorization algorithms.  \OT1/ptm/m/it/10.95 (-20) CWI Quarterly\OT1/ptm/m/n/10.95 (-20) , 7(4):337---
@@ -1713,7 +1716,7 @@ Overfull \hbox (1.54424pt too wide) in paragraph at lines 36--39
 No file Thesis.acr.
 \openout2 = `publications/publications.aux'.
 
-(./publications/publications.tex [19
+(./publications/publications.tex [20
 
 ]
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on input line 10.
@@ -1723,22 +1726,26 @@ File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 LaTeX Font Info:    Trying to load font information for U+fontawesomethree on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
 File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
-)) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-IncrementalApproach.aux) (./03-methodology/02-ParameterInitialization.aux) (./03-methodology/03-ClassicalOptimizer.aux) (./03-methodology/04-SetupSummary.aux) (./04-results/01-IntroducingProblem.aux) (./04-results/02-Benchmarking.aux) (./04-results/04-Results.aux) (./05-discussion/conclusion.aux) (./publications/publications.aux)) ) 
+)) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-IncrementalApproach.aux) (./03-methodology/02-ParameterInitialization.aux) (./03-methodology/03-ClassicalOptimizer.aux) (./03-methodology/04-SetupSummary.aux) (./04-results/01-Introduction.aux) (./04-results/02-Benchmarking.aux) (./04-results/04-Results.aux) (./05-discussion/conclusion.aux) (./publications/publications.aux))
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 45487 strings out of 480129
- 853823 string characters out of 5893410
- 1277731 words of memory out of 5000000
- 61857 multiletter control sequences out of 15000+600000
- 573061 words of font info for 425 fonts, out of 8000000 for 9000
+ 45500 strings out of 480129
+ 853879 string characters out of 5893410
+ 1278011 words of memory out of 5000000
+ 61864 multiletter control sequences out of 15000+600000
+ 573262 words of font info for 427 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  106i,18n,105p,1280b,955s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
  </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Thesis.pdf (26 pages, 552861 bytes).
+Output written on Thesis.pdf (27 pages, 557278 bytes).
 PDF statistics:
- 552 PDF objects out of 1000 (max. 8388607)
- 369 compressed objects within 4 object streams
- 107 named destinations out of 1000 (max. 500000)
+ 563 PDF objects out of 1000 (max. 8388607)
+ 379 compressed objects within 4 object streams
+ 110 named destinations out of 1000 (max. 500000)
  136777 words of extra memory for PDF output out of 154059 (max. 10000000)
 

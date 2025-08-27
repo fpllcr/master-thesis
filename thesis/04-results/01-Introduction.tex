@@ -1,0 +1,53 @@
+\chapter{Results}
+\label{Chapter:Results}
+
+\dropcap{T}his chapter presents the numerical experiments performed to compare the performance
+of the standard QAOA protocol with the proposed linearized protocol. The standard protocol is
+evaluated in its original formulation, while the linearized protocol is analyzed under two different
+cost functions to determine which provides the most favorable performance. Table~\ref{tab:protocols_overview}
+summarizes the three protocols considered throughout this chapter. 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{@{}cccc@{}}
+        \toprule
+        Protocol            & Mixing Hamiltonian    & Problem Hamiltonian   & Cost function \\
+        \midrule
+        standard            & $\hat{H}_\mathrm{M}$   & $\hat{H}_\mathrm{QP}$ & $\langle \hat{H}_\mathrm{QP} \rangle$ \\
+        linear\_quadratic   & $\hat{H}_\mathrm{M}$   & $\hat{H}_\mathrm{LP}$ & $\langle \hat{H}_\mathrm{QP} \rangle$ \\
+        linear\_abs         & $\hat{H}_\mathrm{M}$   & $\hat{H}_\mathrm{LP}$ & $\langle |\hat{H}_\mathrm{LP}| \rangle$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Overview of QAOA protocols analyzed in this work.}
+    \label{tab:protocols_overview}
+\end{table}
+
+The primary evaluation metric throughout this chapter is the \emph{fidelity}, which directly
+corresponds to the probability of successfully obtaining the correct factors of the integer
+to be factorized. Using fidelity as a baseline metric allows for a clear and consistent
+comparison between protocols.
+
+All practical aspects of the QAOA setup---including initialization heuristics and the choice of
+classical optimizer---were fixed and justified in Chapter~\ref{Chapter:Methodology} to ensure
+fair and consistent comparisons. The focus here is exclusively on evaluating and contrasting
+the protocols across problem instances of increasing size under these controlled conditions.
+
+As representative examples, we present detailed results for the biprime integers $N = 25$, $N = 77$,
+and $N = 143$. A complete set of results can be found in the accompanying GitHub repository
+and is summarized in Appendix~\ref{todo}. Table~\ref{tab:instances_overview} provides an overview of
+these selected test cases, including relevant problem parameters and solution encodings.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{@{}ccccccccc@{}}
+        \toprule
+        $N$ & no.\ qubits & $p$ ($p'$) & $q$ ($q'$) & $n_p$ & $n_q$ & $p_\mathrm{bitstring}$ & $q_\mathrm{bitstring}$ & solution(s) \\
+        \midrule
+        25  & 4          & 5 (2)      & 5 (2)      & 2     & 2     & 10                     & 10                     & 0101                  \\
+        77  & 6          & 7 (3)      & 11 (5)     & 2     & 4     & 11                     & 0101                   & 111010                \\
+        143 & 8          & 11 (5)     & 13 (6)     & 3     & 5     & 101                    & 00110                  & 10101100, 01110100    \\
+        \bottomrule
+    \end{tabular}
+    \caption{Overview of biprime test instances used as representative examples.}
+    \label{tab:instances_overview}
+\end{table}
+
