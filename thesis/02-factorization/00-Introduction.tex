@@ -1,0 +1,23 @@
+\chapter{Factorization Algorithms}
+\label{Chapter:Factorization}
+
+\dropcap{I}n this chapter, we introduce the factorization algorithms that are most relevant
+to the work presented in this thesis. The integer factorization problem consists of
+decomposing a given semiprime number $N$ into its prime constituents. While seemingly simple,
+no known classical algorithm can factor large integers efficiently, and the best classical
+methods --such as the general number field sieve-- scale superpolynomially with input
+size~\cite{montgomery_cwi_1994}. This computational asymmetry forms the foundation of widely
+used cryptographic protocols, most notably RSA, which relies on the practical difficulty of
+factoring large semiprimes to ensure security.
+
+The emergence of quantum algorithms has dramatically shifted the landscape of computational
+complexity associated with factorization. In particular, Shor's algorithm demonstrated that
+quantum computers can solve the problem in polynomial time, meaning a direct threat to
+RSA-based cryptography. However, implementing Shor's algorithm requires fault-tolerant quantum,
+hardware which remains out of reach in the current NISQ era.
+
+
+This chapter explores two quantum approaches to the factorization problem. First, we review
+Shor's algorithm and its quantum Fourier transform-based structure. Then, we introduce
+alternative strategies based on adiabatic quantum computation, which may offer more viable paths
+towards factorization on near-term quantum devices.

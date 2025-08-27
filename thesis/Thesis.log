@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  6 JUN 2025 10:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  26 AUG 2025 17:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -10,8 +10,8 @@ L3 programming layer <2022-01-21> (./dissertation.cls
 Document Class: dissertation 2020/08/25 v1.0 Atlarge dissertation class by LV
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo
-File: bk10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk11.clo
+File: bk11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@chapter=\count186
@@ -1218,19 +1218,32 @@ Package: glossary-tree 2021/11/01 v4.49 (NLCT)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 603.
+Package hyperref Info: Option `colorlinks' set `false' on input line 597.
 ) (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/bbm.sty
 Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
 LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 (Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2021/04/25 v1.2e Bold Symbol Support (DPC/FMi)
+Package bm Info: No bold for \OT1/ztmcm/m/n, using \pmb.
+Package bm Info: No bold for \OML/ztmcm/m/it, using \pmb.
+Package bm Info: No bold for \OMS/ztmcm/m/n, using \pmb.
+Package bm Info: No bold for \OMX/ztmcm/m/n, using \pmb.
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+Package bm Info: No bold for \OT1/ptm/bx/n, using \pmb.
+Package bm Info: No bold for \OT1/ptm/m/it, using \pmb.
+\symboldwasy=\mathgroup9
+) (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
 )
 \glswrite=\write4
 \glo@acronym@file=\write5
 \openout5 = `Thesis.acn'.
 
-Package glossaries Info: Writing glossary file Thesis.acn on input line 24.
+Package glossaries Info: Writing glossary file Thesis.acn on input line 27.
  (./glossary.tex) (./abbreviations.tex (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )) (/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
@@ -1243,30 +1256,30 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \l__lipsum_a_int=\count406
 \l__lipsum_b_int=\count407
  (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 43.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 44.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-results/01-IntroducingProblem.aux) (./04-conclusion/conclusion.aux) (./publications/publications.aux))
+) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-IncrementalApproach.aux) (./03-methodology/02-ParameterInitialization.aux) (./03-methodology/03-ClassicalOptimizer.aux) (./03-methodology/04-SetupSummary.aux) (./04-results/01-IntroducingProblem.aux) (./04-results/02-Benchmarking.aux) (./04-results/04-Results.aux) (./05-discussion/conclusion.aux) (./publications/publications.aux))
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1283,27 +1296,27 @@ Package caption Info: End \AtBeginDocument code.
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: custom
+* paper: a4paper
 * layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,19.91692pt)
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(48.39038pt, 362.72084pt, 72.58562pt)
-* v-part:(T,H,B)=(54.62845pt, 546.29498pt, 81.9427pt)
-* \paperwidth=483.69684pt
-* \paperheight=682.86613pt
-* \textwidth=362.72084pt
-* \textheight=546.29498pt
-* \oddsidemargin=-23.87961pt
-* \evensidemargin=0.31563pt
-* \topmargin=-27.79211pt
-* \headheight=12.0pt
-* \headsep=18.06749pt
-* \topskip=10.0pt
-* \footskip=25.29494pt
-* \marginparwidth=125.0pt
+* h-part:(L,W,R)=(85.35826pt, 441.01773pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=441.01773pt
+* \textheight=702.78308pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-35.0119pt
+* \headheight=14.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=116.0pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1327,7 +1340,7 @@ Package caption Info: End \AtBeginDocument code.
 \makeMPintoPDFobject=\count413
 \everyMPtoPDFconversion=\toks71
 )
-Package hyperref Info: Link coloring OFF on input line 43.
+Package hyperref Info: Link coloring OFF on input line 44.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1337,35 +1350,38 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count414
 )
-LaTeX Info: Redefining \ref on input line 43.
-LaTeX Info: Redefining \pageref on input line 43.
-LaTeX Info: Redefining \nameref on input line 43.
-LaTeX Info: Redefining \microtypecontext on input line 43.
-Package microtype Info: Applying patch `item' on input line 43.
-Package microtype Info: Applying patch `toc' on input line 43.
-Package microtype Info: Applying patch `eqnum' on input line 43.
-Package microtype Info: Applying patch `footnote' on input line 43.
+LaTeX Info: Redefining \ref on input line 44.
+LaTeX Info: Redefining \pageref on input line 44.
+LaTeX Info: Redefining \nameref on input line 44.
+LaTeX Info: Redefining \microtypecontext on input line 44.
+Package microtype Info: Applying patch `item' on input line 44.
+Package microtype Info: Applying patch `toc' on input line 44.
+Package microtype Info: Applying patch `eqnum' on input line 44.
+
+
+Package microtype Warning: Unable to apply patch `footnote' on input line 44.
+
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 43.
+LaTeX Info: Redefining \showhyphens on input line 44.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
- (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 \c@lstlisting=\count415
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 43.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 44.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/ztmcm/m/n --> OT1/ntxtlf/m/n on input line 43.
+(Font)                  OT1/ztmcm/m/n --> OT1/ntxtlf/m/n on input line 44.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/ztmcm/m/n --> OT1/ntxtlf/m/n on input line 43.
+(Font)                  OT1/ztmcm/m/n --> OT1/ntxtlf/m/n on input line 44.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/ntxtlf/m/n --> OT1/ntxtlf/b/n on input line 43.
+(Font)                  OT1/ntxtlf/m/n --> OT1/ntxtlf/b/n on input line 44.
 \openout2 = `00-frontmatter/title.aux'.
 
  (./00-frontmatter/title.tex [1
@@ -1375,12 +1391,9 @@ LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
- [2
-
-] [3])
+])
 \openout2 = `00-frontmatter/committee.aux'.
 
  (./00-frontmatter/committee.tex
@@ -1404,9 +1417,9 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
@@ -1414,47 +1427,55 @@ LaTeX Font Info:    Trying to load font information for U+wasy on input line 7.
  (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
-<00-frontmatter/logos/VU-logo.pdf, id=22, 210.90294pt x 62.7667pt>
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 7.
+
+<00-frontmatter/logos/VU-logo.pdf, id=18, 210.90294pt x 62.7667pt>
 File: 00-frontmatter/logos/VU-logo.pdf Graphic file (type pdf)
 <use 00-frontmatter/logos/VU-logo.pdf>
 Package pdftex.def Info: 00-frontmatter/logos/VU-logo.pdf  used on input line 61.
 (pdftex.def)             Requested size: 121.41626pt x 36.135pt.
-<example-image.pdf, id=23, 321.2pt x 240.9pt>
+<example-image.pdf, id=19, 321.2pt x 240.9pt>
 File: example-image.pdf Graphic file (type pdf)
 <use example-image.pdf>
 Package pdftex.def Info: example-image.pdf  used on input line 64.
 (pdftex.def)             Requested size: 67.44908pt x 50.58878pt.
-<00-frontmatter/logos/NWO-logo.pdf, id=24, 142.26149pt x 230.47104pt>
+<00-frontmatter/logos/NWO-logo.pdf, id=20, 142.26149pt x 230.47104pt>
 File: 00-frontmatter/logos/NWO-logo.pdf Graphic file (type pdf)
 <use 00-frontmatter/logos/NWO-logo.pdf>
 Package pdftex.def Info: 00-frontmatter/logos/NWO-logo.pdf  used on input line 68.
 (pdftex.def)             Requested size: 26.344pt x 42.67912pt.
-) [4
+) [3
 
 
 
  <./00-frontmatter/logos/VU-logo.pdf> </usr/share/texlive/texmf-dist/tex/latex/mwe/example-image.pdf> <./00-frontmatter/logos/NWO-logo.pdf>]
 \openout2 = `00-frontmatter/acks.aux'.
 
- (./00-frontmatter/acks.tex) [5
+ (./00-frontmatter/acks.tex) [4
 
 
 
 
-] [6
+] [5
 
 
 ] (./Thesis.toc)
 \tf@toc=\write6
 \openout6 = `Thesis.toc'.
 
- [7
+ [6
 
 
 ]
 \openout2 = `01-introduction/00-Abstract.aux'.
 
- (./01-introduction/00-Abstract.tex) [8
+ (./01-introduction/00-Abstract.tex) [7
 
 
 ]
@@ -1462,113 +1483,237 @@ Package pdftex.def Info: 00-frontmatter/logos/NWO-logo.pdf  used on input line 6
 
  (./01-introduction/00-Introduction.tex
 Chapter 1.
-Package lettrine.sty Info: Targeted height = 17.3449pt
+Package lettrine.sty Info: Targeted height = 22.34943pt
 (lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 17.70815pt (\color {drocap-color}Q);
+(lettrine.sty)             Lettrine height = 22.81749pt (\color {drocap-color}Q);
 (lettrine.sty)             reported on input line 4.
 )
 \openout2 = `01-introduction/01-CircuitModel.aux'.
 
- (./01-introduction/01-CircuitModel.tex)
+ (./01-introduction/01-CircuitModel.tex
+<01-introduction/figs/example_circuit.pdf, id=140, 1013.7875pt x 201.75375pt>
+File: 01-introduction/figs/example_circuit.pdf Graphic file (type pdf)
+<use 01-introduction/figs/example_circuit.pdf>
+Package pdftex.def Info: 01-introduction/figs/example_circuit.pdf  used on input line 27.
+(pdftex.def)             Requested size: 396.91325pt x 78.9884pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
 \openout2 = `01-introduction/02-AdiabaticModel.aux'.
 
- (./01-introduction/02-AdiabaticModel.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
+ (./01-introduction/02-AdiabaticModel.tex [1
 
 
 
 
 
 ]
+<01-introduction/figs/adiabatic_theorem.pdf, id=149, 487.8225pt x 167.62625pt>
+File: 01-introduction/figs/adiabatic_theorem.pdf Graphic file (type pdf)
+<use 01-introduction/figs/adiabatic_theorem.pdf>
+Package pdftex.def Info: 01-introduction/figs/adiabatic_theorem.pdf  used on input line 40.
+(pdftex.def)             Requested size: 330.76329pt x 113.65694pt.
 
-Package lipsum Warning: Unknown language 'latin'. Hyphenation patterns for
-(lipsum)                'english' will be used instead.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2])
+ [2 <./01-introduction/figs/example_circuit.pdf>])
 \openout2 = `01-introduction/03-QAOABasicConcepts.aux'.
 
- (./01-introduction/03-QAOABasicConcepts.tex)
+ (./01-introduction/03-QAOABasicConcepts.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <./01-introduction/figs/adiabatic_theorem.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 14.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+<01-introduction/figs/qaoa.png, id=181, 1002.74625pt x 499.8675pt>
+File: 01-introduction/figs/qaoa.png Graphic file (type png)
+<use 01-introduction/figs/qaoa.png>
+Package pdftex.def Info: 01-introduction/figs/qaoa.png  used on input line 46.
+(pdftex.def)             Requested size: 264.61333pt x 131.90746pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <9> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 50.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 50.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 50.
+
+[4 <./01-introduction/figs/qaoa.png>])
+\openout2 = `02-factorization/00-Introduction.aux'.
+
+ (./02-factorization/00-Introduction.tex [5]
+Chapter 2.
+Package lettrine.sty Info: Targeted height = 22.34943pt
+(lettrine.sty)             (for loversize=0, accent excluded),
+(lettrine.sty)             Lettrine height = 22.34944pt (\color {drocap-color}I);
+(lettrine.sty)             reported on input line 4.
+)
 \openout2 = `02-factorization/01-ShorsAlgo.aux'.
 
- (./02-factorization/01-ShorsAlgo.tex [3]
-Chapter 2.
-Package lettrine.sty Info: Targeted height = 17.3449pt
-(lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 17.3449pt (\color {drocap-color}T);
-(lettrine.sty)             reported on input line 5.
-)
+ (./02-factorization/01-ShorsAlgo.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6
+
+])
 \openout2 = `02-factorization/02-AdiabaticFactorization.aux'.
 
  (./02-factorization/02-AdiabaticFactorization.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4
-
-]
-<figs/drawing.pdf, id=137, 563.03961pt x 91.38394pt>
-File: figs/drawing.pdf Graphic file (type pdf)
-<use figs/drawing.pdf>
-Package pdftex.def Info: figs/drawing.pdf  used on input line 16.
-(pdftex.def)             Requested size: 362.72084pt x 58.87175pt.
- [5 <./figs/drawing.pdf>]
-
-Package natbib Warning: Citation `PhysRevA.104.L050403' on page 6 undefined on input line 35.
-
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 37.
-(/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+ [7]
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 59.
+ (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
-<figs/grafico_3d.pdf, id=156, 574.29025pt x 231.62152pt>
-File: figs/grafico_3d.pdf Graphic file (type pdf)
-<use figs/grafico_3d.pdf>
-Package pdftex.def Info: figs/grafico_3d.pdf  used on input line 47.
-(pdftex.def)             Requested size: 326.44653pt x 131.66159pt.
- [6])
-\openout2 = `03-results/01-IntroducingProblem.aux'.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- (./03-results/01-IntroducingProblem.tex [7 <./figs/grafico_3d.pdf>]
-Chapter 3.
-Package lettrine.sty Info: Targeted height = 17.3449pt
-(lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 17.3449pt (\color {drocap-color}T);
-(lettrine.sty)             reported on input line 5.
+ [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+<02-factorization/figs/standard_circuit_35.pdf, id=255, 1816.7875pt x 347.2975pt>
+File: 02-factorization/figs/standard_circuit_35.pdf Graphic file (type pdf)
+<use 02-factorization/figs/standard_circuit_35.pdf>
+Package pdftex.def Info: 02-factorization/figs/standard_circuit_35.pdf  used on input line 156.
+(pdftex.def)             Requested size: 441.01773pt x 84.30168pt.
+<02-factorization/figs/gate_decomposition.pdf, id=259, 1619.04875pt x 185.69376pt>
+File: 02-factorization/figs/gate_decomposition.pdf Graphic file (type pdf)
+<use 02-factorization/figs/gate_decomposition.pdf>
+Package pdftex.def Info: 02-factorization/figs/gate_decomposition.pdf  used on input line 182.
+(pdftex.def)             Requested size: 441.01773pt x 50.58pt.
+ [10 <./02-factorization/figs/standard_circuit_35.pdf> <./02-factorization/figs/gate_decomposition.pdf
+
+pdfTeX warning: pdflatex (file ./02-factorization/figs/gate_decomposition.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<02-factorization/figs/linear_circuit_35.pdf, id=271, 729.72626pt x 347.2975pt>
+File: 02-factorization/figs/linear_circuit_35.pdf Graphic file (type pdf)
+<use 02-factorization/figs/linear_circuit_35.pdf>
+Package pdftex.def Info: 02-factorization/figs/linear_circuit_35.pdf  used on input line 198.
+(pdftex.def)             Requested size: 242.5611pt x 115.44052pt.
 )
-\openout2 = `04-conclusion/conclusion.aux'.
+\openout2 = `03-methodology/00-Introduction.aux'.
 
- (./04-conclusion/conclusion.tex [8
+ (./03-methodology/00-Introduction.tex [11 <./02-factorization/figs/linear_circuit_35.pdf>]
+Chapter 3.
+Package lettrine.sty Info: Targeted height = 22.34943pt
+(lettrine.sty)             (for loversize=0, accent excluded),
+(lettrine.sty)             Lettrine height = 22.34944pt (\color {drocap-color}T);
+(lettrine.sty)             reported on input line 4.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+)
+\openout2 = `03-methodology/01-IncrementalApproach.aux'.
+
+ (./03-methodology/01-IncrementalApproach.tex
+Underfull \vbox (badness 2103) has occurred while \output is active []
+
+ [12
 
 ]
+<03-methodology/figs/costfun_landscape.pdf, id=294, 735.1657pt x 454.78847pt>
+File: 03-methodology/figs/costfun_landscape.pdf Graphic file (type pdf)
+<use 03-methodology/figs/costfun_landscape.pdf>
+Package pdftex.def Info: 03-methodology/figs/costfun_landscape.pdf  used on input line 31.
+(pdftex.def)             Requested size: 441.01773pt x 272.81966pt.
+)
+\openout2 = `03-methodology/02-ParameterInitialization.aux'.
+
+ (./03-methodology/02-ParameterInitialization.tex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13 <./03-methodology/figs/costfun_landscape.pdf>]
+\openout2 = `03-methodology/03-ClassicalOptimizer.aux'.
+
+ (./03-methodology/03-ClassicalOptimizer.tex
+<03-methodology/figs/optimizer_comparison.pdf, id=340, 728.4402pt x 261.13435pt>
+File: 03-methodology/figs/optimizer_comparison.pdf Graphic file (type pdf)
+<use 03-methodology/figs/optimizer_comparison.pdf>
+Package pdftex.def Info: 03-methodology/figs/optimizer_comparison.pdf  used on input line 18.
+(pdftex.def)             Requested size: 441.01773pt x 158.09634pt.
+)
+\openout2 = `03-methodology/04-SetupSummary.aux'.
+
+ (./03-methodology/04-SetupSummary.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <./03-methodology/figs/optimizer_comparison.pdf>]
+<03-methodology/figs/optimizer_parameters_comparison.pdf, id=390, 762.33244pt x 455.90201pt>
+File: 03-methodology/figs/optimizer_parameters_comparison.pdf Graphic file (type pdf)
+<use 03-methodology/figs/optimizer_parameters_comparison.pdf>
+Package pdftex.def Info: 03-methodology/figs/optimizer_parameters_comparison.pdf  used on input line 15.
+(pdftex.def)             Requested size: 441.01773pt x 263.74857pt.
+)
+\openout2 = `04-results/01-IntroducingProblem.aux'.
+
+ (./04-results/01-IntroducingProblem.tex [15 <./03-methodology/figs/optimizer_parameters_comparison.pdf>]
 Chapter 4.
-) [9
+Package lettrine.sty Info: Targeted height = 22.34943pt
+(lettrine.sty)             (for loversize=0, accent excluded),
+(lettrine.sty)             Lettrine height = 22.34944pt (\color {drocap-color}T);
+(lettrine.sty)             reported on input line 4.
+)
+\openout2 = `04-results/02-Benchmarking.aux'.
+
+ (./04-results/02-Benchmarking.tex)
+\openout2 = `04-results/04-Results.aux'.
+
+ (./04-results/04-Results.tex)
+
+Package lipsum Warning: Unknown language 'latin'. Hyphenation patterns for
+(lipsum)                'english' will be used instead.
+
+\openout2 = `05-discussion/conclusion.aux'.
+
+(./05-discussion/conclusion.tex [16
+
+]
+Chapter 5.
+) [17
 
 
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion}{9}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{17}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{conclusion}{{4}{9}{Conclusion}{chapter.4}{}}
-\newlabel{conclusion@cref}{{[chapter][4][]4}{[1][9][]9}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}This is a section title}{9}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}This is a subsection}{9}{subsection.4.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{This is a subsubsection header}{9}{subsection.4.1.1}\protected@file@percent }
-] [10
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces A nice table.\relax }}{10}{table.caption.6}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces A nice table.\relax }}{10}{table.caption.7}\protected@file@percent }
+\newlabel{conclusion}{{5}{17}{Conclusion}{chapter.5}{}}
+\newlabel{conclusion@cref}{{[chapter][5][]5}{[1][17][]17}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}This is a section title}{17}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}This is a subsection}{17}{subsection.5.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{This is a subsubsection header}{17}{subsection.5.1.1}\protected@file@percent }
+] [18
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces A nice table.\relax }}{18}{table.caption.13}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces A nice table.\relax }}{18}{table.caption.14}\protected@file@percent }
 ] (./Thesis.bbl
+Overfull \hbox (1.54424pt too wide) in paragraph at lines 36--39
+[]\OT1/ptm/m/n/10.95 (-20) P.L. Montgomery.  A survey of modern integer factorization algorithms.  \OT1/ptm/m/it/10.95 (-20) CWI Quarterly\OT1/ptm/m/n/10.95 (-20) , 7(4):337---
+ []
 
-Package natbib Warning: Empty `thebibliography' environment on input line 3.
-
-) (./Thesis.acr [11
-
-])
+)
+No file Thesis.acr.
 \openout2 = `publications/publications.aux'.
 
- (./publications/publications.tex [12
-
+(./publications/publications.tex [19
 
 ]
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on input line 10.
@@ -1578,24 +1723,22 @@ File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 LaTeX Font Info:    Trying to load font information for U+fontawesomethree on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
 File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
-))
-
-Package natbib Warning: There were undefined citations.
-
-(./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-results/01-IntroducingProblem.aux) (./04-conclusion/conclusion.aux) (./publications/publications.aux)) ) 
+)) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-IncrementalApproach.aux) (./03-methodology/02-ParameterInitialization.aux) (./03-methodology/03-ClassicalOptimizer.aux) (./03-methodology/04-SetupSummary.aux) (./04-results/01-IntroducingProblem.aux) (./04-results/02-Benchmarking.aux) (./04-results/04-Results.aux) (./05-discussion/conclusion.aux) (./publications/publications.aux)) ) 
 Here is how much of TeX's memory you used:
- 44669 strings out of 480129
- 830969 string characters out of 5893410
- 1264383 words of memory out of 5000000
- 61302 multiletter control sequences out of 15000+600000
- 543282 words of font info for 305 fonts, out of 8000000 for 9000
+ 45487 strings out of 480129
+ 853823 string characters out of 5893410
+ 1277731 words of memory out of 5000000
+ 61857 multiletter control sequences out of 15000+600000
+ 573061 words of font info for 425 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 106i,18n,105p,1982b,869s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Thesis.pdf (20 pages, 538222 bytes).
+ 106i,18n,105p,1280b,955s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
+
+ </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+Output written on Thesis.pdf (26 pages, 552861 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 110118 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 552 PDF objects out of 1000 (max. 8388607)
+ 369 compressed objects within 4 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 136777 words of extra memory for PDF output out of 154059 (max. 10000000)
 

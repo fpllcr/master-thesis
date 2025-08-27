@@ -1,0 +1,24 @@
+\section{Parameter initialization}
+\label{Section:ParameterInitialization}
+
+As discussed in Sec.~\ref{Section:IncrementalApproach}, adding a new QAOA layer requires a suitable heuristic to initialize the additional variational parameters. Beyond random initialization, two specific strategies have been considered in this work:
+
+\begin{itemize}
+    \item \textbf{Parameter interpolation.}  
+    This method, adopted by Zhou et al.~\cite{zhou_quantum_2020}, linearly interpolates the trajectory traced by the optimized parameters at depth $p$ to generate an initial guess for depth $p+1$. Such interpolation is particularly effective for problems like MaxCut and QUBO, where the optimal parameters often evolve monotonically in an adiabatic-like fashion.
+
+    \item \textbf{Alternative heuristic.}  
+    This approach, which achieved superior performance for both the standard and linearized protocols in our experiments, initializes the new parameters as
+    \begin{equation}
+        \begin{cases}
+            \gamma_{p+1} \leftarrow \widetilde{\gamma}_{p}, \\
+            \beta_{p+1} \leftarrow 0.
+        \end{cases}
+        \label{eq:initialization_heuristic}
+    \end{equation}
+\end{itemize}
+
+Two factors motivated the adoption of this alternative strategy.  
+First, the interpolation heuristic performs poorly for the linearized protocol, frequently leading to trapping in local minima.  
+Second, integer factorization differs fundamentally from MaxCut and QUBO problems: there is no evidence that optimal parameters follow adiabatic-like trajectories, and our results confirm that they do not (see Fig.~\ref{fig:optimizer_comparison} and Fig.~\ref{fig:optimizer_parameter_comparison}).  
+The fact that the alternative heuristic also outperforms interpolation for the standard protocol ensures a fair basis for comparison, as both protocols are evaluated under the most favorable optimization setup for the reference (standard) implementation.

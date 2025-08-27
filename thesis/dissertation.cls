@@ -9,7 +9,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
 
-\LoadClass[10pt]{book}
+\LoadClass[11pt]{book}
 \usepackage{etoolbox}
 \patchcmd{\DeclareMathAlphabet}{\mathgroup\symletters}{\mathgroup\symletters\relax}{}{}
 
@@ -274,22 +274,14 @@
 \fi
 \colorlet{thumb}{anthracite}
 
-%% Set the paper size to 17 by 24 cm, approximately halfway between A4 and A5.
-\if@print
-    \geometry{
-        papersize = {173mm,246mm},
-        layoutsize = {167mm,240mm},
-        layoutoffset = {3mm,11mm},
-        bindingoffset = 3mm
-    }
-\else
-\geometry{papersize = {170mm,240mm},
-        layoutoffset = {0mm,7mm}}
-\fi
-%% We decrease the margins slightly from the default (scale = 0.7).
-\geometry{hscale=0.75,vscale=0.8}
-
-\geometry{textwidth=127.4818mm}
+\geometry{
+  a4paper,
+  top=25mm,
+  bottom=25mm,
+  left=30mm,
+  right=25mm,
+  bindingoffset=0mm
+}
 
 %% Redefine the title command to accept an optional subtitle.
 \renewcommand*\title[2][]{%
@@ -455,6 +447,8 @@
 %% in the page header.
 \newcommand*\setheader[1]{\markboth{\color{chapter-blue}#1}{\color{chapter-blue}#1}}
 
+\setlength{\headheight}{14pt}
+\addtolength{\topmargin}{-2pt}
 %% Change the headrule command (from fancyhdr.sty) to draw the line below the
 %% header in the title color.
 \renewcommand*\headrule{%

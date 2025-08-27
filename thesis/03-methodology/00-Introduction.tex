@@ -1,0 +1,26 @@
+\chapter{Methodology}
+\label{Chapter:Methodology}
+
+\dropcap{T}he Quantum Approximate Optimization Algorithm has been extensively investigated
+since its introduction, leading to a broad landscape of theoretical analyses, practical 
+implementations, and performance-enhancement techniques. Numerous variants have been proposed,
+ranging from modified ansatze to parameter initialization heuristics, and adaptive layer-scaling
+procedures. This diversity reflects both the flexibility of the QAOA framework and the
+complexity of identifying implementations that perform well accross different problem
+instances.
+
+Given this wide range of possible approaches, it is essential to precisely specify
+the algorithmic configuration adopted in this work. In the following sections, we describe
+the chosen setup, selected to ensure that the comparison between our proposed protocol and
+the standard QAOA implementation is both meaningful and fair. The configuration is based
+on the best-performing practices for the standard protocol, so that any observed differences
+in performance can be attributed to the change in the problem Hamiltonian rather than to
+auxiliary implementation details.
+
+Although several software frameworks for quantum circuit simulation exist, such as PennyLane
+and Qiskit, this work employs a direct state-vector simulation using explicit matrix
+multiplications implemented in Numpy. This approach avoids the overhead of gate-by-gate
+simulation, providing a more efficient and transparent means of evaluations QAOA circuits
+at the scale considered. For completeness and reproducibility, the full implementation
+is available in a public GitHub repository\footnote{\url{https://github.com/fpllcr/master-thesis}},
+where all details of the numerical procedures and data analysis can be examined.

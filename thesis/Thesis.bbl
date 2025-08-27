@@ -1,3 +1,81 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{sarandy_consistency_2004}
+M.~S. Sarandy, L.-A. Wu, and D.~A. Lidar.
+\newblock Consistency of the {Adiabatic} {Theorem}.
+\newblock {\em Quantum Information Processing}, 3(6):331--349, December 2004.
+
+\bibitem{albash_adiabatic_2018}
+Tameem Albash and Daniel~A. Lidar.
+\newblock Adiabatic quantum computation.
+\newblock {\em Reviews of Modern Physics}, 90(1):015002, January 2018.
+
+\bibitem{farhi_quantum_2014}
+Edward Farhi, Jeffrey Goldstone, and Sam Gutmann.
+\newblock A {Quantum} {Approximate} {Optimization} {Algorithm}, November 2014.
+\newblock arXiv:1411.4028 [quant-ph].
+
+\bibitem{farhi_quantum_2019}
+Edward Farhi and Aram~W. Harrow.
+\newblock Quantum {Supremacy} through the {Quantum} {Approximate}
+  {Optimization} {Algorithm}, October 2019.
+\newblock arXiv:1602.07674 [quant-ph].
+
+\bibitem{ho_efficient_2019}
+Wen~Wei Ho and Timothy~H. Hsieh.
+\newblock Efficient variational simulation of non-trivial quantum states.
+\newblock {\em SciPost Physics}, 6(3):029, March 2019.
+\newblock arXiv:1803.00026 [cond-mat].
+
+\bibitem{anschuetz_variational_2018}
+Eric~R. Anschuetz, Jonathan~P. Olson, Alán Aspuru-Guzik, and Yudong Cao.
+\newblock Variational {Quantum} {Factoring}, August 2018.
+\newblock arXiv:1808.08927 [quant-ph].
+
+\bibitem{montgomery_cwi_1994}
+P.L. Montgomery.
+\newblock A survey of modern integer factorization algorithms.
+\newblock {\em CWI Quarterly}, 7(4):337---366, December 1994.
+
+\bibitem{nielsen00}
+Michael~A. Nielsen and Isaac~L. Chuang.
+\newblock {\em Quantum Computation and Quantum Information}.
+\newblock Cambridge University Press, 2000.
+
+\bibitem{peng_quantum_2008}
+Xinhua Peng, Zeyang Liao, Nanyang Xu, Gan Qin, Xianyi Zhou, Dieter Suter, and
+  Jiangfeng Du.
+\newblock A {Quantum} {Adiabatic} {Algorithm} for {Factorization} and {Its}
+  {Experimental} {Implementation}.
+\newblock {\em Physical Review Letters}, 101(22):220405, November 2008.
+\newblock arXiv:0808.1935 [quant-ph].
+
+\bibitem{hegade_digitized_2021}
+Narendra~N. Hegade, Koushik Paul, Francisco Albarrán-Arriagada, Xi~Chen, and
+  Enrique Solano.
+\newblock Digitized {Adiabatic} {Quantum} {Factorization}.
+\newblock {\em Physical Review A}, 104(5):L050403, November 2021.
+\newblock arXiv:2105.09480 [quant-ph].
+
+\bibitem{diez-valle_universal_2025}
+Pablo Díez-Valle, Fernando~J. Gómez-Ruiz, Diego Porras, and Juan~José
+  García-Ripoll.
+\newblock Universal {Resources} for {QAOA} and {Quantum} {Annealing}, June
+  2025.
+\newblock arXiv:2506.03241 [quant-ph].
+
+\bibitem{zhou_quantum_2020}
+Leo Zhou, Sheng-Tao Wang, Soonwon Choi, Hannes Pichler, and Mikhail~D. Lukin.
+\newblock Quantum {Approximate} {Optimization} {Algorithm}: {Performance},
+  {Mechanism}, and {Implementation} on {Near}-{Term} {Devices}.
+\newblock {\em Physical Review X}, 10(2):021067, June 2020.
+
+\bibitem{blekos_review_2024}
+Kostas Blekos, Dean Brand, Andrea Ceschini, Chiao-Hui Chou, Rui-Hao Li, Komal
+  Pandya, and Alessandro Summer.
+\newblock A {Review} on {Quantum} {Approximate} {Optimization} {Algorithm} and
+  its {Variants}.
+\newblock {\em Physics Reports}, 1068:1--66, June 2024.
+\newblock arXiv:2306.09198 [quant-ph].
 
 \end{thebibliography}

@@ -1,14 +1,49 @@
-\chapter{Factorization Algorithms}
-\label{Chapter:Factorization}
-
-
-\dropcap{T}his chapter we introduce the factorization algorithms of interest to our work.
-\lipsum[1]
-
-
-
 \section{Shor's Factorization Algorithm}
 
-First we have to briefly introduce the Shor's algorithm. We do not need a very detailed explanation, but it would be nice to provide a didactic discussion about the algorithm and its relevance. To this end, we can use the book by Nielsen and Chuang. In this section, we make clear that it is a gate-based way to do factorization.
+{\color{blue} ALAN: First we have to briefly introduce the Shor's algorithm. We do not need a
+very detailed explanation, but it would be nice to provide a didactic discussion about the algorithm
+and its relevance. To this end, we can use the book by Nielsen and Chuang. In this section,
+we make clear that it is a gate-based way to do factorization.}
 
-\lipsum[1]
+In computer science, an algorithm is considered to be efficient when the number of steps
+of the algorithm grows as a polynomial in the input size. For the problem of integer factorization,
+the input is a semiprime number $N$, and the input size is measured as the number of bits
+required to represent it, i.e., $\log N$. The best known classical algorithm for factoring
+scales superpolynomially with input size, making the problem computationally hard for large $N$.
+\begin{equation}
+    \mathcal{O} \bigg( \exp \big( c(\log N)^{1/3} (\log \log N)^{2/3} \big) \bigg).
+    \label{eq:field_sieve_scaling}
+\end{equation}
+
+In 1994, Peter Shor introduced a quantum algorithm that factors integers in polynomial time,
+marking a landmark result in quantum computing. Shor's algorithm runs in time
+\begin{equation}
+    \mathcal{O} \big( (\log N)^3 \big),
+    \label{eq:shor_scaling}
+\end{equation}
+dramatically outperforming the best classical method~\cite{nielsen00}. The algorithm relies on the quantum
+circuit model, making it a gate-based approach to factorization and one of the strongest motivations
+for the development of quantum computers.
+
+The core idea of Shor's algorithm is to reduce factorization to the problem of order finding:
+given a number $a$ coprime to $N$, find the smallest integer, $r$ such that
+\begin{equation}
+    a^r = 1 \mod N.
+    \label{eq:order_finding}
+\end{equation}
+Once the order $r$ is known, under certain conditions, one can recover a nontrivial factor of
+$N$ using elementary number-theoretic arguments~\cite{nielsen00}.
+
+The quantum part of the algorithm is used to efficiently find this order $r$ using
+period-finding techniques. This is achieved by preparing a quantum superpositioin and applying the
+quantum Fourier transform (QFT) to extract information about the period of the function
+$f(x) = a^x \mod N$. The classical post-processing step then uses continued fractions to extract $r$
+and attempt to derive the prime factors of $N$.
+
+{\color{red}(FELIP: Add some schematic about the algorithm)}
+
+Despite its theoretical significance, implementing Shor's algorithm at scale requires a
+large number of qubits, long coherence times, and fault-tolerant error correction,
+which remain beyond the reach of current quantum hardware. As such, while Shor's algorithm remains
+the most efficient known method for factoring in the long-term quantum regime, alternative approaches
+--such as adiabatic and variational algorithms-- are being explored for use in the NISQ era.
