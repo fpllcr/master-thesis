@@ -21,6 +21,7 @@
 %\RequirePackage{txfonts}
 \usepackage{physics}
 \usepackage{mathptmx}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
 \usepackage{amsmath}
 
 \RequirePackage[english]{babel}

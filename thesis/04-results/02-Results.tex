@@ -1,0 +1,43 @@
+Firstly, we evaluate the fidelities achieved by the different protocols as a function of the number of QAOA layers (Fig.~\ref{fig:fidelity_layers}). Three distinct trends are observed:  
+\begin{itemize}
+    \item For $N = 25$, the \texttt{standard} protocol performs better at shallow depths, but both \texttt{linear} protocols eventually surpass it.  
+    \item For $N = 77$, both \texttt{linear} protocols consistently outperform the \texttt{standard} protocol across all layers.  
+    \item For $N = 143$, the \texttt{standard} protocol initially leads, until a sudden fidelity jump in one of the \texttt{linear} protocols overtakes it.  
+\end{itemize}
+
+As the problem size increases, the third behavior---a sudden jump in fidelity---appears more frequently. Although the cost-function landscape evolves smoothly, the fidelity of \texttt{linear} protocols often exhibits these abrupt improvements. The underlying reasons for this phenomenon will be analyzed in Chapter~\ref{Chapter:Discussion}.  
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{04-results/figs/fidelity_layers_2577143.pdf}
+    \caption{Fidelity versus QAOA layer depth. Larger problems require deeper circuits to achieve significant fidelities.}
+    \label{fig:fidelity_layers}
+\end{figure}
+
+To complement the fidelity analysis, Fig.~\ref{fig:populations} depicts the state populations
+at the end of each protocol, with valid solutions highlighted by dark-colored bars.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{04-results/figs/populations_2577143.pdf}
+    \caption{Final state populations for (a) $N=25$, (b) $N=77$, and (c) $N=143$. The number of layers was fixed as the minimum required to reach at least 80\% fidelity. Solution states are shown as dark-colored bars.}
+    \label{fig:populations}
+\end{figure}
+
+Although fidelity as a function of depth already demonstrates the improved performance of the \texttt{linear} protocols, it is essential to evaluate them in terms of quantum resources. Specifically, we compare protocols using the number of two-qubit gates as the resource metric (Fig.~\ref{fig:fidelity_gates}). In these terms, the advantage of the \texttt{linear} protocols becomes clearer: they achieve significantly higher fidelities while requiring far fewer quantum operations.  
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{04-results/figs/fidelity_gates_2577143.pdf}
+    \caption{Fidelity versus the number of two-qubit gates. This metric highlights the resource efficiency of the \texttt{linear} protocols.}
+    \label{fig:fidelity_gates}
+\end{figure}
+
+Finally, Fig.~\ref{fig:summary_plot} summarizes the number of two-qubit gates required to reach a target fidelity of $\mathcal{F} = 0.5$ for each problem instance and protocol. Missing points indicate cases where this fidelity threshold could not be reached within the available computational resources.  
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{04-results/figs/summary_plot.pdf}
+    \caption{Quantum resources required to achieve a fidelity of $\mathcal{F} = 0.5$. Missing points indicate that the target fidelity could not be reached within the simulated depth.}
+    \label{fig:summary_plot}
+\end{figure}
