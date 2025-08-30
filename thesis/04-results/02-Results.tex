@@ -20,7 +20,9 @@ at the end of each protocol, with valid solutions highlighted by dark-colored ba
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{04-results/figs/populations_2577143.pdf}
-    \caption{Final state populations for (a) $N=25$, (b) $N=77$, and (c) $N=143$. The number of layers was fixed as the minimum required to reach at least 80\% fidelity. Solution states are shown as dark-colored bars.}
+    \caption{Final state populations for (a) $N=25$, (b) $N=77$, and (c) $N=143$. The number
+    of layers was fixed as the minimum required to reach at least 80\% fidelity by any
+    protocol. Solution states are shown as dark-colored bars.}
     \label{fig:populations}
 \end{figure}
 
@@ -33,11 +35,18 @@ Although fidelity as a function of depth already demonstrates the improved perfo
     \label{fig:fidelity_gates}
 \end{figure}
 
-Finally, Fig.~\ref{fig:summary_plot} summarizes the number of two-qubit gates required to reach a target fidelity of $\mathcal{F} = 0.5$ for each problem instance and protocol. Missing points indicate cases where this fidelity threshold could not be reached within the available computational resources.  
+Finally, as a summarizing plot, Fig.~\ref{fig:accumulated_probability} presents a metric that
+enables a consistent comparison between protocols across problem sizes. For larger problem instances,
+fidelity does not always reach the same reference level within practical resource limits,
+which makes direct fidelity thresholds less suitable as a single benchmark. To address this,
+we consider how each protocol concentrates probability within the most relevant portion of
+the spectrum, providing a way to compare performance across different problem sizes.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.7\textwidth]{04-results/figs/summary_plot.pdf}
-    \caption{Quantum resources required to achieve a fidelity of $\mathcal{F} = 0.5$. Missing points indicate that the target fidelity could not be reached within the simulated depth.}
-    \label{fig:summary_plot}
+    \includegraphics[width=0.75\textwidth]{04-results/figs/accumulated_probability.pdf}
+    \caption{Number of two-qubit gates required to accumulate at least 75\% of the total probability
+    within the 5\% of eigenstates closest to the solution, aggregated by problem size (number of qubits).
+    Error bars represent variability across different instances with the same size.}
+    \label{fig:accumulated_probability}
 \end{figure}

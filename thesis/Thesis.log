@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  29 AUG 2025 08:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  30 AUG 2025 13:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1261,7 +1261,7 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 44.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-InitialState.aux) (./03-methodology/02-IncrementalApproach.aux) (./03-methodology/03-ParameterInitialization.aux) (./03-methodology/04-ClassicalOptimizer.aux) (./03-methodology/05-SetupSummary.aux) (./04-results/01-Introduction.aux) (./04-results/02-Results.aux) (./05-discussion/conclusion.aux) (./publications/publications.aux))
+) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-InitialState.aux) (./03-methodology/02-IncrementalApproach.aux) (./03-methodology/03-ParameterInitialization.aux) (./03-methodology/04-ClassicalOptimizer.aux) (./03-methodology/05-SetupSummary.aux) (./04-results/01-Introduction.aux) (./04-results/02-Results.aux) (./05-discussion/discussion.aux) (./publications/publications.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
@@ -1493,7 +1493,7 @@ Package lettrine.sty Info: Targeted height = 22.34943pt
 \openout2 = `01-introduction/01-CircuitModel.aux'.
 
  (./01-introduction/01-CircuitModel.tex
-<01-introduction/figs/example_circuit.pdf, id=137, 1013.7875pt x 201.75375pt>
+<01-introduction/figs/example_circuit.pdf, id=140, 1013.7875pt x 201.75375pt>
 File: 01-introduction/figs/example_circuit.pdf Graphic file (type pdf)
 <use 01-introduction/figs/example_circuit.pdf>
 Package pdftex.def Info: 01-introduction/figs/example_circuit.pdf  used on input line 27.
@@ -1512,30 +1512,29 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ]
-<01-introduction/figs/adiabatic_theorem.pdf, id=146, 487.8225pt x 167.62625pt>
+<01-introduction/figs/adiabatic_theorem.pdf, id=149, 487.8225pt x 167.62625pt>
 File: 01-introduction/figs/adiabatic_theorem.pdf Graphic file (type pdf)
 <use 01-introduction/figs/adiabatic_theorem.pdf>
-Package pdftex.def Info: 01-introduction/figs/adiabatic_theorem.pdf  used on input line 40.
+Package pdftex.def Info: 01-introduction/figs/adiabatic_theorem.pdf  used on input line 35.
 (pdftex.def)             Requested size: 330.76329pt x 113.65694pt.
 
+Underfull \vbox (badness 1199) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+ [2 <./01-introduction/figs/example_circuit.pdf> <./01-introduction/figs/adiabatic_theorem.pdf
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2 <./01-introduction/figs/example_circuit.pdf>])
+pdfTeX warning: pdflatex (file ./01-introduction/figs/adiabatic_theorem.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>])
 \openout2 = `01-introduction/03-QAOABasicConcepts.aux'.
 
  (./01-introduction/03-QAOABasicConcepts.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3 <./01-introduction/figs/adiabatic_theorem.pdf>]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 14.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-<01-introduction/figs/qaoa.png, id=178, 1002.74625pt x 499.8675pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+<01-introduction/figs/qaoa.png, id=181, 1002.74625pt x 499.8675pt>
 File: 01-introduction/figs/qaoa.png Graphic file (type png)
 <use 01-introduction/figs/qaoa.png>
 Package pdftex.def Info: 01-introduction/figs/qaoa.png  used on input line 46.
@@ -1590,29 +1589,37 @@ File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9]
-<02-factorization/figs/standard_circuit_35.pdf, id=251, 1816.7875pt x 347.2975pt>
+<02-factorization/figs/standard_circuit_35.pdf, id=246, 1816.7875pt x 347.2975pt>
 File: 02-factorization/figs/standard_circuit_35.pdf Graphic file (type pdf)
 <use 02-factorization/figs/standard_circuit_35.pdf>
 Package pdftex.def Info: 02-factorization/figs/standard_circuit_35.pdf  used on input line 156.
 (pdftex.def)             Requested size: 441.01773pt x 84.30168pt.
-<02-factorization/figs/gate_decomposition.pdf, id=255, 1619.04875pt x 185.69376pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+<02-factorization/figs/gate_decomposition.pdf, id=259, 1619.04875pt x 185.69376pt>
 File: 02-factorization/figs/gate_decomposition.pdf Graphic file (type pdf)
 <use 02-factorization/figs/gate_decomposition.pdf>
 Package pdftex.def Info: 02-factorization/figs/gate_decomposition.pdf  used on input line 182.
 (pdftex.def)             Requested size: 441.01773pt x 50.58pt.
- [10 <./02-factorization/figs/standard_circuit_35.pdf> <./02-factorization/figs/gate_decomposition.pdf
-
-pdfTeX warning: pdflatex (file ./02-factorization/figs/gate_decomposition.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-<02-factorization/figs/linear_circuit_35.pdf, id=267, 729.72626pt x 347.2975pt>
+<02-factorization/figs/linear_circuit_35.pdf, id=260, 729.72626pt x 347.2975pt>
 File: 02-factorization/figs/linear_circuit_35.pdf Graphic file (type pdf)
 <use 02-factorization/figs/linear_circuit_35.pdf>
 Package pdftex.def Info: 02-factorization/figs/linear_circuit_35.pdf  used on input line 198.
 (pdftex.def)             Requested size: 242.5611pt x 115.44052pt.
-)
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [10 <./02-factorization/figs/standard_circuit_35.pdf> <./02-factorization/figs/gate_decomposition.pdf
+
+pdfTeX warning: pdflatex (file ./02-factorization/figs/gate_decomposition.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
 \openout2 = `03-methodology/00-Introduction.aux'.
 
  (./03-methodology/00-Introduction.tex [11 <./02-factorization/figs/linear_circuit_35.pdf>]
@@ -1637,7 +1644,7 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
 \openout2 = `03-methodology/02-IncrementalApproach.aux'.
 
  (./03-methodology/02-IncrementalApproach.tex
-<03-methodology/figs/costfun_landscape.pdf, id=288, 735.1657pt x 454.78847pt>
+<03-methodology/figs/costfun_landscape.pdf, id=290, 735.1657pt x 454.78847pt>
 File: 03-methodology/figs/costfun_landscape.pdf Graphic file (type pdf)
 <use 03-methodology/figs/costfun_landscape.pdf>
 Package pdftex.def Info: 03-methodology/figs/costfun_landscape.pdf  used on input line 31.
@@ -1656,7 +1663,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14 <./03-methodology/figs/costfun_landscape.pdf>]
-<03-methodology/figs/optimizer_comparison.pdf, id=343, 728.4402pt x 261.13435pt>
+<03-methodology/figs/optimizer_comparison.pdf, id=345, 728.4402pt x 261.13435pt>
 File: 03-methodology/figs/optimizer_comparison.pdf Graphic file (type pdf)
 <use 03-methodology/figs/optimizer_comparison.pdf>
 Package pdftex.def Info: 03-methodology/figs/optimizer_comparison.pdf  used on input line 18.
@@ -1665,7 +1672,7 @@ Package pdftex.def Info: 03-methodology/figs/optimizer_comparison.pdf  used on i
 \openout2 = `03-methodology/05-SetupSummary.aux'.
 
  (./03-methodology/05-SetupSummary.tex [15 <./03-methodology/figs/optimizer_comparison.pdf>]
-<03-methodology/figs/optimizer_parameters_comparison.pdf, id=391, 762.33244pt x 455.90201pt>
+<03-methodology/figs/optimizer_parameters_comparison.pdf, id=393, 762.33244pt x 455.90201pt>
 File: 03-methodology/figs/optimizer_parameters_comparison.pdf Graphic file (type pdf)
 <use 03-methodology/figs/optimizer_parameters_comparison.pdf>
 Package pdftex.def Info: 03-methodology/figs/optimizer_parameters_comparison.pdf  used on input line 15.
@@ -1688,15 +1695,12 @@ LaTeX Warning: Reference `todo' on page 17 undefined on input line 37.
  (./04-results/02-Results.tex [17
 
 ]
-
-LaTeX Warning: Reference `Chapter:Discussion' on page 18 undefined on input line 8.
-
-<04-results/figs/fidelity_layers_2577143.pdf, id=459, 726.4327pt x 261.13435pt>
+<04-results/figs/fidelity_layers_2577143.pdf, id=462, 726.4327pt x 261.13435pt>
 File: 04-results/figs/fidelity_layers_2577143.pdf Graphic file (type pdf)
 <use 04-results/figs/fidelity_layers_2577143.pdf>
 Package pdftex.def Info: 04-results/figs/fidelity_layers_2577143.pdf  used on input line 12.
 (pdftex.def)             Requested size: 441.01773pt x 158.53864pt.
-<04-results/figs/populations_2577143.pdf, id=461, 748.46907pt x 572.63998pt>
+<04-results/figs/populations_2577143.pdf, id=464, 748.46907pt x 572.63998pt>
 File: 04-results/figs/populations_2577143.pdf Graphic file (type pdf)
 <use 04-results/figs/populations_2577143.pdf>
 Package pdftex.def Info: 04-results/figs/populations_2577143.pdf  used on input line 22.
@@ -1705,35 +1709,33 @@ Package pdftex.def Info: 04-results/figs/populations_2577143.pdf  used on input 
 Underfull \vbox (badness 1708) has occurred while \output is active []
 
  [18 <./04-results/figs/fidelity_layers_2577143.pdf> <./04-results/figs/populations_2577143.pdf>]
-<04-results/figs/fidelity_gates_2577143.pdf, id=566, 726.4327pt x 264.25539pt>
+<04-results/figs/fidelity_gates_2577143.pdf, id=569, 726.4327pt x 264.25539pt>
 File: 04-results/figs/fidelity_gates_2577143.pdf Graphic file (type pdf)
 <use 04-results/figs/fidelity_gates_2577143.pdf>
-Package pdftex.def Info: 04-results/figs/fidelity_gates_2577143.pdf  used on input line 31.
+Package pdftex.def Info: 04-results/figs/fidelity_gates_2577143.pdf  used on input line 33.
 (pdftex.def)             Requested size: 441.01773pt x 160.43346pt.
-<04-results/figs/summary_plot.pdf, id=568, 503.39943pt x 327.43266pt>
-File: 04-results/figs/summary_plot.pdf Graphic file (type pdf)
-<use 04-results/figs/summary_plot.pdf>
-Package pdftex.def Info: 04-results/figs/summary_plot.pdf  used on input line 40.
-(pdftex.def)             Requested size: 308.71106pt x 200.80782pt.
+<04-results/figs/accumulated_probability.pdf, id=571, 508.70049pt x 327.43266pt>
+File: 04-results/figs/accumulated_probability.pdf Graphic file (type pdf)
+<use 04-results/figs/accumulated_probability.pdf>
+Package pdftex.def Info: 04-results/figs/accumulated_probability.pdf  used on input line 47.
+(pdftex.def)             Requested size: 330.76329pt x 212.90364pt.
 )
-\openout2 = `05-discussion/conclusion.aux'.
+\openout2 = `05-discussion/discussion.aux'.
 
- (./05-discussion/conclusion.tex [19 <./04-results/figs/fidelity_gates_2577143.pdf> <./04-results/figs/summary_plot.pdf>]
+ (./05-discussion/discussion.tex [19 <./04-results/figs/fidelity_gates_2577143.pdf> <./04-results/figs/accumulated_probability.pdf>]
 Chapter 5.
-) [20
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{20}{chapter.5}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{conclusion}{{5}{20}{Conclusion}{chapter.5}{}}
-\newlabel{conclusion@cref}{{[chapter][5][]5}{[1][20][]20}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}This is a section title}{20}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}This is a subsection}{20}{subsection.5.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{This is a subsubsection header}{20}{subsection.5.1.1}\protected@file@percent }
-] [21
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces A nice table.\relax }}{21}{table.caption.19}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces A nice table.\relax }}{21}{table.caption.20}\protected@file@percent }
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20
+
+]) [21
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Root-mean-square (RMS) distance of the energy spectrum from the target state, used as a measure of how widely the eigenvalues are distributed for each Hamiltonian and problem size.\relax }}{21}{table.caption.19}\protected@file@percent }
+\newlabel{asdf}{{5.1}{21}{Root-mean-square (RMS) distance of the energy spectrum from the target state, used as a measure of how widely the eigenvalues are distributed for each Hamiltonian and problem size.\relax }{table.caption.19}{}}
+\newlabel{asdf@cref}{{[table][1][5]5.1}{[1][20][]21}}
 ] (./Thesis.bbl
 Overfull \hbox (1.54424pt too wide) in paragraph at lines 36--39
 []\OT1/ptm/m/n/10.95 (-20) P.L. Montgomery.  A survey of modern integer factorization algorithms.  \OT1/ptm/m/it/10.95 (-20) CWI Quarterly\OT1/ptm/m/n/10.95 (-20) , 7(4):337---
@@ -1753,26 +1755,26 @@ File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 LaTeX Font Info:    Trying to load font information for U+fontawesomethree on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
 File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
-)) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-InitialState.aux) (./03-methodology/02-IncrementalApproach.aux) (./03-methodology/03-ParameterInitialization.aux) (./03-methodology/04-ClassicalOptimizer.aux) (./03-methodology/05-SetupSummary.aux) (./04-results/01-Introduction.aux) (./04-results/02-Results.aux) (./05-discussion/conclusion.aux) (./publications/publications.aux))
+)) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-InitialState.aux) (./03-methodology/02-IncrementalApproach.aux) (./03-methodology/03-ParameterInitialization.aux) (./03-methodology/04-ClassicalOptimizer.aux) (./03-methodology/05-SetupSummary.aux) (./04-results/01-Introduction.aux) (./04-results/02-Results.aux) (./05-discussion/discussion.aux) (./publications/publications.aux))
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 45576 strings out of 480129
- 856059 string characters out of 5893410
- 1278069 words of memory out of 5000000
- 61919 multiletter control sequences out of 15000+600000
- 574434 words of font info for 435 fonts, out of 8000000 for 9000
+ 45572 strings out of 480129
+ 856126 string characters out of 5893410
+ 1280301 words of memory out of 5000000
+ 61920 multiletter control sequences out of 15000+600000
+ 573320 words of font info for 434 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  106i,18n,105p,1280b,925s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
- </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Thesis.pdf (29 pages, 669537 bytes).
+ </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+Output written on Thesis.pdf (29 pages, 667668 bytes).
 PDF statistics:
- 809 PDF objects out of 1000 (max. 8388607)
- 462 compressed objects within 5 object streams
- 115 named destinations out of 1000 (max. 500000)
- 137309 words of extra memory for PDF output out of 154059 (max. 10000000)
+ 814 PDF objects out of 1000 (max. 8388607)
+ 460 compressed objects within 5 object streams
+ 112 named destinations out of 1000 (max. 500000)
+ 135261 words of extra memory for PDF output out of 154059 (max. 10000000)
 

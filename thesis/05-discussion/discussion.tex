@@ -1,0 +1,53 @@
+\chapter{Discussion}
+\label{Chapter:Discussion}
+
+The numerical results allow us to assess how the proposed linearized QAOA protocols compare
+to the standard formulation and to evaluate the role of the cost function in shaping their
+performance.
+
+\subsection*{Standard versus linear\_quadratic protocols}
+
+Since both the \texttt{standard} and \texttt{linear\_quadratic} protocols are optimized with respect to the same cost function, $\langle \hat{H}_\mathrm{QP} \rangle$, their performance can be directly compared.  
+The data clearly indicate that the \texttt{linear\_quadratic} protocol reaches relevant solutions with acceptable fidelity at shallower circuit depths. Moreover, when performance is measured against the number of two-qubit gates—a more meaningful indicator of quantum resource requirements—the linear protocol consistently requires fewer resources to achieve comparable or superior fidelities.  
+This indicates that the linearization strategy focuses the optimization on the parts of the problem Hamiltonian that matter most, allowing the algorithm to reach good solutions with less computational effort.
+
+\subsection*{Impact of the cost function}
+
+The choice of cost function proves to be a decisive factor.  
+Between the two linearized protocols, \texttt{linear\_abs} generally outperforms \texttt{linear\_quadratic}, achieving higher fidelities at lower resource counts.  
+This highlights that even within a fixed ansatz structure, selecting a cost function that better reflects the problem’s energy landscape can significantly enhance performance.  
+This observation could motivate further investigation into whether alternative ways of defining the cost function might offer performance benefits.
+
+\subsection*{Sudden fidelity jumps in linear protocols}
+
+One of the most distinctive features of the linear protocols is the occurrence of abrupt fidelity jumps as the number of QAOA layers increases.  
+This contrasts with the smoother fidelity evolution observed for the standard protocol, a behavior consistently seen across the problem sizes studied (see Appendix X).  
+To understand this behavior, we analyzed the spectra of the problem Hamiltonians $\hat{H}_\mathrm{LP}$ and $\hat{H}_\mathrm{QP}$.  
+We find that the spectrum of $\hat{H}_\mathrm{LP}$ is more widely spread, leading to larger separations between relevant energy levels.
+Such a structure tends to promote population transfer in discrete steps, which aligns with the observed fidelity jumps.
+Conversely, the denser spectrum of $\hat{H}_\mathrm{QP}$ supports a more gradual redistribution of amplitude during the variational evolution.
+
+This qualitative picture is supported by the numerical results summarized in
+Table~5.1, which reports the computed spectral spread of each Hamiltonian.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{@{}lcccccc@{}}
+        \toprule
+        & \multicolumn{6}{c}{$n$} \\
+        \cmidrule(lr){2-7}
+        Protocol            & 3     & 4     & 5     & 6     & 7     & 8 \\
+        \midrule
+        \texttt{standard}   & 0.59  & 0.58  & 0.26  & 0.24  & 0.20  & 0.21 \\
+        \texttt{linear}     & 0.70  & 0.68  & 0.41  & 0.37  & 0.32  & 0.32 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Root-mean-square (RMS) distance of the energy spectrum from the target state, used as a measure of how widely the eigenvalues are distributed for each Hamiltonian and problem size.}
+    \label{asdf}
+\end{table}
+
+\subsection*{Future prospects}
+
+While the current study focuses on biprime integers of moderate size, extending the analysis to larger numbers is essential to determine whether these trends persist in more challenging regimes.
+Such investigations would help assess the true asymptotic potential of linearized QAOA and guide the development of even more resource-efficient formulations.
+

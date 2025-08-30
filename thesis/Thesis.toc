@@ -5,11 +5,11 @@
 \contentsline {section}{\numberline {1.1}Circuit Model of Quantum Computation}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Adiabatic Quantum Computation}{2}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Adiabatic Quantum Annealers}{3}{subsection.1.2.1}%
-\contentsline {section}{\numberline {1.3}Quantum Approximate Optimization Algorithm}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.3}Quantum Approximate Optimization Algorithm}{3}{section.1.3}%
 \contentsline {chapter}{\numberline {2}Factorization Algorithms}{6}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Shor's Factorization Algorithm}{6}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Adiabatic Factorization Algorithm}{7}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Digitized Adiabatic Quantum Factorization}{9}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.1}Digitized Adiabatic Quantum Factorization}{8}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}QAOA Applied to Factorization (Standard Protocol)}{9}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Our proposal (Linearized Protocol)}{10}{subsection.2.2.3}%
 \contentsline {chapter}{\numberline {3}Methodology}{12}{chapter.3}%
@@ -19,5 +19,6 @@
 \contentsline {section}{\numberline {3.4}Classical optimizer}{15}{section.3.4}%
 \contentsline {section}{\numberline {3.5}QAOA Setup Summary}{15}{section.3.5}%
 \contentsline {chapter}{\numberline {4}Results}{17}{chapter.4}%
-\contentsline {chapter}{Bibliography}{22}{chapter*.21}%
-\contentsline {chapter}{Glossary}{22}{chapter*.21}%
+\contentsline {chapter}{\numberline {5}Discussion}{20}{chapter.5}%
+\contentsline {chapter}{Bibliography}{22}{chapter*.20}%
+\contentsline {chapter}{Glossary}{22}{chapter*.20}%
