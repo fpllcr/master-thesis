@@ -1,16 +1,9 @@
 \section{Incremental Approach}
 \label{Section:IncrementalApproach}
 
-In multi-layer QAOA, increasing the number of layers also increases the number of parameters
-to be optimized. Finding global optima is considerably simpler for $p=1$ (i.e., two parameters)
-than for circuits with many layers. Moreover, when a new layer is added, the previously optimized
-solution remains valid within the enlarged parameter space: the parameters corresponding to the
-first $p$ layers can be initialized with their previously optimized values, while the newly
-introduced parameters can be set to zero. Consequently, adding an additional layer
-($p \rightarrow p+1$) can only maintain or improve performance relative to the previous iteration.
+In multi-layer QAOA, increasing the number of layers also increases the number of parameters to be optimized. Finding global optima is considerably simpler for $p=1$ (i.e., two parameters) than for circuits with many layers. Moreover, when a new layer is added, the previously optimized solution remains valid within the enlarged parameter space: the parameters corresponding to the first $p$ layers can be initialized with their previously optimized values, while the newly introduced parameters can be set to zero. Consequently, adding an additional layer ($p \rightarrow p+1$) can only maintain or improve performance relative to the previous iteration.
 
-This observation motivates a progressive training strategy, often referred to as an \emph{incremental}
-approach, which proceeds as follows:
+This observation motivates a progressive training strategy, often referred to as an \emph{incremental} approach, which proceeds as follows~\cite{zhou_quantum_2020}:
 \begin{enumerate}
     \item Analyze the cost function landscape for $p=1$ to select initial parameters 
     $\gamma_1$ and $\beta_1$ close to the optimal region (Fig.~\ref{fig:costfun_landscape}).

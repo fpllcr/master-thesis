@@ -1,5 +1,12 @@
 \begin{thebibliography}{10}
 
+\bibitem{hegade_digitized_2021}
+Narendra~N. Hegade, Koushik Paul, Francisco Albarrán-Arriagada, Xi~Chen, and
+  Enrique Solano.
+\newblock Digitized {Adiabatic} {Quantum} {Factorization}.
+\newblock {\em Physical Review A}, 104(5):L050403, November 2021.
+\newblock arXiv:2105.09480 [quant-ph].
+
 \bibitem{sarandy_consistency_2004}
 M.~S. Sarandy, L.-A. Wu, and D.~A. Lidar.
 \newblock Consistency of the {Adiabatic} {Theorem}.
@@ -9,6 +16,19 @@ M.~S. Sarandy, L.-A. Wu, and D.~A. Lidar.
 Tameem Albash and Daniel~A. Lidar.
 \newblock Adiabatic quantum computation.
 \newblock {\em Reviews of Modern Physics}, 90(1):015002, January 2018.
+
+\bibitem{aharonov_adiabatic_2004}
+D.~Aharonov, W.~Van~Dam, J.~Kempe, Z.~Landau, S.~Lloyd, and O.~Regev.
+\newblock Adiabatic {Quantum} {Computation} is {Equivalent} to {Standard}
+  {Quantum} {Computation}.
+\newblock In {\em 45th {Annual} {IEEE} {Symposium} on {Foundations} of
+  {Computer} {Science}}, pages 42--51, Rome, Italy, 2004. IEEE.
+
+\bibitem{kadowaki_quantum_1998}
+Tadashi Kadowaki and Hidetoshi Nishimori.
+\newblock Quantum {Annealing} in the {Transverse} {Ising} {Model}.
+\newblock {\em Physical Review E}, 58(5):5355--5363, November 1998.
+\newblock arXiv:cond-mat/9804280.
 
 \bibitem{farhi_quantum_2014}
 Edward Farhi, Jeffrey Goldstone, and Sam Gutmann.
@@ -50,19 +70,20 @@ Xinhua Peng, Zeyang Liao, Nanyang Xu, Gan Qin, Xianyi Zhou, Dieter Suter, and
 \newblock {\em Physical Review Letters}, 101(22):220405, November 2008.
 \newblock arXiv:0808.1935 [quant-ph].
 
-\bibitem{hegade_digitized_2021}
-Narendra~N. Hegade, Koushik Paul, Francisco Albarrán-Arriagada, Xi~Chen, and
-  Enrique Solano.
-\newblock Digitized {Adiabatic} {Quantum} {Factorization}.
-\newblock {\em Physical Review A}, 104(5):L050403, November 2021.
-\newblock arXiv:2105.09480 [quant-ph].
-
 \bibitem{diez-valle_universal_2025}
 Pablo Díez-Valle, Fernando~J. Gómez-Ruiz, Diego Porras, and Juan~José
   García-Ripoll.
 \newblock Universal {Resources} for {QAOA} and {Quantum} {Annealing}, June
   2025.
 \newblock arXiv:2506.03241 [quant-ph].
+
+\bibitem{karamlou_analyzing_2021}
+Amir~H. Karamlou, William~A. Simon, Amara Katabarwa, Travis~L. Scholten, Borja
+  Peropadre, and Yudong Cao.
+\newblock Analyzing the {Performance} of {Variational} {Quantum} {Factoring} on
+  a {Superconducting} {Quantum} {Processor}.
+\newblock {\em npj Quantum Information}, 7(1):156, October 2021.
+\newblock arXiv:2012.07825 [quant-ph].
 
 \bibitem{zhou_quantum_2020}
 Leo Zhou, Sheng-Tao Wang, Soonwon Choi, Hannes Pichler, and Mikhail~D. Lukin.

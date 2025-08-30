@@ -5,7 +5,7 @@ of quantum computation based on continuous-time evolution. Consider a time-depen
 $H(t)$ with a discrete and non-degenerate spectrum. Thus we can define its instantaneous
 eigenstates and eigenenergies by
 \begin{equation}
-    H(t) \ket{n(t)} = E_n (t) \ket{n(t)}.
+    \hat{H}(t) \ket{n(t)} = E_n (t) \ket{n(t)}.
     \label{eq:instantaneous_eigenstates}
 \end{equation}
 
@@ -14,7 +14,7 @@ $\ket{n(0)}$ of  $H(0)$, will remain in its instantaneous eigenstate $\ket{n(t)}
 the evolution, provided that the spectrum remains gapped and the change is sufficiently
 slow~\cite{sarandy_consistency_2004,albash_adiabatic_2018}. This last condition is generally formulated as follows:
 \begin{equation}
-    \max_{0 \leq t \leq T} \bigg| \dfrac{\bra{k} \dot{H} \ket{n}}{g_{nk}} \bigg| \ll \min_{0 \leq t \leq T} \big| g_{nk} \big|,
+    \max_{0 \leq t \leq T} \bigg| \dfrac{\bra{k} \dot{\hat{H}} \ket{n}}{g_{nk}} \bigg| \ll \min_{0 \leq t \leq T} \big| g_{nk} \big|,
     \label{eq:adiabatic_condition}
 \end{equation}
 where $T$ is the total evolution time and $g_{nk}$ represents the energy gap between levels $n$ and $k$: 
@@ -22,13 +22,6 @@ where $T$ is the total evolution time and $g_{nk}$ represents the energy gap bet
     g_{nk}(t) \equiv E_n(t) - E_k(t)
     \label{eq:energy_gap}
 \end{equation}
-
-Despite the adiabatic theorem works for any eigenstate, in practice it is customary to focus on
-ground state adiabatic passages. This is because ground states are typically more robust against
-decoherence and thermal excitations, as they are energetically isolated from higher-energy levels.
-Moreover, for many computational problems, particularly those related to optimization problems,
-it is possible to construct a problem Hamiltonian $H_\mathrm{P}$ whose ground state encodes
-the solution to the instance under consideration.
 
 \begin{figure}[h]
     \centering
@@ -38,25 +31,36 @@ the solution to the instance under consideration.
     \label{fig:adiabatic_passage}
 \end{figure}
 
+Despite the adiabatic theorem works for any eigenstate, in practice it is customary to focus on
+ground state adiabatic passages. This is because ground states are typically more robust against
+decoherence and thermal excitations, as they are energetically isolated from higher-energy levels.
+Moreover, for many computational problems, particularly those related to optimization problems,
+it is possible to construct a Hamiltonian $\hat{H}_\mathrm{P}$ whose ground state encodes
+the solution to the instance under consideration.
+
 In the adiabatic quantum computation model, the Hamiltonian is interpolated between an
-initial Hamiltonian $H_0$, with a known and easily preparable ground state, and the problem
-Hamiltonian $H_\mathrm{P}$, according to a schedule~\cite{albash_adiabatic_2018}:
+initial Hamiltonian $\hat{H}_0$, with a known and easily preparable ground state, and the problem
+Hamiltonian $\hat{H}_\mathrm{P}$, according to a schedule~\cite{albash_adiabatic_2018}:
 \begin{equation}
-    H(t) = \big[1 - s(t)\big] H_0 + s(t) H_\mathrm{P}, \quad s(t) \in [0,1],
+    \hat{H}(t) = \big[1 - s(t)\big] \hat{H}_0 + s(t) \hat{H}_\mathrm{P}, \quad s(t) \in [0,1],
     \label{eq:adiabatic_passage}
 \end{equation}
 where $s(t)$ is a smooth, monotonic function such that $s(0)=0$ and $s(T)=1$. The problem
-Hamiltonian $H_\mathrm{P}$ is designed so that its ground state corresponds to the solution
+Hamiltonian $\hat{H}_\mathrm{P}$ is designed so that its ground state corresponds to the solution
 of the computational task.
 
-{\color{red}(Maybe talk about AQC can be efficiently simulated in the circuit model).}
+Aharonov et al. proved that this model is computationally equivalent to the standard circuit
+model~\cite{aharonov_adiabatic_2004}, meaning that any adiabatic process
+can, in principle, be reproduced digitally with comparable efficiency. This equivalence opens
+the door to a variety of gate-based approaches that draw inspiration from adiabatic evolution
+while remaining fully compatible with the circuit model of quantum computation.
 
 \subsection{Adiabatic Quantum Annealers}
 An important and widely studied application of adiabatic evolution in quantum
-devices is Adiabatic Quantum Annealing (AQA), where the goal is to find low-energy configurations of
-a classical cost function mapped onto a quantum Hamiltonian. AQA is most often applied to Quadratic Unconstrained
-Binary Optimization (QUBO) problems, which can be exactly reformulated as a 2-body interaction Ising
-Hamiltonian of the form
+devices is Adiabatic Quantum Annealing (AQA), where the goal is to find low-energy
+configurations of a classical cost function mapped onto a quantum Hamiltonian. AQA is most
+often applied to Quadratic Unconstrained Binary Optimization (QUBO) problems~\cite{kadowaki_quantum_1998},
+which can be exactly reformulated as a 2-body interaction Ising Hamiltonian of the form
 \begin{equation}
     H_\mathrm{P} = \sum_i h_i \sigma_i^z + \sum_{i<j} J_{ij} \sigma_i^z \sigma_j^z\,,
     \label{eq:ising_hamiltonian}

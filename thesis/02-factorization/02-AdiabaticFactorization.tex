@@ -1,26 +1,19 @@
 \section{Adiabatic Factorization Algorithm}
 \label{Section:AFA}
 
-The problem of integer factorization can be formulated as a
-constrained search over pairs of natural numbers $p$ and $q$
-such that
+The problem of integer factorization can be formulated as a constrained search over pairs of natural numbers $p$ and $q$ such that
 \begin{equation}
 	N = p \times q.
 	\label{eq:integer_factorization}
 \end{equation}
-In the context of adiabatic quantum computation we aim to
-encode this constraint into the ground state of a problem Hamiltonian,
-allowing the solution to emerge through adiabatic evolution.
+In the context of adiabatic quantum computation we aim to encode this constraint into the ground state of a problem Hamiltonian, allowing the solution to emerge through adiabatic evolution.
 
-To encode candidate solutions $p$ and $q$, we adopt a binary representation
-of natural numbers. Any natural number $N$ can be expressed as:
+To encode candidate solutions $p$ and $q$, we adopt a binary representation of natural numbers. Any natural number $N$ can be expressed as:
 \begin{equation}
 	N = \sum_{j=0}^{n_\text{bits} - 1} 2^j x_j,
 	\label{eq:binary_integer}
 \end{equation}
-where each $x_j \in \{0,1\}$ and the bit string $\mathbf{x} = x_{n_\text{bits}-1} \dots x_0$
-represents the binary encoding of $N$. In our approach, we exploit the fact that the factors
-$p$ and $q$ of an odd composite number can be rewritten as:
+where each $x_j \in \{0,1\}$ and the bit string $\mathbf{x} = x_{n_\text{bits}-1} \dots x_0$ represents the binary encoding of $N$. In their approach, Peng et al.~\cite{peng_quantum_2008} exploit the fact that the factors $p$ and $q$ of an odd composite number can be rewritten as:
 \begin{equation}
 	\begin{cases}
 		p = 2p' + 1 \\
@@ -28,8 +21,7 @@ $p$ and $q$ of an odd composite number can be rewritten as:
 	\end{cases} .
 	\label{eq:factors_simplification}
 \end{equation}
-It can be proved that the $n_p$ and $n_q$ are an upper bound on the number of qubits
-required to represent $p'$ and $q'$, respectively:
+It can be proved that the $n_p$ and $n_q$ are an upper bound on the number of qubits required to represent $p'$ and $q'$, respectively:
 \begin{equation}
 	\begin{cases}
 		n_p = m\,\big(\lfloor \sqrt{N} \rfloor_o\big) - 1 \\[2ex]
@@ -37,85 +29,48 @@ required to represent $p'$ and $q'$, respectively:
 	\end{cases} ,
 	\label{eq:factors_num_bits}
 \end{equation}
-where $\lfloor a \rfloor \big(\lfloor a \rfloor_o\big)$ denotes the largest (odd)
-integer not larger than a, while $m(b)$ denotes the smallest number of bits
-required for representing $b$~\cite{peng_quantum_2008}. Then, the adiabatic factorization
-algorithm will make use of $n = n_p + n_q$ qubits. The full quantum state 
+where $\lfloor a \rfloor \big(\lfloor a \rfloor_o\big)$ denotes the largest (odd) integer not larger than a, while $m(b)$ denotes the smallest number of bits required for representing $b$~\cite{peng_quantum_2008}. Then, the adiabatic factorization algorithm will make use of $n = n_p + n_q$ qubits. The full quantum state 
 \begin{equation}
 	\ket{\Psi} = \ket*{\Psi_{p'}} \otimes \ket*{\Psi_{q'}},
 	\label{eq:full_quantum_state}
 \end{equation}
-where $\ket*{\Psi_{p'}} = \ket*{\psi_{1}}\otimes \cdots \otimes \ket*{\psi_{n_p}}$
-and $\ket*{\Psi_{q'}} = \ket*{\psi_{n_p+1}}\otimes \cdots \otimes \ket*{\psi_{n_p +n_q}}$.
+where $\ket*{\Psi_{p'}} = \ket*{\psi_{1}}\otimes \cdots \otimes \ket*{\psi_{n_p}}$ and $\ket*{\Psi_{q'}} = \ket*{\psi_{n_p+1}}\otimes \cdots \otimes \ket*{\psi_{n_p +n_q}}$.
 
-To encode the factorization constraint into the adiabatic quantum framework, we follow
-the approach of Ref.~\cite{hegade_digitized_2021} and define the objective function:
+To encode the factorization constraint into the adiabatic quantum framework, we define the objective function as ~\cite{peng_quantum_2008}:
 \begin{equation}
 	f(p,q) = \big(N - p \times q \big)^2,
 \end{equation}
-such that its global minimum $f(p,q)=0$ corresponds to valid factors. Translating this
-into a Hamiltonian acting on the computational basis, we obtain the quadratic problem Hamiltonian:
+such that its global minimum $f(p,q)=0$ corresponds to valid factors. Translating this into a Hamiltonian acting on the computational basis, we obtain the quadratic problem Hamiltonian:
 \begin{equation}
 	\hat{H}_\mathrm{QP} = \bigg[ N \1 - \bigg( \sum_{\ell=1}^{n_p} 2^\ell \hat{x}_\ell + \1 \bigg)
 	\bigg( \sum_{m=1}^{n_q} 2^m \hat{y}_m + \1 \bigg) \bigg]^2\,,
 	\label{eq:quadratic_problem_hamiltonian}
 \end{equation}
-where $\hat{x}_\ell = \dfrac{\1 - \hat{\sigma}_\ell^z}{2}$ and $\hat{y}_m = \dfrac{\1 - \hat{\sigma}_m^z}{2}$
-are the number operators acting on the qubits encoding $p'$ and $q'$, respectively. The solution
-to the factorization problem is encoded in the ground state of $\hat{H}_\mathrm{QP}$.
+where $\hat{x}_\ell = \dfrac{\1 - \hat{\sigma}_\ell^z}{2}$ and $\hat{y}_m = \dfrac{\1 - \hat{\sigma}_m^z}{2}$ are the number operators acting on the qubits encoding $p'$ and $q'$, respectively. The solution to the factorization problem is encoded in the ground state of $\hat{H}_\mathrm{QP}$.
 
 The initial state of the system is prepared as:
 \begin{equation}
 	\ket{\psi(0)} = \ket{+}^{\otimes n}\,,
 	\label{eq:initial_state}
 \end{equation}
-where $\ket{+} = \frac{1}{\sqrt{2}} (\ket{0} + \ket{1})$ is the eigenstate of $\hat{\sigma}^x$,
-corresponding to the ground state of the initial Hamiltonian $\hat{H}_0$ defined in Eq.~\ref{eq:transverse_field_hamiltonian}.
-Following the adiabatic theorem, if the evolution from $\hat{H}_0$ to $\hat{H}_\mathrm{QP}$
-is slow enough, the system will remain in the instantaneous ground state, reaching the ground state of
-$\hat{H}_\mathrm{QP}$ at the end of the protocol. This final state encodes the solution to the factorization
-problem.
+where $\ket{+} = \frac{1}{\sqrt{2}} (\ket{0} + \ket{1})$ is the eigenstate of $\hat{\sigma}^x$, corresponding to the ground state of the initial Hamiltonian $\hat{H}_0$ defined in Eq.~\ref{eq:transverse_field_hamiltonian}.
+Following the adiabatic theorem, if the evolution from $\hat{H}_0$ to $\hat{H}_\mathrm{QP}$ is slow enough, the system will remain in the instantaneous ground state, reaching the ground state of $\hat{H}_\mathrm{QP}$ at the end of the protocol. This final state encodes the solution to the factorization problem.
 
-Despite its conceptual clarity, the Hamiltonian $\hat{H}_\mathrm{QP}$ includes high-order
-multiqubit interactions, such as three- and four-body terms of the form
-$\hat{\sigma}_\ell^z \hat{\sigma}_m^z \hat{\sigma}_k^z$ and $\hat{\sigma}_\ell^z \hat{\sigma}_m^z
-\hat{\sigma}_k^z \hat{\sigma}_n^z$.
-These many-body interactions are difficult to implement, since they require one to bring
-all involved qubits together and make them interact in a controlled way, resulting in
-prone-to-error processes. The need to avoid those terms is of pivotal interest to provide
-efficient quantum algorithms.
-
-{\color{red} (FELIP: maybe put the results that these research groups obtained when applying AQC for factorization)}
+Despite its conceptual clarity, the Hamiltonian $\hat{H}_\mathrm{QP}$ includes high-order multiqubit interactions, such as three- and four-body terms of the form $\hat{\sigma}_\ell^z \hat{\sigma}_m^z \hat{\sigma}_k^z$ and $\hat{\sigma}_\ell^z \hat{\sigma}_m^z \hat{\sigma}_k^z \hat{\sigma}_n^z$. These many-body interactions are difficult to implement, since they require one to bring all involved qubits together and make them interact in a controlled way, resulting in prone-to-error processes. The need to avoid those terms is of pivotal interest to provide efficient quantum algorithms.
 
 \subsection{Digitized Adiabatic Quantum Factorization}
-Although the adiabatic model is often formulated in terms of continuous time evolution, it
-can be simulated efficiently using gate-based quantum computation {\color{red} (ADD REFERENCES)}
-through a process known as digitization.
+Although the adiabatic model is often formulated in terms of continuous time evolution, it can be simulated efficiently using gate-based quantum computation through a process known as digitization.
 
-In the digitized approach, the continuous adiabatic evolution governed by a time-dependent
-Hamiltonian as of Eq.~\ref{eq:adiabatic_passage} is approximated by a sequence of quantum
-gates through trotterization, breaking the total evolution into small time slices. Each slice
-is implemented as a layer in a quantum circuit, simulating the adiabatic trajectory step
-by step.
+In the digitized approach, the continuous adiabatic evolution governed by a time-dependent Hamiltonian as of Eq.~\ref{eq:adiabatic_passage} is approximated by a sequence of quantum gates through trotterization, breaking the total evolution into small time slices. Each slice is implemented as a layer in a quantum circuit, simulating the adiabatic trajectory step by step.
 
-This method was successfully demonstrated in Ref.~\cite{hegade_digitized_2021}, where
-the authors implemented a digitized adiabatic factorization algorithm on superconducting
-hardware.
+This method was successfully demonstrated by Hegade et al., where the authors implemented a digitized adiabatic factorization algorithm on superconducting hardware. They successfully factorized numbers $N=21$, $N=91$, and $N=217$, and also proved enhancements by introducing a counter-diabatic driving term~\cite{hegade_digitized_2021}.
 
 \subsection{QAOA Applied to Factorization (Standard Protocol)}
-The Quantum Approximate Optimization Algorithm can be viewed as a shortcut to adiabaticity.
-Rather than performing a slow, continuous evolution, QAOA uses a fixed-depth quantum
-circuit composed of alternating unitaries derived from the mixing and problem Hamiltonians.
-The parameters of these unitaries are optimized variationally to prepare a state that
-approximates the solution.
+The Quantum Approximate Optimization Algorithm can be viewed as a shortcut to adiabaticity. Rather than performing a slow, continuous evolution, QAOA uses a fixed-depth quantum circuit composed of alternating unitaries derived from the mixing and problem Hamiltonians. The parameters of these unitaries are optimized variationally to prepare a state that approximates the solution.
 
-As shown in Ref.~\cite{diez-valle_universal_2025}, QAOA and quantum annealing share universal
-structural properties, and there is compelling evidence that smooth annealing paths can be constructed
-from QAOA optimal parameters. This supports the interpretation of QAOA as a digitized
-and variationally optimized version of an adiabatic process.
+Díez-Valle et al.~\cite{diez-valle_universal_2025} demonstrate that QAOA and quantum annealing share fundamental structural features. Their results provide strong evidence that smooth annealing paths can be reconstructed from the optimal parameters of QAOA, reinforcing the view of QAOA as a digitized, variationally optimized form of adiabatic evolution.
 
-In summary, the ingredients to build and execute the QAOA algorithm applied to integer factorization --or what we
-will call the ``standard protocol''-- are:
+In summary, the ingredients to build and execute the QAOA algorithm applied to integer factorization --or what we will call the ``\texttt{standard} protocol''-- are:
 \begin{itemize}
     \item A Hamiltonian $\hat{H}_\mathrm{QP}$ (Eq.~\ref{eq:quadratic_problem_hamiltonian}) that encodes the solution to the factorization problem in its ground state.
     \item A mixing Hamiltonian $\hat{H}_\mathrm{M}$ that does not commute with $\hat{H}_\mathrm{QP}$, e.g., Eq.~\ref{eq:mixing_hamiltonian}.
@@ -159,15 +114,7 @@ in Fig.~\ref{fig:standard_circuit}.
     \label{fig:standard_circuit}
 \end{figure}
 
-{\color{red} (FELIP: I found these few articles on QAOA factorization. The problem is that
-they use simplification techniques and ad-hoc analysis to run factorization using much less qubits. I 
-was not able to find articles that use the standard basic approach.)}
-
-In a study that makes use of a similar approach, plus further pre-processing and simplifications, Anschuetz et al.
-factorize numbers up to $291311$. Using additional classical pre-processing heuristics, Karamlou et al. were able to factorize
-$1099551473989$, $3127$, and $6557$ using only $3$, $4$, and $5$ qubits, respectively. However, our aim is not to
-compete with those approaches, since we focus on the general standard approach for factorization, without making use
-of ad-hoc analysis.
+A related study by Anschuetz et al.~\cite{anschuetz_variational_2018} applies a similar method, combined with additional preprocessing and simplifications, to factor numbers as large as $291311$. Building on this idea, Karamlou et al.~\cite{karamlou_analyzing_2021} used classical preprocessing heuristics to factor $1099551473989$, $3127$, and $6557$ using only $3$, $4$, and $5$ qubits, respectively. In contrast, our goal is not to optimize for specific instances, but rather to analyze the general, standard approach to quantum factorization without relying on ad-hoc techniques.
 
 \subsection{Our proposal (Linearized Protocol)}
 As mentioned in the introduction to Section~\ref{Section:AFA}, the adiabatic factorization algorithm
@@ -195,16 +142,8 @@ Unlike the original Hamiltonian $\hat{H}_\mathrm{QP}$, whose ground state encode
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.55\textwidth]{02-factorization/figs/linear_circuit_35.pdf}
+    \includegraphics[width=0.45\textwidth]{02-factorization/figs/linear_circuit_35.pdf}
     \caption{One-layer circuit for factorizing the number $N=35$ using our protocol, evolving the state with the linear Hamiltonian $H_{\mathrm{LP}}$. Notice the simplification with respect to Fig.~\ref{fig:standard_circuit}
     due to the absence of three- and four-qubit gates.}
     \label{fig:linear_circuit_35.pdf}
 \end{figure}
-
-{\color{blue} (I am not sure if adding this paragraph or not, since at the end the cost function is just
-a classical computation and maybe this explanation adds confusion.)}
-There is another difference with respect to the standard QAOA protocol. In the latter, the same Hamiltonian
-is typically used for both quantum state evolution and classical cost evaluation. In contrast,
-our proposal explicitly decouples these two roles: we use the linearized Hamiltonian to drive the quantum
-dynamics (problem Hamiltonian), and a separate cost Hamiltonian, whose ground state encodes the correct factors
-to steer the classical optimizer.
