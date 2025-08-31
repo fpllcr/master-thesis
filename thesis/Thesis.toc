@@ -20,5 +20,10 @@
 \contentsline {section}{\numberline {3.5}QAOA Setup Summary}{14}{section.3.5}%
 \contentsline {chapter}{\numberline {4}Results}{16}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Discussion}{19}{chapter.5}%
-\contentsline {chapter}{Bibliography}{21}{chapter*.20}%
-\contentsline {chapter}{Glossary}{22}{chapter*.20}%
+\contentsline {chapter}{\numberline {A}Appendix}{21}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Information Table for All Problem Instances}{21}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Fidelity Plots}{22}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Cost vs Layers}{24}{section.A.3}%
+\contentsline {chapter}{Appendix}{25}{figure.caption.24}%
+\contentsline {chapter}{Bibliography}{27}{appendix*.25}%
+\contentsline {chapter}{Glossary}{28}{appendix*.25}%

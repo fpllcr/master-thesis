@@ -21,12 +21,17 @@ A level-1 auxiliary file: 03-methodology/05-SetupSummary.aux
 A level-1 auxiliary file: 04-results/01-Introduction.aux
 A level-1 auxiliary file: 04-results/02-Results.aux
 A level-1 auxiliary file: 05-discussion/discussion.aux
+A level-1 auxiliary file: 06-appendix/00-TitleNLabel.aux
+A level-1 auxiliary file: 06-appendix/01-InformationTable.aux
+A level-1 auxiliary file: 06-appendix/02-FidelityEvolution.aux
+A level-1 auxiliary file: 06-appendix/03-CostEvolution.aux
+A level-1 auxiliary file: 06-appendix/04-Populations.aux
 The style file: unsrt.bst
 A level-1 auxiliary file: publications/publications.aux
 Database file #1: bibliography.bib
 You've used 16 entries,
             1791 wiz_defined-function locations,
-            573 strings with 7431 characters,
+            578 strings with 7594 characters,
 and the built_in function-call counts, 3767 in all, are:
 = -- 310
 > -- 214
