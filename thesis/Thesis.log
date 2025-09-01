@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  1 SEP 2025 11:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  1 SEP 2025 11:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1688,12 +1688,12 @@ Package lettrine.sty Info: Targeted height = 22.34943pt
  (./04-results/02-Results.tex [16
 
 ]
-<04-results/figs/fidelity_layers_2577143.pdf, id=483, 726.4327pt x 261.13435pt>
+<04-results/figs/fidelity_layers_2577143.pdf, id=484, 726.4327pt x 261.13435pt>
 File: 04-results/figs/fidelity_layers_2577143.pdf Graphic file (type pdf)
 <use 04-results/figs/fidelity_layers_2577143.pdf>
 Package pdftex.def Info: 04-results/figs/fidelity_layers_2577143.pdf  used on input line 12.
 (pdftex.def)             Requested size: 441.01773pt x 158.53864pt.
-<04-results/figs/populations_2577143.pdf, id=485, 748.46907pt x 572.63998pt>
+<04-results/figs/populations_2577143.pdf, id=486, 748.46907pt x 572.63998pt>
 File: 04-results/figs/populations_2577143.pdf Graphic file (type pdf)
 <use 04-results/figs/populations_2577143.pdf>
 Package pdftex.def Info: 04-results/figs/populations_2577143.pdf  used on input line 21.
@@ -1702,12 +1702,12 @@ Package pdftex.def Info: 04-results/figs/populations_2577143.pdf  used on input 
 Underfull \vbox (badness 1708) has occurred while \output is active []
 
  [17 <./04-results/figs/fidelity_layers_2577143.pdf> <./04-results/figs/populations_2577143.pdf>]
-<04-results/figs/fidelity_gates_2577143.pdf, id=589, 726.4327pt x 264.25539pt>
+<04-results/figs/fidelity_gates_2577143.pdf, id=591, 726.4327pt x 264.25539pt>
 File: 04-results/figs/fidelity_gates_2577143.pdf Graphic file (type pdf)
 <use 04-results/figs/fidelity_gates_2577143.pdf>
 Package pdftex.def Info: 04-results/figs/fidelity_gates_2577143.pdf  used on input line 32.
 (pdftex.def)             Requested size: 441.01773pt x 160.43346pt.
-<04-results/figs/accumulated_probability.pdf, id=591, 508.70049pt x 327.43266pt>
+<04-results/figs/accumulated_probability.pdf, id=593, 508.70049pt x 327.43266pt>
 File: 04-results/figs/accumulated_probability.pdf Graphic file (type pdf)
 <use 04-results/figs/accumulated_probability.pdf>
 Package pdftex.def Info: 04-results/figs/accumulated_probability.pdf  used on input line 41.
@@ -1745,13 +1745,13 @@ See the caption package documentation for explanation.
  (./06-appendix/02-FidelityEvolution.tex [21
 
 ]
-<06-appendix/figs/fidelity_layers_all.pdf, id=752, 739.2351pt x 1068.02884pt>
+<06-appendix/figs/fidelity_layers_all.pdf, id=754, 739.2351pt x 1068.02884pt>
 File: 06-appendix/figs/fidelity_layers_all.pdf Graphic file (type pdf)
 <use 06-appendix/figs/fidelity_layers_all.pdf>
 Package pdftex.def Info: 06-appendix/figs/fidelity_layers_all.pdf  used on input line 8.
 (pdftex.def)             Requested size: 436.60997pt x 630.79973pt.
  [22 <./06-appendix/figs/fidelity_layers_all.pdf>]
-<06-appendix/figs/fidelity_gates_all.pdf, id=841, 744.55025pt x 1068.31114pt>
+<06-appendix/figs/fidelity_gates_all.pdf, id=844, 744.55025pt x 1068.31114pt>
 File: 06-appendix/figs/fidelity_gates_all.pdf Graphic file (type pdf)
 <use 06-appendix/figs/fidelity_gates_all.pdf>
 Package pdftex.def Info: 06-appendix/figs/fidelity_gates_all.pdf  used on input line 16.
@@ -1760,7 +1760,7 @@ Package pdftex.def Info: 06-appendix/figs/fidelity_gates_all.pdf  used on input 
 \openout2 = `06-appendix/03-CostEvolution.aux'.
 
  (./06-appendix/03-CostEvolution.tex [23 <./06-appendix/figs/fidelity_gates_all.pdf>]
-<06-appendix/figs/cost_layers_all.pdf, id=938, 755.2951pt x 1068.02884pt>
+<06-appendix/figs/cost_layers_all.pdf, id=940, 755.2951pt x 1068.02884pt>
 File: 06-appendix/figs/cost_layers_all.pdf Graphic file (type pdf)
 <use 06-appendix/figs/cost_layers_all.pdf>
 Package pdftex.def Info: 06-appendix/figs/cost_layers_all.pdf  used on input line 7.
@@ -1769,12 +1769,12 @@ Package pdftex.def Info: 06-appendix/figs/cost_layers_all.pdf  used on input lin
 \openout2 = `06-appendix/04-Populations.aux'.
 
  (./06-appendix/04-Populations.tex [24 <./06-appendix/figs/cost_layers_all.pdf>]
-<06-appendix/figs/populations_all1.pdf, id=1031, 778.14243pt x 1062.42195pt>
+<06-appendix/figs/populations_all1.pdf, id=1032, 778.14243pt x 1062.42195pt>
 File: 06-appendix/figs/populations_all1.pdf Graphic file (type pdf)
 <use 06-appendix/figs/populations_all1.pdf>
 Package pdftex.def Info: 06-appendix/figs/populations_all1.pdf  used on input line 7.
 (pdftex.def)             Requested size: 441.01773pt x 602.13382pt.
-<06-appendix/figs/populations_all2.pdf, id=1032, 785.16867pt x 1073.46321pt>
+<06-appendix/figs/populations_all2.pdf, id=1033, 785.16867pt x 1073.46321pt>
 File: 06-appendix/figs/populations_all2.pdf Graphic file (type pdf)
 <use 06-appendix/figs/populations_all2.pdf>
 Package pdftex.def Info: 06-appendix/figs/populations_all2.pdf  used on input line 12.
@@ -1822,10 +1822,10 @@ Here is how much of TeX's memory you used:
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
  </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Thesis.pdf (35 pages, 940532 bytes).
+Output written on Thesis.pdf (35 pages, 940565 bytes).
 PDF statistics:
- 1222 PDF objects out of 1440 (max. 8388607)
- 585 compressed objects within 6 object streams
+ 1223 PDF objects out of 1440 (max. 8388607)
+ 586 compressed objects within 6 object streams
  132 named destinations out of 1000 (max. 500000)
  135286 words of extra memory for PDF output out of 154059 (max. 10000000)
 
