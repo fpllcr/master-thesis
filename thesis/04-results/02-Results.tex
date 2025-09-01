@@ -5,7 +5,7 @@ Firstly, we evaluate the fidelities achieved by the different protocols as a fun
     \item For $N = 143$, the \texttt{standard} protocol initially leads, until a sudden fidelity jump in one of the \texttt{linear} protocols overtakes it.  
 \end{itemize}
 
-As the problem size increases, the third behavior---a sudden jump in fidelity---appears more frequently. The underlying reasons for this phenomenon will be analyzed in Chapter~\ref{Chapter:Discussion}.  
+As the problem size increases, the third behavior---a sudden jump in fidelity---appears more frequently. Although the cost-function landscape evolves smoothly, the fidelity of \texttt{linear} protocols often exhibits these abrupt improvements. The underlying reasons for this phenomenon will be analyzed in Chapter~\ref{Chapter:Discussion}.
 
 \begin{figure}[h]
     \centering
@@ -14,8 +14,7 @@ As the problem size increases, the third behavior---a sudden jump in fidelity---
     \label{fig:fidelity_layers}
 \end{figure}
 
-To complement the fidelity analysis, Fig.~\ref{fig:populations} depicts the state populations
-at the end of each protocol, with valid solutions highlighted by dark-colored bars.
+To complement the fidelity analysis, Fig.~\ref{fig:populations} depicts the state populations at the end of each protocol, with valid solutions highlighted by dark-colored bars.
 
 \begin{figure}[h]
     \centering
@@ -35,12 +34,7 @@ Although fidelity as a function of depth already demonstrates the improved perfo
     \label{fig:fidelity_gates}
 \end{figure}
 
-Finally, as a summarizing plot, Fig.~\ref{fig:accumulated_probability} presents a metric that
-enables a consistent comparison between protocols across problem sizes. For larger problem instances,
-fidelity does not always reach the same reference level within practical resource limits,
-which makes direct fidelity thresholds less suitable as a single benchmark. To address this,
-we consider how each protocol concentrates probability within the most relevant portion of
-the spectrum, providing a way to compare performance across different problem sizes.
+Finally, as a summarizing plot, Fig.~\ref{fig:accumulated_probability} presents a metric that enables a consistent comparison between protocols across problem sizes. For larger problem instances, fidelity does not always reach the same reference level within practical resource limits, which makes direct fidelity thresholds less suitable as a single benchmark. To address this, we consider how each protocol concentrates probability within the most relevant portion of the spectrum, providing a way to compare performance across different problem sizes.
 
 \begin{figure}[h]
     \centering
