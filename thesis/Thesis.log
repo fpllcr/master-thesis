@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  1 SEP 2025 11:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  3 SEP 2025 13:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1261,7 +1261,7 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 44.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-InitialState.aux) (./03-methodology/02-IncrementalApproach.aux) (./03-methodology/03-ParameterInitialization.aux) (./03-methodology/04-ClassicalOptimizer.aux) (./03-methodology/05-SetupSummary.aux) (./04-results/01-Introduction.aux) (./04-results/02-Results.aux) (./05-discussion/discussion.aux) (./06-appendix/00-TitleNLabel.aux) (./06-appendix/01-InformationTable.aux) (./06-appendix/02-FidelityEvolution.aux) (./06-appendix/03-CostEvolution.aux) (./06-appendix/04-Populations.aux) (./publications/publications.aux))
+) (./Thesis.aux (./00-frontmatter/cover.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-InitialState.aux) (./03-methodology/02-IncrementalApproach.aux) (./03-methodology/03-ParameterInitialization.aux) (./03-methodology/04-ClassicalOptimizer.aux) (./03-methodology/05-SetupSummary.aux) (./04-results/01-Introduction.aux) (./04-results/02-Results.aux) (./05-discussion/discussion.aux) (./06-appendix/00-TitleNLabel.aux) (./06-appendix/01-InformationTable.aux) (./06-appendix/02-FidelityEvolution.aux) (./06-appendix/03-CostEvolution.aux) (./06-appendix/04-Populations.aux) (./publications/publications.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
@@ -1384,100 +1384,83 @@ LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/ztmcm/m/n --> OT1/ntxtlf/m/n on input line 44.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/ntxtlf/m/n --> OT1/ntxtlf/b/n on input line 44.
-\openout2 = `00-frontmatter/title.aux'.
+\openout2 = `00-frontmatter/cover.aux'.
 
- (./00-frontmatter/title.tex [1
+ (./00-frontmatter/cover.tex
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=674.33032pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-20.78552pt
+* \headheight=14.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=116.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+<00-frontmatter/logos/uimp_logo.pdf, id=7, 356.33125pt x 56.21pt>
+File: 00-frontmatter/logos/uimp_logo.pdf Graphic file (type pdf)
+<use 00-frontmatter/logos/uimp_logo.pdf>
+Package pdftex.def Info: 00-frontmatter/logos/uimp_logo.pdf  used on input line 10.
+(pdftex.def)             Requested size: 180.37267pt x 28.45274pt.
+<00-frontmatter/logos/csic_logo.pdf, id=8, 1041.8925pt x 255.95625pt>
+File: 00-frontmatter/logos/csic_logo.pdf Graphic file (type pdf)
+<use 00-frontmatter/logos/csic_logo.pdf>
+Package pdftex.def Info: 00-frontmatter/logos/csic_logo.pdf  used on input line 15.
+(pdftex.def)             Requested size: 127.3905pt x 31.2982pt.
+<00-frontmatter/logos/master_logo.pdf, id=9, 915.42pt x 211.79124pt>
+File: 00-frontmatter/logos/master_logo.pdf Graphic file (type pdf)
+<use 00-frontmatter/logos/master_logo.pdf>
+Package pdftex.def Info: 00-frontmatter/logos/master_logo.pdf  used on input line 21.
+(pdftex.def)             Requested size: 432.48051pt x 100.05896pt.
+ [1
 
 \openout4 = `Thesis.ist'.
 
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-])
-\openout2 = `00-frontmatter/committee.aux'.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./00-frontmatter/logos/uimp_logo.pdf> <./00-frontmatter/logos/csic_logo.pdf
 
- (./00-frontmatter/committee.tex
-LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 7.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
-File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
-)
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 7.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 7.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 7.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 7.
- (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
-File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-)
+pdfTeX warning: pdflatex (file ./00-frontmatter/logos/csic_logo.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./00-frontmatter/logos/master_logo.pdf
 
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 7.
-
-
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 7.
-
-<00-frontmatter/logos/VU-logo.pdf, id=18, 210.90294pt x 62.7667pt>
-File: 00-frontmatter/logos/VU-logo.pdf Graphic file (type pdf)
-<use 00-frontmatter/logos/VU-logo.pdf>
-Package pdftex.def Info: 00-frontmatter/logos/VU-logo.pdf  used on input line 61.
-(pdftex.def)             Requested size: 121.41626pt x 36.135pt.
-<example-image.pdf, id=19, 321.2pt x 240.9pt>
-File: example-image.pdf Graphic file (type pdf)
-<use example-image.pdf>
-Package pdftex.def Info: example-image.pdf  used on input line 64.
-(pdftex.def)             Requested size: 67.44908pt x 50.58878pt.
-<00-frontmatter/logos/NWO-logo.pdf, id=20, 142.26149pt x 230.47104pt>
-File: 00-frontmatter/logos/NWO-logo.pdf Graphic file (type pdf)
-<use 00-frontmatter/logos/NWO-logo.pdf>
-Package pdftex.def Info: 00-frontmatter/logos/NWO-logo.pdf  used on input line 68.
-(pdftex.def)             Requested size: 26.344pt x 42.67912pt.
-) [3
-
-
-
- <./00-frontmatter/logos/VU-logo.pdf> </usr/share/texlive/texmf-dist/tex/latex/mwe/example-image.pdf> <./00-frontmatter/logos/NWO-logo.pdf>]
-\openout2 = `00-frontmatter/acks.aux'.
-
- (./00-frontmatter/acks.tex) [4
-
-
-
-
-] [5
-
-
-] (./Thesis.toc)
+pdfTeX warning: pdflatex (file ./00-frontmatter/logos/master_logo.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]) (./Thesis.toc)
 \tf@toc=\write6
 \openout6 = `Thesis.toc'.
 
- [6
+ [2
+
+
 
 
 ]
 \openout2 = `01-introduction/00-Abstract.aux'.
 
- (./01-introduction/00-Abstract.tex) [7
+ (./01-introduction/00-Abstract.tex) [3
 
 
 ]
@@ -1493,12 +1476,49 @@ Package lettrine.sty Info: Targeted height = 22.34943pt
 \openout2 = `01-introduction/01-CircuitModel.aux'.
 
  (./01-introduction/01-CircuitModel.tex
-<01-introduction/figs/example_circuit.pdf, id=156, 1013.7875pt x 201.75375pt>
+LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 10.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
+File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
+)
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 10.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 10.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 10.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 10.
+ (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+)
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 10.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 10.
+
+<01-introduction/figs/example_circuit.pdf, id=119, 1013.7875pt x 201.75375pt>
 File: 01-introduction/figs/example_circuit.pdf Graphic file (type pdf)
 <use 01-introduction/figs/example_circuit.pdf>
 Package pdftex.def Info: 01-introduction/figs/example_circuit.pdf  used on input line 27.
 (pdftex.def)             Requested size: 396.91325pt x 78.9884pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1512,7 +1532,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ]
-<01-introduction/figs/adiabatic_theorem.pdf, id=166, 487.8225pt x 167.62625pt>
+<01-introduction/figs/adiabatic_theorem.pdf, id=130, 487.8225pt x 167.62625pt>
 File: 01-introduction/figs/adiabatic_theorem.pdf Graphic file (type pdf)
 <use 01-introduction/figs/adiabatic_theorem.pdf>
 Package pdftex.def Info: 01-introduction/figs/adiabatic_theorem.pdf  used on input line 28.
@@ -1531,7 +1551,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 14
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-<01-introduction/figs/qaoa.png, id=202, 1002.74625pt x 499.8675pt>
+<01-introduction/figs/qaoa.png, id=165, 1002.74625pt x 499.8675pt>
 File: 01-introduction/figs/qaoa.png Graphic file (type png)
 <use 01-introduction/figs/qaoa.png>
 Package pdftex.def Info: 01-introduction/figs/qaoa.png  used on input line 46.
@@ -1590,7 +1610,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<02-factorization/figs/standard_circuit_35.pdf, id=267, 1816.7875pt x 347.2975pt>
+<02-factorization/figs/standard_circuit_35.pdf, id=231, 1816.7875pt x 347.2975pt>
 File: 02-factorization/figs/standard_circuit_35.pdf Graphic file (type pdf)
 <use 02-factorization/figs/standard_circuit_35.pdf>
 Package pdftex.def Info: 02-factorization/figs/standard_circuit_35.pdf  used on input line 111.
@@ -1603,12 +1623,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-<02-factorization/figs/gate_decomposition.pdf, id=284, 1619.04875pt x 185.69376pt>
+<02-factorization/figs/gate_decomposition.pdf, id=248, 1619.04875pt x 185.69376pt>
 File: 02-factorization/figs/gate_decomposition.pdf Graphic file (type pdf)
 <use 02-factorization/figs/gate_decomposition.pdf>
 Package pdftex.def Info: 02-factorization/figs/gate_decomposition.pdf  used on input line 129.
 (pdftex.def)             Requested size: 441.01773pt x 50.58pt.
-<02-factorization/figs/linear_circuit_35.pdf, id=285, 729.72626pt x 347.2975pt>
+<02-factorization/figs/linear_circuit_35.pdf, id=249, 729.72626pt x 347.2975pt>
 File: 02-factorization/figs/linear_circuit_35.pdf Graphic file (type pdf)
 <use 02-factorization/figs/linear_circuit_35.pdf>
 Package pdftex.def Info: 02-factorization/figs/linear_circuit_35.pdf  used on input line 145.
@@ -1640,7 +1660,7 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
 \openout2 = `03-methodology/02-IncrementalApproach.aux'.
 
  (./03-methodology/02-IncrementalApproach.tex
-<03-methodology/figs/costfun_landscape.pdf, id=309, 735.1657pt x 454.78847pt>
+<03-methodology/figs/costfun_landscape.pdf, id=274, 735.1657pt x 454.78847pt>
 File: 03-methodology/figs/costfun_landscape.pdf Graphic file (type pdf)
 <use 03-methodology/figs/costfun_landscape.pdf>
 Package pdftex.def Info: 03-methodology/figs/costfun_landscape.pdf  used on input line 24.
@@ -1659,7 +1679,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13 <./03-methodology/figs/costfun_landscape.pdf>]
-<03-methodology/figs/optimizer_comparison.pdf, id=365, 728.4402pt x 261.13435pt>
+<03-methodology/figs/optimizer_comparison.pdf, id=329, 728.4402pt x 261.13435pt>
 File: 03-methodology/figs/optimizer_comparison.pdf Graphic file (type pdf)
 <use 03-methodology/figs/optimizer_comparison.pdf>
 Package pdftex.def Info: 03-methodology/figs/optimizer_comparison.pdf  used on input line 18.
@@ -1668,7 +1688,7 @@ Package pdftex.def Info: 03-methodology/figs/optimizer_comparison.pdf  used on i
 \openout2 = `03-methodology/05-SetupSummary.aux'.
 
  (./03-methodology/05-SetupSummary.tex [14 <./03-methodology/figs/optimizer_comparison.pdf>]
-<03-methodology/figs/optimizer_parameters_comparison.pdf, id=413, 762.33244pt x 455.90201pt>
+<03-methodology/figs/optimizer_parameters_comparison.pdf, id=377, 762.33244pt x 455.90201pt>
 File: 03-methodology/figs/optimizer_parameters_comparison.pdf Graphic file (type pdf)
 <use 03-methodology/figs/optimizer_parameters_comparison.pdf>
 Package pdftex.def Info: 03-methodology/figs/optimizer_parameters_comparison.pdf  used on input line 15.
@@ -1688,12 +1708,12 @@ Package lettrine.sty Info: Targeted height = 22.34943pt
  (./04-results/02-Results.tex [16
 
 ]
-<04-results/figs/fidelity_layers_2577143.pdf, id=484, 726.4327pt x 261.13435pt>
+<04-results/figs/fidelity_layers_2577143.pdf, id=449, 726.4327pt x 261.13435pt>
 File: 04-results/figs/fidelity_layers_2577143.pdf Graphic file (type pdf)
 <use 04-results/figs/fidelity_layers_2577143.pdf>
 Package pdftex.def Info: 04-results/figs/fidelity_layers_2577143.pdf  used on input line 12.
 (pdftex.def)             Requested size: 441.01773pt x 158.53864pt.
-<04-results/figs/populations_2577143.pdf, id=486, 748.46907pt x 572.63998pt>
+<04-results/figs/populations_2577143.pdf, id=451, 748.46907pt x 572.63998pt>
 File: 04-results/figs/populations_2577143.pdf Graphic file (type pdf)
 <use 04-results/figs/populations_2577143.pdf>
 Package pdftex.def Info: 04-results/figs/populations_2577143.pdf  used on input line 21.
@@ -1702,12 +1722,12 @@ Package pdftex.def Info: 04-results/figs/populations_2577143.pdf  used on input 
 Underfull \vbox (badness 1708) has occurred while \output is active []
 
  [17 <./04-results/figs/fidelity_layers_2577143.pdf> <./04-results/figs/populations_2577143.pdf>]
-<04-results/figs/fidelity_gates_2577143.pdf, id=591, 726.4327pt x 264.25539pt>
+<04-results/figs/fidelity_gates_2577143.pdf, id=555, 726.4327pt x 264.25539pt>
 File: 04-results/figs/fidelity_gates_2577143.pdf Graphic file (type pdf)
 <use 04-results/figs/fidelity_gates_2577143.pdf>
 Package pdftex.def Info: 04-results/figs/fidelity_gates_2577143.pdf  used on input line 32.
 (pdftex.def)             Requested size: 441.01773pt x 160.43346pt.
-<04-results/figs/accumulated_probability.pdf, id=593, 508.70049pt x 327.43266pt>
+<04-results/figs/accumulated_probability.pdf, id=557, 508.70049pt x 327.43266pt>
 File: 04-results/figs/accumulated_probability.pdf Graphic file (type pdf)
 <use 04-results/figs/accumulated_probability.pdf>
 Package pdftex.def Info: 04-results/figs/accumulated_probability.pdf  used on input line 41.
@@ -1745,13 +1765,13 @@ See the caption package documentation for explanation.
  (./06-appendix/02-FidelityEvolution.tex [21
 
 ]
-<06-appendix/figs/fidelity_layers_all.pdf, id=754, 739.2351pt x 1068.02884pt>
+<06-appendix/figs/fidelity_layers_all.pdf, id=718, 739.2351pt x 1068.02884pt>
 File: 06-appendix/figs/fidelity_layers_all.pdf Graphic file (type pdf)
 <use 06-appendix/figs/fidelity_layers_all.pdf>
 Package pdftex.def Info: 06-appendix/figs/fidelity_layers_all.pdf  used on input line 8.
 (pdftex.def)             Requested size: 436.60997pt x 630.79973pt.
  [22 <./06-appendix/figs/fidelity_layers_all.pdf>]
-<06-appendix/figs/fidelity_gates_all.pdf, id=844, 744.55025pt x 1068.31114pt>
+<06-appendix/figs/fidelity_gates_all.pdf, id=808, 744.55025pt x 1068.31114pt>
 File: 06-appendix/figs/fidelity_gates_all.pdf Graphic file (type pdf)
 <use 06-appendix/figs/fidelity_gates_all.pdf>
 Package pdftex.def Info: 06-appendix/figs/fidelity_gates_all.pdf  used on input line 16.
@@ -1760,7 +1780,7 @@ Package pdftex.def Info: 06-appendix/figs/fidelity_gates_all.pdf  used on input 
 \openout2 = `06-appendix/03-CostEvolution.aux'.
 
  (./06-appendix/03-CostEvolution.tex [23 <./06-appendix/figs/fidelity_gates_all.pdf>]
-<06-appendix/figs/cost_layers_all.pdf, id=940, 755.2951pt x 1068.02884pt>
+<06-appendix/figs/cost_layers_all.pdf, id=904, 755.2951pt x 1068.02884pt>
 File: 06-appendix/figs/cost_layers_all.pdf Graphic file (type pdf)
 <use 06-appendix/figs/cost_layers_all.pdf>
 Package pdftex.def Info: 06-appendix/figs/cost_layers_all.pdf  used on input line 7.
@@ -1769,12 +1789,12 @@ Package pdftex.def Info: 06-appendix/figs/cost_layers_all.pdf  used on input lin
 \openout2 = `06-appendix/04-Populations.aux'.
 
  (./06-appendix/04-Populations.tex [24 <./06-appendix/figs/cost_layers_all.pdf>]
-<06-appendix/figs/populations_all1.pdf, id=1032, 778.14243pt x 1062.42195pt>
+<06-appendix/figs/populations_all1.pdf, id=996, 778.14243pt x 1062.42195pt>
 File: 06-appendix/figs/populations_all1.pdf Graphic file (type pdf)
 <use 06-appendix/figs/populations_all1.pdf>
 Package pdftex.def Info: 06-appendix/figs/populations_all1.pdf  used on input line 7.
 (pdftex.def)             Requested size: 441.01773pt x 602.13382pt.
-<06-appendix/figs/populations_all2.pdf, id=1033, 785.16867pt x 1073.46321pt>
+<06-appendix/figs/populations_all2.pdf, id=997, 785.16867pt x 1073.46321pt>
 File: 06-appendix/figs/populations_all2.pdf Graphic file (type pdf)
 <use 06-appendix/figs/populations_all2.pdf>
 Package pdftex.def Info: 06-appendix/figs/populations_all2.pdf  used on input line 12.
@@ -1788,8 +1808,8 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 \newlabel{Section:PopulationPlots}{{A.4}{25}{Populations}{section.A.4}{}}
 \newlabel{Section:PopulationPlots@cref}{{[subappendix][4][2147483647,1]A.4}{[1][25][]25}}
  <./06-appendix/figs/populations_all1.pdf>] [26
-\@writefile{lof}{\contentsline {figure}{\numberline {A.4}{\ignorespaces Final state populations for all factorization instances. The number of layers was fixed as the minimum required to reach at least 80\% fidelity by any protocol. Solution states are shown as dark-colored bars.\relax }}{26}{figure.caption.24}\protected@file@percent }
-\newlabel{fig:populations_all}{{A.4}{26}{Final state populations for all factorization instances. The number of layers was fixed as the minimum required to reach at least 80\% fidelity by any protocol. Solution states are shown as dark-colored bars.\relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.4}{\ignorespaces Final state populations for all factorization instances. The number of layers was fixed as the minimum required to reach at least 80\% fidelity by any protocol. Solution states are shown as dark-colored bars.\relax }}{26}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:populations_all}{{A.4}{26}{Final state populations for all factorization instances. The number of layers was fixed as the minimum required to reach at least 80\% fidelity by any protocol. Solution states are shown as dark-colored bars.\relax }{figure.caption.23}{}}
 \newlabel{fig:populations_all@cref}{{[figure][4][2147483647,1]A.4}{[1][25][]26}}
  <./06-appendix/figs/populations_all2.pdf>] (./Thesis.bbl
 Overfull \hbox (1.54424pt too wide) in paragraph at lines 56--59
@@ -1810,22 +1830,22 @@ File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 LaTeX Font Info:    Trying to load font information for U+fontawesomethree on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
 File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
-)) (./Thesis.aux (./00-frontmatter/title.aux) (./00-frontmatter/committee.aux) (./00-frontmatter/acks.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-InitialState.aux) (./03-methodology/02-IncrementalApproach.aux) (./03-methodology/03-ParameterInitialization.aux) (./03-methodology/04-ClassicalOptimizer.aux) (./03-methodology/05-SetupSummary.aux) (./04-results/01-Introduction.aux) (./04-results/02-Results.aux) (./05-discussion/discussion.aux) (./06-appendix/00-TitleNLabel.aux) (./06-appendix/01-InformationTable.aux) (./06-appendix/02-FidelityEvolution.aux) (./06-appendix/03-CostEvolution.aux) (./06-appendix/04-Populations.aux) (./publications/publications.aux)) ) 
+)) (./Thesis.aux (./00-frontmatter/cover.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-InitialState.aux) (./03-methodology/02-IncrementalApproach.aux) (./03-methodology/03-ParameterInitialization.aux) (./03-methodology/04-ClassicalOptimizer.aux) (./03-methodology/05-SetupSummary.aux) (./04-results/01-Introduction.aux) (./04-results/02-Results.aux) (./05-discussion/discussion.aux) (./06-appendix/00-TitleNLabel.aux) (./06-appendix/01-InformationTable.aux) (./06-appendix/02-FidelityEvolution.aux) (./06-appendix/03-CostEvolution.aux) (./06-appendix/04-Populations.aux) (./publications/publications.aux)) ) 
 Here is how much of TeX's memory you used:
- 45816 strings out of 480129
- 865425 string characters out of 5893410
- 1286444 words of memory out of 5000000
- 62090 multiletter control sequences out of 15000+600000
- 573878 words of font info for 442 fonts, out of 8000000 for 9000
+ 45721 strings out of 480129
+ 862821 string characters out of 5893410
+ 1284629 words of memory out of 5000000
+ 62036 multiletter control sequences out of 15000+600000
+ 568545 words of font info for 427 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  106i,18n,105p,1280b,931s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
- </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Thesis.pdf (35 pages, 940565 bytes).
+ </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+Output written on Thesis.pdf (31 pages, 1854988 bytes).
 PDF statistics:
- 1223 PDF objects out of 1440 (max. 8388607)
- 586 compressed objects within 6 object streams
- 132 named destinations out of 1000 (max. 500000)
- 135286 words of extra memory for PDF output out of 154059 (max. 10000000)
+ 1187 PDF objects out of 1200 (max. 8388607)
+ 556 compressed objects within 6 object streams
+ 127 named destinations out of 1000 (max. 500000)
+ 125046 words of extra memory for PDF output out of 128383 (max. 10000000)
 
