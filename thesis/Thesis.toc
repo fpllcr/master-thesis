@@ -1,5 +1,6 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Abstract}{iii}{chapter*.2}%
+\contentsline {chapter}{Resumen}{iv}{chapter*.3}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Circuit Model of Quantum Computation}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Adiabatic Quantum Computation}{2}{section.1.2}%
@@ -23,6 +24,5 @@
 \contentsline {section}{\numberline {A.1}Information Table for All Problem Instances}{21}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Fidelity Plots}{22}{section.A.2}%
 \contentsline {section}{\numberline {A.3}Cost vs Layers}{24}{section.A.3}%
-\contentsline {chapter}{Appendix}{25}{figure.caption.23}%
-\contentsline {chapter}{Bibliography}{27}{appendix*.24}%
-\contentsline {chapter}{Glossary}{28}{appendix*.24}%
+\contentsline {chapter}{Appendix}{25}{figure.caption.24}%
+\contentsline {chapter}{Bibliography}{27}{appendix*.25}%
