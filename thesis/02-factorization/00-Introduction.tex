@@ -1,22 +1,5 @@
-\chapter{Factorization Algorithms}
+\chapter{Digitized Factorization}
 \label{Chapter:Factorization}
 
-\dropcap{T}he integer factorization problem consists of
-decomposing a given semiprime number $N$ into its prime constituents. While seemingly simple,
-no known classical algorithm can factor large integers efficiently, and the best classical
-methods --such as the general number field sieve-- scale superpolynomially with input
-size~\cite{montgomery_cwi_1994}. This computational asymmetry forms the foundation of widely
-used cryptographic protocols, most notably RSA, which relies on the practical difficulty of
-factoring large semiprimes to ensure security.
-
-The emergence of quantum algorithms has dramatically shifted the landscape of computational
-complexity associated with factorization. In particular, Shor's algorithm demonstrated that
-quantum computers can solve the problem in polynomial time, meaning a direct threat to
-RSA-based cryptography. However, implementing Shor's algorithm requires fault-tolerant quantum,
-hardware which remains out of reach in the current NISQ era.
-
-
-This chapter explores two quantum approaches to the factorization problem. First, we review
-Shor's algorithm and its quantum Fourier transform-based structure. Then, we introduce
-alternative strategies based on adiabatic quantum computation, which may offer more viable paths
-towards factorization on near-term quantum devices.
+\dropcap{T}his chapter explores two quantum approaches to the factorization problem. First, we review
+Shor's algorithm and its quantum Fourier transform-based structure. Next, we introduce an alternative method for factorization based on adiabatic quantum computation, referred to as \textit{adiabatic factorization}~\cite{peng_quantum_2008}, which may serve as a potentially viable approach for factorization on analog quantum computers. We briefly discuss the limitations of this method, primarily arising from the implementation of many-qubit gates, which pose significant challenges in practical experimental settings. To address this issue, we present our solution in the form of a \textit{linearized adiabatic} Hamiltonian for factorization. Finally, we conclude this section with a discussion of the methods employed to implement each algorithm, setting the stage for subsequent comparisons and analysis.

@@ -1,11 +1,21 @@
 \begin{thebibliography}{10}
 
+\bibitem{montgomery_cwi_1994}
+P.L. Montgomery.
+\newblock A survey of modern integer factorization algorithms.
+\newblock {\em CWI Quarterly}, 7(4):337---366, December 1994.
+
 \bibitem{hegade_digitized_2021}
 Narendra~N. Hegade, Koushik Paul, Francisco Albarrán-Arriagada, Xi~Chen, and
   Enrique Solano.
 \newblock Digitized {Adiabatic} {Quantum} {Factorization}.
 \newblock {\em Physical Review A}, 104(5):L050403, November 2021.
 \newblock arXiv:2105.09480 [quant-ph].
+
+\bibitem{nielsen00}
+Michael~A. Nielsen and Isaac~L. Chuang.
+\newblock {\em Quantum Computation and Quantum Information}.
+\newblock Cambridge University Press, 2000.
 
 \bibitem{sarandy_consistency_2004}
 M.~S. Sarandy, L.-A. Wu, and D.~A. Lidar.
@@ -35,6 +45,12 @@ Edward Farhi, Jeffrey Goldstone, and Sam Gutmann.
 \newblock A {Quantum} {Approximate} {Optimization} {Algorithm}, November 2014.
 \newblock arXiv:1411.4028 [quant-ph].
 
+\bibitem{zhou_quantum_2020}
+Leo Zhou, Sheng-Tao Wang, Soonwon Choi, Hannes Pichler, and Mikhail~D. Lukin.
+\newblock Quantum {Approximate} {Optimization} {Algorithm}: {Performance},
+  {Mechanism}, and {Implementation} on {Near}-{Term} {Devices}.
+\newblock {\em Physical Review X}, 10(2):021067, June 2020.
+
 \bibitem{farhi_quantum_2019}
 Edward Farhi and Aram~W. Harrow.
 \newblock Quantum {Supremacy} through the {Quantum} {Approximate}
@@ -51,16 +67,6 @@ Wen~Wei Ho and Timothy~H. Hsieh.
 Eric~R. Anschuetz, Jonathan~P. Olson, Alán Aspuru-Guzik, and Yudong Cao.
 \newblock Variational {Quantum} {Factoring}, August 2018.
 \newblock arXiv:1808.08927 [quant-ph].
-
-\bibitem{montgomery_cwi_1994}
-P.L. Montgomery.
-\newblock A survey of modern integer factorization algorithms.
-\newblock {\em CWI Quarterly}, 7(4):337---366, December 1994.
-
-\bibitem{nielsen00}
-Michael~A. Nielsen and Isaac~L. Chuang.
-\newblock {\em Quantum Computation and Quantum Information}.
-\newblock Cambridge University Press, 2000.
 
 \bibitem{peng_quantum_2008}
 Xinhua Peng, Zeyang Liao, Nanyang Xu, Gan Qin, Xianyi Zhou, Dieter Suter, and
@@ -84,12 +90,6 @@ Amir~H. Karamlou, William~A. Simon, Amara Katabarwa, Travis~L. Scholten, Borja
   a {Superconducting} {Quantum} {Processor}.
 \newblock {\em npj Quantum Information}, 7(1):156, October 2021.
 \newblock arXiv:2012.07825 [quant-ph].
-
-\bibitem{zhou_quantum_2020}
-Leo Zhou, Sheng-Tao Wang, Soonwon Choi, Hannes Pichler, and Mikhail~D. Lukin.
-\newblock Quantum {Approximate} {Optimization} {Algorithm}: {Performance},
-  {Mechanism}, and {Implementation} on {Near}-{Term} {Devices}.
-\newblock {\em Physical Review X}, 10(2):021067, June 2020.
 
 \bibitem{blekos_review_2024}
 Kostas Blekos, Dean Brand, Andrea Ceschini, Chiao-Hui Chou, Rui-Hao Li, Komal
