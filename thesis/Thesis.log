@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  10 SEP 2025 11:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  10 SEP 2025 12:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1540,36 +1540,36 @@ Package pdftex.def Info: 01-introduction/figs/adiabatic_theorem.pdf  used on inp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 9.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 <01-introduction/figs/qaoa.png, id=167, 1002.74625pt x 499.8675pt>
 File: 01-introduction/figs/qaoa.png Graphic file (type png)
 <use 01-introduction/figs/qaoa.png>
-Package pdftex.def Info: 01-introduction/figs/qaoa.png  used on input line 41.
+Package pdftex.def Info: 01-introduction/figs/qaoa.png  used on input line 36.
 (pdftex.def)             Requested size: 264.61333pt x 131.90746pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <9> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 45.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 37.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 45.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 37.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 45.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 37.
 
 
-Underfull \vbox (badness 1629) has occurred while \output is active []
+Underfull \vbox (badness 1275) has occurred while \output is active []
 
  [4 <./01-introduction/figs/qaoa.png>])
 \openout2 = `02-factorization/00-Introduction.aux'.
@@ -1609,10 +1609,14 @@ File: 02-factorization/figs/standard_circuit_35.pdf Graphic file (type pdf)
 Package pdftex.def Info: 02-factorization/figs/standard_circuit_35.pdf  used on input line 111.
 (pdftex.def)             Requested size: 441.01773pt x 84.30168pt.
 
-Underfull \vbox (badness 2351) has occurred while \output is active []
 
- [9 <./02-factorization/figs/standard_circuit_35.pdf>]
-<02-factorization/figs/gate_decomposition.pdf, id=252, 1619.04875pt x 185.69376pt>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+<02-factorization/figs/gate_decomposition.pdf, id=251, 1619.04875pt x 185.69376pt>
 File: 02-factorization/figs/gate_decomposition.pdf Graphic file (type pdf)
 <use 02-factorization/figs/gate_decomposition.pdf>
 Package pdftex.def Info: 02-factorization/figs/gate_decomposition.pdf  used on input line 126.
@@ -1629,7 +1633,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 )
 \openout2 = `03-methodology/00-Introduction.aux'.
 
- (./03-methodology/00-Introduction.tex [10 <./02-factorization/figs/gate_decomposition.pdf>])
+ (./03-methodology/00-Introduction.tex [10 <./02-factorization/figs/standard_circuit_35.pdf> <./02-factorization/figs/gate_decomposition.pdf
+
+pdfTeX warning: pdflatex (file ./02-factorization/figs/gate_decomposition.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>])
 \openout2 = `03-methodology/01-InitialState.aux'.
 
  (./03-methodology/01-InitialState.tex
@@ -1722,7 +1729,7 @@ Chapter 4.
 File: 05-discussion/figs/energy_spectrums.pdf Graphic file (type pdf)
 <use 05-discussion/figs/energy_spectrums.pdf>
 Package pdftex.def Info: 05-discussion/figs/energy_spectrums.pdf  used on input line 19.
-(pdftex.def)             Requested size: 441.01773pt x 368.34389pt.
+(pdftex.def)             Requested size: 423.37997pt x 353.61012pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1731,11 +1738,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [18
 
-]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[19 <./05-discussion/figs/energy_spectrums.pdf>])
+] [19 <./05-discussion/figs/energy_spectrums.pdf>])
 \openout2 = `06-appendix/00-TitleNLabel.aux'.
 
  (./06-appendix/00-TitleNLabel.tex [20]
@@ -1807,13 +1810,9 @@ File: 06-appendix/figs/energy_spectrums_all2.pdf Graphic file (type pdf)
 Package pdftex.def Info: 06-appendix/figs/energy_spectrums_all2.pdf  used on input line 12.
 (pdftex.def)             Requested size: 423.37997pt x 667.12025pt.
 ) [27 <./06-appendix/figs/energy_spectrums_all1.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \vbox (7.33717pt too high) has occurred while \output is active []
 
- [28
-\@writefile{lof}{\contentsline {figure}{\numberline {A.5}{\ignorespaces Energy spectrums for all factorization instances. The horizontal axis shows the decimal encoding of computational basis states, while the vertical axis indicates the normalized eigenenergies.\relax }}{28}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:energy_spectrums_all}{{A.5}{28}{Energy spectrums for all factorization instances. The horizontal axis shows the decimal encoding of computational basis states, while the vertical axis indicates the normalized eigenenergies.\relax }{figure.caption.25}{}}
-\newlabel{fig:energy_spectrums_all@cref}{{[figure][5][2147483647,1]A.5}{[1][27][]28}}
- <./06-appendix/figs/energy_spectrums_all2.pdf>] (./Thesis.bbl
+ [28 <./06-appendix/figs/energy_spectrums_all2.pdf>] (./Thesis.bbl
 Overfull \hbox (1.54424pt too wide) in paragraph at lines 4--7
 []\OT1/ptm/m/n/10.95 (-20) P.L. Montgomery.  A survey of modern integer factorization algorithms.  \OT1/ptm/m/it/10.95 (-20) CWI Quarterly\OT1/ptm/m/n/10.95 (-20) , 7(4):337---
  []
@@ -1843,17 +1842,17 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 45789 strings out of 480129
- 865173 string characters out of 5893410
- 1285208 words of memory out of 5000000
- 62079 multiletter control sequences out of 15000+600000
- 570183 words of font info for 434 fonts, out of 8000000 for 9000
+ 45802 strings out of 480129
+ 865340 string characters out of 5893410
+ 1286672 words of memory out of 5000000
+ 62083 multiletter control sequences out of 15000+600000
+ 571199 words of font info for 441 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  106i,18n,105p,1617b,920s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
  </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Thesis.pdf (34 pages, 1938447 bytes).
+Output written on Thesis.pdf (34 pages, 1938291 bytes).
 PDF statistics:
  1402 PDF objects out of 1440 (max. 8388607)
  628 compressed objects within 7 object streams

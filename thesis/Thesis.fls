@@ -2529,10 +2529,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
@@ -2540,8 +2536,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm6.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmbc7t.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT ./02-factorization/figs/standard_circuit_35.pdf
 INPUT ./02-factorization/figs/standard_circuit_35.pdf
@@ -2551,6 +2549,8 @@ INPUT ./02-factorization/figs/standard_circuit_35.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm9.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm5.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmbc7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT ./02-factorization/figs/gate_decomposition.pdf
 INPUT ./02-factorization/figs/gate_decomposition.pdf
 INPUT 02-factorization/figs/gate_decomposition.pdf
@@ -2698,6 +2698,10 @@ INPUT ./05-discussion/figs/energy_spectrums.pdf
 INPUT 05-discussion/figs/energy_spectrums.pdf
 INPUT ./05-discussion/figs/energy_spectrums.pdf
 INPUT ./05-discussion/figs/energy_spectrums.pdf
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7v.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
 INPUT ./06-appendix/00-TitleNLabel.tex
 INPUT ./06-appendix/00-TitleNLabel.tex
 INPUT ./06-appendix/00-TitleNLabel.tex

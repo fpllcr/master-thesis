@@ -10,7 +10,7 @@
 \contentsline {section}{\numberline {2.1}Shor's Factorization Algorithm}{6}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Adiabatic Factorization Algorithm}{7}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Digitized Adiabatic Quantum Factorization}{8}{section.2.3}%
-\contentsline {subsubsection}{QAOA for Standard Adiabatic Factorization}{8}{section.2.3}%
+\contentsline {subsubsection}{QAOA for Standard Adiabatic Factorization}{9}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}QAOA for Linearized Adiabatic Factorization}{10}{subsection.2.3.1}%
 \contentsline {section}{\numberline {2.4}Algorithms Implementation: Methods}{11}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Initial State}{11}{subsection.2.4.1}%
