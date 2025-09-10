@@ -26,11 +26,10 @@ A level-1 auxiliary file: 06-appendix/03-CostEvolution.aux
 A level-1 auxiliary file: 06-appendix/04-Populations.aux
 A level-1 auxiliary file: 06-appendix/05-EnergySpectrums.aux
 The style file: unsrt.bst
-A level-1 auxiliary file: publications/publications.aux
 Database file #1: bibliography.bib
 You've used 16 entries,
             1791 wiz_defined-function locations,
-            577 strings with 7577 characters,
+            576 strings with 7548 characters,
 and the built_in function-call counts, 3767 in all, are:
 = -- 310
 > -- 214

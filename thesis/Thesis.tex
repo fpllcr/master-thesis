@@ -29,9 +29,6 @@
 \newcommand*{\origrightarrow}{}
 \let\oldarrow\textrightarrow
 \renewcommand*{\textrightarrow}{\fontfamily{cmr}\selectfont\origrightarrow}
-\loadglsentries[main]{glossary}
-
-\input{abbreviations}
 
 \usepackage[skip=4pt, indent=16pt]{parskip}
 
@@ -57,32 +54,6 @@
 %%%%
 \include{00-frontmatter/cover}
 
-% Dissertation Committee
-%%%%
-
-% \thispagestyle{empty}
-% \include{00-frontmatter/committee}
-
-% Fundings, SIKS, etc.
-%%%%
-
-% \thispagestyle{empty}
-% \include{00-frontmatter/acks}
-
-% Declaration of Authorship
-%%%%
-
-%\thispagestyle{empty}
-%\include{00-frontmatter/authorship}
-
-% Quote
-%%%%
-
-% \thispagestyle{empty}
-% \dedication{\epigraph{Dedicatory of this thesis...}{Author}}
-
-
-
 %%%%
 % ToC
 %%%%
@@ -90,22 +61,14 @@
 \thispagestyle{empty}
 \tableofcontents
 \let\cleardoublepage\clearpage
-%%%%
-% Abstract(s)
-%%%%
+
 \include{01-introduction/00-Abstract}
-
-
 
 %% Use Arabic numerals for the page numbers of the chapters.
 \mainmatter
 
 %% Turn on thumb indices.
 \thumbtrue
-
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapter 1
@@ -148,9 +111,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-
-
 %% Use letters for the chapter numbers of the appendices.
 \appendix
 \include{06-appendix/00-TitleNLabel}
@@ -159,8 +119,6 @@
 \include{06-appendix/03-CostEvolution}
 \include{06-appendix/04-Populations}
 \include{06-appendix/05-EnergySpectrums}
-
-%\addcontentsline{toc}{chapter}{Appendix}
 
 %% Turn off thumb indices for unnumbered chapters.
 \thumbfalse
@@ -176,27 +134,7 @@
 
 
 \bibliographystyle{unsrt}
-% argument is your BibTeX string definitions and bibliography database(s)
 \bibliography{bibliography}
-
-
-%%%%
-% Glossary
-%%%%
-% \glsaddall
-% \printglossary[type=\acronymtype,title={Glossary}]
-% \addcontentsline{toc}{chapter}{Glossary}
-% \setheader{Glossary}
-
-
-
-%%%%
-% Thesis publications
-%%%%
-\include{publications/publications}
-
-
-
 
 \end{document}
 
