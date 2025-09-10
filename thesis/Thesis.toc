@@ -18,9 +18,11 @@
 \contentsline {subsection}{\numberline {2.4.3}Classical optimizer}{13}{subsection.2.4.3}%
 \contentsline {chapter}{\numberline {3}Results}{15}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Discussion}{18}{chapter.4}%
-\contentsline {chapter}{\numberline {A}Appendix}{20}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Information Table for All Problem Instances}{20}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Fidelity Plots}{21}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Cost vs Layers}{23}{section.A.3}%
-\contentsline {chapter}{Appendix}{24}{figure.caption.22}%
-\contentsline {chapter}{Bibliography}{26}{appendix*.23}%
+\contentsline {section}{\numberline {4.1}Future prospects}{20}{section.4.1}%
+\contentsline {chapter}{\numberline {A}Appendix}{21}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Information Table for All Problem Instances}{21}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Fidelity Plots}{22}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Cost vs Layers}{24}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Populations}{25}{section.A.4}%
+\contentsline {section}{\numberline {A.5}Energy Spectrums}{27}{section.A.5}%
+\contentsline {chapter}{Bibliography}{29}{appendix*.26}%
