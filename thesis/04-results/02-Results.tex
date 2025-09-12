@@ -5,7 +5,7 @@ Firstly, we evaluate the fidelities achieved by the different protocols as a fun
     \item For $N = 143$, the \texttt{standard} protocol initially leads, until a sudden fidelity jump in one of the \texttt{linear} protocols overtakes it.  
 \end{itemize}
 
-As the problem size increases, the third behavior---a sudden jump in fidelity---appears more frequently. Although the cost-function landscape evolves more smoothly (see Fig.~\ref{fig:cost_layers_all}), the fidelity of \texttt{linear} protocols often exhibits these abrupt improvements. The underlying reasons for this phenomenon will be analyzed in Chapter~\ref{Chapter:Discussion}.
+As the problem size increases, the third behavior---a sudden jump in fidelity---appears more frequently (see Fig.~\ref{fig:fidelity_layers_all}). Although the cost-function landscape evolves more smoothly (see Fig.~\ref{fig:cost_layers_all}), the fidelity of \texttt{linear} protocols often exhibits these abrupt improvements. The underlying reasons for this phenomenon will be analyzed in Chapter~\ref{Chapter:Discussion}.
 
 \begin{figure}[h]
     \centering
@@ -18,14 +18,14 @@ To complement the fidelity analysis, Fig.~\ref{fig:populations} depicts the stat
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{04-results/figs/populations_2577143.pdf}
+    \includegraphics[width=1\textwidth]{04-results/figs/populations_2577143.pdf}
     \caption{Final state populations for (a) $N=25$, (b) $N=77$, and (c) $N=143$. The number
     of layers was fixed as the minimum required to reach at least 80\% fidelity by any
     protocol. Solution states are shown as dark-colored bars.}
     \label{fig:populations}
 \end{figure}
 
-Although fidelity as a function of depth already demonstrates the improved performance of the \texttt{linear} protocols, it is essential to evaluate them in terms of quantum resources. Specifically, we compare protocols using the number of two-qubit gates as the resource metric (Fig.~\ref{fig:fidelity_gates}). In these terms, the advantage of the \texttt{linear} protocols becomes clearer: they achieve significantly higher fidelities while requiring far fewer quantum operations.  
+Although fidelity as a function of depth already demonstrates the improved performance of the \texttt{linear} protocols, it is essential to evaluate them in terms of quantum resources --- which is the central goal of this work. Specifically, we compare protocols using the number of two-qubit gates as the resource metric (Fig.~\ref{fig:fidelity_gates}). In these terms, the advantage of the \texttt{linear} protocols becomes clearer: they achieve significantly higher fidelities while requiring far fewer quantum operations.  
 
 \begin{figure}[h]
     \centering
@@ -34,18 +34,20 @@ Although fidelity as a function of depth already demonstrates the improved perfo
     \label{fig:fidelity_gates}
 \end{figure}
 
-Finally, as a summarizing plot, Fig.~\ref{fig:accumulated_probability} presents a metric that enables a consistent comparison between protocols across problem sizes. For larger problem instances, fidelity does not always reach the same reference level within practical resource limits, which makes direct fidelity thresholds less suitable as a single benchmark. To address this, we quantify how efficiently each protocol concentrates probability in the vicinity of the correct solution.
+For $N=143$ in Fig.~\ref{fig:fidelity_layers} and Fig.~\ref{fig:fidelity_gates}, it may initially appear that the algorithm performs better under the \texttt{standard} protocol than under \texttt{linear\_quadratic}. In terms of fidelity alone, this is technically correct, but the fidelities in this regime are so low that the difference is not practically significant. In contrast, the cost plots in Fig.~\ref{fig:cost_layers_all} reveal a different picture: the \texttt{linear\_quadratic} protocol consistently achieves lower cost values. This behavior indicates that it is progressing toward a better population transfer to the target state, which should ultimately translate into higher fidelity at later stages.
 
-Specifically, for each problem instance we compute the cumulative probability contained within the fraction $\alpha$ of eigenstates closest in energy to the target state,
-\begin{equation}
-    P_\alpha = \sum_{i \in \mathcal{N}_\alpha} |\langle i | \psi \rangle|^2\,,
-\end{equation}
-where $\mathcal{N}_\alpha$ denotes the $\alpha$\% of states nearest to the solution. We then determine the minimum number of two-qubit gates required for the accumulated probability to exceed a fixed threshold (here, $75$\%).
+% Finally, as a summarizing plot, Fig.~\ref{fig:accumulated_probability} presents a metric that enables a consistent comparison between protocols across problem sizes. For larger problem instances, fidelity does not always reach the same reference level within practical resource limits, which makes direct fidelity thresholds less suitable as a single benchmark. To address this, we quantify how efficiently each protocol concentrates probability in the vicinity of the correct solution.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.68\textwidth]{04-results/figs/accumulated_probability.pdf}
-    \caption{Number of two-qubit gates required to accumulate at least 75\% of the total probability
-    within the 5\% of eigenstates closest to the solution, aggregated by problem size (number of qubits).}
-    \label{fig:accumulated_probability}
-\end{figure}
+% Specifically, for each problem instance we compute the cumulative probability contained within the fraction $\alpha$ of eigenstates closest in energy to the target state,
+% \begin{equation}
+%     P_\alpha = \sum_{i \in \mathcal{N}_\alpha} |\langle i | \psi \rangle|^2\,,
+% \end{equation}
+% where $\mathcal{N}_\alpha$ denotes the $\alpha$\% of states nearest to the solution. We then determine the minimum number of two-qubit gates required for the accumulated probability to exceed a fixed threshold (here, $75$\%).
+
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.68\textwidth]{04-results/figs/accumulated_probability.pdf}
+%     \caption{Number of two-qubit gates required to accumulate at least 75\% of the total probability
+%     within the 5\% of eigenstates closest to the solution, aggregated by problem size (number of qubits).}
+%     \label{fig:accumulated_probability}
+% \end{figure}

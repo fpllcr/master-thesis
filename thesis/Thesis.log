@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  10 SEP 2025 12:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  12 SEP 2025 18:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1526,7 +1526,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \openout2 = `01-introduction/02-AdiabaticModel.aux'.
 
  (./01-introduction/02-AdiabaticModel.tex
-<01-introduction/figs/adiabatic_theorem.pdf, id=135, 487.8225pt x 167.62625pt>
+<01-introduction/figs/adiabatic_theorem.pdf, id=143, 487.8225pt x 167.62625pt>
 File: 01-introduction/figs/adiabatic_theorem.pdf Graphic file (type pdf)
 <use 01-introduction/figs/adiabatic_theorem.pdf>
 Package pdftex.def Info: 01-introduction/figs/adiabatic_theorem.pdf  used on input line 23.
@@ -1542,7 +1542,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-<01-introduction/figs/qaoa.png, id=167, 1002.74625pt x 499.8675pt>
+<01-introduction/figs/qaoa.png, id=174, 1002.74625pt x 499.8675pt>
 File: 01-introduction/figs/qaoa.png Graphic file (type png)
 <use 01-introduction/figs/qaoa.png>
 Package pdftex.def Info: 01-introduction/figs/qaoa.png  used on input line 36.
@@ -1601,7 +1601,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<02-factorization/figs/standard_circuit_35.pdf, id=233, 1816.7875pt x 347.2975pt>
+<02-factorization/figs/standard_circuit_35.pdf, id=240, 1816.7875pt x 347.2975pt>
 File: 02-factorization/figs/standard_circuit_35.pdf Graphic file (type pdf)
 <use 02-factorization/figs/standard_circuit_35.pdf>
 Package pdftex.def Info: 02-factorization/figs/standard_circuit_35.pdf  used on input line 111.
@@ -1614,12 +1614,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-<02-factorization/figs/gate_decomposition.pdf, id=251, 1619.04875pt x 185.69376pt>
+<02-factorization/figs/gate_decomposition.pdf, id=258, 1619.04875pt x 185.69376pt>
 File: 02-factorization/figs/gate_decomposition.pdf Graphic file (type pdf)
 <use 02-factorization/figs/gate_decomposition.pdf>
 Package pdftex.def Info: 02-factorization/figs/gate_decomposition.pdf  used on input line 126.
 (pdftex.def)             Requested size: 441.01773pt x 50.58pt.
-<02-factorization/figs/linear_circuit_35.pdf, id=253, 729.72626pt x 347.2975pt>
+<02-factorization/figs/linear_circuit_35.pdf, id=260, 729.72626pt x 347.2975pt>
 File: 02-factorization/figs/linear_circuit_35.pdf Graphic file (type pdf)
 <use 02-factorization/figs/linear_circuit_35.pdf>
 Package pdftex.def Info: 02-factorization/figs/linear_circuit_35.pdf  used on input line 142.
@@ -1644,7 +1644,7 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
 \openout2 = `03-methodology/02-IncrementalApproach.aux'.
 
  (./03-methodology/02-IncrementalApproach.tex
-<03-methodology/figs/costfun_landscape.pdf, id=277, 735.1657pt x 454.78847pt>
+<03-methodology/figs/costfun_landscape.pdf, id=284, 735.1657pt x 454.78847pt>
 File: 03-methodology/figs/costfun_landscape.pdf Graphic file (type pdf)
 <use 03-methodology/figs/costfun_landscape.pdf>
 Package pdftex.def Info: 03-methodology/figs/costfun_landscape.pdf  used on input line 18.
@@ -1659,12 +1659,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \openout2 = `03-methodology/04-ClassicalOptimizer.aux'.
 
  (./03-methodology/04-ClassicalOptimizer.tex
-<03-methodology/figs/optimizer_comparison.pdf, id=322, 728.4402pt x 261.13435pt>
+<03-methodology/figs/optimizer_comparison.pdf, id=329, 728.4402pt x 261.13435pt>
 File: 03-methodology/figs/optimizer_comparison.pdf Graphic file (type pdf)
 <use 03-methodology/figs/optimizer_comparison.pdf>
 Package pdftex.def Info: 03-methodology/figs/optimizer_comparison.pdf  used on input line 18.
 (pdftex.def)             Requested size: 436.60997pt x 156.51447pt.
-<03-methodology/figs/optimizer_parameters_comparison.pdf, id=323, 762.33244pt x 455.90201pt>
+<03-methodology/figs/optimizer_parameters_comparison.pdf, id=330, 762.33244pt x 455.90201pt>
 File: 03-methodology/figs/optimizer_parameters_comparison.pdf Graphic file (type pdf)
 <use 03-methodology/figs/optimizer_parameters_comparison.pdf>
 Package pdftex.def Info: 03-methodology/figs/optimizer_parameters_comparison.pdf  used on input line 21.
@@ -1688,46 +1688,38 @@ Package lettrine.sty Info: Targeted height = 22.34943pt
 (lettrine.sty)             (for loversize=0, accent excluded),
 (lettrine.sty)             Lettrine height = 22.34944pt (\color {drocap-color}T);
 (lettrine.sty)             reported on input line 4.
-
-LaTeX Warning: Reference `Chapter:Methodology' on page 15 undefined on input line 31.
-
 )
 \openout2 = `04-results/02-Results.aux'.
 
  (./04-results/02-Results.tex [15
 
 ]
-<04-results/figs/fidelity_layers_2577143.pdf, id=444, 726.4327pt x 261.13435pt>
+<04-results/figs/fidelity_layers_2577143.pdf, id=453, 726.4327pt x 261.13435pt>
 File: 04-results/figs/fidelity_layers_2577143.pdf Graphic file (type pdf)
 <use 04-results/figs/fidelity_layers_2577143.pdf>
 Package pdftex.def Info: 04-results/figs/fidelity_layers_2577143.pdf  used on input line 12.
 (pdftex.def)             Requested size: 396.91325pt x 142.68398pt.
-<04-results/figs/populations_2577143.pdf, id=446, 748.46907pt x 572.63998pt>
+<04-results/figs/populations_2577143.pdf, id=455, 857.49173pt x 581.79921pt>
 File: 04-results/figs/populations_2577143.pdf Graphic file (type pdf)
 <use 04-results/figs/populations_2577143.pdf>
 Package pdftex.def Info: 04-results/figs/populations_2577143.pdf  used on input line 21.
-(pdftex.def)             Requested size: 352.81552pt x 269.93596pt.
+(pdftex.def)             Requested size: 441.01773pt x 299.22601pt.
  [16 <./04-results/figs/fidelity_layers_2577143.pdf> <./04-results/figs/populations_2577143.pdf>]
-<04-results/figs/fidelity_gates_2577143.pdf, id=550, 726.4327pt x 264.25539pt>
+<04-results/figs/fidelity_gates_2577143.pdf, id=553, 726.4327pt x 267.26663pt>
 File: 04-results/figs/fidelity_gates_2577143.pdf Graphic file (type pdf)
 <use 04-results/figs/fidelity_gates_2577143.pdf>
 Package pdftex.def Info: 04-results/figs/fidelity_gates_2577143.pdf  used on input line 32.
-(pdftex.def)             Requested size: 396.91325pt x 144.3893pt.
-<04-results/figs/accumulated_probability.pdf, id=552, 508.70049pt x 327.43266pt>
-File: 04-results/figs/accumulated_probability.pdf Graphic file (type pdf)
-<use 04-results/figs/accumulated_probability.pdf>
-Package pdftex.def Info: 04-results/figs/accumulated_probability.pdf  used on input line 47.
-(pdftex.def)             Requested size: 299.88882pt x 193.0287pt.
+(pdftex.def)             Requested size: 396.91325pt x 146.03464pt.
 )
 \openout2 = `05-discussion/discussion.aux'.
 
- (./05-discussion/discussion.tex [17 <./04-results/figs/fidelity_gates_2577143.pdf> <./04-results/figs/accumulated_probability.pdf>]
+ (./05-discussion/discussion.tex [17 <./04-results/figs/fidelity_gates_2577143.pdf>]
 Chapter 4.
-<05-discussion/figs/energy_spectrums.pdf, id=702, 779.06236pt x 650.66966pt>
+<05-discussion/figs/energy_spectrums.pdf, id=637, 816.36237pt x 650.66966pt>
 File: 05-discussion/figs/energy_spectrums.pdf Graphic file (type pdf)
 <use 05-discussion/figs/energy_spectrums.pdf>
 Package pdftex.def Info: 05-discussion/figs/energy_spectrums.pdf  used on input line 19.
-(pdftex.def)             Requested size: 423.37997pt x 353.61012pt.
+(pdftex.def)             Requested size: 436.60997pt x 348.00058pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1756,13 +1748,13 @@ See the caption package documentation for explanation.
  (./06-appendix/02-FidelityEvolution.tex [21
 
 ]
-<06-appendix/figs/fidelity_layers_all.pdf, id=789, 739.2351pt x 1068.02884pt>
+<06-appendix/figs/fidelity_layers_all.pdf, id=711, 739.2351pt x 1068.02884pt>
 File: 06-appendix/figs/fidelity_layers_all.pdf Graphic file (type pdf)
 <use 06-appendix/figs/fidelity_layers_all.pdf>
 Package pdftex.def Info: 06-appendix/figs/fidelity_layers_all.pdf  used on input line 8.
 (pdftex.def)             Requested size: 436.60997pt x 630.79973pt.
  [22 <./06-appendix/figs/fidelity_layers_all.pdf>]
-<06-appendix/figs/fidelity_gates_all.pdf, id=878, 744.55025pt x 1068.31114pt>
+<06-appendix/figs/fidelity_gates_all.pdf, id=799, 744.55025pt x 1068.31114pt>
 File: 06-appendix/figs/fidelity_gates_all.pdf Graphic file (type pdf)
 <use 06-appendix/figs/fidelity_gates_all.pdf>
 Package pdftex.def Info: 06-appendix/figs/fidelity_gates_all.pdf  used on input line 16.
@@ -1771,7 +1763,7 @@ Package pdftex.def Info: 06-appendix/figs/fidelity_gates_all.pdf  used on input 
 \openout2 = `06-appendix/03-CostEvolution.aux'.
 
  (./06-appendix/03-CostEvolution.tex [23 <./06-appendix/figs/fidelity_gates_all.pdf>]
-<06-appendix/figs/cost_layers_all.pdf, id=975, 755.2951pt x 1068.02884pt>
+<06-appendix/figs/cost_layers_all.pdf, id=895, 755.2951pt x 1068.02884pt>
 File: 06-appendix/figs/cost_layers_all.pdf Graphic file (type pdf)
 <use 06-appendix/figs/cost_layers_all.pdf>
 Package pdftex.def Info: 06-appendix/figs/cost_layers_all.pdf  used on input line 7.
@@ -1780,16 +1772,16 @@ Package pdftex.def Info: 06-appendix/figs/cost_layers_all.pdf  used on input lin
 \openout2 = `06-appendix/04-Populations.aux'.
 
  (./06-appendix/04-Populations.tex [24 <./06-appendix/figs/cost_layers_all.pdf>]
-<06-appendix/figs/populations_all1.pdf, id=1066, 778.14243pt x 1062.42195pt>
+<06-appendix/figs/populations_all1.pdf, id=987, 760.42584pt x 1062.42195pt>
 File: 06-appendix/figs/populations_all1.pdf Graphic file (type pdf)
 <use 06-appendix/figs/populations_all1.pdf>
 Package pdftex.def Info: 06-appendix/figs/populations_all1.pdf  used on input line 7.
-(pdftex.def)             Requested size: 441.01773pt x 602.13382pt.
-<06-appendix/figs/populations_all2.pdf, id=1067, 785.16867pt x 1073.46321pt>
+(pdftex.def)             Requested size: 441.01773pt x 616.17274pt.
+<06-appendix/figs/populations_all2.pdf, id=988, 767.45209pt x 1073.46321pt>
 File: 06-appendix/figs/populations_all2.pdf Graphic file (type pdf)
 <use 06-appendix/figs/populations_all2.pdf>
 Package pdftex.def Info: 06-appendix/figs/populations_all2.pdf  used on input line 12.
-(pdftex.def)             Requested size: 441.01773pt x 602.95346pt.
+(pdftex.def)             Requested size: 441.01773pt x 616.8762pt.
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1797,18 +1789,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \openout2 = `06-appendix/05-EnergySpectrums.aux'.
 
  (./06-appendix/05-EnergySpectrums.tex [26 <./06-appendix/figs/populations_all2.pdf>]
-<06-appendix/figs/energy_spectrums_all1.pdf, id=1162, 776.73041pt x 1234.97261pt>
+<06-appendix/figs/energy_spectrums_all1.pdf, id=1083, 760.72781pt x 1234.97261pt>
 File: 06-appendix/figs/energy_spectrums_all1.pdf Graphic file (type pdf)
 <use 06-appendix/figs/energy_spectrums_all1.pdf>
 Package pdftex.def Info: 06-appendix/figs/energy_spectrums_all1.pdf  used on input line 7.
-(pdftex.def)             Requested size: 423.37997pt x 673.15039pt.
-<06-appendix/figs/energy_spectrums_all2.pdf, id=1163, 783.75665pt x 1234.97261pt>
+(pdftex.def)             Requested size: 414.55774pt x 672.99963pt.
+<06-appendix/figs/energy_spectrums_all2.pdf, id=1084, 767.75406pt x 1234.97261pt>
 File: 06-appendix/figs/energy_spectrums_all2.pdf Graphic file (type pdf)
 <use 06-appendix/figs/energy_spectrums_all2.pdf>
 Package pdftex.def Info: 06-appendix/figs/energy_spectrums_all2.pdf  used on input line 12.
-(pdftex.def)             Requested size: 423.37997pt x 667.12025pt.
+(pdftex.def)             Requested size: 414.55774pt x 666.8376pt.
 ) [27 <./06-appendix/figs/energy_spectrums_all1.pdf>]
-Overfull \vbox (7.33717pt too high) has occurred while \output is active []
+Overfull \vbox (7.05452pt too high) has occurred while \output is active []
 
  [28 <./06-appendix/figs/energy_spectrums_all2.pdf>] (./Thesis.bbl
 Overfull \hbox (1.54424pt too wide) in paragraph at lines 4--7
@@ -1823,17 +1815,13 @@ Package glossaries Warning: No \printglossary or \printglossaries found.
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
-(./Thesis.aux (./00-frontmatter/cover.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-InitialState.aux) (./03-methodology/02-IncrementalApproach.aux) (./03-methodology/03-ParameterInitialization.aux) (./03-methodology/04-ClassicalOptimizer.aux) (./03-methodology/05-SetupSummary.aux) (./04-results/01-Introduction.aux) (./04-results/02-Results.aux) (./05-discussion/discussion.aux) (./06-appendix/00-TitleNLabel.aux) (./06-appendix/01-InformationTable.aux) (./06-appendix/02-FidelityEvolution.aux) (./06-appendix/03-CostEvolution.aux) (./06-appendix/04-Populations.aux) (./06-appendix/05-EnergySpectrums.aux))
-
-LaTeX Warning: There were undefined references.
-
- ) 
+(./Thesis.aux (./00-frontmatter/cover.aux) (./01-introduction/00-Abstract.aux) (./01-introduction/00-Introduction.aux) (./01-introduction/01-CircuitModel.aux) (./01-introduction/02-AdiabaticModel.aux) (./01-introduction/03-QAOABasicConcepts.aux) (./02-factorization/00-Introduction.aux) (./02-factorization/01-ShorsAlgo.aux) (./02-factorization/02-AdiabaticFactorization.aux) (./03-methodology/00-Introduction.aux) (./03-methodology/01-InitialState.aux) (./03-methodology/02-IncrementalApproach.aux) (./03-methodology/03-ParameterInitialization.aux) (./03-methodology/04-ClassicalOptimizer.aux) (./03-methodology/05-SetupSummary.aux) (./04-results/01-Introduction.aux) (./04-results/02-Results.aux) (./05-discussion/discussion.aux) (./06-appendix/00-TitleNLabel.aux) (./06-appendix/01-InformationTable.aux) (./06-appendix/02-FidelityEvolution.aux) (./06-appendix/03-CostEvolution.aux) (./06-appendix/04-Populations.aux) (./06-appendix/05-EnergySpectrums.aux)) ) 
 Here is how much of TeX's memory you used:
- 45622 strings out of 480129
- 861303 string characters out of 5893410
- 1281898 words of memory out of 5000000
- 61929 multiletter control sequences out of 15000+600000
- 570389 words of font info for 438 fonts, out of 8000000 for 9000
+ 45633 strings out of 480129
+ 861299 string characters out of 5893410
+ 1281616 words of memory out of 5000000
+ 61931 multiletter control sequences out of 15000+600000
+ 570907 words of font info for 444 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  106i,18n,105p,1617b,920s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{cite.blekos_review_2024} has been referenced but does not exist, replaced by a fixed one
@@ -1844,11 +1832,19 @@ pdfTeX warning (dest): name{cite.karamlou_analyzing_2021} has been referenced bu
 
 pdfTeX warning (dest): name{cite.diez-valle_universal_2025} has been referenced but does not exist, replaced by a fixed one
 
- </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Thesis.pdf (33 pages, 1937065 bytes).
+pdfTeX warning (dest): name{cite.peng_quantum_2008} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.anschuetz_variational_2018} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.ho_efficient_2019} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.farhi_quantum_2019} has been referenced but does not exist, replaced by a fixed one
+
+ </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+Output written on Thesis.pdf (33 pages, 1899865 bytes).
 PDF statistics:
- 1398 PDF objects out of 1440 (max. 8388607)
- 625 compressed objects within 7 object streams
- 131 named destinations out of 1000 (max. 500000)
- 127104 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 1315 PDF objects out of 1440 (max. 8388607)
+ 603 compressed objects within 7 object streams
+ 132 named destinations out of 1000 (max. 500000)
+ 127099 words of extra memory for PDF output out of 128383 (max. 10000000)
 

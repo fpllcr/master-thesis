@@ -5,6 +5,33 @@ P.L. Montgomery.
 \newblock A survey of modern integer factorization algorithms.
 \newblock {\em CWI Quarterly}, 7(4):337---366, December 1994.
 
+\bibitem{rivest_method_1978}
+R.~L. Rivest, A.~Shamir, and L.~Adleman.
+\newblock A method for obtaining digital signatures and public-key
+  cryptosystems.
+\newblock {\em Communications of the ACM}, 21(2):120--126, February 1978.
+
+\bibitem{shor_algorithms_1994}
+P.W. Shor.
+\newblock Algorithms for quantum computation: discrete logarithms and
+  factoring.
+\newblock In {\em Proceedings 35th {Annual} {Symposium} on {Foundations} of
+  {Computer} {Science}}, pages 124--134, Santa Fe, NM, USA, 1994. IEEE Comput.
+  Soc. Press.
+
+\bibitem{albash_adiabatic_2018}
+Tameem Albash and Daniel~A. Lidar.
+\newblock Adiabatic quantum computation.
+\newblock {\em Reviews of Modern Physics}, 90(1):015002, January 2018.
+
+\bibitem{cerezo_variational_2021}
+M.~Cerezo, Andrew Arrasmith, Ryan Babbush, Simon~C. Benjamin, Suguru Endo,
+  Keisuke Fujii, Jarrod~R. McClean, Kosuke Mitarai, Xiao Yuan, Lukasz Cincio,
+  and Patrick~J. Coles.
+\newblock Variational {Quantum} {Algorithms}.
+\newblock {\em Nature Reviews Physics}, 3(9):625--644, August 2021.
+\newblock arXiv:2012.09265 [quant-ph].
+
 \bibitem{hegade_digitized_2021}
 Narendra~N. Hegade, Koushik Paul, Francisco Albarrán-Arriagada, Xi~Chen, and
   Enrique Solano.
@@ -21,11 +48,6 @@ Michael~A. Nielsen and Isaac~L. Chuang.
 M.~S. Sarandy, L.-A. Wu, and D.~A. Lidar.
 \newblock Consistency of the {Adiabatic} {Theorem}.
 \newblock {\em Quantum Information Processing}, 3(6):331--349, December 2004.
-
-\bibitem{albash_adiabatic_2018}
-Tameem Albash and Daniel~A. Lidar.
-\newblock Adiabatic quantum computation.
-\newblock {\em Reviews of Modern Physics}, 90(1):015002, January 2018.
 
 \bibitem{aharonov_adiabatic_2004}
 D.~Aharonov, W.~Van~Dam, J.~Kempe, Z.~Landau, S.~Lloyd, and O.~Regev.
