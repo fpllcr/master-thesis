@@ -5,7 +5,7 @@ The numerical results allow us to assess how the proposed linearized QAOA protoc
 
 \subsection*{Standard versus linear\_quadratic protocols}
 
-Since both the \texttt{standard} and \texttt{linear\_quadratic} protocols are optimized with respect to the same cost function, $\langle \hat{H}_\mathrm{QP} \rangle$, their performance can be directly compared. The data clearly indicate that the \texttt{linear\_quadratic} protocol reaches relevant solutions with acceptable fidelity at shallower circuit depths. Moreover, when performance is measured against the number of two-qubit gates—a more meaningful indicator of quantum resource requirements—the linear protocol consistently requires fewer resources to achieve comparable or superior fidelities. This indicates that the linearization strategy focuses the optimization on the parts of the problem Hamiltonian that matter most, allowing the algorithm to reach good solutions with less computational effort.
+Since both the \texttt{standard} and \texttt{linear\_quadratic} protocols are optimized with respect to the same cost function, $\langle \hat{H}_\mathrm{QP} \rangle$, their performance can be directly compared. The data clearly indicate that the \texttt{linear\_quadratic} protocol reaches relevant solutions with acceptable fidelity at shallower circuit depths. Moreover, when performance is measured against the number of two-qubit gates --- a more meaningful indicator of quantum resource requirements --- the linear protocol consistently requires fewer resources to achieve comparable or superior fidelities. This indicates that the linearization strategy focuses the optimization on the parts of the problem Hamiltonian that matter most, allowing the algorithm to reach good solutions with less computational effort.
 
 \subsection*{Impact of the cost function}
 
@@ -46,6 +46,8 @@ The results confirm that $\hat{H}_\mathrm{LP}$ consistently exhibits larger RMS 
     \caption{Root-mean-square (RMS) distance of the energy spectrum from the target state, used as a measure of how widely the eigenvalues are distributed for each Hamiltonian and problem size.}
     \label{table:rms}
 \end{table}
+
+%For example, in the problem instance $N=143$ in Fig.~\ref{fig:fidelity_layers} and Fig.~\ref{fig:fidelity_gates}, it may initially appear that the algorithm performs better under the \texttt{standard} protocol than under \texttt{linear\_quadratic}. In terms of fidelity alone, this is technically correct, but the fidelities in this regime are so low that the difference is not practically significant. In contrast, the cost plots in Fig.~\ref{fig:cost_layers_all} reveal a different picture: the \texttt{linear\_quadratic} protocol consistently achieves lower cost values. This behavior indicates that it is progressing toward a better population transfer to the target state, which should ultimately translate into higher fidelity at later stages.
 
 \section{Future prospects}
 

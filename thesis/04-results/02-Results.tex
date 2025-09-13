@@ -34,8 +34,6 @@ Although fidelity as a function of depth already demonstrates the improved perfo
     \label{fig:fidelity_gates}
 \end{figure}
 
-For $N=143$ in Fig.~\ref{fig:fidelity_layers} and Fig.~\ref{fig:fidelity_gates}, it may initially appear that the algorithm performs better under the \texttt{standard} protocol than under \texttt{linear\_quadratic}. In terms of fidelity alone, this is technically correct, but the fidelities in this regime are so low that the difference is not practically significant. In contrast, the cost plots in Fig.~\ref{fig:cost_layers_all} reveal a different picture: the \texttt{linear\_quadratic} protocol consistently achieves lower cost values. This behavior indicates that it is progressing toward a better population transfer to the target state, which should ultimately translate into higher fidelity at later stages.
-
 % Finally, as a summarizing plot, Fig.~\ref{fig:accumulated_probability} presents a metric that enables a consistent comparison between protocols across problem sizes. For larger problem instances, fidelity does not always reach the same reference level within practical resource limits, which makes direct fidelity thresholds less suitable as a single benchmark. To address this, we quantify how efficiently each protocol concentrates probability in the vicinity of the correct solution.
 
 % Specifically, for each problem instance we compute the cumulative probability contained within the fraction $\alpha$ of eigenstates closest in energy to the target state,

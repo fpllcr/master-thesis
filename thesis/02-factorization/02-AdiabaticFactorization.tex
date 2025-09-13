@@ -10,12 +10,12 @@ The problem of integer factorization can be formulated as a constrained search o
 \end{equation}
 In the context of adiabatic quantum computation we aim to encode this constraint into the ground state of a problem Hamiltonian, allowing the solution to emerge through adiabatic evolution.
 
-To encode candidate solutions $p$ and $q$, we adopt a binary representation of natural numbers. Any natural number $N$ can be expressed as:
+To encode candidate solutions $p$ and $q$, we adopt a binary representation of natural numbers. Any natural number $X$ can be expressed as:
 \begin{equation}
-	N = \sum_{j=0}^{n_\text{bits} - 1} 2^j x_j,
+	X = \sum_{j=0}^{n_\text{bits} - 1} 2^j x_j,
 	\label{eq:binary_integer}
 \end{equation}
-where each $x_j \in \{0,1\}$ and the bit string $\mathbf{x} = x_{n_\text{bits}-1} \dots x_0$ represents the binary encoding of $N$. In their approach, Peng et al.~\cite{peng_quantum_2008} exploit the fact that the factors $p$ and $q$ of an odd composite number can be rewritten as:
+where each $x_j \in \{0,1\}$ and the bit string $\mathbf{x} = x_{n_\text{bits}-1} \dots x_0$ represents the binary encoding of $X$. In their approach, Peng et al.~\cite{peng_quantum_2008} exploit the fact that the factors $p$ and $q$ of an odd composite number can be rewritten as:
 \begin{equation}
 	\begin{cases}
 		p = 2p' + 1 \\
@@ -55,7 +55,7 @@ The initial state of the system is prepared as:
 	\ket{\psi(0)} = \ket{+}^{\otimes n}\,,
 	\label{eq:initial_state}
 \end{equation}
-where $\ket{+} = \frac{1}{\sqrt{2}} (\ket{0} + \ket{1})$ is the eigenstate of $\hat{\sigma}^x$, corresponding to the ground state of the initial Hamiltonian $\hat{H}_0$ defined in Eq.~\ref{eq:transverse_field_hamiltonian}.
+where $\ket{+} = \frac{1}{\sqrt{2}} (\ket{0} + \ket{1})$ is lowest-energy the eigenstate of $\hat{\sigma}^x$, corresponding to the ground state of the initial Hamiltonian $\hat{H}_0$ defined in Eq.~\ref{eq:transverse_field_hamiltonian}.
 Following the adiabatic theorem, if the evolution from $\hat{H}_0$ to $\hat{H}_\mathrm{QP}$ is slow enough, the system will remain in the instantaneous ground state, reaching the ground state of $\hat{H}_\mathrm{QP}$ at the end of the protocol. This final state encodes the solution to the factorization problem.
 
 Despite its conceptual clarity, the Hamiltonian $\hat{H}_\mathrm{QP}$ includes multiqubit interactions, such as three- and four-body terms of the form $\hat{\sigma}_\ell^z \hat{\sigma}_m^z \hat{\sigma}_k^z$ and $\hat{\sigma}_\ell^z \hat{\sigma}_m^z \hat{\sigma}_k^z \hat{\sigma}_n^z$. These many-body interactions are difficult to implement, since they require one to bring all involved qubits together and make them interact in a controlled way, resulting in prone-to-error processes. The need to avoid those terms is of pivotal interest to provide efficient quantum algorithms.
@@ -68,7 +68,7 @@ In the digitized approach, the continuous adiabatic evolution governed by a time
 This method was successfully demonstrated by Hegade et al.~\cite{hegade_digitized_2021}, where the authors implemented a digitized adiabatic factorization algorithm on superconducting hardware. They successfully factorized numbers $N=21$, $N=91$, and $N=217$, and also proved enhancements by introducing an additional layer in the algorithm due to application of counter-diabatic driving theories.
 
 \subsubsection{QAOA for Standard Adiabatic Factorization}
-In some sense, we can say that QAOA can be viewed as a shortcut to adiabaticity implemented in the circuit model for quantum computation. Rather than performing a slow, continuous evolution, QAOA uses a fixed-depth quantum circuit composed of alternating unitaries derived from the mixing and problem Hamiltonians. The parameters of these unitaries are optimized variationally to prepare a state that approximates the solution.
+In some sense, QAOA can be viewed as a shortcut to adiabaticity implemented in the circuit model for quantum computation. Rather than performing a slow, continuous evolution, QAOA uses a fixed-depth quantum circuit composed of alternating unitaries derived from the mixing and problem Hamiltonians. The parameters of these unitaries are optimized variationally to prepare a state that approximates the solution.
 
 Díez-Valle et al.~\cite{diez-valle_universal_2025} demonstrate that QAOA and quantum annealing share fundamental structural features. Their results provide strong evidence that smooth annealing paths can be reconstructed from the optimal parameters of QAOA, reinforcing the view of QAOA as a digitized, variationally optimized form of adiabatic evolution.
 
@@ -114,7 +114,7 @@ and so on for the higher-order terms. Similarly, the mixing Hamiltonian $\hat{H}
     \label{fig:standard_circuit}
 \end{figure}
 
-A related study by Anschuetz et al.~\cite{anschuetz_variational_2018} applies a similar method, combined with additional preprocessing and simplifications, to factor numbers as large as $291311$. Building on this idea, Karamlou et al.~\cite{karamlou_analyzing_2021} used classical preprocessing heuristics to factor $1099551473989$, $3127$, and $6557$ using only $3$, $4$, and $5$ qubits, respectively. In contrast, our goal is not to optimize for specific instances, but rather to analyze the general, standard approach to quantum factorization without relying on ad-hoc techniques. The motivatioin comes from establishing a broadly applicable framework, valid for any input $N$, while avoiding the need for modifications to the underlying factorization algorithm.
+A related study by Anschuetz et al.~\cite{anschuetz_variational_2018} applies a similar method, combined with additional preprocessing and simplifications, to factorize numbers as large as $291311$. Building on this idea, Karamlou et al.~\cite{karamlou_analyzing_2021} used classical preprocessing heuristics to factorize $1099551473989$, $3127$, and $6557$ using only $3$, $4$, and $5$ qubits, respectively. In contrast, our goal is not to optimize for specific instances, but rather to analyze the general, standard approach to quantum factorization without relying on ad-hoc techniques. The motivatioin comes from establishing a broadly applicable framework, valid for any input $N$, while avoiding the need for modifications to the underlying factorization algorithm.
 
 \subsection{QAOA for Linearized Adiabatic Factorization}
 As mentioned in the introduction to Section~\ref{Section:AFA}, the adiabatic factorization algorithm

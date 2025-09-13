@@ -3,14 +3,14 @@
 In computer science, an algorithm is considered to be efficient when the number of steps
 of the algorithm grows as a polynomial in the input size. For the problem of integer factorization,
 the input is a semiprime number $N$, and the input size is measured as the number of bits
-required to represent it, i.e., $\log N$. The best known classical algorithm for factoring
+required to represent it, i.e., $\log N$. The best known classical algorithm for factorizing
 scales superpolynomially with input size, making the problem computationally hard for large $N$.
 \begin{equation}
     \mathcal{O} \bigg( \exp \big( c(\log N)^{1/3} (\log \log N)^{2/3} \big) \bigg).
     \label{eq:field_sieve_scaling}
 \end{equation}
 
-In 1994, Peter Shor introduced a quantum algorithm that factors integers in polynomial time,
+In 1994, Peter Shor introduced a quantum algorithm that factorizes integers in polynomial time,
 marking a landmark result in quantum computing. Shor's algorithm runs in time
 \begin{equation}
     \mathcal{O} \big( (\log N)^3 \big),
@@ -21,7 +21,7 @@ circuit model, making it a gate-based approach to factorization and one of the s
 for the development of quantum computers.
 
 The core idea of Shor's algorithm is to reduce factorization to the problem of order finding:
-given a number $a$ coprime to $N$, find the smallest integer, $r$ such that
+given a number $a$ coprime to $N$, find the smallest integer $r$ such that
 \begin{equation}
     a^r = 1 \mod N.
     \label{eq:order_finding}
@@ -38,5 +38,5 @@ and attempt to derive the prime factors of $N$.
 Despite its theoretical significance, implementing Shor's algorithm at scale requires a
 large number of qubits, long coherence times, and fault-tolerant error correction,
 which remain beyond the reach of current quantum hardware. As such, while Shor's algorithm remains
-the most efficient known method for factoring in the long-term quantum regime, alternative approaches
---such as adiabatic and variational algorithms-- are being explored for use in the NISQ era.
+the most efficient known method for factorizing in the long-term quantum regime, alternative approaches
+--- such as adiabatic and variational algorithms --- are being explored for use in the NISQ era.
