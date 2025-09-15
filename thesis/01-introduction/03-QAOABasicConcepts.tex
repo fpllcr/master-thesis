@@ -8,7 +8,7 @@ At its core, QAOA constructs a parametrized quantum state (ansatz) by sequential
     \item The cost Hamiltonian $H_C$, which encodes the objective function of the optimization
     problem. This is typically written in the form of an Ising Hamiltonian.
     \item The mixing Hamiltonian $H_M$, which introduces transitions between computational
-    basis states to enable exploration of the solution space. A common choice is:
+    basis states to enable exploration of the solution space. A common choice, justified by Eq.~\eqref{eq:transverse_field_hamiltonian}, is:
     \begin{equation}
         \hat{H}_M = \sum_i \hat{\sigma}_i^x,
         \label{eq:mixing_hamiltonian}
@@ -16,7 +16,7 @@ At its core, QAOA constructs a parametrized quantum state (ansatz) by sequential
     where $\hat{\sigma}_i^x$ is the Pauli-X operator acting on qubit $i$.
 \end{itemize}
 
-The algorithm starts with the initial state $\ket{\psi_0} = \ket{+}^{\otimes n}$, which is the ground state of $H_M$ and a uniform superposition over all computational basis states. The QAOA ansatz with $p$ layers is constructed as:
+The algorithm starts with the initial state $\ket{\psi_0} = \ket{+}^{\otimes n}$, which is the ground state of $H_M$ and a uniform superposition over all computational basis states, where $\ket{+} = \dfrac{1}{\sqrt{2}} \big(\ket{0} + \ket{1}\big)$. The QAOA ansatz with $p$ layers is constructed as:
 \begin{equation}
     \ket{\psi_p(\bm{\gamma}, \bm{\beta})} = e^{-i \beta_p \hat{H}_M} e^{- i \gamma_p \hat{H}_C} \cdots
     e^{-i \beta_1 \hat{H}_M} e^{- i \gamma_1 \hat{H}_C} \ket{+}^{\otimes n},

@@ -37,18 +37,18 @@ where $f(t)$ is a smooth, monotonic function such that $f(0)=0$ and $f(T)=1$. Th
 Aharonov et al.~\cite{aharonov_adiabatic_2004} proved that this model is computationally equivalent to the standard circuit model, meaning that any adiabatic process can, in principle, be reproduced digitally with comparable efficiency. This equivalence opens the door to a variety of gate-based approaches that draw inspiration from adiabatic evolution while remaining fully compatible with the circuit model of quantum computation.
 
 \subsection{Adiabatic Quantum Annealers}
-An important and widely studied application of adiabatic evolution in quantum devices is Adiabatic Quantum Annealing (AQA), where the goal is to find low-energy configurations of a classical cost function mapped onto a quantum Hamiltonian. AQA is most often applied to Quadratic Unconstrained Binary Optimization (QUBO) problems~\cite{kadowaki_quantum_1998}, which can be exactly reformulated as a 2-body interaction Ising Hamiltonian of the form
+An important and widely studied application of adiabatic evolution in quantum devices is Adiabatic Quantum Annealing (AQA), where the goal is to find low-energy configurations of a classical cost function mapped onto a quantum Hamiltonian. AQA is most often applied to Quadratic Unconstrained Binary Optimization (QUBO) problems~\cite{kadowaki_quantum_1998}, which can be exactly reformulated as a 2-body interaction Ising Hamiltonian of the form~\cite{albash_adiabatic_2018}
 \begin{equation}
     \hat{H}_\mathrm{P} = \sum_i h_i \hat{\sigma}_i^z + \sum_{i<j} J_{ij} \hat{\sigma}_i^z \hat{\sigma}_j^z\,,
     \label{eq:ising_hamiltonian}
 \end{equation}
-where $h_i$ are local fields, $J_{ij}$ represent coupling strengths between qubits, and $\hat{\sigma}_i^z$ are Pauli-Z operators acting on the $i$-th qubit. The task is to drive the system from an initial, easily preparable ground state towards the ground state of $H_\mathrm{P}$, which encodes the optimal solution to the problem at hand.
+where $h_i$ are local fields, $J_{ij}$ represent coupling strengths between qubits, and $\hat{\sigma}_i^z$ are Pauli-Z operators acting on the $i$-th qubit, with eigenstates $\ket{0}$ and $\ket{1}$ satisfying $\hat{\sigma}^z \ket{0} = \ket{0}$ and $\hat{\sigma}^z \ket{1} = -\ket{1}$. The task is to drive the system from an initial, easily preparable ground state towards the ground state of $H_\mathrm{P}$, which encodes the optimal solution to the problem at hand.
 
 In a typical AQA protocol, the evolution begins with an initial Hamiltonian of a system with a X-oriented field component of the form
 \begin{equation}
     \hat{H}_0 = \sum_i \hat{\sigma}_i^x\,.
     \label{eq:transverse_field_hamiltonian}
 \end{equation}
-whose ground state is straightforward to prepare. The system is then driven according to the interpolation scheme in equation (\ref{eq:adiabatic_passage}). The aim is to adiabatically steer the system from the easily preparable ground state $H_0$ to the ground state of $H_\mathrm{P}$, which encodes the solution to the problem of interest.
+where $\hat{\sigma}^x = \ket{0}\bra{1}+\ket{1}\bra{0}$ and whose ground state is straightforward to prepare. The system is then driven according to the interpolation scheme in Eq.~\eqref{eq:adiabatic_passage}. The aim is to adiabatically steer the system from the easily preparable ground state $H_0$ to the ground state of $H_\mathrm{P}$, which encodes the solution to the problem of interest.
 
 This procedure is feasible for problems that can be expressed in the QUBO form, as they can be mapped to an Ising Hamiltonian with only two-body interactions. This approach has been physically implemented in superconducting-qubit devices, most notably in the commercial quantum annealers developed by D-Wave. However, as we shall see in chapter~\ref{Chapter:Factorization}, the problem of interest in this thesis, integer factorization, does not directly fall into the QUBO class, as its Hamiltonian contains three- and four-body interaction terms.

@@ -55,7 +55,7 @@ The initial state of the system is prepared as:
 	\ket{\psi(0)} = \ket{+}^{\otimes n}\,,
 	\label{eq:initial_state}
 \end{equation}
-where $\ket{+} = \frac{1}{\sqrt{2}} (\ket{0} + \ket{1})$ is lowest-energy the eigenstate of $\hat{\sigma}^x$, corresponding to the ground state of the initial Hamiltonian $\hat{H}_0$ defined in Eq.~\ref{eq:transverse_field_hamiltonian}.
+corresponding to the ground state of the initial Hamiltonian $\hat{H}_0$ defined in Eq.~\eqref{eq:transverse_field_hamiltonian}.
 Following the adiabatic theorem, if the evolution from $\hat{H}_0$ to $\hat{H}_\mathrm{QP}$ is slow enough, the system will remain in the instantaneous ground state, reaching the ground state of $\hat{H}_\mathrm{QP}$ at the end of the protocol. This final state encodes the solution to the factorization problem.
 
 Despite its conceptual clarity, the Hamiltonian $\hat{H}_\mathrm{QP}$ includes multiqubit interactions, such as three- and four-body terms of the form $\hat{\sigma}_\ell^z \hat{\sigma}_m^z \hat{\sigma}_k^z$ and $\hat{\sigma}_\ell^z \hat{\sigma}_m^z \hat{\sigma}_k^z \hat{\sigma}_n^z$. These many-body interactions are difficult to implement, since they require one to bring all involved qubits together and make them interact in a controlled way, resulting in prone-to-error processes. The need to avoid those terms is of pivotal interest to provide efficient quantum algorithms.
@@ -63,7 +63,7 @@ Despite its conceptual clarity, the Hamiltonian $\hat{H}_\mathrm{QP}$ includes m
 \section{Digitized Adiabatic Quantum Factorization}
 Although the adiabatic model is often formulated in terms of continuous time evolution, it can be simulated efficiently using gate-based quantum computation through a process known as digitization.
 
-In the digitized approach, the continuous adiabatic evolution governed by a time-dependent Hamiltonian as of Eq.~\ref{eq:adiabatic_passage} is approximated by a sequence of quantum gates through trotterization, breaking the total evolution into small time slices. Each slice is implemented as a layer in a quantum circuit, simulating the adiabatic trajectory step by step.
+In the digitized approach, the continuous adiabatic evolution governed by a time-dependent Hamiltonian as of Eq.~\eqref{eq:adiabatic_passage} is approximated by a sequence of quantum gates through trotterization, breaking the total evolution into small time slices. Each slice is implemented as a layer in a quantum circuit, simulating the adiabatic trajectory step by step.
 
 This method was successfully demonstrated by Hegade et al.~\cite{hegade_digitized_2021}, where the authors implemented a digitized adiabatic factorization algorithm on superconducting hardware. They successfully factorized numbers $N=21$, $N=91$, and $N=217$, and also proved enhancements by introducing an additional layer in the algorithm due to application of counter-diabatic driving theories.
 
@@ -74,14 +74,14 @@ Díez-Valle et al.~\cite{diez-valle_universal_2025} demonstrate that QAOA and qu
 
 In summary, the ingredients to build and execute the QAOA algorithm applied to integer factorization --- or what we will call the ``\texttt{standard} protocol'' --- are:
 \begin{itemize}
-    \item A Hamiltonian $\hat{H}_\mathrm{QP}$ (Eq.~\ref{eq:quadratic_problem_hamiltonian}) that encodes the solution to the factorization problem in its ground state.
-    \item A mixing Hamiltonian $\hat{H}_\mathrm{M}$ that does not commute with $\hat{H}_\mathrm{QP}$, e.g., Eq.~\ref{eq:mixing_hamiltonian}.
-    \item A quantum circuit that implements the state evolution given by Eq.~\ref{eq:qaoa_state_evolution}.
+    \item A Hamiltonian $\hat{H}_\mathrm{QP}$, Eq.~\eqref{eq:quadratic_problem_hamiltonian}, that encodes the solution to the factorization problem in its ground state.
+    \item A mixing Hamiltonian $\hat{H}_\mathrm{M}$ that does not commute with $\hat{H}_\mathrm{QP}$, e.g., Eq.~\eqref{eq:mixing_hamiltonian}.
+    \item A quantum circuit that implements the state evolution given by Eq.~\eqref{eq:qaoa_state_evolution}.
     \item A classical optimizer to find the circuit's optimal parameters.
     \item A cost function given by $F_p (\bm{\gamma}, \bm{\beta}) = \bra{\psi_p (\bm{\gamma}, \bm{\beta})} \hat{H}_\mathrm{QP} \ket{\psi_p (\bm{\gamma}, \bm{\beta})}$.
 \end{itemize}
 
-Due to the form of Eq.~\ref{eq:quadratic_problem_hamiltonian}, the problem Hamiltonian can be expressed as:
+Due to the form of Eq.~\eqref{eq:quadratic_problem_hamiltonian}, the problem Hamiltonian can be expressed as:
 \begin{equation}
     \hat{H}_\mathrm{QP} = n \1 + \sum_i a_i \hat{\sigma}^z_i
     + \sum_{ij} b_{ij} \hat{\sigma}^z_i \hat{\sigma}^z_j
@@ -135,7 +135,7 @@ To mitigate this issue, we propose a linearized problem Hamiltonian inspired by 
 	\bigg( \sum_{m=1}^{n_q} 2^m \hat{y}_m + \1 \bigg)\,.
 	\label{eq:linear_problem_hamiltonian}
 \end{equation}
-Unlike the original Hamiltonian $\hat{H}_\mathrm{QP}$, whose ground state encodes the solution, $\hat{H}_\mathrm{LP}$ contains only two-body terms and is therefore easier to implement (see Fig.~\ref{fig:linear_circuit_35.pdf}), but the factorization solution corresponds to an eigenstate with eigenvalue zero rather than the ground state. Since the adiabatic theorem is not restricted to ground states but applies to any non-degenerate eigenstate, we hypothesize that it is possible to target this eigenstate through a suitable adiabatic or variational process. Based on this idea, our proposal is to replace the original Hamiltonian in the QAOA layers with $\hat{H}_\mathrm{LP}$, leveraging the possibility of starting from an eigenstate near the middle of the initial Hamiltonian’s spectrum and evolving under $\hat{H}_\mathrm{LP}$ to preserve this eigenstate structure, ultimately reaching the correct factorization solution, which also lies near the center of the spectrum.
+Unlike the original Hamiltonian $\hat{H}_\mathrm{QP}$, whose ground state encodes the solution, $\hat{H}_\mathrm{LP}$ contains only two-body terms and is therefore easier to implement (see Fig.~\ref{fig:linear_circuit_35.pdf}), but the factorization solution corresponds to an eigenstate with eigenvalue zero rather than the ground state. In other words, here we consider that the solution of the factorization is encoded in the \textit{null-space} of the Hamiltonian, composed by eigenstates with eigenvalue $0$. This approach does not impose limitations on the algorithm, since the adiabatic theorem is not restricted to ground states but applies to any non-degenerate eigenstate. Therefore, the adiabatic theorem supports that it is possible to target this eigenstate through a suitable adiabatic or variational process. Based on this idea, our proposal is to replace the original Hamiltonian in the QAOA layers with $\hat{H}_\mathrm{LP}$, leveraging the possibility of starting from an eigenstate near the middle of the initial Hamiltonian’s spectrum and evolving under $\hat{H}_\mathrm{LP}$ to preserve this eigenstate structure, ultimately reaching the correct factorization solution, which also lies near the center of the spectrum.
 
 \begin{figure}[h]
     \centering
