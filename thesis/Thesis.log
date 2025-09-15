@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  15 SEP 2025 16:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.4.5)  15 SEP 2025 17:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1718,11 +1718,11 @@ Package pdftex.def Info: 04-results/figs/fidelity_gates_2577143.pdf  used on inp
 
  (./05-discussion/discussion.tex [17 <./04-results/figs/fidelity_gates_2577143.pdf>]
 Chapter 4.
-<05-discussion/figs/energy_spectrums.pdf, id=633, 816.36237pt x 650.66966pt>
+<05-discussion/figs/energy_spectrums.pdf, id=636, 819.76263pt x 552.33844pt>
 File: 05-discussion/figs/energy_spectrums.pdf Graphic file (type pdf)
 <use 05-discussion/figs/energy_spectrums.pdf>
-Package pdftex.def Info: 05-discussion/figs/energy_spectrums.pdf  used on input line 19.
-(pdftex.def)             Requested size: 436.60997pt x 348.00058pt.
+Package pdftex.def Info: 05-discussion/figs/energy_spectrums.pdf  used on input line 21.
+(pdftex.def)             Requested size: 441.01773pt x 297.14583pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1751,13 +1751,13 @@ See the caption package documentation for explanation.
  (./06-appendix/02-FidelityEvolution.tex [21
 
 ]
-<06-appendix/figs/fidelity_layers_all.pdf, id=707, 739.2351pt x 1068.02884pt>
+<06-appendix/figs/fidelity_layers_all.pdf, id=711, 739.2351pt x 1068.02884pt>
 File: 06-appendix/figs/fidelity_layers_all.pdf Graphic file (type pdf)
 <use 06-appendix/figs/fidelity_layers_all.pdf>
 Package pdftex.def Info: 06-appendix/figs/fidelity_layers_all.pdf  used on input line 8.
 (pdftex.def)             Requested size: 436.60997pt x 630.79973pt.
  [22 <./06-appendix/figs/fidelity_layers_all.pdf>]
-<06-appendix/figs/fidelity_gates_all.pdf, id=795, 744.55025pt x 1068.31114pt>
+<06-appendix/figs/fidelity_gates_all.pdf, id=799, 744.55025pt x 1068.31114pt>
 File: 06-appendix/figs/fidelity_gates_all.pdf Graphic file (type pdf)
 <use 06-appendix/figs/fidelity_gates_all.pdf>
 Package pdftex.def Info: 06-appendix/figs/fidelity_gates_all.pdf  used on input line 16.
@@ -1766,7 +1766,7 @@ Package pdftex.def Info: 06-appendix/figs/fidelity_gates_all.pdf  used on input 
 \openout2 = `06-appendix/03-CostEvolution.aux'.
 
  (./06-appendix/03-CostEvolution.tex [23 <./06-appendix/figs/fidelity_gates_all.pdf>]
-<06-appendix/figs/cost_layers_all.pdf, id=891, 755.2951pt x 1068.02884pt>
+<06-appendix/figs/cost_layers_all.pdf, id=895, 755.2951pt x 1068.02884pt>
 File: 06-appendix/figs/cost_layers_all.pdf Graphic file (type pdf)
 <use 06-appendix/figs/cost_layers_all.pdf>
 Package pdftex.def Info: 06-appendix/figs/cost_layers_all.pdf  used on input line 7.
@@ -1775,12 +1775,12 @@ Package pdftex.def Info: 06-appendix/figs/cost_layers_all.pdf  used on input lin
 \openout2 = `06-appendix/04-Populations.aux'.
 
  (./06-appendix/04-Populations.tex [24 <./06-appendix/figs/cost_layers_all.pdf>]
-<06-appendix/figs/populations_all1.pdf, id=983, 760.42584pt x 1062.42195pt>
+<06-appendix/figs/populations_all1.pdf, id=987, 760.42584pt x 1062.42195pt>
 File: 06-appendix/figs/populations_all1.pdf Graphic file (type pdf)
 <use 06-appendix/figs/populations_all1.pdf>
 Package pdftex.def Info: 06-appendix/figs/populations_all1.pdf  used on input line 7.
 (pdftex.def)             Requested size: 441.01773pt x 616.17274pt.
-<06-appendix/figs/populations_all2.pdf, id=984, 767.45209pt x 1073.46321pt>
+<06-appendix/figs/populations_all2.pdf, id=988, 767.45209pt x 1073.46321pt>
 File: 06-appendix/figs/populations_all2.pdf Graphic file (type pdf)
 <use 06-appendix/figs/populations_all2.pdf>
 Package pdftex.def Info: 06-appendix/figs/populations_all2.pdf  used on input line 12.
@@ -1792,12 +1792,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \openout2 = `06-appendix/05-EnergySpectrums.aux'.
 
  (./06-appendix/05-EnergySpectrums.tex [26 <./06-appendix/figs/populations_all2.pdf>]
-<06-appendix/figs/energy_spectrums_all1.pdf, id=1079, 760.72781pt x 1234.97261pt>
+<06-appendix/figs/energy_spectrums_all1.pdf, id=1083, 760.72781pt x 1234.97261pt>
 File: 06-appendix/figs/energy_spectrums_all1.pdf Graphic file (type pdf)
 <use 06-appendix/figs/energy_spectrums_all1.pdf>
 Package pdftex.def Info: 06-appendix/figs/energy_spectrums_all1.pdf  used on input line 7.
 (pdftex.def)             Requested size: 414.55774pt x 672.99963pt.
-<06-appendix/figs/energy_spectrums_all2.pdf, id=1080, 767.75406pt x 1234.97261pt>
+<06-appendix/figs/energy_spectrums_all2.pdf, id=1084, 767.75406pt x 1234.97261pt>
 File: 06-appendix/figs/energy_spectrums_all2.pdf Graphic file (type pdf)
 <use 06-appendix/figs/energy_spectrums_all2.pdf>
 Package pdftex.def Info: 06-appendix/figs/energy_spectrums_all2.pdf  used on input line 12.
@@ -1844,10 +1844,10 @@ pdfTeX warning (dest): name{cite.ho_efficient_2019} has been referenced but does
 pdfTeX warning (dest): name{cite.farhi_quantum_2019} has been referenced but does not exist, replaced by a fixed one
 
  </home/fpellicer/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Thesis.pdf (33 pages, 1897441 bytes).
+Output written on Thesis.pdf (33 pages, 1898432 bytes).
 PDF statistics:
- 1311 PDF objects out of 1440 (max. 8388607)
- 602 compressed objects within 7 object streams
+ 1315 PDF objects out of 1440 (max. 8388607)
+ 605 compressed objects within 7 object streams
  132 named destinations out of 1000 (max. 500000)
  127099 words of extra memory for PDF output out of 128383 (max. 10000000)
 
