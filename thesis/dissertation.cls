@@ -57,7 +57,8 @@
 \RequirePackage{tablefootnote}
 \RequirePackage{lettrine}
 \RequirePackage{metalogo}
-\RequirePackage[sectionbib,numbers,sort&compress]{natbib}
+\RequirePackage[numbers,sort&compress]{natbib}
+\RequirePackage[nottoc]{tocbibind}
 \RequirePackage[noindentafter]{titlesec}
 \RequirePackage{titletoc}
 %\RequirePackage[nottoc]{tocbibind}
@@ -586,7 +587,7 @@
 }
 
 %% Create an unnumbered reference section.
-\addto\captionsenglish{\renewcommand*\bibname{\color{black}References}}
+% \addto\captionsenglish{\renewcommand*\bibname{\color{black}References}}
 \newcommand*\references[1]{%
     \bibliographystyle{dissertation}%
     \bibliography{#1}%
