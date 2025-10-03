@@ -62,25 +62,26 @@ class QAOASolver:
         
     
     def _qaoa_layer(self, psi, gamma, beta):
-        return apply_op(Rx(beta), apply_expiH(gamma, self.Ep, psi))
+        # H_M = - sum X  ===> exp(-i beta H_M) = sum R_X(-2 beta)
+        return apply_op(Rx(-2*beta), apply_expiH(gamma, self.Ep, psi))
     
     def _qaoa_layer_and_derivatives(self, psi, gamma, beta):
         psi = apply_expiH(gamma, self.Ep, psi)
-        dpsi_dgamma = 1j * (self.Ep * psi)
-        R = Rx(beta)
+        dpsi_dgamma = -1j * (self.Ep * psi)
+        R = Rx(-2*beta)
         dpsi_dgamma = apply_op(R, dpsi_dgamma)
         psi = apply_op(R, psi)
-        dpsi_dbeta = apply_sum_op(-0.5j * sigma_x, psi)
+        dpsi_dbeta = apply_sum_op(1j * sigma_x, psi)
         return psi, dpsi_dgamma, dpsi_dbeta
     
     def _init_state(self):
+        ket_0 = np.array([1, 0], dtype=np.complex128)
+        ket_1 = np.array([0, 1], dtype=np.complex128)
+        ket_plus = (ket_0 + ket_1) / np.sqrt(2)
+        ket_minus = (ket_0 - ket_1) / np.sqrt(2)
+
         if self.problem_hamiltonian == 'linear_H':
             # |+-+-+-...>
-            ket_0 = np.array([1, 0], dtype=np.complex128)
-            ket_1 = np.array([0, 1], dtype=np.complex128)
-            ket_plus = (ket_0 + ket_1) / np.sqrt(2)
-            ket_minus = (ket_0 - ket_1) / np.sqrt(2)
-
             psi = ket_plus
             for i in range(1, self.num_qubits):
                 next_ket = ket_plus if i%2==0 else ket_minus
@@ -88,7 +89,9 @@ class QAOASolver:
             
         else:
             # |++++++...>
-            psi = np.full(self.dim, 1 / np.sqrt(self.dim), dtype=np.complex128)
+            psi = ket_plus
+            for i in range(1, self.num_qubits):
+                psi = np.kron(psi, ket_plus)
         
         return psi
 
